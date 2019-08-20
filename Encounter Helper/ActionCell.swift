@@ -1,18 +1,17 @@
 //
-//  MonsterListCell.swift
+//  ActionCell.swift
 //  Encounter Helper
 //
-//  Created by Wayne Ohmer on 8/18/19.
+//  Created by Wayne Ohmer on 8/19/19.
 //  Copyright © 2019 Tryal by Fyre. All rights reserved.
 //
 
 import UIKit
 
-class MonsterListCell: UITableViewCell {
+class ActionCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var monsterImageView: UIImageView!
-    
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

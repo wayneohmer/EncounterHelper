@@ -14,6 +14,66 @@ class Monster {
 
     var monsterModel = MonsterModel()
     var metaMonster = MonsterMetaModel()
+
+    var name:String { return monsterModel.name }
+    var size:String { return monsterModel.size }
+    var type:String { return monsterModel.type }
+    var subtype:String { return monsterModel.subtype }
+    var alignment:String { return monsterModel.alignment }
+    var armorClass:Int { return monsterModel.armor_class }
+    var hitPoints:Int { return monsterModel.hit_points }
+    var hitDice:String { return monsterModel.hit_dice }
+    var speed:String { return monsterModel.speed }
+    var strength:Int { return monsterModel.strength }
+    var dexterity:Int { return monsterModel.dexterity }
+    var constitution:Int { return monsterModel.constitution }
+    var intelligence:Int { return monsterModel.intelligence }
+    var wisdom:Int { return monsterModel.wisdom }
+    var charisma:Int { return monsterModel.charisma }
+    var constitutionSave:Int { return monsterModel.constitution_save ?? 0 }
+    var intelligenceSave:Int { return monsterModel.intelligence_save ?? 0 }
+    var charismaSave:Int { return monsterModel.charisma_save ?? 0 }
+    var dexteritySave:Int { return monsterModel.dexterity_save ?? 0 }
+    var strengthSave:Int { return monsterModel.strength_save ?? 0 }
+    var wisdomSave:Int { return monsterModel.wisdom_save ?? 0 }
+    var perception:Int { return monsterModel.perception ?? 0 }
+    var damageVulnerabilities:String { return monsterModel.damage_vulnerabilities }
+    var damageResistances:String { return monsterModel.damage_resistances }
+    var damageImmunities:String { return monsterModel.damage_immunities }
+    var conditionImmunities:String { return monsterModel.condition_immunities }
+    var senses:String { return monsterModel.senses }
+    var languages:String { return monsterModel.languages }
+    var challengeRating:String { return monsterModel.challenge_rating }
+    
+    var actions:[Action] { return monsterModel.actions ?? [Action]() }
+    var specialAbilities:[Action] { return monsterModel.special_abilities ?? [Action]() }
+    var legondaryActions:[Action] { return monsterModel.legendary_actions ?? [Action]() }
+    
+    var allActions:[[Action]] { return [actions,specialAbilities,legondaryActions]}
+
+    var traits:NSAttributedString? {
+        guard let htmlData = NSString(string: metaMonster.Traits ?? "").data(using: String.Encoding.unicode.rawValue) else {
+            return nil
+        }
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+        let attributedString = try! NSAttributedString(data: htmlData, options: options, documentAttributes: nil)
+        return attributedString
+        
+    }
+    var meta:String? { return metaMonster.meta }
+    var actionsDesc:String? { return metaMonster.Actions }
+    var imgUrl:String? { return metaMonster.img_url }
+    
+    var image:UIImage? {
+        
+        guard let url = URL(string:metaMonster.img_url ?? "") else { return nil }
+        do {
+            return UIImage(data: try Data(contentsOf: url))
+        } catch {
+            return nil
+        }
+    }
+    
     
     class func readMonsters() {
         var monsters = [MonsterModel]()
@@ -80,8 +140,11 @@ struct MonsterModel: Codable  {
     var charisma = 0
     var constitution_save:Int? = 0
     var intelligence_save:Int? = 0
+    var charisma_save:Int? = 0
+    var dexterity_save:Int? = 0
+    var strength_save:Int? = 0
+    
     var wisdom_save:Int? = 0
-    var history:Int? = 0
     var perception:Int? = 0
     var damage_vulnerabilities:String = ""
     var damage_resistances:String = ""

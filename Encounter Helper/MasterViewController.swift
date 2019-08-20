@@ -11,7 +11,8 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-
+    var filterdMonsters = [Monster]()
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,14 @@ class MasterViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         Monster.readMonsters()
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Monsters"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        self.tableView.estimatedRowHeight = 60
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +46,8 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.monster = Monster.sharedMonsters[indexPath.row]
+                
+                controller.monster = isFiltering() ? filterdMonsters[indexPath.row] : Monster.sharedMonsters[indexPath.row]
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -51,13 +61,27 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return filterdMonsters.count
+        }
         return Monster.sharedMonsters.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MonsterListCell", for: indexPath) as! MonsterListCell
 
-        cell.nameLabel.text = Monster.sharedMonsters[indexPath.row].monsterModel.name
+        if isFiltering() {
+            cell.nameLabel.text = filterdMonsters[indexPath.row].name
+            cell.monsterImageView.image = filterdMonsters[indexPath.row].image
+
+        } else {
+            cell.nameLabel.text = Monster.sharedMonsters[indexPath.row].name
+            cell.monsterImageView.image = Monster.sharedMonsters[indexPath.row].image ?? UIImage()
+        }
         return cell
     }
 
@@ -73,7 +97,34 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+    
+    // MARK: - Private instance methods
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filterdMonsters = Monster.sharedMonsters.filter({( monster:Monster) -> Bool in
+            return monster.name.lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
 
 
 }
+
+extension MasterViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+
+    }
+}
+
 
