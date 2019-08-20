@@ -76,11 +76,9 @@ class MasterViewController: UITableViewController {
 
         if isFiltering() {
             cell.nameLabel.text = filterdMonsters[indexPath.row].name
-            cell.monsterImageView.image = filterdMonsters[indexPath.row].image
 
         } else {
             cell.nameLabel.text = Monster.sharedMonsters[indexPath.row].name
-            cell.monsterImageView.image = Monster.sharedMonsters[indexPath.row].image ?? UIImage()
         }
         return cell
     }

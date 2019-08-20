@@ -63,12 +63,18 @@ class Monster {
     var meta:String? { return metaMonster.meta }
     var actionsDesc:String? { return metaMonster.Actions }
     var imgUrl:String? { return metaMonster.img_url }
-    
+    var storedImage:UIImage?
+
     var image:UIImage? {
+        
+        if storedImage != nil {
+            return storedImage
+        }
         
         guard let url = URL(string:metaMonster.img_url ?? "") else { return nil }
         do {
-            return UIImage(data: try Data(contentsOf: url))
+            self.storedImage = UIImage(data: try Data(contentsOf: url))
+            return self.storedImage
         } catch {
             return nil
         }
