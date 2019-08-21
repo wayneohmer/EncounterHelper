@@ -26,7 +26,9 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        Monster.readMonsters()
+        if Monster.sharedMonsters.count == 0 {
+            Monster.readMonsters()
+        }
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false

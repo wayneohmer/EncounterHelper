@@ -11,6 +11,9 @@ import UIKit
 class Monster  {
     
     static var sharedMonsters = [Monster]()
+    static var imageFileNames = Set<String>()
+    var imagePath:URL { return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(storedImageFileName ?? "")") }
+
 
     var monsterModel = MonsterModel()
     var metaMonster = MonsterMetaModel()
@@ -64,22 +67,50 @@ class Monster  {
     var actionsDesc:String? { return metaMonster.Actions }
     var imgUrl:String? { return metaMonster.img_url }
     var storedImage:UIImage?
+    var storedImageFileName:String? { return monsterModel.storedImageFileName }
+    var imageFileName:String? {
+        set {
+            guard var newName = newValue else { return }
+            while Monster.imageFileNames.contains(newName) {
+                newName = "\(newName)X"
+            }
+            Monster.imageFileNames.insert(newName)
+            monsterModel.storedImageFileName = newName
+        }
+        get {
+            return storedImageFileName
+        }
+    }
 
     var image:UIImage? {
         
         if storedImage != nil {
             return storedImage
         }
+        if let imageData = try? Data(contentsOf: imagePath) {
+            if let image = UIImage(data: imageData) {
+                self.storedImage = image
+                return image
+            }
+        }
         
         guard let url = URL(string:metaMonster.img_url ?? "") else { return nil }
+        guard let imageData = try? Data(contentsOf: url) else { return nil }
+        self.storedImage = UIImage(data: imageData)
+        imageFileName = name
         do {
-            self.storedImage = UIImage(data: try Data(contentsOf: url))
-            return self.storedImage
+            try imageData.write(to: imagePath)
         } catch {
-            return nil
+            print(imagePath.absoluteString)
         }
+        return self.storedImage
     }
     
+    convenience init(model:MonsterModel) {
+        self.init()
+        self.monsterModel = model
+        self.metaMonster = model.metaModel ?? MonsterMetaModel()
+    }
     
     class func readMonsters() {
         var monsters = [MonsterModel]()
@@ -127,6 +158,11 @@ class Monster  {
     
 }
 
+struct StoredMonsters: Codable {
+    
+    var monsters = [MonsterModel]()
+}
+
 struct MonsterModel: Codable  {
     
     var name:String = ""
@@ -159,10 +195,13 @@ struct MonsterModel: Codable  {
     var senses:String = ""
     var languages:String = ""
     var challenge_rating:String = ""
+    var storedImageFileName:String? = ""
     
     var special_abilities:[Action]?
     var actions:[Action]?
     var legendary_actions:[Action]?
+    var metaModel:MonsterMetaModel?
+
 
 }
 
