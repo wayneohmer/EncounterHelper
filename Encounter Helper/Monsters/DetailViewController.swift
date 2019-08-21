@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var hitPointsLabel: UILabel!
+    @IBOutlet weak var hitPointView: UIView!
     @IBOutlet weak var armorClassLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var speedLabel: UILabel!
@@ -31,14 +32,22 @@ class DetailViewController: UIViewController {
             navigationItem.title = monster.name
             descriptionLabel.text = monster.meta
             hitPointsLabel.text = "\(monster.hitPoints)"
+            hitPointView.clipsToBounds = false
+            hitPointView.layer.cornerRadius = 7
+            hitPointView.layer.shadowColor = UIColor.white.cgColor
+            hitPointView.layer.shadowOpacity = 0.5
+            hitPointView.layer.shadowOffset = CGSize(width: 3, height: 0)
+
             armorClassLabel.text = "\(monster.armorClass)"
             
             imageView.image = monster.image
-            imageView.layer.borderColor = UIColor.black.cgColor
-            imageView.layer.borderWidth = 2.0
-            hitPointsLabel.layer.borderColor = UIColor.black.cgColor
-            hitPointsLabel.layer.borderWidth = 2.0
+            imageView.clipsToBounds = false
+            imageView.layer.cornerRadius = 7
+            imageView.layer.shadowColor = UIColor.white.cgColor
+            imageView.layer.shadowOpacity = 0.5
+            imageView.layer.shadowOffset = CGSize(width: 3, height: 0)
             
+         
             speedLabel.text = monster.speed
             sensesLabel.text = monster.senses
             

@@ -14,5 +14,10 @@ class Encounter {
     
     var name = ""
     var monsters = [Monster]()
+    
+    convenience init(name:String) {
+        self.init()
+        self.name = name
+    }
 
 }

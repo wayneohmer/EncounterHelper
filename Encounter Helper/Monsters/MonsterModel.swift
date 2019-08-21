@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Monster {
+class Monster  {
     
     static var sharedMonsters = [Monster]()
 

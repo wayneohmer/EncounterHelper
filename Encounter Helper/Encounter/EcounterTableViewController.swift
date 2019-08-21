@@ -20,27 +20,47 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
+    
     // MARK: - Table view data source
 
+    @IBAction func plusTouched(_ sender: Any) {
+        let alert = UIAlertController(title: "Name", message: "", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in
+            let newEncounter = Encounter(name:alert.textFields?[0].text ?? "")
+            Encounter.sharedEncounters.append(newEncounter)
+            self.performSegue(withIdentifier: "newEncounter", sender: newEncounter)
+        })
+        self.present(alert, animated: true)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return Encounter.sharedEncounters.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = UITableViewCell()
 
-        // Configure the cell...
+        cell.textLabel?.text = Encounter.sharedEncounters[indexPath.row].name
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "newEncounter", sender: Encounter.sharedEncounters[indexPath.row])
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,8 +111,15 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let splitViewController = segue.destination as! UISplitViewController
-        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        var navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-2] as! UINavigationController
+
+        if let vc = navigationController.topViewController as? MasterViewController {
+            if let encounter = sender as? Encounter {
+                vc.encounter = encounter
+            }
+        }
         splitViewController.delegate = self
         
     }

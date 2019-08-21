@@ -11,6 +11,7 @@
 		2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340046230B5232003AE875 /* EcounterTableViewController.swift */; };
 		2B340049230B943B003AE875 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340048230B943B003AE875 /* ActionCell.swift */; };
 		2B34004B230B94FE003AE875 /* ActionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34004A230B94FE003AE875 /* ActionTableViewController.swift */; };
+		2B340055230C84F8003AE875 /* BlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340054230C84F8003AE875 /* BlackButton.swift */; };
 		2BAC383B2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF9A8A2309F37500DEB8CD /* 5e-SRD-MonstersCopy.json */; };
 		2BAC383C2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF9A8A2309F37500DEB8CD /* 5e-SRD-MonstersCopy.json */; };
 		2BAC383E2309FC0400A1CAEA /* MonsterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */; };
@@ -43,6 +44,7 @@
 		2B340046230B5232003AE875 /* EcounterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcounterTableViewController.swift; sourceTree = "<group>"; };
 		2B340048230B943B003AE875 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		2B34004A230B94FE003AE875 /* ActionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewController.swift; sourceTree = "<group>"; };
+		2B340054230C84F8003AE875 /* BlackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackButton.swift; sourceTree = "<group>"; };
 		2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterListCell.swift; sourceTree = "<group>"; };
 		2BAC383F230A04C100A1CAEA /* srd_5e_monsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = srd_5e_monsters.json; sourceTree = "<group>"; };
 		2BEF9A602309E85000DEB8CD /* Encounter Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Encounter Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B340051230C8491003AE875 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				2B340048230B943B003AE875 /* ActionCell.swift */,
+				2B34004A230B94FE003AE875 /* ActionTableViewController.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		2B340052230C84A7003AE875 /* Encounter */ = {
+			isa = PBXGroup;
+			children = (
+				2B340044230B4E7B003AE875 /* Encounter.swift */,
+				2B340046230B5232003AE875 /* EcounterTableViewController.swift */,
+			);
+			path = Encounter;
+			sourceTree = "<group>";
+		};
+		2B340053230C84B6003AE875 /* Monsters */ = {
+			isa = PBXGroup;
+			children = (
+				2BEF9A872309ECBB00DEB8CD /* MonsterModel.swift */,
+				2BEF9A652309E85000DEB8CD /* MasterViewController.swift */,
+				2BEF9A672309E85000DEB8CD /* DetailViewController.swift */,
+				2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */,
+			);
+			path = Monsters;
+			sourceTree = "<group>";
+		};
 		2BEF9A572309E85000DEB8CD = {
 			isa = PBXGroup;
 			children = (
@@ -100,19 +131,15 @@
 		2BEF9A622309E85000DEB8CD /* Encounter Helper */ = {
 			isa = PBXGroup;
 			children = (
-				2BEF9A632309E85000DEB8CD /* AppDelegate.swift */,
-				2BEF9A652309E85000DEB8CD /* MasterViewController.swift */,
-				2BEF9A672309E85000DEB8CD /* DetailViewController.swift */,
 				2BEF9A692309E85000DEB8CD /* Main.storyboard */,
+				2BEF9A632309E85000DEB8CD /* AppDelegate.swift */,
+				2B340053230C84B6003AE875 /* Monsters */,
+				2B340052230C84A7003AE875 /* Encounter */,
+				2B340051230C8491003AE875 /* Action */,
 				2BEF9A6C2309E85200DEB8CD /* Assets.xcassets */,
-				2BEF9A6E2309E85200DEB8CD /* LaunchScreen.storyboard */,
 				2BEF9A712309E85200DEB8CD /* Info.plist */,
-				2BEF9A872309ECBB00DEB8CD /* MonsterModel.swift */,
-				2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */,
-				2B340044230B4E7B003AE875 /* Encounter.swift */,
-				2B340046230B5232003AE875 /* EcounterTableViewController.swift */,
-				2B340048230B943B003AE875 /* ActionCell.swift */,
-				2B34004A230B94FE003AE875 /* ActionTableViewController.swift */,
+				2BEF9A6E2309E85200DEB8CD /* LaunchScreen.storyboard */,
+				2B340054230C84F8003AE875 /* BlackButton.swift */,
 			);
 			path = "Encounter Helper";
 			sourceTree = "<group>";
@@ -237,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BEF9A682309E85000DEB8CD /* DetailViewController.swift in Sources */,
+				2B340055230C84F8003AE875 /* BlackButton.swift in Sources */,
 				2B340049230B943B003AE875 /* ActionCell.swift in Sources */,
 				2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */,
 				2B340045230B4E7B003AE875 /* Encounter.swift in Sources */,
