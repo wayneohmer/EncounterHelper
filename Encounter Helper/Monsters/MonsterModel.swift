@@ -12,7 +12,7 @@ class Monster  {
     
     static var sharedMonsters = [Monster]()
     static var imageFileNames = Set<String>()
-    var imagePath:URL { return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(storedImageFileName ?? "")") }
+    var imagePath:URL { return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("images\(storedImageFileName ?? "")") }
 
 
     var monsterModel = MonsterModel()

@@ -48,6 +48,7 @@ class MasterViewController: UITableViewController {
     }
 
     @IBAction func SaveTouched(_ sender: Any) {
+        self.encounter.save()
         self.dismiss(animated: true, completion: nil)
     }
     

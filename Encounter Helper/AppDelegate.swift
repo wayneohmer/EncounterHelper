@@ -14,10 +14,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var window: UIWindow?
 
     let savedMonstersPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("monsters")
-    let savedEncountersPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("encounters")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if  !FileManager.default.fileExists(atPath: Encounter.savedEncountersPath.absoluteString) {
+            do {
+                try FileManager.default.createDirectory(atPath: Encounter.savedEncountersPath.path,
+                                                withIntermediateDirectories: true,
+                                                attributes: nil)
+            } catch {
+                print("Error creating images folder in documents dir: \(error)")
+            }
+        }
+        if  !FileManager.default.fileExists(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("images").absoluteString) {
+            do {
+                try FileManager.default.createDirectory(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("images").path,
+                                                        withIntermediateDirectories: false,
+                                                        attributes: nil)
+            } catch {
+                print("Error creating images folder in documents dir: \(error)")
+            }
+        }
         
         if let monsterData = try? Data(contentsOf: savedMonstersPath) {
             if let savedMonstsers = try? JSONDecoder().decode(StoredMonsters.self, from: monsterData) {
@@ -26,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                 }
             }
         }
+        self.getAllEncounters()
         return true
     }
 
@@ -46,6 +64,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         saveAllMonsters()
     }
 
+    func getAllEncounters() {
+        guard let dir = try? FileManager.default.contentsOfDirectory(atPath:Encounter.savedEncountersPath.path) else { return }
+        for path in dir {
+            guard let url = URL(string: Encounter.savedEncountersPath.appendingPathComponent(path).absoluteString) else { break }
+            do {
+                let encounterData = try Data(contentsOf: url)
+                if let encounter = try? JSONDecoder().decode(SavebleEncounter.self, from: encounterData) {
+                    Encounter.sharedEncounters.append(Encounter(saveable: encounter))
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+        
     func saveAllMonsters(){
         var savedMonstsers = StoredMonsters()
         for monster in Monster.sharedMonsters {
@@ -56,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         do {
             let data = try JSONEncoder().encode(savedMonstsers)
             do {
-                try data.write(to: savedMonstersPath)
+                try data.write(to: self.savedMonstersPath)
             } catch {
                 print("Save Failed")
             }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17F72A230F0F800061EB5A /* EncounterCell.swift */; };
 		2B340045230B4E7B003AE875 /* Encounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340044230B4E7B003AE875 /* Encounter.swift */; };
 		2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340046230B5232003AE875 /* EcounterTableViewController.swift */; };
 		2B340049230B943B003AE875 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340048230B943B003AE875 /* ActionCell.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B17F72A230F0F800061EB5A /* EncounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterCell.swift; sourceTree = "<group>"; };
 		2B340044230B4E7B003AE875 /* Encounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounter.swift; sourceTree = "<group>"; };
 		2B340046230B5232003AE875 /* EcounterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcounterTableViewController.swift; sourceTree = "<group>"; };
 		2B340048230B943B003AE875 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				2B340044230B4E7B003AE875 /* Encounter.swift */,
 				2B340046230B5232003AE875 /* EcounterTableViewController.swift */,
+				2B17F72A230F0F800061EB5A /* EncounterCell.swift */,
 			);
 			path = Encounter;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BEF9A682309E85000DEB8CD /* DetailViewController.swift in Sources */,
+				2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */,
 				2B340055230C84F8003AE875 /* BlackButton.swift in Sources */,
 				2B340049230B943B003AE875 /* ActionCell.swift in Sources */,
 				2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */,

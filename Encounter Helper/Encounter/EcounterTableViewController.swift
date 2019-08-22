@@ -12,7 +12,7 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.tableFooterView = UIView()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -51,9 +51,9 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EncounterCell", for: indexPath) as! EncounterCell
 
-        cell.textLabel?.text = Encounter.sharedEncounters[indexPath.row].name
+        cell.nameLabel.text = Encounter.sharedEncounters[indexPath.row].name
 
         return cell
     }
