@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17F72A230F0F800061EB5A /* EncounterCell.swift */; };
+		2B17F76623108F2A0061EB5A /* Monster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F76523108F2A0061EB5A /* Monster.storyboard */; };
+		2B17F7732310A2E20061EB5A /* DiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17F7722310A2E20061EB5A /* DiceController.swift */; };
+		2B17F7752310A2EF0061EB5A /* AdvantageSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17F7742310A2EF0061EB5A /* AdvantageSwitch.swift */; };
+		2B17F7782310A2FE0061EB5A /* FyreDice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17F7762310A2FD0061EB5A /* FyreDice.swift */; };
+		2B17F7792310A2FE0061EB5A /* Oops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17F7772310A2FD0061EB5A /* Oops.swift */; };
+		2B17F7802310A7EC0061EB5A /* 3dice.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F77B2310A7EC0061EB5A /* 3dice.aif */; };
+		2B17F7812310A7EC0061EB5A /* DeathSound.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F77C2310A7EC0061EB5A /* DeathSound.aif */; };
+		2B17F7822310A7EC0061EB5A /* 10dice.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F77D2310A7EC0061EB5A /* 10dice.aif */; };
+		2B17F7832310A7EC0061EB5A /* Awww.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F77E2310A7EC0061EB5A /* Awww.aif */; };
+		2B17F7842310A7EC0061EB5A /* 1die.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F77F2310A7EC0061EB5A /* 1die.aif */; };
 		2B340045230B4E7B003AE875 /* Encounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340044230B4E7B003AE875 /* Encounter.swift */; };
 		2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340046230B5232003AE875 /* EcounterTableViewController.swift */; };
 		2B340049230B943B003AE875 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340048230B943B003AE875 /* ActionCell.swift */; };
@@ -42,6 +52,16 @@
 
 /* Begin PBXFileReference section */
 		2B17F72A230F0F800061EB5A /* EncounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterCell.swift; sourceTree = "<group>"; };
+		2B17F76523108F2A0061EB5A /* Monster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monster.storyboard; sourceTree = "<group>"; };
+		2B17F7722310A2E20061EB5A /* DiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceController.swift; sourceTree = "<group>"; };
+		2B17F7742310A2EF0061EB5A /* AdvantageSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvantageSwitch.swift; sourceTree = "<group>"; };
+		2B17F7762310A2FD0061EB5A /* FyreDice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyreDice.swift; sourceTree = "<group>"; };
+		2B17F7772310A2FD0061EB5A /* Oops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oops.swift; sourceTree = "<group>"; };
+		2B17F77B2310A7EC0061EB5A /* 3dice.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dice.aif; sourceTree = "<group>"; };
+		2B17F77C2310A7EC0061EB5A /* DeathSound.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeathSound.aif; sourceTree = "<group>"; };
+		2B17F77D2310A7EC0061EB5A /* 10dice.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10dice.aif; sourceTree = "<group>"; };
+		2B17F77E2310A7EC0061EB5A /* Awww.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Awww.aif; sourceTree = "<group>"; };
+		2B17F77F2310A7EC0061EB5A /* 1die.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1die.aif; sourceTree = "<group>"; };
 		2B340044230B4E7B003AE875 /* Encounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounter.swift; sourceTree = "<group>"; };
 		2B340046230B5232003AE875 /* EcounterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcounterTableViewController.swift; sourceTree = "<group>"; };
 		2B340048230B943B003AE875 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
@@ -83,6 +103,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B17F7712310A2C60061EB5A /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				2B17F7762310A2FD0061EB5A /* FyreDice.swift */,
+				2B17F7772310A2FD0061EB5A /* Oops.swift */,
+				2B17F7742310A2EF0061EB5A /* AdvantageSwitch.swift */,
+				2B17F7722310A2E20061EB5A /* DiceController.swift */,
+				2B17F77A2310A7EC0061EB5A /* Sounds */,
+			);
+			path = Dice;
+			sourceTree = "<group>";
+		};
+		2B17F77A2310A7EC0061EB5A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2B17F77B2310A7EC0061EB5A /* 3dice.aif */,
+				2B17F77C2310A7EC0061EB5A /* DeathSound.aif */,
+				2B17F77D2310A7EC0061EB5A /* 10dice.aif */,
+				2B17F77E2310A7EC0061EB5A /* Awww.aif */,
+				2B17F77F2310A7EC0061EB5A /* 1die.aif */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		2B340051230C8491003AE875 /* Action */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +142,7 @@
 				2B340044230B4E7B003AE875 /* Encounter.swift */,
 				2B340046230B5232003AE875 /* EcounterTableViewController.swift */,
 				2B17F72A230F0F800061EB5A /* EncounterCell.swift */,
+				2B17F76523108F2A0061EB5A /* Monster.storyboard */,
 			);
 			path = Encounter;
 			sourceTree = "<group>";
@@ -139,6 +184,7 @@
 				2B340053230C84B6003AE875 /* Monsters */,
 				2B340052230C84A7003AE875 /* Encounter */,
 				2B340051230C8491003AE875 /* Action */,
+				2B17F7712310A2C60061EB5A /* Dice */,
 				2BEF9A6C2309E85200DEB8CD /* Assets.xcassets */,
 				2BEF9A712309E85200DEB8CD /* Info.plist */,
 				2BEF9A6E2309E85200DEB8CD /* LaunchScreen.storyboard */,
@@ -244,8 +290,14 @@
 				2BEF9A702309E85200DEB8CD /* LaunchScreen.storyboard in Resources */,
 				2BAC3841230A05FB00A1CAEA /* srd_5e_monsters.json in Resources */,
 				2BAC383B2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */,
+				2B17F7822310A7EC0061EB5A /* 10dice.aif in Resources */,
+				2B17F7842310A7EC0061EB5A /* 1die.aif in Resources */,
+				2B17F7812310A7EC0061EB5A /* DeathSound.aif in Resources */,
 				2BEF9A6D2309E85200DEB8CD /* Assets.xcassets in Resources */,
+				2B17F76623108F2A0061EB5A /* Monster.storyboard in Resources */,
+				2B17F7832310A7EC0061EB5A /* Awww.aif in Resources */,
 				2BEF9A6B2309E85000DEB8CD /* Main.storyboard in Resources */,
+				2B17F7802310A7EC0061EB5A /* 3dice.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,14 +318,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B17F7792310A2FE0061EB5A /* Oops.swift in Sources */,
 				2BEF9A682309E85000DEB8CD /* DetailViewController.swift in Sources */,
 				2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */,
 				2B340055230C84F8003AE875 /* BlackButton.swift in Sources */,
+				2B17F7752310A2EF0061EB5A /* AdvantageSwitch.swift in Sources */,
 				2B340049230B943B003AE875 /* ActionCell.swift in Sources */,
 				2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */,
+				2B17F7782310A2FE0061EB5A /* FyreDice.swift in Sources */,
 				2B340045230B4E7B003AE875 /* Encounter.swift in Sources */,
 				2BEF9A662309E85000DEB8CD /* MasterViewController.swift in Sources */,
 				2B34004B230B94FE003AE875 /* ActionTableViewController.swift in Sources */,
+				2B17F7732310A2E20061EB5A /* DiceController.swift in Sources */,
 				2BEF9A882309ECBB00DEB8CD /* MonsterModel.swift in Sources */,
 				2BEF9A642309E85000DEB8CD /* AppDelegate.swift in Sources */,
 				2BAC383E2309FC0400A1CAEA /* MonsterListCell.swift in Sources */,

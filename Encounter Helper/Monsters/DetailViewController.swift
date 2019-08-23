@@ -16,6 +16,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var armorClassLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var damageResistLabel: UILabel!
+    @IBOutlet weak var damageImmuneLabel: UILabel!
+    @IBOutlet weak var conditionImmuneLabel: UILabel!
+    
+    @IBOutlet weak var damageResistStack: UIStackView!
+    @IBOutlet weak var damageImmuneStack: UIStackView!
+    @IBOutlet weak var conditionImmuneStack: UIStackView!
+    
+    @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var sensesLabel: UILabel!
     @IBOutlet weak var strButton: UIButton!
@@ -29,14 +38,16 @@ class DetailViewController: UIViewController {
     
     func configureView() {
         if let monster = self.monster {
-            navigationItem.title = monster.name
+            nameField.text = monster.name
             descriptionLabel.text = monster.meta
             hitPointsLabel.text = "\(monster.hitPoints)"
+            
             hitPointView.clipsToBounds = false
             hitPointView.layer.cornerRadius = 7
-            hitPointView.layer.shadowColor = UIColor.white.cgColor
-            hitPointView.layer.shadowOpacity = 0.5
-            hitPointView.layer.shadowOffset = CGSize(width: 3, height: 0)
+            hitPointView.layer.shadowColor = UIColor.red.cgColor
+            hitPointView.layer.shadowOpacity = 1.0
+            hitPointView.layer.shadowOffset = CGSize(width: 0, height: 0)
+            hitPointView.layer.shadowRadius = 5
 
             armorClassLabel.text = "\(monster.armorClass)"
             
@@ -50,6 +61,27 @@ class DetailViewController: UIViewController {
          
             speedLabel.text = monster.speed
             sensesLabel.text = monster.senses
+            if monster.damageResistances != "" {
+                damageResistStack.isHidden = false
+                damageResistLabel.text = monster.damageResistances
+            } else {
+                damageResistStack.isHidden = true
+            }
+            
+            if monster.damageImmunities != "" {
+                damageImmuneStack.isHidden = false
+                damageImmuneLabel.text = monster.damageImmunities
+            } else {
+                damageImmuneStack.isHidden = true
+            }
+            
+            if monster.conditionImmunities != "" {
+                conditionImmuneStack.isHidden = false
+                conditionImmuneLabel.text = monster.conditionImmunities
+            } else {
+                conditionImmuneStack.isHidden = true
+            }
+            
             
             strButton.setTitle(self.fixButtonTitleWith(attribute: "STR", score: monster.strength, save: monster.strengthSave), for: .normal)
             intButton.setTitle(self.fixButtonTitleWith(attribute: "INT", score: monster.intelligence, save: monster.intelligenceSave), for: .normal)

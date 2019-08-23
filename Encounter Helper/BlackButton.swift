@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class BlackButton: UIButton {
 
     override func layoutSubviews() {
