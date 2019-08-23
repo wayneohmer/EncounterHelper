@@ -194,7 +194,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTw-gK-cmk">
-                                <rect key="frame" x="0.0" y="296" width="1024" height="1000"/>
+                                <rect key="frame" x="0.0" y="246.5" width="1024" height="1049.5"/>
                                 <connections>
                                     <segue destination="sxy-Cd-HIf" kind="embed" id="ffo-09-2Dl"/>
                                 </connections>
@@ -205,7 +205,7 @@
                             <constraint firstItem="H5s-kF-55V" firstAttribute="top" secondItem="ATd-A2-JQu" secondAttribute="top" id="2Ur-JZ-6Vg"/>
                             <constraint firstItem="3At-eE-kMW" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="8" id="5sj-TF-Ees"/>
                             <constraint firstItem="jrf-RB-diQ" firstAttribute="top" secondItem="H5s-kF-55V" secondAttribute="bottom" constant="7.5" id="9yS-gE-aQz"/>
-                            <constraint firstItem="GTw-gK-cmk" firstAttribute="top" secondItem="6AP-wg-1jd" secondAttribute="bottom" constant="65.5" id="BEo-kU-oVd"/>
+                            <constraint firstItem="GTw-gK-cmk" firstAttribute="top" secondItem="6AP-wg-1jd" secondAttribute="bottom" constant="16" id="BEo-kU-oVd"/>
                             <constraint firstItem="3At-eE-kMW" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="8" id="BdM-YF-HqE"/>
                             <constraint firstItem="2nO-ns-JO9" firstAttribute="leading" secondItem="zae-ig-qbG" secondAttribute="leading" id="LcE-NU-hr4"/>
                             <constraint firstItem="Hps-4d-Jbq" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="8" id="M5T-N7-n6z"/>
@@ -251,9 +251,10 @@
             <objects>
                 <tableViewController id="sxy-Cd-HIf" customClass="ActionTableViewController" customModule="Encounter_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xqT-q0-rcr">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1049.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActionCell" rowHeight="93" id="Wa9-HO-j6y" customClass="ActionCell" customModule="Encounter_Helper" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="1024" height="93"/>
@@ -311,6 +312,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1372649074" green="0.13333323599999999" blue="0.13333180550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EncounterCell" rowHeight="113" id="iCW-hs-miC" customClass="EncounterCell" customModule="Encounter_Helper" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="1024" height="113"/>
@@ -383,7 +385,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1296"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.17648079991340637" green="0.16858789324760437" blue="0.17254775762557983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MonsterListCell" rowHeight="74" id="WCw-Qf-5nD" customClass="MonsterListCell" customModule="Encounter_Helper" customModuleProvider="target">
@@ -414,7 +416,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.18432402610778809" green="0.17643094062805176" blue="0.18039083480834961" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Zd7-Hw-vm7" secondAttribute="bottom" constant="8" id="Ce9-dp-Zhh"/>
                                         <constraint firstItem="Zd7-Hw-vm7" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" constant="8" id="DNN-n7-dch"/>
@@ -452,8 +454,29 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="headerView" destination="VKz-WD-sRq" id="fKf-bN-g80"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="VKz-WD-sRq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-S0-B2g">
+                            <rect key="frame" x="49" y="49" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkq-5t-99v">
+                            <rect key="frame" x="240" y="49" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="ejy-lf-gYu"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="1396.875" y="-664.12884333821376"/>
         </scene>
@@ -464,6 +487,7 @@
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="black" translucent="NO" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1372649073600769" green="0.1333332359790802" blue="0.13333180546760559" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
                         <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>

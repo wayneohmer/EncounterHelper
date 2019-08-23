@@ -14,7 +14,10 @@ class MasterViewController: UITableViewController {
     var filterdMonsters = [Monster]()
     var encounter = Encounter()
     let searchController = UISearchController(searchResultsController: nil)
+    let titleButton =  UIButton(type: .custom)
 
+    @IBOutlet var headerView: UIView!
+    
     var monsters = [Monster]()
     var isEncounter:Bool { return monsters.count != Monster.sharedMonsters.count }
     
@@ -33,6 +36,8 @@ class MasterViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Monsters"
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.barStyle = .black
         navigationItem.searchController = searchController
         definesPresentationContext = true
         self.tableView.estimatedRowHeight = 60
@@ -40,6 +45,14 @@ class MasterViewController: UITableViewController {
         
         self.navigationItem.title = encounter.name
         self.monsters = encounter.monsters
+        
+        titleButton.frame = CGRect(x: 0, y: 0, width: 250, height: 40)
+        titleButton.backgroundColor = UIColor(red: 35/255, green: 34/255, blue: 34/255, alpha: 1)
+        titleButton.setTitle(self.encounter.name, for: .normal)
+        titleButton.addTarget(self, action: #selector(flipTouched), for: .touchUpInside)
+        self.navigationItem.titleView = titleButton
+        
+        //self.tableView.tableHeaderView = self.headerView
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,8 +65,10 @@ class MasterViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func flipTouched(_ sender: Any) {
+    @objc func flipTouched() {
         monsters = isEncounter ? Monster.sharedMonsters : encounter.monsters
+        let title = isEncounter ?  self.encounter.name : "All"
+        self.titleButton.setTitle(title, for: .normal)
         tableView.reloadData()
     }
     // MARK: - Segues
@@ -134,12 +149,16 @@ class MasterViewController: UITableViewController {
     
     @IBAction func tableButtonTouched(_ sender: UIButton) {
         if sender.title(for: .normal) == "+" {
-            self.encounter.monsters.append(monsters[sender.tag])
+            if isFiltering() {
+                self.encounter.monsters.append(filterdMonsters[sender.tag])
+            } else {
+                self.encounter.monsters.append(monsters[sender.tag])
+            }
             tableView.reloadRows(at: [IndexPath(item: sender.tag, section: 0)], with: .automatic)
         } else {
             self.encounter.monsters.remove(at: sender.tag)
             self.monsters = self.encounter.monsters
-            tableView.deleteRows(at: [IndexPath(item: sender.tag, section: 0)], with: .fade)
+            tableView.reloadData()
 
         }
     }
