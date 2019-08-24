@@ -15,9 +15,9 @@ class BlackButton: UIButton {
         super.layoutSubviews()
         var gradientColors:[CGColor] = [UIColor.black.cgColor]
         
-        var red = CGFloat(1.0)
-        var green = CGFloat(1.0)
-        var blue = CGFloat(1.0)
+        var red = CGFloat(0.7)
+        var green = CGFloat(0.7)
+        var blue = CGFloat(0.7)
 
         for _ in 0...5 {
             //fmax assures result is > 0
@@ -45,9 +45,9 @@ class BlackButton: UIButton {
 
         self.layer.cornerRadius = 10.0
         self.clipsToBounds = false
-        self.layer.shadowColor = UIColor.white.cgColor
+        self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.3
-        self.layer.shadowOffset = CGSize(width: 3, height: 2)
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
 
     }
     

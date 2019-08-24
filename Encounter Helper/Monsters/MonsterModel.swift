@@ -33,13 +33,13 @@ class Monster  {
     var intelligence:Int { return monsterModel.intelligence }
     var wisdom:Int { return monsterModel.wisdom }
     var charisma:Int { return monsterModel.charisma }
-    var constitutionSave:Int { return monsterModel.constitution_save ?? 0 }
-    var intelligenceSave:Int { return monsterModel.intelligence_save ?? 0 }
-    var charismaSave:Int { return monsterModel.charisma_save ?? 0 }
-    var dexteritySave:Int { return monsterModel.dexterity_save ?? 0 }
-    var strengthSave:Int { return monsterModel.strength_save ?? 0 }
-    var wisdomSave:Int { return monsterModel.wisdom_save ?? 0 }
-    var perception:Int { return monsterModel.perception ?? 0 }
+    var constitutionSave:Int? { return monsterModel.constitution_save}
+    var intelligenceSave:Int? { return monsterModel.intelligence_save }
+    var charismaSave:Int? { return monsterModel.charisma_save }
+    var dexteritySave:Int? { return monsterModel.dexterity_save }
+    var strengthSave:Int? { return monsterModel.strength_save }
+    var wisdomSave:Int? { return monsterModel.wisdom_save  }
+    var perception:Int { return monsterModel.perception ?? 0}
     var damageVulnerabilities:String { return monsterModel.damage_vulnerabilities }
     var damageResistances:String { return monsterModel.damage_resistances }
     var damageImmunities:String { return monsterModel.damage_immunities }

@@ -11,6 +11,7 @@ import AudioToolbox
 
 class DiceController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!
     @IBOutlet weak var resultDisplayLabel: UILabel!
     @IBOutlet weak var rollValueLabel: UILabel!
@@ -39,7 +40,8 @@ class DiceController: UIViewController {
     @IBOutlet weak var plus10Button: UIButton!
     @IBOutlet weak var plus20Button: UIButton!
     @IBOutlet weak var plus30Button: UIButton!
-
+    @IBOutlet weak var SaveCheckSwitch: UISegmentedControl!
+    
     let deathSound = "DeathSound"
     let awwwSound = "Awww"
     let oneDieSound = "1die"
@@ -53,12 +55,15 @@ class DiceController: UIViewController {
     var currentHistoryIndex = 0
     var oopsStack = [Oops]()
     
+    var rollName: String?
+    var saveMod:Int?
+    var checkMod:Int?
     var fyreDice = FyreDice()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.diceButtons = [self.d4Button,self.d6Button,self.d8Button,self.d10Button,self.d12Button,self.d20Button,self.d100Button]
-        self.modifierButtons = [self.plus1Button,self.plus2Button,self.plus3Button,self.plus4Button,self.plus5Button,self.plus6Button,self.plus7Button,self.plus8Button,self.plus9Button,self.plus10Button,self.plus20Button,self.plus30Button,]
+        
+        self.titleLabel.text = self.rollName ?? ""
         self.makeSystemSoundUrls()
         self.advantageSwitch.companion = self.disadvantageSwitch
         self.disadvantageSwitch.companion = self.advantageSwitch
@@ -233,9 +238,11 @@ class DiceController: UIViewController {
             oopsStack.removeLast()
         }
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func saveCheckTouhced(_ sender: UISegmentedControl) {
+        
+        self.fyreDice.modifier = sender.selectedSegmentIndex == 0 ? self.saveMod ?? 0 : self.checkMod ?? 0
+        self.updateDisplay()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -33,7 +33,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var intButton: UIButton!
     @IBOutlet weak var wisButton: UIButton!
     @IBOutlet weak var chaButton: UIButton!
-
+    @IBOutlet weak var fadeView: UIView!
+    
     var monster:Monster?
     
     func configureView() {
@@ -98,12 +99,26 @@ class DetailViewController: UIViewController {
         configureView()
     }
     
-    func fixButtonTitleWith(attribute:String, score:Int, save:Int) -> String {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.monster == nil {
+            self.fadeView.isHidden = false
+            self.fadeView.alpha = 1
+        } else {
+            self.fadeView.isHidden = false
+            self.fadeView.alpha = 1
+            UIView.animate(withDuration: 0.3, animations: {
+                self.fadeView.alpha = 0
+            })
+        }
+    }
+    
+    func fixButtonTitleWith(attribute:String, score:Int, save:Int?) -> String {
         let modifier = (score-10)/2
         let sign = modifier > 0 ? "+": ""
         var title =  modifier != 0 ? "\(attribute) \(score) \(sign)\(modifier)" : "\(attribute) \(score)"
-        if save != 0 {
-            title = "\(title)/\(save)"
+        if save != nil {
+            title = "\(title)/\(save!)"
         }
         return title
     }
@@ -111,8 +126,59 @@ class DetailViewController: UIViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? ActionTableViewController {
-            vc.monster = self.monster ?? Monster()
+        
+        func prepSave(vc:DiceController, name:String, save:Int?, stat:Int ){
+            vc.rollName = name
+            vc.fyreDice = FyreDice()
+            vc.fyreDice.dice = [20 : 1]
+            vc.saveMod = save ?? Int((stat - 10)/2)
+            vc.checkMod = Int((stat - 10)/2)
+            vc.fyreDice.modifier = vc.saveMod ?? 0
+        }
+        
+        switch segue.identifier {
+        case "actionEmbed":
+            if let vc = segue.destination as? ActionTableViewController {
+                vc.monster = self.monster ?? Monster()
+            }
+        case "strSave":
+            if let vc = segue.destination as? DiceController {
+                guard let monster = monster else { return }
+                prepSave(vc: vc, name: "Strength", save: monster.strengthSave, stat: monster.strength)
+
+            }
+        case "dexSave":
+            if let vc = segue.destination as? DiceController {
+                guard let monster = monster else { return }
+                prepSave(vc: vc, name: "Dexterity", save: monster.dexteritySave, stat: monster.dexterity)
+                
+            }
+        case "conSave":
+            if let vc = segue.destination as? DiceController {
+                guard let monster = monster else { return }
+                prepSave(vc: vc, name: "Constitution", save: monster.constitutionSave, stat: monster.constitution)
+                
+            }
+        case "intSave":
+            if let vc = segue.destination as? DiceController {
+                guard let monster = monster else { return }
+                prepSave(vc: vc, name: "Intelligence", save: monster.intelligenceSave, stat: monster.intelligence)
+                
+            }
+        case "wisSave":
+            if let vc = segue.destination as? DiceController {
+                guard let monster = monster else { return }
+                prepSave(vc: vc, name: "Wisdom", save: monster.wisdomSave, stat: monster.wisdom)
+                
+            }
+        case "chaSave":
+            if let vc = segue.destination as? DiceController {
+                guard let monster = monster else { return }
+                prepSave(vc: vc, name: "Charisma", save: monster.charismaSave, stat: monster.charisma)
+                
+            }
+        default:
+            break
         }
     }
     
