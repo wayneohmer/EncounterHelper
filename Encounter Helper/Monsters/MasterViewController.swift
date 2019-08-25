@@ -79,6 +79,9 @@ class MasterViewController: UITableViewController {
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 
                 controller.monster = isFiltering() ? filterdMonsters[indexPath.row] : monsters[indexPath.row]
+                controller.masterTableView = self.tableView
+                controller.encounter = self.encounter
+                controller.masterVc = self
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }

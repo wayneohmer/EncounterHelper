@@ -59,10 +59,25 @@ class ActionTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showAttack", sender: nil)
+        if monster.allActions[indexPath.section][indexPath.row].damage_dice != nil {
+            self.performSegue(withIdentifier: "showAttack", sender: monster.allActions[indexPath.section][indexPath.row])
+        }
+        
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAttack", let action = sender as? Action, let vc = segue.destination as? DiceController {
+            vc.rollName = action.name
+            vc.fyreDice = FyreDice()
+            vc.fyreDice.dice = [20:1]
+            vc.fyreDice.modifier = action.attack_bonus ?? 0
+            vc.damageRollName = "\(action.name) Damage"
+            if let components = action.damage_dice?.split(separator: "d") {
+                vc.damageDice.dice = [Int(components[1]) ?? 0:Int(components[0]) ?? 0]
+                vc.damageDice.modifier = action.damage_bonus ?? 0
+            }
+        }
+    }
     
     
 

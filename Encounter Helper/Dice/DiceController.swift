@@ -19,6 +19,7 @@ class DiceController: UIViewController {
     @IBOutlet weak var disadvantageSwitch: AdvantageSwitch!
    
     @IBOutlet weak var rollButton: UIButton!
+    @IBOutlet weak var hitButton: BlackButton!
     
     @IBOutlet weak var d4Button: UIButton!
     @IBOutlet weak var d6Button: UIButton!
@@ -41,6 +42,7 @@ class DiceController: UIViewController {
     @IBOutlet weak var plus20Button: UIButton!
     @IBOutlet weak var plus30Button: UIButton!
     @IBOutlet weak var SaveCheckSwitch: UISegmentedControl!
+    @IBOutlet weak var advantageStack: UIStackView!
     
     let deathSound = "DeathSound"
     let awwwSound = "Awww"
@@ -56,10 +58,12 @@ class DiceController: UIViewController {
     var oopsStack = [Oops]()
     
     var rollName: String?
-    var saveMod:Int?
-    var checkMod:Int?
+    var damageRollName: String?
+    var saveMod: Int?
+    var checkMod: Int?
+    var damageDice = FyreDice()
     var fyreDice = FyreDice()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -242,6 +246,15 @@ class DiceController: UIViewController {
         
         self.fyreDice.modifier = sender.selectedSegmentIndex == 0 ? self.saveMod ?? 0 : self.checkMod ?? 0
         self.updateDisplay()
+        
+    }
+    @IBAction func hitTouched(_ sender: Any) {
+        self.fyreDice = self.damageDice
+        self.titleLabel.text = self.damageRollName
+        self.hasRolled = false
+        self.updateDisplay()
+        self.advantageStack.isHidden = true
+        self.hitButton.isEnabled = false
         
     }
     

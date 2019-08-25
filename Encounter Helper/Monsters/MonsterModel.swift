@@ -63,7 +63,7 @@ class Monster  {
         return attributedString
         
     }
-    var meta:String? { return metaMonster.meta }
+    var meta:String? { return metaMonster.meta ?? "\(size) \(type), \(alignment)"  }
     var actionsDesc:String? { return metaMonster.Actions }
     var imgUrl:String? { return metaMonster.img_url }
     var storedImage:UIImage?
@@ -215,10 +215,10 @@ struct Action: Codable {
 
 struct MonsterMetaModel: Codable  {
     
-    var name:String? = ""
-    var Traits:String? = ""
-    var meta:String? = ""
-    var Actions:String? = ""
-    var img_url:String? = ""
+    var name:String?
+    var Traits:String?
+    var meta:String?
+    var Actions:String?
+    var img_url:String?
 
 }

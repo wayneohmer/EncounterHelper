@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var hitPointsLabel: UILabel!
@@ -36,11 +36,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var fadeView: UIView!
     
     var monster:Monster?
+    var masterTableView:UITableView?
+    var encounter:Encounter?
+    var masterVc:MasterViewController?
     
     func configureView() {
         if let monster = self.monster {
             nameField.text = monster.name
-            descriptionLabel.text = monster.meta
+            descriptionLabel.text = monster.meta ?? "Some shit"
             hitPointsLabel.text = "\(monster.hitPoints)"
             
             hitPointView.clipsToBounds = false
@@ -102,9 +105,11 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if self.monster == nil {
+            self.view.bringSubviewToFront(fadeView)
             self.fadeView.isHidden = false
             self.fadeView.alpha = 1
         } else {
+            self.view.bringSubviewToFront(fadeView)
             self.fadeView.isHidden = false
             self.fadeView.alpha = 1
             UIView.animate(withDuration: 0.3, animations: {
@@ -123,6 +128,22 @@ class DetailViewController: UIViewController {
         return title
     }
     // MARK: - Navigation
+    @IBAction func dupTouched(_ sender: UIBarButtonItem) {
+        let newMonster = Monster(model: self.monster?.monsterModel ?? MonsterModel())
+        newMonster.monsterModel.name = "\(newMonster.name) 1"
+        self.encounter?.monsters.append(newMonster)
+        self.masterVc?.monsters = encounter?.monsters ?? [Monster]()
+        self.masterTableView?.reloadData()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.nameField {
+            self.monster?.monsterModel.name = textField.text ?? ""
+            self.masterTableView?.reloadData()
+        }
+        textField.resignFirstResponder()
+        return true
+    }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
