@@ -39,6 +39,7 @@
 		2BEF9A882309ECBB00DEB8CD /* MonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF9A872309ECBB00DEB8CD /* MonsterModel.swift */; };
 		2BEF9A892309F32000DEB8CD /* 5e-SRD-Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF9A852309EC5900DEB8CD /* 5e-SRD-Monsters.json */; };
 		2BFCD5722312295200804A0D /* HitPointEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCD5712312295200804A0D /* HitPointEditorController.swift */; };
+		2BFCD57423132FE800804A0D /* ConditionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCD57323132FE800804A0D /* ConditionsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		2BEF9A872309ECBB00DEB8CD /* MonsterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterModel.swift; sourceTree = "<group>"; };
 		2BEF9A8A2309F37500DEB8CD /* 5e-SRD-MonstersCopy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "5e-SRD-MonstersCopy.json"; sourceTree = "<group>"; };
 		2BFCD5712312295200804A0D /* HitPointEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitPointEditorController.swift; sourceTree = "<group>"; };
+		2BFCD57323132FE800804A0D /* ConditionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				2BEF9A672309E85000DEB8CD /* DetailViewController.swift */,
 				2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */,
 				2BFCD5712312295200804A0D /* HitPointEditorController.swift */,
+				2BFCD57323132FE800804A0D /* ConditionsController.swift */,
 			);
 			path = Monsters;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				2BEF9A662309E85000DEB8CD /* MasterViewController.swift in Sources */,
 				2B34004B230B94FE003AE875 /* ActionTableViewController.swift in Sources */,
 				2B17F7732310A2E20061EB5A /* DiceController.swift in Sources */,
+				2BFCD57423132FE800804A0D /* ConditionsController.swift in Sources */,
 				2BEF9A882309ECBB00DEB8CD /* MonsterModel.swift in Sources */,
 				2BEF9A642309E85000DEB8CD /* AppDelegate.swift in Sources */,
 				2BAC383E2309FC0400A1CAEA /* MonsterListCell.swift in Sources */,

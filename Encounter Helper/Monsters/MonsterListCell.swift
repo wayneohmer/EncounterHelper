@@ -26,13 +26,21 @@ class MonsterListCell: UITableViewCell {
     func updateCell() {
         
         if isEncounter {
-            nameLabel.text = monster.name
+            if monster.hitPoints <= 0 {
+                let attributeString = NSMutableAttributedString(string: "\(monster.name)")
+                attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
+                self.nameLabel.attributedText = attributeString
+            } else {
+                self.nameLabel.attributedText = nil
+                nameLabel.text = monster.name
+            }
             addRemoveButton.setTitle("-", for: .normal)
         } else {
             let count = encounter.monsters.filter({$0.name == monster.name}).count
             nameLabel.text = count == 0 ? monster.name : "\(monster.name) \(count)"
             addRemoveButton.setTitle("+", for: .normal)
         }
+        nameLabel.textColor = monster.damageColor
         
     }
     

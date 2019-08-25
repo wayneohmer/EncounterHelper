@@ -51,7 +51,6 @@ class MasterViewController: UITableViewController {
         titleButton.setTitle(self.encounter.name, for: .normal)
         titleButton.addTarget(self, action: #selector(flipTouched), for: .touchUpInside)
         self.navigationItem.titleView = titleButton
-        
         //self.tableView.tableHeaderView = self.headerView
     }
 

@@ -24,7 +24,12 @@ class Monster  {
     var subtype:String { return monsterModel.subtype }
     var alignment:String { return monsterModel.alignment }
     var armorClass:Int { return monsterModel.armor_class }
-    var hitPoints:Int { return monsterModel.hit_points }
+    var hitPoints:Int { return monsterModel.currentHitPoints ?? monsterModel.maxHitPoints ?? monsterModel.hit_points }
+    var damageColor: UIColor {
+        guard let hp = monsterModel.currentHitPoints, let maxHp = monsterModel.maxHitPoints else { return .white }
+        let GB = CGFloat(hp) / CGFloat(maxHp)
+        return UIColor(red: 1, green: GB, blue: GB, alpha: 1)
+    }
     var hitDice:String { return monsterModel.hit_dice }
     var speed:String { return monsterModel.speed }
     var strength:Int { return monsterModel.strength }
@@ -47,7 +52,8 @@ class Monster  {
     var senses:String { return monsterModel.senses }
     var languages:String { return monsterModel.languages }
     var challengeRating:String { return monsterModel.challenge_rating }
-    
+    var conditions:String { return Array(monsterModel.conditions ?? Set<String>()).sorted().joined(separator: ", ") }
+
     var actions:[Action] { return monsterModel.actions ?? [Action]() }
     var specialAbilities:[Action] { return monsterModel.special_abilities ?? [Action]() }
     var legondaryActions:[Action] { return monsterModel.legendary_actions ?? [Action]() }
@@ -196,6 +202,9 @@ struct MonsterModel: Codable  {
     var languages:String = ""
     var challenge_rating:String = ""
     var storedImageFileName:String? = ""
+    var currentHitPoints:Int?
+    var maxHitPoints:Int?
+    var conditions:Set<String>? = Set<String>()
     
     var special_abilities:[Action]?
     var actions:[Action]?

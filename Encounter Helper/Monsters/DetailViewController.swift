@@ -15,10 +15,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var hitPointView: UIView!
     @IBOutlet weak var armorClassLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var noImage: UIImageView!
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var damageResistLabel: UILabel!
     @IBOutlet weak var damageImmuneLabel: UILabel!
     @IBOutlet weak var conditionImmuneLabel: UILabel!
+    @IBOutlet weak var conditionsLabel: UILabel!
     
     @IBOutlet weak var damageResistStack: UIStackView!
     @IBOutlet weak var damageImmuneStack: UIStackView!
@@ -42,7 +44,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         if let monster = self.monster {
             nameField.text = monster.name
             descriptionLabel.text = monster.meta 
-            hitPointsLabel.text = "\(monster.hitPoints)"
+            self.updateHP()
+            conditionsLabel.text = monster.conditions
             
             hitPointView.clipsToBounds = false
             hitPointView.layer.cornerRadius = 7
@@ -125,6 +128,17 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         }
         return title
     }
+    
+    func updateHP() {
+        self.hitPointsLabel.text = "\(monster?.hitPoints ?? 0)"
+        self.hitPointsLabel.textColor = monster?.damageColor
+        self.masterVc?.tableView.reloadData()
+        self.masterVc?.selectMonsterWith(name: monster?.name ?? "")
+        self.noImage.isHidden = (monster?.hitPoints ?? 0) > 0
+        self.view.alpha = (monster?.hitPoints ?? 0) <= 0 ? 0.5 : 1
+        
+    }
+    
     // MARK: - Navigation
     @IBAction func dupTouched(_ sender: UIBarButtonItem) {
         
@@ -158,6 +172,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -212,6 +228,15 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
                 prepSave(vc: vc, name: "Charisma", save: monster.charismaSave, stat: monster.charisma)
                 
             }
+        case "editHP":
+            if let vc = segue.destination as? HitPointEditorController {
+                vc.monsterVc = self
+            }
+        case "Conditions":
+            if let vc = segue.destination as? ConditionsController {
+                vc.monsterVc = self
+            }
+            
         default:
             break
         }

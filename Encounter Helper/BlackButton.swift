@@ -10,14 +10,29 @@ import UIKit
 
 @IBDesignable
 class BlackButton: UIButton {
+    
+    
+    var storedColor = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1.0)
+    var color:UIColor {
+        set {
+            self.layoutSubviews()
+        }
+        get {
+            return storedColor
+            
+        }
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         var gradientColors:[CGColor] = [UIColor.black.cgColor]
         
-        var red = CGFloat(0.7)
-        var green = CGFloat(0.7)
-        var blue = CGFloat(0.7)
+        var red:CGFloat = 0
+        var blue:CGFloat = 0
+        var green:CGFloat = 0
+        var alpha:CGFloat = 0
+
+        storedColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
 
         for _ in 0...5 {
             //fmax assures result is > 0
