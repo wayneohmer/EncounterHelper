@@ -36,14 +36,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var fadeView: UIView!
     
     var monster:Monster?
-    var masterTableView:UITableView?
-    var encounter:Encounter?
     var masterVc:MasterViewController?
     
     func configureView() {
         if let monster = self.monster {
             nameField.text = monster.name
-            descriptionLabel.text = monster.meta ?? "Some shit"
+            descriptionLabel.text = monster.meta 
             hitPointsLabel.text = "\(monster.hitPoints)"
             
             hitPointView.clipsToBounds = false
@@ -129,17 +127,33 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     }
     // MARK: - Navigation
     @IBAction func dupTouched(_ sender: UIBarButtonItem) {
+        
         let newMonster = Monster(model: self.monster?.monsterModel ?? MonsterModel())
-        newMonster.monsterModel.name = "\(newMonster.name) 1"
-        self.encounter?.monsters.append(newMonster)
-        self.masterVc?.monsters = encounter?.monsters ?? [Monster]()
-        self.masterTableView?.reloadData()
+        var components = newMonster.name.split(separator: " ")
+        if var num = Int(String(components.last ?? "")) {
+            num += 1
+            components.removeLast()
+            newMonster.monsterModel.name = "\(components.joined(separator: " ")) \(num)"
+            while self.masterVc?.encounter.monsters.filter({ $0.name == newMonster.name }).count ?? 0 > 0 {
+                num += 1
+                newMonster.monsterModel.name = "\(components.joined(separator: " ")) \(num)"
+            }
+        } else {
+            self.monster?.monsterModel.name = "\(newMonster.name) 1"
+            newMonster.monsterModel.name = "\(newMonster.name) 2"
+        }
+        self.masterVc?.encounter.monsters.append(newMonster)
+        self.masterVc?.encounter.monsters.sort(by: { $0.name < $1.name })
+        self.masterVc?.monsters = masterVc?.encounter.monsters ?? [Monster]()
+        self.masterVc?.tableView.reloadData()
+        self.monster = newMonster
+        self.masterVc?.selectMonsterWith(name: newMonster.name)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.nameField {
             self.monster?.monsterModel.name = textField.text ?? ""
-            self.masterTableView?.reloadData()
+            self.masterVc?.tableView.reloadData()
         }
         textField.resignFirstResponder()
         return true

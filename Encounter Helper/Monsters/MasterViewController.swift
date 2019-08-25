@@ -71,6 +71,14 @@ class MasterViewController: UITableViewController {
         self.titleButton.setTitle(title, for: .normal)
         tableView.reloadData()
     }
+    
+    func selectMonsterWith(name:String ) {
+        for (idx,monster) in monsters.enumerated() {
+            if monster.name == name {
+                self.tableView.selectRow(at: IndexPath(row: idx, section: 0), animated: true, scrollPosition: .middle)
+            }
+        }
+    }
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,8 +87,6 @@ class MasterViewController: UITableViewController {
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 
                 controller.monster = isFiltering() ? filterdMonsters[indexPath.row] : monsters[indexPath.row]
-                controller.masterTableView = self.tableView
-                controller.encounter = self.encounter
                 controller.masterVc = self
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true

@@ -38,6 +38,7 @@
 		2BEF9A862309EC5900DEB8CD /* 5e-SRD-Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF9A852309EC5900DEB8CD /* 5e-SRD-Monsters.json */; };
 		2BEF9A882309ECBB00DEB8CD /* MonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF9A872309ECBB00DEB8CD /* MonsterModel.swift */; };
 		2BEF9A892309F32000DEB8CD /* 5e-SRD-Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF9A852309EC5900DEB8CD /* 5e-SRD-Monsters.json */; };
+		2BFCD5722312295200804A0D /* HitPointEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCD5712312295200804A0D /* HitPointEditorController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		2BEF9A852309EC5900DEB8CD /* 5e-SRD-Monsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "5e-SRD-Monsters.json"; sourceTree = "<group>"; };
 		2BEF9A872309ECBB00DEB8CD /* MonsterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterModel.swift; sourceTree = "<group>"; };
 		2BEF9A8A2309F37500DEB8CD /* 5e-SRD-MonstersCopy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "5e-SRD-MonstersCopy.json"; sourceTree = "<group>"; };
+		2BFCD5712312295200804A0D /* HitPointEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitPointEditorController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				2BEF9A652309E85000DEB8CD /* MasterViewController.swift */,
 				2BEF9A672309E85000DEB8CD /* DetailViewController.swift */,
 				2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */,
+				2BFCD5712312295200804A0D /* HitPointEditorController.swift */,
 			);
 			path = Monsters;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				2B17F7792310A2FE0061EB5A /* Oops.swift in Sources */,
 				2BEF9A682309E85000DEB8CD /* DetailViewController.swift in Sources */,
 				2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */,
+				2BFCD5722312295200804A0D /* HitPointEditorController.swift in Sources */,
 				2B340055230C84F8003AE875 /* BlackButton.swift in Sources */,
 				2B17F7752310A2EF0061EB5A /* AdvantageSwitch.swift in Sources */,
 				2B340049230B943B003AE875 /* ActionCell.swift in Sources */,
