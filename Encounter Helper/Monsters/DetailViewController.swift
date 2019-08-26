@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var hitPointsLabel: UILabel!
@@ -16,6 +16,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var armorClassLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var noImage: UIImageView!
+    @IBOutlet weak var imageBorder: UIView!
+    
+    
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var damageResistLabel: UILabel!
     @IBOutlet weak var damageImmuneLabel: UILabel!
@@ -37,9 +40,17 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var chaButton: UIButton!
     @IBOutlet weak var fadeView: UIView!
     
+    @IBOutlet weak var diceButton: UIBarButtonItem!
+    @IBOutlet weak var duplicateButton: UIBarButtonItem!
+    @IBOutlet weak var condictionsButton: UIBarButtonItem!
+    @IBOutlet weak var startButton: UIBarButtonItem!
+    
     var monster:Monster?
     var masterVc:MasterViewController?
-    
+    var ecounterBarButtons:[UIBarButtonItem] { return [startButton,condictionsButton,diceButton]}
+    var noEcounterBarButtons:[UIBarButtonItem] { return [startButton,duplicateButton]}
+    var allBarButtons = [UIBarButtonItem]()
+
     func configureView() {
         if let monster = self.monster {
             nameField.text = monster.name
@@ -57,11 +68,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
             armorClassLabel.text = "\(monster.armorClass)"
             
             imageView.image = monster.image
-            imageView.clipsToBounds = false
-            imageView.layer.cornerRadius = 7
-            imageView.layer.shadowColor = UIColor.white.cgColor
-            imageView.layer.shadowOpacity = 0.5
-            imageView.layer.shadowOffset = CGSize(width: 3, height: 0)
+            imageBorder.layer.borderWidth = 1
+            imageBorder.layer.borderColor = UIColor.darkGray.cgColor
+            
             
          
             speedLabel.text = monster.speed
@@ -99,7 +108,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        allBarButtons = [startButton,condictionsButton,diceButton,duplicateButton]
+        self.navigationItem.rightBarButtonItems = noEcounterBarButtons
+        if let vc = masterVc {
+            self.startButton.title = vc.encounter.isStarted ? "Finsh" : "Start"
+        }
         configureView()
     }
     
@@ -162,6 +175,57 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         self.masterVc?.tableView.reloadData()
         self.monster = newMonster
         self.masterVc?.selectMonsterWith(name: newMonster.name)
+    }
+    
+    @IBAction func startTouched(_ sender: UIBarButtonItem) {
+        if let vc = masterVc {
+            vc.encounter.isStarted = !vc.encounter.isStarted
+            if vc.encounter.isStarted {
+                self.navigationItem.rightBarButtonItems = ecounterBarButtons
+            } else {
+                self.navigationItem.rightBarButtonItems = noEcounterBarButtons
+            }
+            self.startButton.title = masterVc?.encounter.isStarted ?? false ? "Finsh" : "Start"
+        }
+    }
+    
+    @IBAction func imageTouched() {
+        let alertController = UIAlertController(title: "Add Image", message: "", preferredStyle: .actionSheet)
+        
+        func launchPicker(sourceType:UIImagePickerController.SourceType) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = sourceType
+            imagePicker.delegate = self
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+        alertController.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { alertAction in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                launchPicker(sourceType: .camera)
+            }
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Choose Photo From Library", style: .default, handler: { alertAction in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                launchPicker(sourceType: .photoLibrary)
+            }
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = self.imageView
+            popoverController.sourceRect = (popoverController.sourceView?.bounds)!
+        }
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.monster?.image = image
+            self.imageView.image = image
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

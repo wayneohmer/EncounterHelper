@@ -89,27 +89,35 @@ class Monster  {
     }
 
     var image:UIImage? {
-        
-        if storedImage != nil {
-            return storedImage
-        }
-        if let imageData = try? Data(contentsOf: imagePath) {
-            if let image = UIImage(data: imageData) {
-                self.storedImage = image
-                return image
+        set {
+            if let newValue = newValue {
+                storedImage = newValue
+                imageFileName = name
+                try? newValue.jpegData(compressionQuality: 1)?.write(to: imagePath)
             }
         }
-        
-        guard let url = URL(string:metaMonster.img_url ?? "") else { return nil }
-        guard let imageData = try? Data(contentsOf: url) else { return nil }
-        self.storedImage = UIImage(data: imageData)
-        imageFileName = name
-        do {
-            try imageData.write(to: imagePath)
-        } catch {
-            print(imagePath.absoluteString)
+        get {
+            if storedImage != nil {
+                return storedImage
+            }
+            if let imageData = try? Data(contentsOf: imagePath) {
+                if let image = UIImage(data: imageData) {
+                    self.storedImage = image
+                    return image
+                }
+            }
+            
+            guard let url = URL(string:metaMonster.img_url ?? "") else { return nil }
+            guard let imageData = try? Data(contentsOf: url) else { return nil }
+            self.storedImage = UIImage(data: imageData)
+            imageFileName = name
+            do {
+                try imageData.write(to: imagePath)
+            } catch {
+                print(imagePath.absoluteString)
+            }
+            return self.storedImage
         }
-        return self.storedImage
     }
     
     convenience init(model:MonsterModel) {

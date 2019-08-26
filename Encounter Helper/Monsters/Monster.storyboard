@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39W-Xd-crw">
+                                <rect key="frame" x="0.0" y="70" width="768" height="954"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zlA-tt-n3C">
                                 <rect key="frame" x="8" y="78" width="218" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -262,21 +266,26 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7J0-Jw-owQ">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="210"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Kc-bE-7go">
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Kc-bE-7go">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="210"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Z0A-Pj-mhs" appends="YES" id="D24-ip-AkY"/>
+                                                </connections>
                                             </imageView>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_circle" translatesAutoresizingMaskIntoConstraints="NO" id="kKU-Us-rJs">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_circle" translatesAutoresizingMaskIntoConstraints="NO" id="kKU-Us-rJs">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="210"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="8Kc-bE-7go" secondAttribute="bottom" id="1e2-WE-vbW"/>
                                             <constraint firstItem="kKU-Us-rJs" firstAttribute="top" secondItem="7J0-Jw-owQ" secondAttribute="top" id="3fL-zQ-fC8"/>
                                             <constraint firstAttribute="trailing" secondItem="8Kc-bE-7go" secondAttribute="trailing" id="50D-bb-NyO"/>
-                                            <constraint firstAttribute="width" secondItem="7J0-Jw-owQ" secondAttribute="height" id="7SL-ET-eWu"/>
+                                            <constraint firstAttribute="width" secondItem="7J0-Jw-owQ" secondAttribute="height" multiplier="1:1" id="7SL-ET-eWu"/>
                                             <constraint firstItem="kKU-Us-rJs" firstAttribute="leading" secondItem="7J0-Jw-owQ" secondAttribute="leading" id="NO9-M3-vLI"/>
                                             <constraint firstAttribute="bottom" secondItem="kKU-Us-rJs" secondAttribute="bottom" id="ODJ-yw-nT4"/>
                                             <constraint firstItem="8Kc-bE-7go" firstAttribute="leading" secondItem="7J0-Jw-owQ" secondAttribute="leading" id="SDm-Ym-FwI"/>
@@ -299,17 +308,10 @@
                                     <segue destination="0PT-GN-Yt4" kind="embed" identifier="actionEmbed" id="8SA-w7-j7a"/>
                                 </connections>
                             </containerView>
-                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39W-Xd-crw">
-                                <rect key="frame" x="0.0" y="1019" width="768" height="5"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="rha-g1-WWD"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Poisoned, Paralyzed, blinded, charmed, Incopacitated" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWL-3g-Hnl">
                                 <rect key="frame" x="385" y="171" width="367" height="45.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.17271350899999999" green="0.91751509899999995" blue="0.050922417560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -333,6 +335,7 @@
                             <constraint firstItem="fr7-Ug-5kC" firstAttribute="leading" secondItem="7Er-0m-5Jw" secondAttribute="trailing" constant="16" id="N0P-fG-w05"/>
                             <constraint firstItem="y4J-er-7sn" firstAttribute="top" secondItem="nv6-zO-KhU" secondAttribute="bottom" constant="16" id="Pn0-qW-VLi"/>
                             <constraint firstItem="31j-RF-sgl" firstAttribute="top" secondItem="5Mr-G7-3Tm" secondAttribute="top" id="Tvf-nb-wsM"/>
+                            <constraint firstItem="39W-Xd-crw" firstAttribute="top" secondItem="1au-zm-Kch" secondAttribute="top" id="UtP-OV-2kd"/>
                             <constraint firstItem="1au-zm-Kch" firstAttribute="trailing" secondItem="bWL-3g-Hnl" secondAttribute="trailing" constant="16" id="ab1-kJ-V2s"/>
                             <constraint firstItem="5Mr-G7-3Tm" firstAttribute="leading" secondItem="bS9-v3-RUD" secondAttribute="trailing" constant="16" id="d4e-C5-YDr"/>
                             <constraint firstItem="zlA-tt-n3C" firstAttribute="leading" secondItem="1au-zm-Kch" secondAttribute="leading" constant="8" id="fFh-jm-tNQ"/>
@@ -372,12 +375,19 @@
                                     </segue>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Start" id="yt8-gv-Ity">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="startTouched:" destination="DwA-FD-pM7" id="pZU-VX-Efr"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="armorClassLabel" destination="lQu-0r-i09" id="iAU-9W-AfC"/>
                         <outlet property="chaButton" destination="4TS-Xv-Llp" id="LDV-of-uPx"/>
                         <outlet property="conButton" destination="3eS-Jk-vj2" id="4Os-Fp-OS6"/>
+                        <outlet property="condictionsButton" destination="HXN-Ef-fMs" id="0KX-On-ATI"/>
                         <outlet property="conditionImmuneLabel" destination="X2k-m4-khL" id="7G0-W9-AC2"/>
                         <outlet property="conditionImmuneStack" destination="c6U-5c-th4" id="vO2-Tn-a4J"/>
                         <outlet property="conditionsLabel" destination="bWL-3g-Hnl" id="OD0-4f-fkB"/>
@@ -387,15 +397,19 @@
                         <outlet property="damageResistStack" destination="527-F8-8gq" id="Yqd-M4-YQD"/>
                         <outlet property="descriptionLabel" destination="nv6-zO-KhU" id="4gr-uC-EPV"/>
                         <outlet property="dexButton" destination="oPM-Dk-4FB" id="aSy-ZI-Drl"/>
+                        <outlet property="diceButton" destination="c3g-xm-e5y" id="0UN-dJ-ZWb"/>
+                        <outlet property="duplicateButton" destination="P7Y-gh-XEk" id="R2W-dK-r53"/>
                         <outlet property="fadeView" destination="39W-Xd-crw" id="SGg-I2-6M0"/>
                         <outlet property="hitPointView" destination="bS9-v3-RUD" id="gd3-AB-bSw"/>
                         <outlet property="hitPointsLabel" destination="O39-8I-n2C" id="63g-bq-UT3"/>
+                        <outlet property="imageBorder" destination="7J0-Jw-owQ" id="Y8B-B2-UXO"/>
                         <outlet property="imageView" destination="8Kc-bE-7go" id="gdy-RC-0bc"/>
                         <outlet property="intButton" destination="1dt-PO-TZ7" id="Sjh-DM-VWS"/>
                         <outlet property="nameField" destination="zlA-tt-n3C" id="id1-Qx-iyA"/>
                         <outlet property="noImage" destination="kKU-Us-rJs" id="aES-az-GU8"/>
                         <outlet property="sensesLabel" destination="ueW-l9-YSw" id="ENl-Vp-swe"/>
                         <outlet property="speedLabel" destination="YqO-ga-09m" id="4i9-5W-HlU"/>
+                        <outlet property="startButton" destination="yt8-gv-Ity" id="OJn-Nw-MtX"/>
                         <outlet property="strButton" destination="fQa-rt-1bh" id="jko-Vp-x8i"/>
                         <outlet property="wisButton" destination="3Q8-Zn-YDz" id="eKW-D7-s4j"/>
                     </connections>
@@ -406,6 +420,11 @@
                         <segue destination="ZIH-BO-IKl" kind="popoverPresentation" identifier="editHP" popoverAnchorView="O39-8I-n2C" id="ywW-Vb-cmU">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Z0A-Pj-mhs">
+                    <connections>
+                        <action selector="imageTouched" destination="DwA-FD-pM7" id="nmL-CC-4LS"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -2427,176 +2446,16 @@
             <objects>
                 <viewController id="ZIH-BO-IKl" customClass="HitPointEditorController" customModule="Encounter_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y8l-X7-8gR">
-                        <rect key="frame" x="0.0" y="0.0" width="183" height="278"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRW-Bs-Tow" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="12" y="77" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="1">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="anz-G1-Jhd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5r-NM-DvO" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="65" y="77" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="2">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="mvd-i6-PWz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1B-3T-eml" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="119" y="77" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="3">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="G9q-M7-KIY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aws-Eq-jDg" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="12" y="118" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="4">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="Rm1-yc-nN3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-mZ-ym8" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="65" y="118" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="5">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="vnj-0d-AeE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Og-YI-Ln1" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="119" y="119" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="6">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="gQO-KO-p0h"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-C1-k58" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="12" y="159" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="7">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="OkQ-dz-uCB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnt-YV-g26" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="65" y="159" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="8">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="7VP-N5-QxB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MC-rG-DGe" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="119" y="159" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="9">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="lho-7t-8j1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgP-eS-msS" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="65" y="200" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="0">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="tkw-4J-iIX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oec-5i-jSM" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="12" y="200" width="52" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="&lt;-">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="backspaceTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="0QY-ea-Y77"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vvJ-4e-POZ">
-                                <rect key="frame" x="12" y="9" width="93" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zM6-7r-zTd" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="107" y="9" width="31" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="x">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="xTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="okq-8h-vdZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtU-8J-sOT" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="12" y="241" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.78581426898219175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Heal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="damageTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="HTs-mD-Qus"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBy-Uy-cgC" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="93" y="241" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBy-Uy-cgC" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                <rect key="frame" x="110" y="259" width="74" height="40"/>
                                 <color key="backgroundColor" red="0.64335477927123286" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="Ohy-w0-JOz"/>
+                                    <constraint firstAttribute="height" constant="40" id="ejm-Fa-IaB"/>
+                                </constraints>
                                 <state key="normal" title="Damage">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2605,13 +2464,215 @@
                                     <action selector="damageTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="YA1-ol-hYo"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QZD-zc-Qin">
+                                <rect key="frame" x="16" y="76" width="166" height="167"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Ye-KM-XQw">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRW-Bs-Tow" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="36"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="anz-G1-Jhd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5r-NM-DvO" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="58" y="0.0" width="50" height="36"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="mvd-i6-PWz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1B-3T-eml" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="116" y="0.0" width="50" height="36"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="G9q-M7-KIY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2xP-bb-peg">
+                                        <rect key="frame" x="0.0" y="44" width="166" height="35.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aws-Eq-jDg" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="35.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="Rm1-yc-nN3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-mZ-ym8" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="58" y="0.0" width="50" height="35.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="vnj-0d-AeE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Og-YI-Ln1" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="116" y="0.0" width="50" height="35.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="gQO-KO-p0h"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IaX-11-igl">
+                                        <rect key="frame" x="0.0" y="87.5" width="166" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-C1-k58" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="36"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="OkQ-dz-uCB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnt-YV-g26" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="58" y="0.0" width="50" height="36"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="7VP-N5-QxB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MC-rG-DGe" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="116" y="0.0" width="50" height="36"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="lho-7t-8j1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tuV-xl-TE5">
+                                        <rect key="frame" x="0.0" y="131.5" width="166" height="35.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oec-5i-jSM" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="35.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="&lt;-">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backspaceTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="0QY-ea-Y77"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgP-eS-msS" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                                <rect key="frame" x="91" y="0.0" width="75" height="35.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="tkw-4J-iIX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vvJ-4e-POZ">
+                                <rect key="frame" x="16" y="8" width="93" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="20l-Fz-tZb"/>
+                                    <constraint firstAttribute="height" constant="60" id="ehh-Mj-2NL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtU-8J-sOT" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                <rect key="frame" x="16" y="259" width="74" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.78581426898219175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="hMa-CL-TD3"/>
+                                    <constraint firstAttribute="height" constant="40" id="z5k-TJ-MkJ"/>
+                                </constraints>
+                                <state key="normal" title="Heal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="damageTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="HTs-mD-Qus"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zM6-7r-zTd" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                <rect key="frame" x="117" y="8" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HXu-UL-tZS"/>
+                                    <constraint firstAttribute="width" secondItem="zM6-7r-zTd" secondAttribute="height" multiplier="1:1" id="Ncu-Ku-qIs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="xTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="okq-8h-vdZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qgX-mB-WKE" firstAttribute="trailing" secondItem="QZD-zc-Qin" secondAttribute="trailing" constant="18" id="1Ow-M9-eYX"/>
+                            <constraint firstItem="LtU-8J-sOT" firstAttribute="top" secondItem="tuV-xl-TE5" secondAttribute="bottom" constant="16" id="2Xk-9Y-h3r"/>
+                            <constraint firstItem="vvJ-4e-POZ" firstAttribute="leading" secondItem="qgX-mB-WKE" secondAttribute="leading" constant="16" id="FEQ-ls-Fj7"/>
+                            <constraint firstItem="LtU-8J-sOT" firstAttribute="leading" secondItem="qgX-mB-WKE" secondAttribute="leading" constant="16" id="Hir-Wf-yhb"/>
+                            <constraint firstItem="qgX-mB-WKE" firstAttribute="bottom" secondItem="LtU-8J-sOT" secondAttribute="bottom" constant="16" id="O7o-jO-Ug0"/>
+                            <constraint firstItem="vvJ-4e-POZ" firstAttribute="leading" secondItem="qgX-mB-WKE" secondAttribute="leading" constant="16" id="Rij-J2-D6P"/>
+                            <constraint firstItem="QZD-zc-Qin" firstAttribute="top" secondItem="vvJ-4e-POZ" secondAttribute="bottom" constant="8" id="S9o-xc-IHu"/>
+                            <constraint firstItem="qgX-mB-WKE" firstAttribute="bottom" secondItem="pBy-Uy-cgC" secondAttribute="bottom" constant="16" id="Tst-XD-fcN"/>
+                            <constraint firstItem="zM6-7r-zTd" firstAttribute="leading" secondItem="vvJ-4e-POZ" secondAttribute="trailing" constant="8" id="UOh-GW-iTJ"/>
+                            <constraint firstItem="QZD-zc-Qin" firstAttribute="leading" secondItem="qgX-mB-WKE" secondAttribute="leading" constant="16" id="kaI-6d-xxx"/>
+                            <constraint firstItem="vvJ-4e-POZ" firstAttribute="top" secondItem="y8l-X7-8gR" secondAttribute="top" constant="8" id="qQO-yp-aDW"/>
+                            <constraint firstItem="vvJ-4e-POZ" firstAttribute="top" secondItem="y8l-X7-8gR" secondAttribute="top" constant="8" id="sEL-df-zDV"/>
+                            <constraint firstItem="qgX-mB-WKE" firstAttribute="trailing" secondItem="pBy-Uy-cgC" secondAttribute="trailing" constant="16" id="uep-wL-t9h"/>
+                            <constraint firstItem="zM6-7r-zTd" firstAttribute="top" secondItem="y8l-X7-8gR" secondAttribute="top" constant="8" id="weY-1Z-Rzz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qgX-mB-WKE"/>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="183" height="278"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="315"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="183" height="278"/>
+                    <size key="freeformSize" width="200" height="315"/>
                     <connections>
                         <outlet property="damageButton" destination="pBy-Uy-cgC" id="bG7-tP-olw"/>
                         <outlet property="healButton" destination="LtU-8J-sOT" id="eJ0-Fm-VUK"/>

@@ -27,7 +27,7 @@ class ActionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return monster.allActions[section].count > 0 ? 45 : 0
+        return monster.allActions[section].count > 0 ? 35 : 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

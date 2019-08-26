@@ -38,8 +38,9 @@ class MasterViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search Monsters"
         searchController.searchBar.tintColor = .white
         searchController.searchBar.barStyle = .black
-        navigationItem.searchController = searchController
+        navigationItem.searchController = isEncounter ? nil : searchController
         definesPresentationContext = true
+        
         self.tableView.estimatedRowHeight = 60
         self.tableView.tableFooterView = UIView()
         
@@ -69,6 +70,7 @@ class MasterViewController: UITableViewController {
         let title = isEncounter ?  self.encounter.name : "All"
         self.titleButton.setTitle(title, for: .normal)
         tableView.reloadData()
+        navigationItem.searchController = isEncounter ? nil : searchController
     }
     
     func selectMonsterWith(name:String ) {
@@ -111,7 +113,9 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MonsterListCell", for: indexPath) as! MonsterListCell
+        
+        let cellId = isEncounter ? "MonsterEncounterCell" : "MonsterListCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MonsterListCell
 
         let monster = isFiltering() ? filterdMonsters[indexPath.row] : monsters[indexPath.row]
         
@@ -119,22 +123,23 @@ class MasterViewController: UITableViewController {
         cell.encounter = encounter
         cell.isEncounter = isEncounter
         cell.updateCell()
-        cell.addRemoveButton.tag = indexPath.row
+        cell.addRemoveButton?.tag = indexPath.row
         
         return cell
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return isEncounter
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            self.encounter.monsters.remove(at: indexPath.row)
+            self.monsters = self.encounter.monsters
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
+            
+        } 
     }
     
     // MARK: - Private instance methods
@@ -163,11 +168,6 @@ class MasterViewController: UITableViewController {
                 self.encounter.monsters.append(monsters[sender.tag])
             }
             tableView.reloadRows(at: [IndexPath(item: sender.tag, section: 0)], with: .automatic)
-        } else {
-            self.encounter.monsters.remove(at: sender.tag)
-            self.monsters = self.encounter.monsters
-            tableView.reloadData()
-
         }
     }
     

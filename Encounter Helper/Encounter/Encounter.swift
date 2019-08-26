@@ -17,6 +17,7 @@ class Encounter {
     
     var name = ""
     var fileName = ""
+    var isStarted = false
     var monsters = [Monster]()
     
     var saveable:SavebleEncounter {

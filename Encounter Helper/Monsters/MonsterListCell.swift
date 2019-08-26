@@ -16,7 +16,10 @@ class MonsterListCell: UITableViewCell {
     var encounter = Encounter()
     var isEncounter = true
     
-    @IBOutlet weak var addRemoveButton: UIButton!
+    @IBOutlet weak var monsterImageView: UIImageView!
+    @IBOutlet weak var addRemoveButton: UIButton?
+    @IBOutlet weak var conditionsLabel: UILabel!
+    @IBOutlet weak var noCircleImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,11 +37,14 @@ class MonsterListCell: UITableViewCell {
                 self.nameLabel.attributedText = nil
                 nameLabel.text = monster.name
             }
-            addRemoveButton.setTitle("-", for: .normal)
+            monsterImageView.image = monster.image
+            conditionsLabel.text = monster.conditions
+            noCircleImage.isHidden = monster.hitPoints > 0 
+            
         } else {
             let count = encounter.monsters.filter({$0.name == monster.name}).count
             nameLabel.text = count == 0 ? monster.name : "\(monster.name) \(count)"
-            addRemoveButton.setTitle("+", for: .normal)
+            addRemoveButton?.setTitle("+", for: .normal)
         }
         nameLabel.textColor = monster.damageColor
         

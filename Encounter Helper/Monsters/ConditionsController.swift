@@ -66,6 +66,8 @@ class ConditionsController: UIViewController {
         }
         monster.monsterModel.conditions = conditions
         monsterVc.conditionsLabel.text = monster.conditions
+        monsterVc.masterVc?.tableView.reloadData()
+        monsterVc.masterVc?.selectMonsterWith(name: monster.name)
     }
     
     

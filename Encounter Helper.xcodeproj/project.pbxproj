@@ -146,7 +146,6 @@
 				2B340044230B4E7B003AE875 /* Encounter.swift */,
 				2B340046230B5232003AE875 /* EcounterTableViewController.swift */,
 				2B17F72A230F0F800061EB5A /* EncounterCell.swift */,
-				2B17F76523108F2A0061EB5A /* Monster.storyboard */,
 			);
 			path = Encounter;
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 				2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */,
 				2BFCD5712312295200804A0D /* HitPointEditorController.swift */,
 				2BFCD57323132FE800804A0D /* ConditionsController.swift */,
+				2B17F76523108F2A0061EB5A /* Monster.storyboard */,
 			);
 			path = Monsters;
 			sourceTree = "<group>";
