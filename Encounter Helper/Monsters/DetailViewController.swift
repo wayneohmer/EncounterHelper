@@ -40,14 +40,15 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var chaButton: UIButton!
     @IBOutlet weak var fadeView: UIView!
     
-    @IBOutlet weak var diceButton: UIBarButtonItem!
-    @IBOutlet weak var duplicateButton: UIBarButtonItem!
-    @IBOutlet weak var condictionsButton: UIBarButtonItem!
-    @IBOutlet weak var startButton: UIBarButtonItem!
+    @IBOutlet var diceButton: UIBarButtonItem!
+    @IBOutlet var duplicateButton: UIBarButtonItem!
+    @IBOutlet var condictionsButton: UIBarButtonItem!
+    @IBOutlet var startButton: UIBarButtonItem!
+    @IBOutlet var massSpellButton: UIBarButtonItem!
     
     var monster:Monster?
     var masterVc:MasterViewController?
-    var ecounterBarButtons:[UIBarButtonItem] { return [startButton,condictionsButton,diceButton]}
+    var ecounterBarButtons:[UIBarButtonItem] { return [startButton,condictionsButton,diceButton,massSpellButton]}
     var noEcounterBarButtons:[UIBarButtonItem] { return [startButton,duplicateButton]}
     var allBarButtons = [UIBarButtonItem]()
 
@@ -108,11 +109,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        allBarButtons = [startButton,condictionsButton,diceButton,duplicateButton]
         self.navigationItem.rightBarButtonItems = noEcounterBarButtons
-        if let vc = masterVc {
-            self.startButton.title = vc.encounter.isStarted ? "Finsh" : "Start"
-        }
         configureView()
     }
     
@@ -129,6 +126,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             UIView.animate(withDuration: 0.3, animations: {
                 self.fadeView.alpha = 0
             })
+        }
+        if let vc = masterVc {
+            self.startButton.title = vc.encounter.isStarted ? "Finsh" : "Start"
+            self.navigationItem.rightBarButtonItems = vc.encounter.isStarted ? ecounterBarButtons : noEcounterBarButtons
         }
     }
     
@@ -189,6 +190,36 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
     }
     
+    @IBAction func massSpellTouched(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Mass Spell", message: "", preferredStyle: .actionSheet)
+
+        alertController.addAction(UIAlertAction(title: Attribute.Strength.rawValue, style: .default, handler: { alertAction in
+            self.performSegue(withIdentifier: "massSpell", sender: Attribute.Strength)
+        }))
+        alertController.addAction(UIAlertAction(title: Attribute.Dexterity.rawValue, style: .default, handler: { alertAction in
+            self.performSegue(withIdentifier: "massSpell", sender: Attribute.Dexterity)
+        }))
+        alertController.addAction(UIAlertAction(title: Attribute.Constitution.rawValue, style: .default, handler: { alertAction in
+            self.performSegue(withIdentifier: "massSpell", sender: Attribute.Constitution)
+        }))
+        alertController.addAction(UIAlertAction(title: Attribute.Intelligence.rawValue, style: .default, handler: { alertAction in
+            self.performSegue(withIdentifier: "massSpell", sender: Attribute.Intelligence)
+        }))
+        alertController.addAction(UIAlertAction(title: Attribute.Wisdom.rawValue, style: .default, handler: { alertAction in
+            self.performSegue(withIdentifier: "massSpell", sender: Attribute.Wisdom)
+        }))
+        alertController.addAction(UIAlertAction(title: Attribute.Charisma.rawValue, style: .default, handler: { alertAction in
+            self.performSegue(withIdentifier: "massSpell", sender: Attribute.Charisma)
+        }))
+        
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.barButtonItem = self.massSpellButton
+        }
+        self.present(alertController, animated: true, completion: nil)
+
+    }
+
+
     @IBAction func imageTouched() {
         let alertController = UIAlertController(title: "Add Image", message: "", preferredStyle: .actionSheet)
         
@@ -299,6 +330,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         case "Conditions":
             if let vc = segue.destination as? ConditionsController {
                 vc.monsterVc = self
+            }
+        case "massSpell":
+            if let vc = segue.destination as? MassSpellController {
+                vc.encounter = self.masterVc?.encounter ?? Encounter()
+                vc.attribute = sender as? Attribute ?? Attribute.Strength
             }
             
         default:

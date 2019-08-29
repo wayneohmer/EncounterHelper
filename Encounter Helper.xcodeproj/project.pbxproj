@@ -40,6 +40,9 @@
 		2BEF9A892309F32000DEB8CD /* 5e-SRD-Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF9A852309EC5900DEB8CD /* 5e-SRD-Monsters.json */; };
 		2BFCD5722312295200804A0D /* HitPointEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCD5712312295200804A0D /* HitPointEditorController.swift */; };
 		2BFCD57423132FE800804A0D /* ConditionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCD57323132FE800804A0D /* ConditionsController.swift */; };
+		2BFCD5B62314906600804A0D /* MassSpell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFCD5B52314906600804A0D /* MassSpell.storyboard */; };
+		2BFCD5B82314917000804A0D /* MassSpellMonsterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCD5B72314917000804A0D /* MassSpellMonsterController.swift */; };
+		2BFCD5BA2314947E00804A0D /* MassSpellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCD5B92314947E00804A0D /* MassSpellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		2BEF9A8A2309F37500DEB8CD /* 5e-SRD-MonstersCopy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "5e-SRD-MonstersCopy.json"; sourceTree = "<group>"; };
 		2BFCD5712312295200804A0D /* HitPointEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitPointEditorController.swift; sourceTree = "<group>"; };
 		2BFCD57323132FE800804A0D /* ConditionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsController.swift; sourceTree = "<group>"; };
+		2BFCD5B52314906600804A0D /* MassSpell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MassSpell.storyboard; sourceTree = "<group>"; };
+		2BFCD5B72314917000804A0D /* MassSpellMonsterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassSpellMonsterController.swift; sourceTree = "<group>"; };
+		2BFCD5B92314947E00804A0D /* MassSpellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassSpellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,9 @@
 			children = (
 				2B340048230B943B003AE875 /* ActionCell.swift */,
 				2B34004A230B94FE003AE875 /* ActionTableViewController.swift */,
+				2BFCD5B92314947E00804A0D /* MassSpellController.swift */,
+				2BFCD5B72314917000804A0D /* MassSpellMonsterController.swift */,
+				2BFCD5B52314906600804A0D /* MassSpell.storyboard */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFCD5B62314906600804A0D /* MassSpell.storyboard in Resources */,
 				2BEF9A892309F32000DEB8CD /* 5e-SRD-Monsters.json in Resources */,
 				2BEF9A702309E85200DEB8CD /* LaunchScreen.storyboard in Resources */,
 				2BAC3841230A05FB00A1CAEA /* srd_5e_monsters.json in Resources */,
@@ -331,6 +341,7 @@
 				2B340055230C84F8003AE875 /* BlackButton.swift in Sources */,
 				2B17F7752310A2EF0061EB5A /* AdvantageSwitch.swift in Sources */,
 				2B340049230B943B003AE875 /* ActionCell.swift in Sources */,
+				2BFCD5BA2314947E00804A0D /* MassSpellController.swift in Sources */,
 				2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */,
 				2B17F7782310A2FE0061EB5A /* FyreDice.swift in Sources */,
 				2B340045230B4E7B003AE875 /* Encounter.swift in Sources */,
@@ -338,6 +349,7 @@
 				2B34004B230B94FE003AE875 /* ActionTableViewController.swift in Sources */,
 				2B17F7732310A2E20061EB5A /* DiceController.swift in Sources */,
 				2BFCD57423132FE800804A0D /* ConditionsController.swift in Sources */,
+				2BFCD5B82314917000804A0D /* MassSpellMonsterController.swift in Sources */,
 				2BEF9A882309ECBB00DEB8CD /* MonsterModel.swift in Sources */,
 				2BEF9A642309E85000DEB8CD /* AppDelegate.swift in Sources */,
 				2BAC383E2309FC0400A1CAEA /* MonsterListCell.swift in Sources */,

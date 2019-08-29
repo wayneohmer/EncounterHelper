@@ -72,8 +72,10 @@ class ActionTableViewController: UITableViewController {
             vc.fyreDice.dice = [20:1]
             vc.fyreDice.modifier = action.attack_bonus ?? 0
             vc.damageRollName = "\(action.name) Damage"
-            if let components = action.damage_dice?.split(separator: "d") {
-                vc.damageDice.dice = [Int(components[1]) ?? 0:Int(components[0]) ?? 0]
+            let diceComponents = action.damage_dice?.split(separator: "+")
+            for diceStr in diceComponents ?? [Substring(action.damage_dice ?? "")] {
+                let components = diceStr.split(separator: "d")
+                vc.damageDice.add(multipier: Int(components[0].trimmingCharacters(in: .whitespaces)) ?? 0, d: Int(components[1].trimmingCharacters(in: .whitespaces)) ?? 0)
                 vc.damageDice.modifier = action.damage_bonus ?? 0
             }
         }

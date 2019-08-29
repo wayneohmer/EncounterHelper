@@ -20,6 +20,7 @@ class MonsterListCell: UITableViewCell {
     @IBOutlet weak var addRemoveButton: UIButton?
     @IBOutlet weak var conditionsLabel: UILabel!
     @IBOutlet weak var noCircleImage: UIImageView!
+    @IBOutlet weak var saveLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -58,5 +59,7 @@ class MonsterListCell: UITableViewCell {
             self.layer.borderWidth = 0
         }
     }
+    
+    
     
 }

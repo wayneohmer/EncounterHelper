@@ -8,6 +8,17 @@
 
 import UIKit
 
+enum Attribute : String {
+    
+    case Strength
+    case Dexterity
+    case Constitution
+    case Intelligence
+    case Wisdom
+    case Charisma
+
+}
+
 class Monster  {
     
     static var sharedMonsters = [Monster]()
@@ -124,6 +135,16 @@ class Monster  {
         self.init()
         self.monsterModel = model
         self.metaMonster = model.metaModel ?? MonsterMetaModel()
+        if self.monsterModel.currentHitPoints == nil {
+            if self.monsterModel.maxHitPoints == nil {
+                self.monsterModel.maxHitPoints = self.monsterModel.hit_points
+            }
+            self.monsterModel.currentHitPoints = self.monsterModel.maxHitPoints
+        }
+    }
+    
+    func restoreWith(model: MonsterModel) {
+        self.monsterModel = model
     }
     
     class func readMonsters() {
