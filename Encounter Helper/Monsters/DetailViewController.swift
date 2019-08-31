@@ -186,7 +186,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             } else {
                 self.navigationItem.rightBarButtonItems = noEcounterBarButtons
             }
-            self.startButton.title = masterVc?.encounter.isStarted ?? false ? "Finsh" : "Start"
+            self.startButton.title = masterVc?.encounter.isStarted ?? false ? "Finish" : "Start"
         }
     }
     

@@ -49,14 +49,45 @@
                                     <action selector="donePressed" destination="l3M-1u-19n" eventType="touchUpInside" id="vWk-yF-sOt"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gaE-Bx-PBx">
-                                <rect key="frame" x="391" y="36" width="100" height="136"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-cm-9BY">
+                                <rect key="frame" x="383" y="28" width="120" height="112"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Damage" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-XL-77j">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-gJ-1wP">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Damage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fG-mm-vpM">
+                                        <rect key="frame" x="0.0" y="32" width="120" height="80"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="TH0-tr-Me3"/>
+                                            <constraint firstAttribute="width" constant="120" id="D6t-3e-9wb"/>
+                                            <constraint firstAttribute="height" constant="80" id="cFr-Yd-Imi"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="l3M-1u-19n" id="aXN-Sh-ezg"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gaE-Bx-PBx">
+                                <rect key="frame" x="519" y="28" width="120" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-Yf-8Ed">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Damage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-XL-77j">
+                                        <rect key="frame" x="0.0" y="32" width="120" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="TH0-tr-Me3"/>
                                             <constraint firstAttribute="height" constant="80" id="tfy-tl-Dyu"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -66,29 +97,28 @@
                                             <outlet property="delegate" destination="l3M-1u-19n" id="xB0-P0-9th"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Damage" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Tca-4M-F3j">
-                                        <rect key="frame" x="0.0" y="96" width="100" height="40"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Damage" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tca-4M-F3j">
+                                        <rect key="frame" x="0.0" y="120" width="120" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ic8-mZ-vHl"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                         <connections>
                                             <outlet property="delegate" destination="l3M-1u-19n" id="U7q-kL-0iH"/>
                                         </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="VBR-dG-ntf">
-                                <rect key="frame" x="391" y="188" width="200" height="118"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VBR-dG-ntf">
+                                <rect key="frame" x="391" y="204" width="248" height="106"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJ9-nd-g4M" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="c4K-he-Z7U"/>
-                                            <constraint firstAttribute="width" constant="200" id="iEu-sG-y80"/>
+                                            <constraint firstAttribute="height" constant="50" id="c4K-he-Z7U"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <state key="normal" title="Roll">
@@ -103,10 +133,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCZ-90-5kB" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="73" width="200" height="45"/>
+                                        <rect key="frame" x="0.0" y="66" width="248" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="Abk-lJ-Rcz"/>
-                                            <constraint firstAttribute="height" constant="45" id="C3R-AG-iN4"/>
+                                            <constraint firstAttribute="height" constant="40" id="C3R-AG-iN4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <state key="normal" title="Restore">
@@ -118,22 +147,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Damage" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2fG-mm-vpM">
-                                <rect key="frame" x="523" y="36" width="100" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="D6t-3e-9wb"/>
-                                    <constraint firstAttribute="height" constant="80" id="cFr-Yd-Imi"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
-                                <connections>
-                                    <outlet property="delegate" destination="l3M-1u-19n" id="aXN-Sh-ezg"/>
-                                </connections>
-                            </textField>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ako-34-BOp">
-                                <rect key="frame" x="391" y="322" width="450" height="325"/>
+                                <rect key="frame" x="391" y="326" width="450" height="325"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="325" id="5G7-Gp-SE1"/>
                                     <constraint firstAttribute="width" constant="450" id="7Ut-ie-6Ch"/>
@@ -145,23 +160,26 @@
                         </subviews>
                         <color key="backgroundColor" red="0.12129447609186172" green="0.12922456860542297" blue="0.14169979095458984" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gaE-Bx-PBx" firstAttribute="leading" secondItem="gd1-Jn-F0L" secondAttribute="trailing" constant="16" id="56t-8p-0CQ"/>
+                            <constraint firstItem="gaE-Bx-PBx" firstAttribute="top" secondItem="yDN-cm-9BY" secondAttribute="top" id="2ei-io-nij"/>
+                            <constraint firstItem="yDN-cm-9BY" firstAttribute="leading" secondItem="gd1-Jn-F0L" secondAttribute="trailing" constant="8" id="CY6-Tf-C5t"/>
                             <constraint firstItem="Ako-34-BOp" firstAttribute="top" secondItem="XCZ-90-5kB" secondAttribute="bottom" constant="16" id="Dhe-Bv-FwU"/>
                             <constraint firstItem="VBR-dG-ntf" firstAttribute="leading" secondItem="gd1-Jn-F0L" secondAttribute="trailing" constant="16" id="FJ4-pW-7k7"/>
-                            <constraint firstItem="VBR-dG-ntf" firstAttribute="top" secondItem="gaE-Bx-PBx" secondAttribute="bottom" constant="16" id="U4O-A9-IrP"/>
+                            <constraint firstItem="Ako-34-BOp" firstAttribute="top" secondItem="VBR-dG-ntf" secondAttribute="bottom" constant="16" id="Thn-eo-ncC"/>
                             <constraint firstItem="gd1-Jn-F0L" firstAttribute="top" secondItem="Hv3-Bh-zlV" secondAttribute="top" id="Ud4-0j-k2x"/>
                             <constraint firstItem="Hv3-Bh-zlV" firstAttribute="trailing" secondItem="Y8u-Gc-NZ9" secondAttribute="trailing" constant="8" id="XnZ-hJ-XH9"/>
                             <constraint firstItem="Ako-34-BOp" firstAttribute="leading" secondItem="XCZ-90-5kB" secondAttribute="leading" id="YwP-Q0-eB5"/>
+                            <constraint firstItem="VBR-dG-ntf" firstAttribute="trailing" secondItem="gaE-Bx-PBx" secondAttribute="trailing" id="cnd-i6-KzM"/>
                             <constraint firstItem="Hv3-Bh-zlV" firstAttribute="bottom" secondItem="gd1-Jn-F0L" secondAttribute="bottom" id="dpn-Yh-hBJ"/>
                             <constraint firstItem="gd1-Jn-F0L" firstAttribute="leading" secondItem="Hv3-Bh-zlV" secondAttribute="leading" id="fYk-zC-cat"/>
-                            <constraint firstItem="2fG-mm-vpM" firstAttribute="leading" secondItem="gaE-Bx-PBx" secondAttribute="trailing" constant="32" id="juC-v1-c3J"/>
-                            <constraint firstItem="2fG-mm-vpM" firstAttribute="top" secondItem="Hv3-Bh-zlV" secondAttribute="top" constant="16" id="nnY-TH-ksx"/>
-                            <constraint firstItem="gaE-Bx-PBx" firstAttribute="top" secondItem="Hv3-Bh-zlV" secondAttribute="top" constant="16" id="uuf-t2-o18"/>
+                            <constraint firstItem="yDN-cm-9BY" firstAttribute="top" secondItem="Hv3-Bh-zlV" secondAttribute="top" constant="8" id="hwV-7U-sBf"/>
+                            <constraint firstItem="VBR-dG-ntf" firstAttribute="top" secondItem="gaE-Bx-PBx" secondAttribute="bottom" constant="16" id="mSf-Dn-5Wj"/>
                             <constraint firstItem="Y8u-Gc-NZ9" firstAttribute="top" secondItem="Hv3-Bh-zlV" secondAttribute="top" constant="8" id="ved-6a-Evw"/>
+                            <constraint firstItem="gaE-Bx-PBx" firstAttribute="leading" secondItem="yDN-cm-9BY" secondAttribute="trailing" constant="16" id="wBO-a7-tah"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hv3-Bh-zlV"/>
                     </view>
                     <connections>
+                        <outlet property="DCLabel" destination="JUQ-gJ-1wP" id="pMl-oa-bZ9"/>
                         <outlet property="damageField" destination="3ns-XL-77j" id="NjP-vT-zxz"/>
                         <outlet property="dcField" destination="2fG-mm-vpM" id="OS8-5J-7ns"/>
                         <outlet property="halfDamageField" destination="Tca-4M-F3j" id="v0a-bf-kLk"/>

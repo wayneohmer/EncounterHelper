@@ -38,7 +38,7 @@ class MasterViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search Monsters"
         searchController.searchBar.tintColor = .white
         searchController.searchBar.barStyle = .black
-        navigationItem.searchController = isEncounter ? nil : searchController
+        navigationItem.searchController = searchController
         definesPresentationContext = true
         
         self.tableView.estimatedRowHeight = 60
@@ -52,6 +52,7 @@ class MasterViewController: UITableViewController {
         titleButton.setTitle(self.encounter.name, for: .normal)
         titleButton.addTarget(self, action: #selector(flipTouched), for: .touchUpInside)
         self.navigationItem.titleView = titleButton
+
         //self.tableView.tableHeaderView = self.headerView
     }
 
@@ -68,10 +69,10 @@ class MasterViewController: UITableViewController {
     
     @objc func flipTouched() {
         monsters = isEncounter ? Monster.sharedMonsters : encounter.monsters
+        //monsters.sort(by: {$0.challengeRating < $1.challengeRating })
         let title = isEncounter ?  self.encounter.name : "All"
         self.titleButton.setTitle(title, for: .normal)
         tableView.reloadData()
-        navigationItem.searchController = isEncounter ? nil : searchController
     }
     
     func selectMonsterWith(name:String ) {
@@ -130,7 +131,6 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return isEncounter
     }
 

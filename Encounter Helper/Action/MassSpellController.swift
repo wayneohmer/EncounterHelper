@@ -20,12 +20,15 @@ class MassSpellController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var halfDamageField: UITextField!
     @IBOutlet weak var dcField: UITextField!
     @IBOutlet weak var rollbutton: BlackButton!
+    @IBOutlet weak var DCLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         for monster in encounter.monsters {
             self.restoreMonsters.append(monster.monsterModel)
         }
+        self.DCLabel.text = attribute.rawValue
+        self.dcField.becomeFirstResponder()
     }
     
     @IBAction func donePressed() {
@@ -34,11 +37,13 @@ class MassSpellController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == self.damageField {
+        if textField == self.dcField {
+            
+            self.damageField.becomeFirstResponder()
+        } else if textField == self.damageField {
             if let damage = Int(textField.text ?? "") {
                 self.halfDamageField.text = "\(damage/2)"
             }
-            self.dcField.becomeFirstResponder()
         }
         textField.resignFirstResponder()
         return true

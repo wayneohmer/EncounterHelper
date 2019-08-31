@@ -44,8 +44,9 @@ class MonsterListCell: UITableViewCell {
             
         } else {
             let count = encounter.monsters.filter({$0.name == monster.name}).count
-            nameLabel.text = count == 0 ? monster.name : "\(monster.name) \(count)"
+            nameLabel.text = count == 0 ? "\(monster.name) - \(monster.challengeRating)" : "\(monster.name) - \(monster.challengeRating) \(count)"
             addRemoveButton?.setTitle("+", for: .normal)
+            
         }
         nameLabel.textColor = monster.damageColor
         

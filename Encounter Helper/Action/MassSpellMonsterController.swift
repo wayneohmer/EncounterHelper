@@ -63,6 +63,9 @@ class MassSpellMonsterController: UITableViewController {
             }
         }
         self.tableView.reloadRows(at: selectedPaths, with: .none)
+        for indexPath in saveidx.union(failidx) {
+            self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
     }
     
     // MARK: - Table view data source

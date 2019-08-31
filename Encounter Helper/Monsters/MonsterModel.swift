@@ -62,8 +62,24 @@ class Monster  {
     var conditionImmunities:String { return monsterModel.condition_immunities }
     var senses:String { return monsterModel.senses }
     var languages:String { return monsterModel.languages }
-    var challengeRating:String { return monsterModel.challenge_rating }
+    var challengeRating:Float {
+        if let cr = Float(monsterModel.challenge_rating) {
+            return cr
+            
+        } else {
+            let components = monsterModel.challenge_rating.split(separator: "/")
+            if let num = Float(components[0]), let den = Float(components[1]), den != 0 {
+                return num/den
+            }
+        }
+        
+        return 0
+        
+    }
     var conditions:String { return Array(monsterModel.conditions ?? Set<String>()).sorted().joined(separator: ", ") }
+    var eotSave:String? { return monsterModel.eotSave }
+    var eotDamage:Int? { return monsterModel.eotDamage }
+
 
     var actions:[Action] { return monsterModel.actions ?? [Action]() }
     var specialAbilities:[Action] { return monsterModel.special_abilities ?? [Action]() }
@@ -234,6 +250,8 @@ struct MonsterModel: Codable  {
     var currentHitPoints:Int?
     var maxHitPoints:Int?
     var conditions:Set<String>? = Set<String>()
+    var eotDamage:Int?
+    var eotSave:String?
     
     var special_abilities:[Action]?
     var actions:[Action]?
