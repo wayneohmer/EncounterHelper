@@ -76,7 +76,7 @@ class MasterViewController: UITableViewController {
     }
     
     func selectMonsterWith(name:String ) {
-        for (idx,monster) in monsters.enumerated() {
+        for (idx,monster) in isFiltering() ? filterdMonsters.enumerated() : monsters.enumerated()  {
             if monster.name == name {
                 self.tableView.selectRow(at: IndexPath(row: idx, section: 0), animated: true, scrollPosition: .middle)
             }

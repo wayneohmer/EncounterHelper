@@ -15,6 +15,7 @@ class Oops {
         case roll
         case saveDelete
         case save
+        case hit
     }
     
     var fyreDice = FyreDice()

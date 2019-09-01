@@ -8,7 +8,11 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+protocol LogManager {
+    func logMessage(message:String)
+}
+
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LogManager {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var hitPointsLabel: UILabel!
@@ -51,13 +55,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     var ecounterBarButtons:[UIBarButtonItem] { return [startButton,condictionsButton,diceButton,massSpellButton]}
     var noEcounterBarButtons:[UIBarButtonItem] { return [startButton,duplicateButton]}
     var allBarButtons = [UIBarButtonItem]()
+    var actionVc = ActionTableViewController()
 
     func configureView() {
         if let monster = self.monster {
             nameField.text = monster.name
             descriptionLabel.text = monster.meta 
-            self.updateHP()
             conditionsLabel.text = monster.conditions
+            self.updateHP()
             
             hitPointView.clipsToBounds = false
             hitPointView.layer.cornerRadius = 7
@@ -71,8 +76,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             imageView.image = monster.image
             imageBorder.layer.borderWidth = 1
             imageBorder.layer.borderColor = UIColor.darkGray.cgColor
-            
-            
          
             speedLabel.text = monster.speed
             sensesLabel.text = monster.senses
@@ -146,11 +149,19 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     func updateHP() {
         self.hitPointsLabel.text = "\(monster?.hitPoints ?? 0)"
         self.hitPointsLabel.textColor = monster?.damageColor
-        self.masterVc?.tableView.reloadData()
-        self.masterVc?.selectMonsterWith(name: monster?.name ?? "")
         self.noImage.isHidden = (monster?.hitPoints ?? 0) > 0
         self.view.alpha = (monster?.hitPoints ?? 0) <= 0 ? 0.5 : 1
-        
+    }
+    
+    func updateMasterVc() {
+        self.masterVc?.tableView.reloadRows(at: self.masterVc?.tableView.indexPathsForSelectedRows ?? [IndexPath](), with: .none)
+        self.masterVc?.selectMonsterWith(name: monster?.name ?? "")
+
+    }
+
+    func logMessage(message: String) {
+        self.monster?.addLog(desc: message)
+        self.actionVc.tableView.reloadData()
     }
     
     // MARK: - Navigation
@@ -219,7 +230,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
 
     }
 
-
     @IBAction func imageTouched() {
         let alertController = UIAlertController(title: "Add Image", message: "", preferredStyle: .actionSheet)
         
@@ -268,8 +278,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         return true
     }
     
-    
-    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -280,47 +288,50 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             vc.saveMod = save ?? Int((stat - 10)/2)
             vc.checkMod = Int((stat - 10)/2)
             vc.fyreDice.modifier = vc.saveMod ?? 0
+            vc.logManager = self
         }
         
         switch segue.identifier {
         case "actionEmbed":
             if let vc = segue.destination as? ActionTableViewController {
                 vc.monster = self.monster ?? Monster()
+                vc.monsterVc = self
+                actionVc = vc
             }
         case "strSave":
             if let vc = segue.destination as? DiceController {
                 guard let monster = monster else { return }
-                prepSave(vc: vc, name: "Strength", save: monster.strengthSave, stat: monster.strength)
+                prepSave(vc: vc, name: "Strength Save", save: monster.strengthSave, stat: monster.strength)
 
             }
         case "dexSave":
             if let vc = segue.destination as? DiceController {
                 guard let monster = monster else { return }
-                prepSave(vc: vc, name: "Dexterity", save: monster.dexteritySave, stat: monster.dexterity)
+                prepSave(vc: vc, name: "Dexterity Save", save: monster.dexteritySave, stat: monster.dexterity)
                 
             }
         case "conSave":
             if let vc = segue.destination as? DiceController {
                 guard let monster = monster else { return }
-                prepSave(vc: vc, name: "Constitution", save: monster.constitutionSave, stat: monster.constitution)
+                prepSave(vc: vc, name: "Constitution Save", save: monster.constitutionSave, stat: monster.constitution)
                 
             }
         case "intSave":
             if let vc = segue.destination as? DiceController {
                 guard let monster = monster else { return }
-                prepSave(vc: vc, name: "Intelligence", save: monster.intelligenceSave, stat: monster.intelligence)
+                prepSave(vc: vc, name: "Intelligence Save", save: monster.intelligenceSave, stat: monster.intelligence)
                 
             }
         case "wisSave":
             if let vc = segue.destination as? DiceController {
                 guard let monster = monster else { return }
-                prepSave(vc: vc, name: "Wisdom", save: monster.wisdomSave, stat: monster.wisdom)
+                prepSave(vc: vc, name: "Wisdom Save", save: monster.wisdomSave, stat: monster.wisdom)
                 
             }
         case "chaSave":
             if let vc = segue.destination as? DiceController {
                 guard let monster = monster else { return }
-                prepSave(vc: vc, name: "Charisma", save: monster.charismaSave, stat: monster.charisma)
+                prepSave(vc: vc, name: "Charisma Save", save: monster.charismaSave, stat: monster.charisma)
                 
             }
         case "editHP":

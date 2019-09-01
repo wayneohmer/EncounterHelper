@@ -11,7 +11,8 @@ import UIKit
 class ActionTableViewController: UITableViewController {
 
     var monster = Monster()
-    var titles = ["Actions","Special Abilities","Legondary Actions"]
+    var titles = ["Actions","Special Abilities","Legondary Actions","Log"]
+    var monsterVc = DetailViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class ActionTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -54,7 +55,8 @@ class ActionTableViewController: UITableViewController {
 
         cell.nameLabel.text = monster.allActions[indexPath.section][indexPath.row].name
         cell.descriptionLabel.text = monster.allActions[indexPath.section][indexPath.row].desc
-        
+        cell.nameLabel.isHidden = cell.nameLabel.text ?? "" == "" 
+            
         return cell
     }
 
@@ -72,6 +74,7 @@ class ActionTableViewController: UITableViewController {
             vc.fyreDice.dice = [20:1]
             vc.fyreDice.modifier = action.attack_bonus ?? 0
             vc.damageRollName = "\(action.name) Damage"
+            vc.logManager = self.monsterVc
             let diceComponents = action.damage_dice?.split(separator: "+")
             for diceStr in diceComponents ?? [Substring(action.damage_dice ?? "")] {
                 let components = diceStr.split(separator: "d")

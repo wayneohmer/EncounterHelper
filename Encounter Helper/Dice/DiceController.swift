@@ -63,6 +63,7 @@ class DiceController: UIViewController {
     var checkMod: Int?
     var damageDice = FyreDice()
     var fyreDice = FyreDice()
+    var logManager:LogManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,6 +163,7 @@ class DiceController: UIViewController {
         FyreDice.shardedHistory.append(FyreDice(with:self.fyreDice, includeResult:true))
         self.currentHistoryIndex = FyreDice.shardedHistory.count-1
         self.updateDisplay()
+        self.logManager?.logMessage(message:"\(self.titleLabel.text ?? "") \(self.fyreDice.display), \(self.fyreDice.resultDisplay) = \(self.fyreDice.rollValue) ")
     }
 
     @IBAction func signTouched(_ sender: UIButton) {
@@ -226,6 +228,10 @@ class DiceController: UIViewController {
             case .buttonTouch:
                 self.fyreDice = FyreDice(with:oops.fyreDice, includeResult:true)
                 self.updateDisplay()
+            case .hit:
+                self.fyreDice = FyreDice(with:oops.fyreDice, includeResult:true)
+                self.updateDisplay()
+                self.hitButton.isEnabled = true
             case .roll:
                 self.fyreDice = FyreDice(with:oops.fyreDice, includeResult:true)
                 self.updateDisplay()
@@ -242,13 +248,23 @@ class DiceController: UIViewController {
             oopsStack.removeLast()
         }
     }
+    
     @IBAction func saveCheckTouhced(_ sender: UISegmentedControl) {
         
-        self.fyreDice.modifier = sender.selectedSegmentIndex == 0 ? self.saveMod ?? 0 : self.checkMod ?? 0
+        if sender.selectedSegmentIndex == 0 {
+            self.fyreDice.modifier = self.saveMod ?? 0
+            self.titleLabel.text = self.titleLabel.text?.replacingOccurrences(of: "Check", with: "Save")
+        } else {
+            self.fyreDice.modifier = self.checkMod ?? 0
+            self.titleLabel.text = self.titleLabel.text?.replacingOccurrences(of: "Save", with: "Check")
+        }
+        
         self.updateDisplay()
         
     }
     @IBAction func hitTouched(_ sender: Any) {
+        self.oopsStack.append(Oops(fyreDice: FyreDice(with:self.fyreDice, includeResult:true), type: Oops.OopsType.hit))
+
         self.fyreDice = self.damageDice
         self.titleLabel.text = self.damageRollName
         self.hasRolled = false

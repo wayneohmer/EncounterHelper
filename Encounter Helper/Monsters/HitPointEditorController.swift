@@ -51,11 +51,17 @@ class HitPointEditorController: UIViewController {
         if sender.title(for: .normal) == "Heal" {
             if let hp = monster.monsterModel.currentHitPoints {
                 monster.monsterModel.currentHitPoints = min(hp + damage,monster.monsterModel.maxHitPoints ?? monster.monsterModel.hit_points)
+                monster.addLog(desc: "Heal - \(damage)")
             }
         } else {
             monster.monsterModel.currentHitPoints? -= damage
+            monster.addLog(desc: "Damage - \(damage)")
         }
-        self.dismiss(animated: true, completion: { self.monsterVc.updateHP() })
+        self.dismiss(animated: true, completion: {
+             self.monsterVc.updateHP()
+             self.monsterVc.updateMasterVc()
+             self.monsterVc.actionVc.tableView.reloadData()
+        })
     }
     
 }

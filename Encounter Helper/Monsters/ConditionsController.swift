@@ -14,6 +14,9 @@ class ConditionsController: UIViewController {
     var monsterVc = DetailViewController()
     
     @IBOutlet weak var mainStack: UIStackView!
+    @IBOutlet weak var DamageField: UITextField!
+    @IBOutlet var saveButtons: [BlackButton]!
+    @IBOutlet weak var saveDCField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +51,15 @@ class ConditionsController: UIViewController {
             for key in ci {
                 switchDict[key.trimmingCharacters(in: [" "]).capitalized]?.isEnabled = false
             }
+            if let save = monster.monsterModel.eotSave {
+                for button in saveButtons {
+                    button.isEnabled = button.title(for: .normal) != save
+                }
+                self.saveDCField.text = "\(monster.eotSaveDC ?? 0)"
+                
+            }
         }
+        
     }
     
     @IBAction func switchChanged(_ sender: UISwitch) {
@@ -64,12 +75,36 @@ class ConditionsController: UIViewController {
                 conditions.insert(key)
             }
         }
+        monster.monsterModel.eotSave = nil
+        monster.monsterModel.eotDamage = nil
+        if let dmg = Int(self.DamageField.text ?? ""), dmg != 0 {
+            monster.monsterModel.eotDamage = dmg
+        }
+        for button in saveButtons {
+            if button.isEnabled == false, button.title(for: .normal) != "None" {
+                monster.monsterModel.eotSave = button.title(for: .normal)
+                monster.monsterModel.eotSaveDC = Int(self.saveDCField.text ?? "")
+            }
+        }
         monster.monsterModel.conditions = conditions
         monsterVc.conditionsLabel.text = monster.conditions
         monsterVc.masterVc?.tableView.reloadData()
         monsterVc.masterVc?.selectMonsterWith(name: monster.name)
+        
     }
     
+    @IBAction func SaveButtonTouched(_ sender: BlackButton) {
+        for button in saveButtons {
+            if button == sender {
+                button.isEnabled = false
+            } else {
+                button.isEnabled = true
+            }
+        }
+        if sender.title(for: .normal) == "None" {
+            self.saveDCField.text = ""
+        }
+    }
     
 
 }

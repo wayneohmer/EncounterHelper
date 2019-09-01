@@ -76,16 +76,33 @@ class Monster  {
         return 0
         
     }
-    var conditions:String { return Array(monsterModel.conditions ?? Set<String>()).sorted().joined(separator: ", ") }
+    var conditions:String {
+        var returnString = Array(monsterModel.conditions ?? Set<String>()).sorted().joined(separator: ", ")
+        if let eotDmg = monsterModel.eotDamage {
+            returnString += " EOT: \(eotDmg) Damage"
+            if let eotSave = monsterModel.eotSave {
+                returnString += " \(eotSave) Save DC:\(eotSaveDC ?? 0)"
+            }
+        } else {
+            if let eotSave = monsterModel.eotSave {
+                returnString += " EOT: \(eotSave) Save DC:\(eotSaveDC ?? 0)"
+            }
+        }
+        
+        return returnString
+        
+    }
     var eotSave:String? { return monsterModel.eotSave }
+    var eotSaveDC:Int? { return monsterModel.eotSaveDC }
     var eotDamage:Int? { return monsterModel.eotDamage }
 
 
     var actions:[Action] { return monsterModel.actions ?? [Action]() }
     var specialAbilities:[Action] { return monsterModel.special_abilities ?? [Action]() }
     var legondaryActions:[Action] { return monsterModel.legendary_actions ?? [Action]() }
-    
-    var allActions:[[Action]] { return [actions,specialAbilities,legondaryActions]}
+    var log:[Action] { return monsterModel.log ?? [Action]() }
+
+    var allActions:[[Action]] { return [actions,specialAbilities,legondaryActions,log]}
 
     var traits:NSAttributedString? {
         guard let htmlData = NSString(string: metaMonster.Traits ?? "").data(using: String.Encoding.unicode.rawValue) else {
@@ -127,6 +144,10 @@ class Monster  {
             if storedImage != nil {
                 return storedImage
             }
+//            if let image = UIImage(named: self.name) {
+//                self.storedImage = image
+//                return image
+//            }
             if let imageData = try? Data(contentsOf: imagePath) {
                 if let image = UIImage(data: imageData) {
                     self.storedImage = image
@@ -157,6 +178,13 @@ class Monster  {
             }
             self.monsterModel.currentHitPoints = self.monsterModel.maxHitPoints
         }
+    }
+    
+    func addLog(desc:String) {
+        if monsterModel.log == nil {
+            monsterModel.log = [Action]()
+        }
+        monsterModel.log?.insert(Action(desc: desc), at: 0)
     }
     
     func restoreWith(model: MonsterModel) {
@@ -252,14 +280,17 @@ struct MonsterModel: Codable  {
     var conditions:Set<String>? = Set<String>()
     var eotDamage:Int?
     var eotSave:String?
-    
+    var eotSaveDC:Int?
+
     var special_abilities:[Action]?
     var actions:[Action]?
     var legendary_actions:[Action]?
+    var log:[Action]?
     var metaModel:MonsterMetaModel?
 
-
 }
+
+
 
 struct Action: Codable {
     var name:String = ""
@@ -267,6 +298,10 @@ struct Action: Codable {
     var attack_bonus:Int?
     var damage_dice:String?
     var damage_bonus:Int?
+    
+    init(desc:String) {
+        self.desc = desc
+    }
 }
 
 struct MonsterMetaModel: Codable  {
