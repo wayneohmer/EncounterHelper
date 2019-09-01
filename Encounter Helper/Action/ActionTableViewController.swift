@@ -12,8 +12,7 @@ class ActionTableViewController: UITableViewController {
 
     var monster = Monster()
     var titles = ["Actions","Special Abilities","Legondary Actions","Log"]
-    var monsterVc = DetailViewController()
-    
+    var monsterVc:DetailViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
 
