@@ -46,7 +46,7 @@ class Encounter_HelperTests: XCTestCase {
     }
     
     func testExample2() {
-        if let path = Bundle.main.path(forResource: "srd_5e_monsters", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "conditions", ofType: "json") {
             fileURL = URL(fileURLWithPath:path)
         } else {
             XCTAssert(false)
@@ -56,7 +56,7 @@ class Encounter_HelperTests: XCTestCase {
             let data = try Data(contentsOf: fileURL!, options: .mappedIfSafe)
             do {
                 let decoder = JSONDecoder()
-                monsterMetaArray = try decoder.decode([MonsterMetaModel].self, from: data)
+                let conditions = try decoder.decode(Conditions.self, from: data)
             } catch {
                 print(error)
                 XCTAssert(false, error.localizedDescription)

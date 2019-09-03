@@ -308,11 +308,15 @@
                                     <segue destination="0PT-GN-Yt4" kind="embed" identifier="actionEmbed" id="8SA-w7-j7a"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Poisoned, Paralyzed, blinded, charmed, Incopacitated" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWL-3g-Hnl">
+                            <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="Poisoned, Paralyzed, blinded, charmed, Incopacitated" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWL-3g-Hnl">
                                 <rect key="frame" x="385" y="171" width="367" height="45.5"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <color key="textColor" red="0.17271350899999999" green="0.91751509899999995" blue="0.050922417560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="msY-gt-ANN" appends="YES" id="CRB-uH-hRQ"/>
+                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -420,6 +424,9 @@
                         <outlet property="strButton" destination="fQa-rt-1bh" id="jko-Vp-x8i"/>
                         <outlet property="wisButton" destination="3Q8-Zn-YDz" id="eKW-D7-s4j"/>
                         <segue destination="x0b-xe-jz4" kind="presentation" identifier="massSpell" id="yLu-Ef-vwU"/>
+                        <segue destination="ijJ-DQ-tdY" kind="popoverPresentation" identifier="conditionsDesc" popoverAnchorView="bWL-3g-Hnl" id="E4U-B6-dNr">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7Q-Gk-b4k" sceneMemberID="firstResponder"/>
@@ -433,6 +440,11 @@
                 <tapGestureRecognizer id="Z0A-Pj-mhs">
                     <connections>
                         <action selector="imageTouched" destination="DwA-FD-pM7" id="nmL-CC-4LS"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="msY-gt-ANN">
+                    <connections>
+                        <action selector="conditionsTouched:" destination="DwA-FD-pM7" id="yEU-LI-4l7"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -501,7 +513,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ny6-e6-er9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31236" y="519"/>
+            <point key="canvasLocation" x="30469" y="756"/>
         </scene>
         <!--Dice Controller-->
         <scene sceneID="xsZ-Pl-09Y">
@@ -1576,6 +1588,55 @@
             </objects>
             <point key="canvasLocation" x="31073.4375" y="84.9609375"/>
         </scene>
+        <!--Conditions Desc Controller-->
+        <scene sceneID="1LU-tn-sjY">
+            <objects>
+                <tableViewController id="ijJ-DQ-tdY" customClass="ConditionsDescController" customModule="Encounter_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gDC-3O-4Lf">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CondtionsDescCell" id="QeO-eI-BoH" customClass="CondtionsDescCell" customModule="Encounter_Helper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="500" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QeO-eI-BoH" id="WK5-M2-kMG">
+                                    <rect key="frame" x="0.0" y="0.0" width="500" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJE-Gz-c5H">
+                                            <rect key="frame" x="16" y="8" width="418" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="GJE-Gz-c5H" secondAttribute="trailing" constant="16" id="bdh-CK-jdh"/>
+                                        <constraint firstItem="GJE-Gz-c5H" firstAttribute="leading" secondItem="WK5-M2-kMG" secondAttribute="leading" constant="16" id="ohU-Hz-gSp"/>
+                                        <constraint firstAttribute="bottom" secondItem="GJE-Gz-c5H" secondAttribute="bottom" constant="8" id="uVL-9T-T4g"/>
+                                        <constraint firstItem="GJE-Gz-c5H" firstAttribute="top" secondItem="WK5-M2-kMG" secondAttribute="top" constant="8" id="wH9-MJ-MDr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="GJE-Gz-c5H" id="hHN-mf-12v"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ijJ-DQ-tdY" id="ukf-hT-AHK"/>
+                            <outlet property="delegate" destination="ijJ-DQ-tdY" id="WGe-cW-zw0"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="500" height="700"/>
+                    <size key="freeformSize" width="500" height="500"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E7n-Lo-iio" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31093" y="384"/>
+        </scene>
         <!--Dice Controller-->
         <scene sceneID="Pgu-v4-pg8">
             <objects>
@@ -2110,7 +2171,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gO7-58-JtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pAt-T8-N8a" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="31319.140625" y="-258.10546875"/>
+            <point key="canvasLocation" x="30991" y="720"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dhy-06-baT">

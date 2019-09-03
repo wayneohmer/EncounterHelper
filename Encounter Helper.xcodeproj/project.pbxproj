@@ -23,6 +23,10 @@
 		2B340049230B943B003AE875 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340048230B943B003AE875 /* ActionCell.swift */; };
 		2B34004B230B94FE003AE875 /* ActionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34004A230B94FE003AE875 /* ActionTableViewController.swift */; };
 		2B340055230C84F8003AE875 /* BlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340054230C84F8003AE875 /* BlackButton.swift */; };
+		2BA2C645231DAB1000602491 /* conditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2C644231DAB1000602491 /* conditions.json */; };
+		2BA2C646231DAC5600602491 /* conditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2C644231DAB1000602491 /* conditions.json */; };
+		2BA2C648231DB07400602491 /* ConditionsDescController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2C647231DB07400602491 /* ConditionsDescController.swift */; };
+		2BA2C64A231DB4C800602491 /* CondtionsDescCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2C649231DB4C800602491 /* CondtionsDescCell.swift */; };
 		2BAC383B2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF9A8A2309F37500DEB8CD /* 5e-SRD-MonstersCopy.json */; };
 		2BAC383C2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF9A8A2309F37500DEB8CD /* 5e-SRD-MonstersCopy.json */; };
 		2BAC383E2309FC0400A1CAEA /* MonsterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */; };
@@ -72,6 +76,9 @@
 		2B340048230B943B003AE875 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		2B34004A230B94FE003AE875 /* ActionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewController.swift; sourceTree = "<group>"; };
 		2B340054230C84F8003AE875 /* BlackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackButton.swift; sourceTree = "<group>"; };
+		2BA2C644231DAB1000602491 /* conditions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = conditions.json; sourceTree = "<group>"; };
+		2BA2C647231DB07400602491 /* ConditionsDescController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsDescController.swift; sourceTree = "<group>"; };
+		2BA2C649231DB4C800602491 /* CondtionsDescCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondtionsDescCell.swift; sourceTree = "<group>"; };
 		2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterListCell.swift; sourceTree = "<group>"; };
 		2BAC383F230A04C100A1CAEA /* srd_5e_monsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = srd_5e_monsters.json; sourceTree = "<group>"; };
 		2BEF9A602309E85000DEB8CD /* Encounter Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Encounter Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,10 +174,20 @@
 				2BEF9A672309E85000DEB8CD /* DetailViewController.swift */,
 				2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */,
 				2BFCD5712312295200804A0D /* HitPointEditorController.swift */,
-				2BFCD57323132FE800804A0D /* ConditionsController.swift */,
 				2B17F76523108F2A0061EB5A /* Monster.storyboard */,
+				2BA2C64B231DE21E00602491 /* Conditions */,
 			);
 			path = Monsters;
+			sourceTree = "<group>";
+		};
+		2BA2C64B231DE21E00602491 /* Conditions */ = {
+			isa = PBXGroup;
+			children = (
+				2BFCD57323132FE800804A0D /* ConditionsController.swift */,
+				2BA2C647231DB07400602491 /* ConditionsDescController.swift */,
+				2BA2C649231DB4C800602491 /* CondtionsDescCell.swift */,
+			);
+			path = Conditions;
 			sourceTree = "<group>";
 		};
 		2BEF9A572309E85000DEB8CD = {
@@ -216,6 +233,7 @@
 				2BEF9A8A2309F37500DEB8CD /* 5e-SRD-MonstersCopy.json */,
 				2BEF9A7A2309E85300DEB8CD /* Encounter_HelperTests.swift */,
 				2BEF9A7C2309E85300DEB8CD /* Info.plist */,
+				2BA2C644231DAB1000602491 /* conditions.json */,
 			);
 			path = "Encounter HelperTests";
 			sourceTree = "<group>";
@@ -304,6 +322,7 @@
 				2BFCD5B62314906600804A0D /* MassSpell.storyboard in Resources */,
 				2BEF9A892309F32000DEB8CD /* 5e-SRD-Monsters.json in Resources */,
 				2BEF9A702309E85200DEB8CD /* LaunchScreen.storyboard in Resources */,
+				2BA2C646231DAC5600602491 /* conditions.json in Resources */,
 				2BAC3841230A05FB00A1CAEA /* srd_5e_monsters.json in Resources */,
 				2BAC383B2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */,
 				2B17F7822310A7EC0061EB5A /* 10dice.aif in Resources */,
@@ -322,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BEF9A862309EC5900DEB8CD /* 5e-SRD-Monsters.json in Resources */,
+				2BA2C645231DAB1000602491 /* conditions.json in Resources */,
 				2BAC383C2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */,
 				2BAC3840230A04C100A1CAEA /* srd_5e_monsters.json in Resources */,
 			);
@@ -339,7 +359,9 @@
 				2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */,
 				2BFCD5722312295200804A0D /* HitPointEditorController.swift in Sources */,
 				2B340055230C84F8003AE875 /* BlackButton.swift in Sources */,
+				2BA2C64A231DB4C800602491 /* CondtionsDescCell.swift in Sources */,
 				2B17F7752310A2EF0061EB5A /* AdvantageSwitch.swift in Sources */,
+				2BA2C648231DB07400602491 /* ConditionsDescController.swift in Sources */,
 				2B340049230B943B003AE875 /* ActionCell.swift in Sources */,
 				2BFCD5BA2314947E00804A0D /* MassSpellController.swift in Sources */,
 				2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */,

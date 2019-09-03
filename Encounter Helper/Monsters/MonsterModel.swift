@@ -19,8 +19,49 @@ enum Attribute : String {
 
 }
 
+
+
+//1/4    50         16    15,000
+//1/2    100         17    18,000
+//1    200         18    20,000
+//2    450         19    22,000
+//3    700         20    25,000
+//4    1,100         21    33,000
+//5    1,800         22    41,000
+//6    2,300         23    50,000
+//7    2,900         24    62,000
+//8    3,900         25    75,000
+
 class Monster  {
     
+    static let crDict:[String:Int] = ["1/8":25,
+                                      "1/4":50,
+                                      "1/2":100,
+                                      "3":700,
+                                      "4":1100,
+                                      "5":1800,
+                                      "6":2300,
+                                      "7":2900,
+                                      "8":3900,
+                                      "9":5000,
+                                      "10":5900,
+                                      "11":7200,
+                                      "12":8400,
+                                      "13":10000,
+                                      "14":11500,
+                                      "15":13000,
+                                      "16":15000,
+                                      "17":18000,
+                                      "18":20000,
+                                      "19":22000,
+                                      "20":25000,
+                                      "21":33000,
+                                      "22":41000,
+                                      "23":50000,
+                                      "24":62000,
+                                      "25":75000,
+                                      "30":75000]
+
     static var sharedMonsters = [Monster]()
     static var imageFileNames = Set<String>()
     var imagePath:URL { return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("images\(storedImageFileName ?? "")") }
@@ -95,6 +136,7 @@ class Monster  {
     var eotSave:String? { return monsterModel.eotSave }
     var eotSaveDC:Int? { return monsterModel.eotSaveDC }
     var eotDamage:Int? { return monsterModel.eotDamage }
+    var experience:Int { return Monster.crDict[monsterModel.challenge_rating] ?? 0 }
 
 
     var actions:[Action] { return monsterModel.actions ?? [Action]() }
@@ -131,7 +173,19 @@ class Monster  {
             return storedImageFileName
         }
     }
-
+    
+    static var condtionsDesc:[String:[String]] = {
+        
+        guard let path = Bundle.main.path(forResource: "conditions", ofType: "json") else {
+            return [String:[String]]()
+        }
+        let fileURL = URL(fileURLWithPath:path)
+        let data = try! Data(contentsOf: fileURL, options: .mappedIfSafe)
+        let decoder = JSONDecoder()
+        let conditions = try! decoder.decode(Conditions.self, from: data)
+        return conditions.contentDict ?? [String:[String]]()
+    }()
+    
     var image:UIImage? {
         set {
             if let newValue = newValue {
@@ -144,10 +198,13 @@ class Monster  {
             if storedImage != nil {
                 return storedImage
             }
-//            if let image = UIImage(named: self.name) {
-//                self.storedImage = image
-//                return image
-//            }
+            if let image = UIImage(named: self.name) {
+                self.storedImage = image
+                imageFileName = name
+                try? self.storedImage?.jpegData(compressionQuality: 1)?.write(to: imagePath)
+                
+                return image
+            }
             if let imageData = try? Data(contentsOf: imagePath) {
                 if let image = UIImage(data: imageData) {
                     self.storedImage = image
@@ -312,4 +369,8 @@ struct MonsterMetaModel: Codable  {
     var Actions:String?
     var img_url:String?
 
+}
+
+struct Conditions: Codable {
+    var contentDict:[String:[String]]?
 }

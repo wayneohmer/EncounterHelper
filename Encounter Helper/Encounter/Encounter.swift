@@ -19,6 +19,7 @@ class Encounter {
     var fileName = ""
     var isStarted = false
     var monsters = [Monster]()
+    var round = Int(0)
     
     var saveable:SavebleEncounter {
         var modelArray = [MonsterModel]()
@@ -26,7 +27,7 @@ class Encounter {
             modelArray.append(monster.monsterModel)
         }
         
-        return SavebleEncounter(name: name, fileName:fileName, monsters: modelArray)
+        return SavebleEncounter(name: name, fileName:fileName, round: round, monsters: modelArray)
     }
     
     convenience init(name:String) {
@@ -73,5 +74,6 @@ struct SavebleEncounter:Codable {
     
     var name = ""
     var fileName = ""
+    var round = Int(0)
     var monsters = [MonsterModel]()
 }

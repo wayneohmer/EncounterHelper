@@ -70,6 +70,7 @@ class ConditionsController: UIViewController {
         super.viewWillDisappear(animated)
         guard let monster = monsterVc.monster else { return }
         var conditions = Set<String>()
+        let oldConditions = monster.conditions
         for (key,item) in switchDict {
             if item.isOn {
                 conditions.insert(key)
@@ -90,6 +91,16 @@ class ConditionsController: UIViewController {
         monsterVc.conditionsLabel.text = monster.conditions
         monsterVc.masterVc?.tableView.reloadData()
         monsterVc.masterVc?.selectMonsterWith(name: monster.name)
+        if oldConditions != monster.conditions {
+            if monster.conditions == "" {
+                monsterVc.logMessage(message: "Conditions Removed: \(oldConditions)")
+                
+            } else if oldConditions == "" {
+                monsterVc.logMessage(message: "Conditions Added: \(monster.conditions)")
+            } else {
+                monsterVc.logMessage(message: "Conditions Changed: \(oldConditions) To \(monster.conditions)")
+            }
+        }
         
     }
     

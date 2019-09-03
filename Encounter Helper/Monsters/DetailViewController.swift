@@ -131,9 +131,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             })
         }
         if let vc = masterVc {
-            self.startButton.title = vc.encounter.isStarted ? "Finsh" : "Start"
+            self.startButton.title = vc.encounter.isStarted ? "Finish" : "Start"
             self.navigationItem.rightBarButtonItems = vc.encounter.isStarted ? ecounterBarButtons : noEcounterBarButtons
         }
+        self.navigationItem.title = "Round \(masterVc?.encounter.round ?? 0)"
     }
     
     func fixButtonTitleWith(attribute:String, score:Int, save:Int?) -> String {
@@ -160,7 +161,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
 
     func logMessage(message: String) {
-        self.monster?.addLog(desc: message)
+        self.monster?.addLog(desc: "Round \(masterVc?.encounter.round ?? 0) \(message)")
         self.actionVc.tableView.reloadData()
     }
     
@@ -198,6 +199,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                 self.navigationItem.rightBarButtonItems = noEcounterBarButtons
             }
             self.startButton.title = masterVc?.encounter.isStarted ?? false ? "Finish" : "Start"
+            vc.encounter.round = 1
+            self.navigationItem.title = "Round \(masterVc?.encounter.round ?? 0)"
+
         }
     }
     
@@ -229,7 +233,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.present(alertController, animated: true, completion: nil)
 
     }
-
+    @IBAction func conditionsTouched(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "conditionsDesc", sender: nil)
+    }
+    
     @IBAction func imageTouched() {
         let alertController = UIAlertController(title: "Add Image", message: "", preferredStyle: .actionSheet)
         
@@ -346,6 +353,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             if let vc = segue.destination as? MassSpellController {
                 vc.encounter = self.masterVc?.encounter ?? Encounter()
                 vc.attribute = sender as? Attribute ?? Attribute.Strength
+            }
+        case "conditionsDesc":
+            if let vc = segue.destination as? ConditionsDescController {
+                vc.conditions = Array(monster?.monsterModel.conditions ?? Set<String>())
             }
             
         default:

@@ -8,18 +8,22 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, UITextFieldDelegate {
 
     var detailViewController: DetailViewController? = nil
     var filterdMonsters = [Monster]()
     var encounter = Encounter()
-    let searchController = UISearchController(searchResultsController: nil)
     let titleButton =  UIButton(type: .custom)
+    var searchCRMin:Float { return Float(crMinField.text ?? "") ?? 0 }
+    var searchCRMax:Float { return Float(crMaxField.text ?? "") ?? 999 }
 
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var searchName: UITextField!
+    @IBOutlet weak var crMinField: UITextField!
+    @IBOutlet weak var crMaxField: UITextField!
     
     var monsters = [Monster]()
-    var isEncounter:Bool { return monsters.count != Monster.sharedMonsters.count }
+    var isEncounter:Bool { return monsters.count == encounter.monsters.count }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +36,7 @@ class MasterViewController: UITableViewController {
         if Monster.sharedMonsters.count == 0 {
             Monster.readMonsters()
         }
-        // Setup the Search Controller
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Monsters"
-        searchController.searchBar.tintColor = .white
-        searchController.searchBar.barStyle = .black
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+        
         
         self.tableView.estimatedRowHeight = 60
         self.tableView.tableFooterView = UIView()
@@ -68,8 +65,14 @@ class MasterViewController: UITableViewController {
     }
     
     @objc func flipTouched() {
-        monsters = isEncounter ? Monster.sharedMonsters : encounter.monsters
-        //monsters.sort(by: {$0.challengeRating < $1.challengeRating })
+        monsters = self.titleButton.title(for: .normal) != "All" ? Monster.sharedMonsters : encounter.monsters
+        monsters.sort(by: {
+            if $0.challengeRating == $1.challengeRating {
+                return $0.name < $1.name
+            } else {
+                return $0.challengeRating < $1.challengeRating
+            }
+        })
         let title = isEncounter ?  self.encounter.name : "All"
         self.titleButton.setTitle(title, for: .normal)
         tableView.reloadData()
@@ -82,6 +85,12 @@ class MasterViewController: UITableViewController {
             }
         }
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        filterContentForSearchText(searchName.text ?? "", scope: "All")
+        textField.resignFirstResponder()
+        return true
+    }
+    
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -112,6 +121,18 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return isEncounter ? nil : self.headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if !isEncounter {
+            return 95
+        } else {
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -147,18 +168,26 @@ class MasterViewController: UITableViewController {
     
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
-        return searchController.searchBar.text?.isEmpty ?? true
+        return (searchName.text?.isEmpty ?? true && crMinField.text?.isEmpty ?? true && crMaxField.text?.isEmpty ?? true) 
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filterdMonsters = monsters.filter({( monster:Monster) -> Bool in
-            return monster.name.lowercased().contains(searchText.lowercased())
+            if monster.challengeRating >= searchCRMin && monster.challengeRating <= searchCRMax {
+                if searchText != "" {
+                    return monster.name.lowercased().contains(searchText.lowercased())
+                } else {
+                    return true
+                }
+            } else {
+                return false
+            }
         })
         
         tableView.reloadData()
     }
     func isFiltering() -> Bool {
-        return searchController.isActive && !searchBarIsEmpty()
+        return !searchBarIsEmpty() && !isEncounter
     }
     
     @IBAction func tableButtonTouched(_ sender: UIButton) {
@@ -175,12 +204,5 @@ class MasterViewController: UITableViewController {
 
 }
 
-extension MasterViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
-
-    }
-}
 
 

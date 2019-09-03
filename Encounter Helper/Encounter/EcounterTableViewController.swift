@@ -53,7 +53,8 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EncounterCell", for: indexPath) as! EncounterCell
 
-        cell.nameLabel.text = Encounter.sharedEncounters[indexPath.row].name
+        let encounter = Encounter.sharedEncounters[indexPath.row]
+        cell.nameLabel.text = "\(encounter.name) - \(encounter.monsters.map({$0.experience}).reduce(0, + ))"
 
         return cell
     }
