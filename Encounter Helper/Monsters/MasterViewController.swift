@@ -33,10 +33,7 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        if Monster.sharedMonsters.count == 0 {
-            Monster.readMonsters()
-        }
-        
+        Monster.readMonsters()
         
         self.tableView.estimatedRowHeight = 60
         self.tableView.tableFooterView = UIView()
@@ -65,7 +62,7 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @objc func flipTouched() {
-        monsters = self.titleButton.title(for: .normal) != "All" ? Monster.sharedMonsters : encounter.monsters
+        monsters = self.titleButton.title(for: .normal) != "All" ? Array(Monster.sharedMonsters) : encounter.monsters
         monsters.sort(by: {
             if $0.challengeRating == $1.challengeRating {
                 return $0.name < $1.name

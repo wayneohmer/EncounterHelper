@@ -52,10 +52,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     var monster:Monster?
     var masterVc:MasterViewController?
+    var encounter:Encounter { return masterVc?.encounter ?? Encounter() }
     var ecounterBarButtons:[UIBarButtonItem] { return [startButton,condictionsButton,diceButton,massSpellButton]}
     var noEcounterBarButtons:[UIBarButtonItem] { return [startButton,duplicateButton]}
     var allBarButtons = [UIBarButtonItem]()
     var actionVc = ActionTableViewController()
+    let titleButton =  UIButton(type: .custom)
 
     func configureView() {
         if let monster = self.monster {
@@ -113,6 +115,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItems = noEcounterBarButtons
+        titleButton.frame = CGRect(x: 0, y: 0, width: 250, height: 40)
+        titleButton.backgroundColor = UIColor(red: 35/255, green: 34/255, blue: 34/255, alpha: 1)
+        titleButton.setTitle("Round \(encounter.round)", for: .normal)
+        titleButton.addTarget(self, action: #selector(roundTouched), for: .touchUpInside)
+        self.navigationItem.titleView = titleButton
         configureView()
     }
     
@@ -134,7 +141,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             self.startButton.title = vc.encounter.isStarted ? "Finish" : "Start"
             self.navigationItem.rightBarButtonItems = vc.encounter.isStarted ? ecounterBarButtons : noEcounterBarButtons
         }
-        self.navigationItem.title = "Round \(masterVc?.encounter.round ?? 0)"
+        self.navigationItem.title = "Round \(encounter.round)"
     }
     
     func fixButtonTitleWith(attribute:String, score:Int, save:Int?) -> String {
@@ -145,6 +152,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             title = "\(title)/\(save!)"
         }
         return title
+    }
+    
+    @objc func roundTouched() {
+        encounter.round += 1
+        titleButton.setTitle("Round \(encounter.round)", for: .normal)
     }
     
     func updateHP() {
@@ -161,7 +173,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
 
     func logMessage(message: String) {
-        self.monster?.addLog(desc: "Round \(masterVc?.encounter.round ?? 0) \(message)")
+        self.monster?.addLog(desc: "Round \(encounter.round) \(message)")
         self.actionVc.tableView.reloadData()
     }
     
@@ -174,7 +186,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             num += 1
             components.removeLast()
             newMonster.monsterModel.name = "\(components.joined(separator: " ")) \(num)"
-            while self.masterVc?.encounter.monsters.filter({ $0.name == newMonster.name }).count ?? 0 > 0 {
+            while self.encounter.monsters.filter({ $0.name == newMonster.name }).count > 0 {
                 num += 1
                 newMonster.monsterModel.name = "\(components.joined(separator: " ")) \(num)"
             }
@@ -182,9 +194,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             self.monster?.monsterModel.name = "\(newMonster.name) 1"
             newMonster.monsterModel.name = "\(newMonster.name) 2"
         }
-        self.masterVc?.encounter.monsters.append(newMonster)
-        self.masterVc?.encounter.monsters.sort(by: { $0.name < $1.name })
-        self.masterVc?.monsters = masterVc?.encounter.monsters ?? [Monster]()
+        self.encounter.monsters.append(newMonster)
+        self.encounter.monsters.sort(by: { $0.name < $1.name })
+        self.masterVc?.monsters = encounter.monsters
         self.masterVc?.tableView.reloadData()
         self.monster = newMonster
         self.masterVc?.selectMonsterWith(name: newMonster.name)
@@ -194,13 +206,23 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         if let vc = masterVc {
             vc.encounter.isStarted = !vc.encounter.isStarted
             if vc.encounter.isStarted {
+                let alertController = UIAlertController(title: "Randomize HP?", message: "", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { alertAction in
+                    for monster in self.encounter.monsters {
+                        monster.randomizeHP()
+                    }
+                    self.updateHP()
+                }))
+                alertController.addAction(UIAlertAction(title: "No", style: .default))
+                self.present(alertController, animated: true)
+                
                 self.navigationItem.rightBarButtonItems = ecounterBarButtons
             } else {
                 self.navigationItem.rightBarButtonItems = noEcounterBarButtons
             }
-            self.startButton.title = masterVc?.encounter.isStarted ?? false ? "Finish" : "Start"
+            self.startButton.title = encounter.isStarted ? "Finish" : "Start"
             vc.encounter.round = 1
-            self.navigationItem.title = "Round \(masterVc?.encounter.round ?? 0)"
+            self.navigationItem.title = "Round \(encounter.round)"
 
         }
     }
@@ -233,6 +255,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.present(alertController, animated: true, completion: nil)
 
     }
+    
     @IBAction func conditionsTouched(_ sender: UITapGestureRecognizer) {
         self.performSegue(withIdentifier: "conditionsDesc", sender: nil)
     }
@@ -351,7 +374,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             }
         case "massSpell":
             if let vc = segue.destination as? MassSpellController {
-                vc.encounter = self.masterVc?.encounter ?? Encounter()
+                vc.encounter = self.encounter
                 vc.attribute = sender as? Attribute ?? Attribute.Strength
             }
         case "conditionsDesc":

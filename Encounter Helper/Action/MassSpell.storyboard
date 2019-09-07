@@ -27,10 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gd1-Jn-F0L">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1092"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="oe7-eQ-3wM"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="20" width="208.5" height="1092"/>
                                 <connections>
                                     <segue destination="8D5-te-y6R" kind="embed" id="7fu-4u-KyB"/>
                                 </connections>
@@ -50,7 +47,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-cm-9BY">
-                                <rect key="frame" x="383" y="28" width="120" height="112"/>
+                                <rect key="frame" x="216.5" y="28" width="120" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-gJ-1wP">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
@@ -75,7 +72,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gaE-Bx-PBx">
-                                <rect key="frame" x="519" y="28" width="120" height="160"/>
+                                <rect key="frame" x="352.5" y="28" width="120" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-Yf-8Ed">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
@@ -113,7 +110,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VBR-dG-ntf">
-                                <rect key="frame" x="391" y="204" width="248" height="106"/>
+                                <rect key="frame" x="224.5" y="204" width="248" height="106"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJ9-nd-g4M" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="248" height="50"/>
@@ -148,9 +145,9 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ako-34-BOp">
-                                <rect key="frame" x="391" y="326" width="450" height="325"/>
+                                <rect key="frame" x="224.5" y="326" width="450" height="390"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="325" id="5G7-Gp-SE1"/>
+                                    <constraint firstAttribute="height" constant="390" id="5G7-Gp-SE1"/>
                                     <constraint firstAttribute="width" constant="450" id="7Ut-ie-6Ch"/>
                                 </constraints>
                                 <connections>
@@ -173,6 +170,7 @@
                             <constraint firstItem="gd1-Jn-F0L" firstAttribute="leading" secondItem="Hv3-Bh-zlV" secondAttribute="leading" id="fYk-zC-cat"/>
                             <constraint firstItem="yDN-cm-9BY" firstAttribute="top" secondItem="Hv3-Bh-zlV" secondAttribute="top" constant="8" id="hwV-7U-sBf"/>
                             <constraint firstItem="VBR-dG-ntf" firstAttribute="top" secondItem="gaE-Bx-PBx" secondAttribute="bottom" constant="16" id="mSf-Dn-5Wj"/>
+                            <constraint firstItem="gd1-Jn-F0L" firstAttribute="width" secondItem="yNi-3s-EQj" secondAttribute="width" multiplier="25%" id="tEw-bU-dNH"/>
                             <constraint firstItem="Y8u-Gc-NZ9" firstAttribute="top" secondItem="Hv3-Bh-zlV" secondAttribute="top" constant="8" id="ved-6a-Evw"/>
                             <constraint firstItem="gaE-Bx-PBx" firstAttribute="leading" secondItem="yDN-cm-9BY" secondAttribute="trailing" constant="16" id="wBO-a7-tah"/>
                         </constraints>
@@ -196,16 +194,16 @@
             <objects>
                 <tableViewController id="8D5-te-y6R" customClass="MassSpellMonsterController" customModule="Encounter_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kzg-vi-9AK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1092"/>
+                        <rect key="frame" x="0.0" y="0.0" width="208.5" height="1092"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.18039405345916748" green="0.17642879486083984" blue="0.18039089441299438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MonsterEncounterCell" rowHeight="106" id="5wt-CH-la6" customClass="MonsterListCell" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="106"/>
+                                <rect key="frame" x="0.0" y="28" width="208.5" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5wt-CH-la6" id="xm8-6p-b9d">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="208.5" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-R4-Upd">

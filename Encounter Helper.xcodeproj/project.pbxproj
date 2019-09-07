@@ -18,6 +18,10 @@
 		2B17F7822310A7EC0061EB5A /* 10dice.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F77D2310A7EC0061EB5A /* 10dice.aif */; };
 		2B17F7832310A7EC0061EB5A /* Awww.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F77E2310A7EC0061EB5A /* Awww.aif */; };
 		2B17F7842310A7EC0061EB5A /* 1die.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F77F2310A7EC0061EB5A /* 1die.aif */; };
+		2B2A0EEC2324545B00030C0F /* spells.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A0EEB2324545B00030C0F /* spells.json */; };
+		2B2A0EED2324545B00030C0F /* spells.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A0EEB2324545B00030C0F /* spells.json */; };
+		2B2A0EEF2324547C00030C0F /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A0EEE2324547C00030C0F /* Spell.swift */; };
+		2B2A0EF02324547C00030C0F /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A0EEE2324547C00030C0F /* Spell.swift */; };
 		2B340045230B4E7B003AE875 /* Encounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340044230B4E7B003AE875 /* Encounter.swift */; };
 		2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340046230B5232003AE875 /* EcounterTableViewController.swift */; };
 		2B340049230B943B003AE875 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340048230B943B003AE875 /* ActionCell.swift */; };
@@ -71,6 +75,8 @@
 		2B17F77D2310A7EC0061EB5A /* 10dice.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10dice.aif; sourceTree = "<group>"; };
 		2B17F77E2310A7EC0061EB5A /* Awww.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Awww.aif; sourceTree = "<group>"; };
 		2B17F77F2310A7EC0061EB5A /* 1die.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1die.aif; sourceTree = "<group>"; };
+		2B2A0EEB2324545B00030C0F /* spells.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spells.json; sourceTree = "<group>"; };
+		2B2A0EEE2324547C00030C0F /* Spell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
 		2B340044230B4E7B003AE875 /* Encounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounter.swift; sourceTree = "<group>"; };
 		2B340046230B5232003AE875 /* EcounterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcounterTableViewController.swift; sourceTree = "<group>"; };
 		2B340048230B943B003AE875 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 				2BEF9A712309E85200DEB8CD /* Info.plist */,
 				2BEF9A6E2309E85200DEB8CD /* LaunchScreen.storyboard */,
 				2B340054230C84F8003AE875 /* BlackButton.swift */,
+				2B2A0EEE2324547C00030C0F /* Spell.swift */,
 			);
 			path = "Encounter Helper";
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 		2BEF9A792309E85300DEB8CD /* Encounter HelperTests */ = {
 			isa = PBXGroup;
 			children = (
+				2B2A0EEB2324545B00030C0F /* spells.json */,
 				2BEF9A852309EC5900DEB8CD /* 5e-SRD-Monsters.json */,
 				2BAC383F230A04C100A1CAEA /* srd_5e_monsters.json */,
 				2BEF9A8A2309F37500DEB8CD /* 5e-SRD-MonstersCopy.json */,
@@ -322,6 +330,7 @@
 				2BFCD5B62314906600804A0D /* MassSpell.storyboard in Resources */,
 				2BEF9A892309F32000DEB8CD /* 5e-SRD-Monsters.json in Resources */,
 				2BEF9A702309E85200DEB8CD /* LaunchScreen.storyboard in Resources */,
+				2B2A0EEC2324545B00030C0F /* spells.json in Resources */,
 				2BA2C646231DAC5600602491 /* conditions.json in Resources */,
 				2BAC3841230A05FB00A1CAEA /* srd_5e_monsters.json in Resources */,
 				2BAC383B2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */,
@@ -343,6 +352,7 @@
 				2BEF9A862309EC5900DEB8CD /* 5e-SRD-Monsters.json in Resources */,
 				2BA2C645231DAB1000602491 /* conditions.json in Resources */,
 				2BAC383C2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */,
+				2B2A0EED2324545B00030C0F /* spells.json in Resources */,
 				2BAC3840230A04C100A1CAEA /* srd_5e_monsters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +368,7 @@
 				2BEF9A682309E85000DEB8CD /* DetailViewController.swift in Sources */,
 				2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */,
 				2BFCD5722312295200804A0D /* HitPointEditorController.swift in Sources */,
+				2B2A0EEF2324547C00030C0F /* Spell.swift in Sources */,
 				2B340055230C84F8003AE875 /* BlackButton.swift in Sources */,
 				2BA2C64A231DB4C800602491 /* CondtionsDescCell.swift in Sources */,
 				2B17F7752310A2EF0061EB5A /* AdvantageSwitch.swift in Sources */,
@@ -382,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2A0EF02324547C00030C0F /* Spell.swift in Sources */,
 				2BEF9A7B2309E85300DEB8CD /* Encounter_HelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8645,6 +8645,59 @@
     ]
   },
   {
+      "name": "Goblin Boss",
+      "size": "Small",
+      "type": "humanoid",
+      "subtype": "goblinoid",
+      "alignment": "neutral evil",
+      "armor_class": 17,
+      "hit_points": 12,
+      "hit_dice": "6d6",
+      "speed": "30 ft.",
+      "strength": 10,
+      "dexterity": 14,
+      "constitution": 10,
+      "intelligence": 10,
+      "wisdom": 8,
+      "charisma": 10,
+      "stealth": 6,
+      "damage_vulnerabilities": "",
+      "damage_resistances": "",
+      "damage_immunities": "",
+      "condition_immunities": "",
+      "senses": "darkvision 60 ft., passive Perception 9",
+      "languages": "Common, Goblin",
+      "challenge_rating": "1",
+      "special_abilities": [
+          {
+              "name": "Nimble Escape",
+              "desc": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns.",
+              "attack_bonus": 0
+          }
+      ],
+      "actions": [
+          {
+              "name": "Scimitar",
+              "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+              "attack_bonus": 4,
+              "damage_dice": "1d6",
+              "damage_bonus": 2
+          },{
+              "name": "Multiattack",
+              "desc": "The goblin makes two attacks with its scimitar. The second attack has disadvantage.",
+              "attack_bonus": 0,
+
+          },
+          {
+              "name": "Javelin",
+              "desc": "Ranged or Melee Weapon Attack: +4 to hit, reach 5 or range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+              "attack_bonus": 4,
+              "damage_dice": "1d6",
+              "damage_bonus": 2
+          }
+      ]
+  },
+  {
       "name": "Goblin Rat Master",
       "size": "Small",
       "type": "humanoid",
@@ -18305,5 +18358,67 @@
         "damage_bonus": 1
       }
     ]
+  },{
+      "name": "Bullywug",
+      "size": "Medium",
+      "type": "fium'anoid",
+      "subtype": "",
+      "alignment": "neutral evil",
+      "armor_class": 15,
+      "hit_points": 11,
+      "hit_dice": "2d8",
+      "speed": "20 ft.",
+      "strength": 12,
+      "dexterity": 12,
+      "constitution": 13,
+      "intelligence": 7,
+      "wisdom": 10,
+      "charisma": 7,
+      "wisdom_save": 0,
+      "damage_vulnerabilities": "",
+      "damage_resistances": "",
+      "damage_immunities": "",
+      "condition_immunities": "",
+      "senses": "passive Perception 10",
+      "languages": "Bullywug",
+      "challenge_rating": "1/4",
+      "special_abilities": [
+          {
+              "name": "Amphibious",
+              "desc": "The bullywug can breathe air and water",
+              "attack_bonus": 0
+          },{
+              "name": "Speak with Frogs and Toads",
+              "desc": "The bullywug can communicate simple concepts to frogs and toads when it speaks in Bullywug.",
+              "attack_bonus": 0
+          },{
+              "name": "Swamp Camouflage",
+              "desc": "The bullywug has advantage on Dexterity(Stealth) checks made to hide in swampy terrain.",
+              "attack_bonus": 0
+          },{
+              "name": "Standing Leap",
+              "desc": "The bullywug's long jump is up to 20 feet and its high jump is up to 10 feet,with or without a running start.",
+              "attack_bonus": 0
+          }
+      ],
+      "actions": [
+          {
+              "name": "Multiattack",
+              "desc": "The bullywug makes two melee attacks: one with its bite and one with its spear.",
+              "attack_bonus": 0,
+          },{
+              "name": "Bite",
+              "desc": "Melee Weapon Attack:+3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damag",
+              "attack_bonus": 3,
+              "damage_dice": "1d4",
+              "damage_bonus": 1
+          },{
+              "name": "Spear",
+              "desc": "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range20f60ft.,onetarget. Hit:4 (1d6+1) piercing damage,or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack",
+              "attack_bonus": 3,
+              "damage_dice": "1d6",
+              "damage_bonus": 1
+          }
+      ]
   }
 ]

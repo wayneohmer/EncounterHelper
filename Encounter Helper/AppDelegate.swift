@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if let monsterData = try? Data(contentsOf: savedMonstersPath) {
             if let savedMonstsers = try? JSONDecoder().decode(StoredMonsters.self, from: monsterData) {
                 for model in savedMonstsers.monsters {
-                    Monster.sharedMonsters.append(Monster(model:model))
+                    Monster.sharedMonsters.insert(Monster(model:model))
                 }
             }
         }

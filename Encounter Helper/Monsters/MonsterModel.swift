@@ -32,7 +32,9 @@ enum Attribute : String {
 //7    2,900         24    62,000
 //8    3,900         25    75,000
 
-class Monster  {
+class Monster: Hashable {
+    
+    
     
     static let crDict:[String:Int] = ["1/8":25,
                                       "1/4":50,
@@ -62,14 +64,16 @@ class Monster  {
                                       "25":75000,
                                       "30":75000]
 
-    static var sharedMonsters = [Monster]()
+    static var sharedMonsters = Set<Monster>()
+    
     static var imageFileNames = Set<String>()
     var imagePath:URL { return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("images\(storedImageFileName ?? "")") }
 
 
     var monsterModel = MonsterModel()
     var metaMonster = MonsterMetaModel()
-
+    var hashValue:Int {return self.name.hashValue }
+    
     var name:String { return monsterModel.name }
     var size:String { return monsterModel.size }
     var type:String { return monsterModel.type }
@@ -142,9 +146,10 @@ class Monster  {
     var actions:[Action] { return monsterModel.actions ?? [Action]() }
     var specialAbilities:[Action] { return monsterModel.special_abilities ?? [Action]() }
     var legondaryActions:[Action] { return monsterModel.legendary_actions ?? [Action]() }
+    var reactions:[Action] { return monsterModel.reactions ?? [Action]() }
     var log:[Action] { return monsterModel.log ?? [Action]() }
 
-    var allActions:[[Action]] { return [actions,specialAbilities,legondaryActions,log]}
+    var allActions:[[Action]] { return [actions,specialAbilities,legondaryActions,reactions,log]}
 
     var traits:NSAttributedString? {
         guard let htmlData = NSString(string: metaMonster.Traits ?? "").data(using: String.Encoding.unicode.rawValue) else {
@@ -248,6 +253,18 @@ class Monster  {
         self.monsterModel = model
     }
     
+    func randomizeHP() {
+        let components = monsterModel.hit_dice.split(separator: "d")
+        let dice = FyreDice()
+        if let mult = Int(components[0]), let d = Int(components[1]) {
+            dice.add(multipier: mult, d: d)
+            dice.modifier = mult * ((monsterModel.constitution - 10) / 2)
+            dice.roll()
+            monsterModel.maxHitPoints = dice.rollValue
+            monsterModel.currentHitPoints = monsterModel.maxHitPoints
+        }
+    }
+    
     class func readMonsters() {
         var monsters = [MonsterModel]()
         var metaMonsters = [MonsterMetaModel]()
@@ -288,8 +305,12 @@ class Monster  {
                     break;
                 }
             }
-            Monster.sharedMonsters.append(monster)
+            Monster.sharedMonsters.insert(monster)
         }
+    }
+    
+    static func == (lhs: Monster, rhs: Monster) -> Bool {
+        return lhs.name == rhs.name
     }
     
 }
@@ -342,6 +363,7 @@ struct MonsterModel: Codable  {
     var special_abilities:[Action]?
     var actions:[Action]?
     var legendary_actions:[Action]?
+    var reactions:[Action]?
     var log:[Action]?
     var metaModel:MonsterMetaModel?
 

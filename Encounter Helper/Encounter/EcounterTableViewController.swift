@@ -13,6 +13,7 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        Spell.readSpells()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -78,6 +79,7 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let splitViewController = segue.destination as! UISplitViewController
+        splitViewController.preferredPrimaryColumnWidthFraction = 0.25
         var navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-2] as! UINavigationController
