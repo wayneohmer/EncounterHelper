@@ -12,7 +12,9 @@ class Spell: Hashable {
     
     static var sharedSpells = Set<Spell>()
     
-    var hashValue:Int { return self.name.hashValue }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.name)
+    }
 
     var spellModel = SpellModel()
     

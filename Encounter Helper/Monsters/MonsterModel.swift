@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 enum Attribute : String {
     
@@ -19,22 +20,7 @@ enum Attribute : String {
 
 }
 
-
-
-//1/4    50         16    15,000
-//1/2    100         17    18,000
-//1    200         18    20,000
-//2    450         19    22,000
-//3    700         20    25,000
-//4    1,100         21    33,000
-//5    1,800         22    41,000
-//6    2,300         23    50,000
-//7    2,900         24    62,000
-//8    3,900         25    75,000
-
 class Monster: Hashable {
-    
-    
     
     static let crDict:[String:Int] = ["1/8":25,
                                       "1/4":50,
@@ -72,8 +58,10 @@ class Monster: Hashable {
 
     var monsterModel = MonsterModel()
     var metaMonster = MonsterMetaModel()
-    var hashValue:Int {return self.name.hashValue }
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.name)
+    }
     var name:String { return monsterModel.name }
     var size:String { return monsterModel.size }
     var type:String { return monsterModel.type }
@@ -307,6 +295,24 @@ class Monster: Hashable {
             }
             Monster.sharedMonsters.insert(monster)
         }
+    }
+    
+    func saveToCloud() {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        
+        let data = try! encoder.encode(monsterModel)
+        print(String(data: data, encoding: .utf8)!)
+        let container = CKContainer.default()
+        let cloudDb = container.publicCloudDatabase
+        let cloudMonster = CKRecord(recordType: "Monster")
+        cloudMonster["name"] = self.name
+        cloudMonster["json"] = String(data: data, encoding: .utf8)!
+        cloudDb.save(cloudMonster) { record,error in
+            print(error.debugDescription)
+        }
+        
+        
     }
     
     static func == (lhs: Monster, rhs: Monster) -> Bool {

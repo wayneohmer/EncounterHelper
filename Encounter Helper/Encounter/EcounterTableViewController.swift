@@ -13,12 +13,6 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        Spell.readSpells()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -32,9 +26,11 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
     @IBAction func plusTouched(_ sender: Any) {
         let alert = UIAlertController(title: "Name", message: "", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
-        
+        alert.addTextField(configurationHandler: nil)
+
         alert.addAction(UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in
             let newEncounter = Encounter(name:alert.textFields?[0].text ?? "")
+            newEncounter.party = Character.shared
             Encounter.sharedEncounters.append(newEncounter)
             self.performSegue(withIdentifier: "newEncounter", sender: newEncounter)
         })
@@ -55,13 +51,20 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
         let cell = tableView.dequeueReusableCell(withIdentifier: "EncounterCell", for: indexPath) as! EncounterCell
 
         let encounter = Encounter.sharedEncounters[indexPath.row]
-        cell.nameLabel.text = "\(encounter.name) - \(encounter.monsters.map({$0.experience}).reduce(0, + ))"
+        cell.nameLabel.text = "\(encounter.name) - \(encounter.monsters.map({$0.experience}).reduce(0, + )) - \(encounter.totalXP) - \(encounter.threshold) "
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "newEncounter", sender: Encounter.sharedEncounters[indexPath.row])
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            Encounter.sharedEncounters.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 
 
@@ -78,19 +81,29 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let splitViewController = segue.destination as! UISplitViewController
-        splitViewController.preferredPrimaryColumnWidthFraction = 0.25
-        var navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-        navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-2] as! UINavigationController
-
-        if let vc = navigationController.topViewController as? MasterViewController {
-            if let encounter = sender as? Encounter {
-                vc.encounter = encounter
+        switch segue.identifier{
+            
+        case "newEncounter":
+            let splitViewController = segue.destination as! UISplitViewController
+            splitViewController.preferredPrimaryColumnWidthFraction = 0.25
+            var navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+            navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-2] as! UINavigationController
+            
+            if let vc = navigationController.topViewController as? MasterViewController {
+                if let encounter = sender as? Encounter {
+                    vc.encounter = encounter
+                }
             }
+            splitViewController.delegate = self
+            
+        case "party":
+            break
+        default:
+            break
         }
-        splitViewController.delegate = self
         
     }
 
 }
+

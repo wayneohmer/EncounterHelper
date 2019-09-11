@@ -22,6 +22,18 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Add minature images</string>
+	<key>NSUbiquitousContainers</key>
+	<dict>
+		<key>iCloud.com.trialbyfyre.encounter-Helper</key>
+		<dict>
+			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
+			<true/>
+			<key>NSUbiquitousContainerName</key>
+			<string>MyApp</string>
+			<key>NSUbiquitousContainerSupportedFolderLevels</key>
+			<string>Any</string>
+		</dict>
+	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -56,7 +56,7 @@ class Encounter_HelperTests: XCTestCase {
             let data = try Data(contentsOf: fileURL!, options: .mappedIfSafe)
             do {
                 let decoder = JSONDecoder()
-                let conditions = try decoder.decode(Conditions.self, from: data)
+                let _ = try decoder.decode(Conditions.self, from: data)
             } catch {
                 print(error)
                 XCTAssert(false, error.localizedDescription)

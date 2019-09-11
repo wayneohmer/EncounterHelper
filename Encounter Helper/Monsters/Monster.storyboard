@@ -391,6 +391,12 @@
                                     <action selector="massSpellTouched:" destination="DwA-FD-pM7" id="sCj-yq-XzZ"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem systemItem="save" id="lZ5-ZB-poS">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="saveTouched:" destination="DwA-FD-pM7" id="IFD-e7-f3P"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -418,6 +424,7 @@
                         <outlet property="massSpellButton" destination="5cd-Yp-0af" id="I71-LS-fJN"/>
                         <outlet property="nameField" destination="zlA-tt-n3C" id="id1-Qx-iyA"/>
                         <outlet property="noImage" destination="kKU-Us-rJs" id="aES-az-GU8"/>
+                        <outlet property="saveButton" destination="lZ5-ZB-poS" id="2mr-xy-QAo"/>
                         <outlet property="sensesLabel" destination="ueW-l9-YSw" id="ENl-Vp-swe"/>
                         <outlet property="speedLabel" destination="YqO-ga-09m" id="4i9-5W-HlU"/>
                         <outlet property="startButton" destination="yt8-gv-Ity" id="OJn-Nw-MtX"/>
@@ -1605,7 +1612,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJE-Gz-c5H">
-                                            <rect key="frame" x="16" y="8" width="418" height="27.5"/>
+                                            <rect key="frame" x="16" y="8" width="468" height="27.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>

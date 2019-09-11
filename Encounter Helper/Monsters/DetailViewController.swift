@@ -49,12 +49,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var condictionsButton: UIBarButtonItem!
     @IBOutlet var startButton: UIBarButtonItem!
     @IBOutlet var massSpellButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var monster:Monster?
     var masterVc:MasterViewController?
     var encounter:Encounter { return masterVc?.encounter ?? Encounter() }
     var ecounterBarButtons:[UIBarButtonItem] { return [startButton,condictionsButton,diceButton,massSpellButton]}
-    var noEcounterBarButtons:[UIBarButtonItem] { return [startButton,duplicateButton]}
+    var noEcounterBarButtons:[UIBarButtonItem] { return [startButton,duplicateButton,saveButton]}
     var allBarButtons = [UIBarButtonItem]()
     var actionVc = ActionTableViewController()
     let titleButton =  UIButton(type: .custom)
@@ -202,6 +203,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.masterVc?.selectMonsterWith(name: newMonster.name)
     }
     
+    @IBAction func saveTouched(_ sender: UIBarButtonItem) {
+        self.monster?.saveToCloud()
+    }
     @IBAction func startTouched(_ sender: UIBarButtonItem) {
         if let vc = masterVc {
             vc.encounter.isStarted = !vc.encounter.isStarted

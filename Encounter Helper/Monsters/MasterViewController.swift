@@ -21,6 +21,7 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var searchName: UITextField!
     @IBOutlet weak var crMinField: UITextField!
     @IBOutlet weak var crMaxField: UITextField!
+    @IBOutlet var saveButton: UIBarButtonItem!
     
     var monsters = [Monster]()
     var isEncounter:Bool { return monsters.count == encounter.monsters.count }
@@ -72,6 +73,7 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
         })
         let title = isEncounter ?  self.encounter.name : "All"
         self.titleButton.setTitle(title, for: .normal)
+        self.navigationItem.rightBarButtonItem = isEncounter ? self.saveButton : nil
         tableView.reloadData()
     }
     
@@ -82,6 +84,8 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         filterContentForSearchText(searchName.text ?? "", scope: "All")
         textField.resignFirstResponder()

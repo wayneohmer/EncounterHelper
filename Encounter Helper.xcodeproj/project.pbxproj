@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1008A723283F230018872C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1008A623283F230018872C /* Character.swift */; };
 		2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17F72A230F0F800061EB5A /* EncounterCell.swift */; };
 		2B17F76623108F2A0061EB5A /* Monster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F76523108F2A0061EB5A /* Monster.storyboard */; };
 		2B17F7732310A2E20061EB5A /* DiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17F7722310A2E20061EB5A /* DiceController.swift */; };
@@ -27,6 +28,9 @@
 		2B340049230B943B003AE875 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340048230B943B003AE875 /* ActionCell.swift */; };
 		2B34004B230B94FE003AE875 /* ActionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34004A230B94FE003AE875 /* ActionTableViewController.swift */; };
 		2B340055230C84F8003AE875 /* BlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340054230C84F8003AE875 /* BlackButton.swift */; };
+		2B99A9C9232998DE0021E888 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B99A9C8232998DE0021E888 /* CloudKit.framework */; };
+		2B99A9CB2329A6320021E888 /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99A9CA2329A6320021E888 /* PartyViewController.swift */; };
+		2B99A9CD2329A6510021E888 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99A9CC2329A6510021E888 /* CharacterCell.swift */; };
 		2BA2C645231DAB1000602491 /* conditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2C644231DAB1000602491 /* conditions.json */; };
 		2BA2C646231DAC5600602491 /* conditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2C644231DAB1000602491 /* conditions.json */; };
 		2BA2C648231DB07400602491 /* ConditionsDescController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2C647231DB07400602491 /* ConditionsDescController.swift */; };
@@ -64,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B1008A623283F230018872C /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		2B17F72A230F0F800061EB5A /* EncounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterCell.swift; sourceTree = "<group>"; };
 		2B17F76523108F2A0061EB5A /* Monster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monster.storyboard; sourceTree = "<group>"; };
 		2B17F7722310A2E20061EB5A /* DiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceController.swift; sourceTree = "<group>"; };
@@ -77,11 +82,15 @@
 		2B17F77F2310A7EC0061EB5A /* 1die.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1die.aif; sourceTree = "<group>"; };
 		2B2A0EEB2324545B00030C0F /* spells.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spells.json; sourceTree = "<group>"; };
 		2B2A0EEE2324547C00030C0F /* Spell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
+		2B2A0EF1232555B700030C0F /* Encounter Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Encounter Helper.entitlements"; sourceTree = "<group>"; };
 		2B340044230B4E7B003AE875 /* Encounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounter.swift; sourceTree = "<group>"; };
 		2B340046230B5232003AE875 /* EcounterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcounterTableViewController.swift; sourceTree = "<group>"; };
 		2B340048230B943B003AE875 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		2B34004A230B94FE003AE875 /* ActionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewController.swift; sourceTree = "<group>"; };
 		2B340054230C84F8003AE875 /* BlackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackButton.swift; sourceTree = "<group>"; };
+		2B99A9C8232998DE0021E888 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2B99A9CA2329A6320021E888 /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
+		2B99A9CC2329A6510021E888 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		2BA2C644231DAB1000602491 /* conditions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = conditions.json; sourceTree = "<group>"; };
 		2BA2C647231DB07400602491 /* ConditionsDescController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsDescController.swift; sourceTree = "<group>"; };
 		2BA2C649231DB4C800602491 /* CondtionsDescCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondtionsDescCell.swift; sourceTree = "<group>"; };
@@ -113,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B99A9C9232998DE0021E888 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +160,14 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		2B2A0EF2232555D100030C0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B99A9C8232998DE0021E888 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2B340051230C8491003AE875 /* Action */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +186,9 @@
 				2B340044230B4E7B003AE875 /* Encounter.swift */,
 				2B340046230B5232003AE875 /* EcounterTableViewController.swift */,
 				2B17F72A230F0F800061EB5A /* EncounterCell.swift */,
+				2B1008A623283F230018872C /* Character.swift */,
+				2B99A9CA2329A6320021E888 /* PartyViewController.swift */,
+				2B99A9CC2329A6510021E888 /* CharacterCell.swift */,
 			);
 			path = Encounter;
 			sourceTree = "<group>";
@@ -202,6 +223,7 @@
 				2BEF9A622309E85000DEB8CD /* Encounter Helper */,
 				2BEF9A792309E85300DEB8CD /* Encounter HelperTests */,
 				2BEF9A612309E85000DEB8CD /* Products */,
+				2B2A0EF2232555D100030C0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +239,7 @@
 		2BEF9A622309E85000DEB8CD /* Encounter Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2B2A0EF1232555B700030C0F /* Encounter Helper.entitlements */,
 				2BEF9A692309E85000DEB8CD /* Main.storyboard */,
 				2BEF9A632309E85000DEB8CD /* AppDelegate.swift */,
 				2B340053230C84B6003AE875 /* Monsters */,
@@ -296,9 +319,18 @@
 				TargetAttributes = {
 					2BEF9A5F2309E85000DEB8CD = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					2BEF9A752309E85300DEB8CD = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 						TestTargetID = 2BEF9A5F2309E85000DEB8CD;
 					};
 				};
@@ -364,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B99A9CD2329A6510021E888 /* CharacterCell.swift in Sources */,
 				2B17F7792310A2FE0061EB5A /* Oops.swift in Sources */,
 				2BEF9A682309E85000DEB8CD /* DetailViewController.swift in Sources */,
 				2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */,
@@ -375,6 +408,7 @@
 				2BA2C648231DB07400602491 /* ConditionsDescController.swift in Sources */,
 				2B340049230B943B003AE875 /* ActionCell.swift in Sources */,
 				2BFCD5BA2314947E00804A0D /* MassSpellController.swift in Sources */,
+				2B1008A723283F230018872C /* Character.swift in Sources */,
 				2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */,
 				2B17F7782310A2FE0061EB5A /* FyreDice.swift in Sources */,
 				2B340045230B4E7B003AE875 /* Encounter.swift in Sources */,
@@ -382,6 +416,7 @@
 				2B34004B230B94FE003AE875 /* ActionTableViewController.swift in Sources */,
 				2B17F7732310A2E20061EB5A /* DiceController.swift in Sources */,
 				2BFCD57423132FE800804A0D /* ConditionsController.swift in Sources */,
+				2B99A9CB2329A6320021E888 /* PartyViewController.swift in Sources */,
 				2BFCD5B82314917000804A0D /* MassSpellMonsterController.swift in Sources */,
 				2BEF9A882309ECBB00DEB8CD /* MonsterModel.swift in Sources */,
 				2BEF9A642309E85000DEB8CD /* AppDelegate.swift in Sources */,
@@ -548,16 +583,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Encounter Helper/Encounter Helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UC39945CUV;
+				DEVELOPMENT_TEAM = EKUA3NG8A6;
 				INFOPLIST_FILE = "Encounter Helper/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Encounter-Helper";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trialbyfyre.encounterHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -566,16 +603,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Encounter Helper/Encounter Helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UC39945CUV;
+				DEVELOPMENT_TEAM = EKUA3NG8A6;
 				INFOPLIST_FILE = "Encounter Helper/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Encounter-Helper";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trialbyfyre.encounterHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
@@ -595,7 +634,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Encounter-HelperTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Encounter Helper.app/Encounter Helper";
 			};
@@ -616,7 +655,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Encounter-HelperTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Encounter Helper.app/Encounter Helper";
 			};

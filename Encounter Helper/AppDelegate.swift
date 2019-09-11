@@ -44,6 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             }
         }
         self.getAllEncounters()
+        
+        if let iCloudDocumentsURL = FileManager.default.url(forUbiquityContainerIdentifier:"trialbyfyre.encounter-Helper")?.appendingPathComponent("Documents") {
+            if (!FileManager.default.fileExists(atPath: iCloudDocumentsURL.path, isDirectory: nil)) {
+                try! FileManager.default.createDirectory(at: iCloudDocumentsURL, withIntermediateDirectories: true, attributes: nil)
+            }
+        }
         return true
     }
 
