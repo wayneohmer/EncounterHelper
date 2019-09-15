@@ -8,10 +8,12 @@
 
 import UIKit
 
-class EcounterTableViewController: UITableViewController, UISplitViewControllerDelegate {
+class EncounterTableViewController: UITableViewController, UISplitViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 100
+
         tableView.tableFooterView = UIView()
     }
 
@@ -22,46 +24,39 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
 
     // MARK: - Table view data source
 
-    @IBAction func plusTouched(_ sender: Any) {
-        let alert = UIAlertController(title: "Name", message: "", preferredStyle: .alert)
-        alert.addTextField(configurationHandler: nil)
-        alert.addTextField(configurationHandler: nil)
-
-        alert.addAction(UIAlertAction(title: "Ok", style: .default) { (_) in
-            let newEncounter = Encounter(name: alert.textFields?[0].text ?? "")
-            Encounter.sharedEncounters.append(newEncounter)
-            self.performSegue(withIdentifier: "newEncounter", sender: newEncounter)
-        })
-        self.present(alert, animated: true)
-    }
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return Encounter.sharedEncounters.count
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EncounterCell", for: indexPath) as! EncounterCell
 
         let encounter = Encounter.sharedEncounters[indexPath.row]
-        cell.nameLabel.text = "\(encounter.name) - \(encounter.monsters.map({$0.experience}).reduce(0, + )) - \(encounter.totalXP) - \(encounter.threshold) "
+        let exp = encounter.monsters.map({$0.experience}).reduce(0, + )
+        cell.nameLabel.text = "\(encounter.name) - \(exp) - \(encounter.totalXP) - \(encounter.threshold) - \(exp/Character.sharedParty.count) per character"
+        cell.detailsLabel.text = encounter.details
+        cell.editButton.tag = indexPath.row
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "newEncounter", sender: Encounter.sharedEncounters[indexPath.row])
+        self.performSegue(withIdentifier: "openEncounter", sender: Encounter.sharedEncounters[indexPath.row])
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             Encounter.sharedEncounters.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
         }
     }
 
@@ -80,7 +75,7 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
 
-        case "newEncounter":
+        case "openEncounter":
             let splitViewController = segue.destination as! UISplitViewController
             splitViewController.preferredPrimaryColumnWidthFraction = 0.25
             var navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
@@ -93,6 +88,15 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
                 }
             }
             splitViewController.delegate = self
+        case "NewEncounter":
+            if let vc = segue.destination as? EncounterDetailController {
+                vc.parentVc = self
+            }
+        case "EditEncounter":
+            if let vc = segue.destination as? EncounterDetailController, let button = sender as? UIButton {
+                vc.parentVc = self
+                vc.encounter = Encounter.sharedEncounters[button.tag]
+            }
 
         case "party":
             break

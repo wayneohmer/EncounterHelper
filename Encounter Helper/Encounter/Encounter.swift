@@ -16,6 +16,7 @@ class Encounter {
     static var fileNames = Set<String>()
 
     var name = ""
+    var details = ""
     var fileName = ""
     var isStarted = false
     var monsters = [Monster]()
@@ -28,7 +29,7 @@ class Encounter {
             modelArray.append(monster.monsterModel)
         }
 
-        return SavebleEncounter(name: name, fileName: fileName, round: round, monsters: modelArray, partyLevels: partyLevels)
+        return SavebleEncounter(name: name, details: details, fileName: fileName, round: round, monsters: modelArray, partyLevels: partyLevels)
     }
 
     var partyThreshold:(easy: Int, medium: Int, hard: Int, deadly: Int) {
@@ -78,6 +79,7 @@ class Encounter {
     convenience init(saveable: SavebleEncounter) {
         self.init()
         self.name = saveable.name
+        self.details = saveable.details
         self.fileName = saveable.fileName
         for mondel in saveable.monsters {
             self.monsters.append(Monster(model: mondel))
@@ -134,6 +136,7 @@ class Encounter {
 struct SavebleEncounter: Codable {
 
     var name = ""
+    var details = ""
     var fileName = ""
     var round = Int(0)
     var monsters = [MonsterModel]()
