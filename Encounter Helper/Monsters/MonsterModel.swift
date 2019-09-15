@@ -182,20 +182,26 @@ class Monster: Hashable {
             if let newValue = newValue {
                 storedImage = newValue
                 imageFileName = name
-                try? newValue.jpegData(compressionQuality: 1)?.write(to: imagePath)
+                self.monsterModel.imageData =  newValue.jpegData(compressionQuality: 0)
             }
         }
         get {
             if storedImage != nil {
                 return storedImage
             }
+
+            if let image = UIImage(data: self.monsterModel.imageData ?? Data()) {
+                self.storedImage = image
+                return image
+            }
+
             if let image = UIImage(named: self.name) {
                 self.storedImage = image
                 imageFileName = name
-                try? self.storedImage?.jpegData(compressionQuality: 1)?.write(to: imagePath)
-
+                self.monsterModel.imageData = self.storedImage?.jpegData(compressionQuality: 0)
                 return image
             }
+
             if let imageData = try? Data(contentsOf: imagePath) {
                 if let image = UIImage(data: imageData) {
                     self.storedImage = image
@@ -205,13 +211,14 @@ class Monster: Hashable {
 
             guard let url = URL(string: metaMonster.img_url ?? "") else { return nil }
             guard let imageData = try? Data(contentsOf: url) else { return nil }
+            self.monsterModel.imageData = imageData
             self.storedImage = UIImage(data: imageData)
             imageFileName = name
-            do {
-                try imageData.write(to: imagePath)
-            } catch {
-                print(imagePath.absoluteString)
-            }
+//            do {
+//                try imageData.write(to: imagePath)
+//            } catch {
+//                print(imagePath.absoluteString)
+//            }
             return self.storedImage
         }
     }
@@ -297,6 +304,25 @@ class Monster: Hashable {
 
     func saveToCloud() {
 
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let imageData = monsterModel.imageData
+        monsterModel.imageData = nil
+
+        let data = try! encoder.encode(monsterModel)
+        let container = CKContainer.default()
+        let cloudDb = container.publicCloudDatabase
+        let cloudMonster = CKRecord(recordType: "Monster")
+        cloudMonster["name"] = self.name
+        cloudMonster["json"] = String(data: data, encoding: .utf8)!
+        cloudDb.save(cloudMonster) { record, error in
+            if error == nil {
+                print("\(record?["recordName"] ?? "No Name")")
+            } else {
+                print(error.debugDescription)
+            }
+        }
+
     }
 
     static func == (lhs: Monster, rhs: Monster) -> Bool {
@@ -349,6 +375,7 @@ struct MonsterModel: Codable {
     var eotDamage: Int?
     var eotSave: String?
     var eotSaveDC: Int?
+    var imageData: Data?
 
     var special_abilities: [Action]?
     var actions: [Action]?

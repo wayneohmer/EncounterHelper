@@ -32,6 +32,7 @@
 		2B356BBB232DA970000E8E9E /* AttackCharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B356BBA232DA970000E8E9E /* AttackCharacterCell.swift */; };
 		2B356BBD232EB617000E8E9E /* MasterViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B356BBC232EB617000E8E9E /* MasterViews.storyboard */; };
 		2B356BBF232EC47F000E8E9E /* EncounterDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B356BBE232EC47F000E8E9E /* EncounterDetailController.swift */; };
+		2B356BC9232EF3C4000E8E9E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B356BC8232EF3C4000E8E9E /* CloudKit.framework */; };
 		2B99A9CB2329A6320021E888 /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99A9CA2329A6320021E888 /* PartyViewController.swift */; };
 		2B99A9CD2329A6510021E888 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99A9CC2329A6510021E888 /* CharacterCell.swift */; };
 		2BA2C645231DAB1000602491 /* conditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2C644231DAB1000602491 /* conditions.json */; };
@@ -95,6 +96,7 @@
 		2B356BBA232DA970000E8E9E /* AttackCharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackCharacterCell.swift; sourceTree = "<group>"; };
 		2B356BBC232EB617000E8E9E /* MasterViews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MasterViews.storyboard; sourceTree = "<group>"; };
 		2B356BBE232EC47F000E8E9E /* EncounterDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterDetailController.swift; sourceTree = "<group>"; };
+		2B356BC8232EF3C4000E8E9E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		2B99A9CA2329A6320021E888 /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		2B99A9CC2329A6510021E888 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		2BA2C644231DAB1000602491 /* conditions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = conditions.json; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B356BC9232EF3C4000E8E9E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +171,7 @@
 		2B2A0EF2232555D100030C0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B356BC8232EF3C4000E8E9E /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -330,7 +334,7 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
 								enabled = 1;
