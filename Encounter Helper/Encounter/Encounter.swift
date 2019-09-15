@@ -49,7 +49,7 @@ class Encounter {
         } else if monsters.count > 2 && monsters.count <= 6 {
             xp *= 2
         } else if monsters.count >= 7 && monsters.count <= 10 {
-            xp *= Int(Double(xp) * 2.5)
+            xp = Int(Double(xp) * 2.5)
         } else if monsters.count >= 11 && monsters.count <= 14 {
             xp *= 3
         } else if monsters.count >= 15 && monsters.count <= 10 {

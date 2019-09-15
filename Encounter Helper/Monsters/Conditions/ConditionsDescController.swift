@@ -18,7 +18,7 @@ class ConditionsDescController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         self.view.layer.borderColor = UIColor.white.cgColor
         self.view.layer.borderWidth = 3
-        self.view.layer.cornerRadius = 10
+        self.view.layer.cornerRadius = 7
 
     }
 

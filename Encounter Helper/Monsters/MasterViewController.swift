@@ -148,6 +148,8 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
     }
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        self.difficultyLabel.layer.cornerRadius = 7
+        self.difficultyLabel.clipsToBounds = true
         self.difficultyLabel.text = "XP - \(encounter.monsters.map({$0.experience}).reduce(0, + )) - \(encounter.totalXP) - \(encounter.threshold) "
     }
 

@@ -76,11 +76,11 @@ class DiceController: UIViewController {
         self.disadvantageSwitch.companion = self.advantageSwitch
         self.view.layer.borderColor = UIColor.white.cgColor
         self.view.layer.borderWidth = 3
-        self.view.layer.cornerRadius = 10
-        self.displayLabel.layer.cornerRadius = 10
-        self.titleLabel.layer.cornerRadius = 10
-        self.resultDisplayLabel.layer.cornerRadius = 10
-        self.rollValueLabel.layer.cornerRadius = 10
+        self.view.layer.cornerRadius = 7
+        self.displayLabel.layer.cornerRadius = 7
+        self.titleLabel.layer.cornerRadius = 7
+        self.resultDisplayLabel.layer.cornerRadius = 7
+        self.rollValueLabel.layer.cornerRadius = 7
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -291,7 +291,7 @@ class DiceController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "embed" {
             partyVc = segue.destination as? AttackPartyController
-            partyVc?.view.layer.cornerRadius = 10
+            partyVc?.view.layer.cornerRadius = 7
         }
 
     }

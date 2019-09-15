@@ -58,8 +58,8 @@ class BlackButton: UIButton {
         glossLayer.locations = glossLocations
         self.layer.insertSublayer(glossLayer, at: 0)
 
-        self.layer.cornerRadius = 10.0
-        self.clipsToBounds = false
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.3
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
