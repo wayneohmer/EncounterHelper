@@ -9,9 +9,9 @@
 import UIKit
 
 class AdvantageSwitch: UISwitch {
-    
-    var companion:AdvantageSwitch?
-    
+
+    var companion: AdvantageSwitch?
+
     override var isEnabled: Bool {
         didSet {
             if !isEnabled {
@@ -19,7 +19,7 @@ class AdvantageSwitch: UISwitch {
             }
         }
     }
-    
+
     func fixCompanion() {
         guard let companion = self.companion else {
             return

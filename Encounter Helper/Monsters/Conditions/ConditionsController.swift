@@ -9,23 +9,23 @@
 import UIKit
 
 class ConditionsController: UIViewController {
-    
-    var switchDict = [String:UISwitch]()
+
+    var switchDict = [String: UISwitch]()
     var monsterVc = DetailViewController()
-    
+
     @IBOutlet weak var mainStack: UIStackView!
     @IBOutlet weak var DamageField: UITextField!
     @IBOutlet var saveButtons: [BlackButton]!
     @IBOutlet weak var saveDCField: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         for stack in mainStack.subviews {
             if let stack2 = stack as? UIStackView {
                 for stack3 in stack2.subviews {
                     if let stack4 = stack3 as? UIStackView {
-                        var dictSwitch:UISwitch?
-                        var key:String?
+                        var dictSwitch: UISwitch?
+                        var key: String?
                         for view in stack4.subviews {
                             if let thisSwitch = view as? UISwitch {
                                 dictSwitch = thisSwitch
@@ -56,22 +56,22 @@ class ConditionsController: UIViewController {
                     button.isEnabled = button.title(for: .normal) != save
                 }
                 self.saveDCField.text = "\(monster.eotSaveDC ?? 0)"
-                
+
             }
         }
-        
+
     }
-    
+
     @IBAction func switchChanged(_ sender: UISwitch) {
-        
+
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let monster = monsterVc.monster else { return }
         var conditions = Set<String>()
         let oldConditions = monster.conditions
-        for (key,item) in switchDict {
+        for (key, item) in switchDict {
             if item.isOn {
                 conditions.insert(key)
             }
@@ -94,16 +94,16 @@ class ConditionsController: UIViewController {
         if oldConditions != monster.conditions {
             if monster.conditions == "" {
                 monsterVc.logMessage(message: "Conditions Removed: \(oldConditions)")
-                
+
             } else if oldConditions == "" {
                 monsterVc.logMessage(message: "Conditions Added: \(monster.conditions)")
             } else {
                 monsterVc.logMessage(message: "Conditions Changed: \(oldConditions) To \(monster.conditions)")
             }
         }
-        
+
     }
-    
+
     @IBAction func SaveButtonTouched(_ sender: BlackButton) {
         for button in saveButtons {
             if button == sender {
@@ -116,6 +116,5 @@ class ConditionsController: UIViewController {
             self.saveDCField.text = ""
         }
     }
-    
 
 }

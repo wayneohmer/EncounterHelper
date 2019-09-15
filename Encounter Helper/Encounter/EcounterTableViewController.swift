@@ -19,8 +19,7 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
         super.viewDidAppear(animated)
         tableView.reloadData()
     }
-    
-    
+
     // MARK: - Table view data source
 
     @IBAction func plusTouched(_ sender: Any) {
@@ -28,15 +27,14 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
         alert.addTextField(configurationHandler: nil)
         alert.addTextField(configurationHandler: nil)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in
-            let newEncounter = Encounter(name:alert.textFields?[0].text ?? "")
-            newEncounter.party = Character.shared
+        alert.addAction(UIAlertAction(title: "Ok", style: .default) { (_) in
+            let newEncounter = Encounter(name: alert.textFields?[0].text ?? "")
             Encounter.sharedEncounters.append(newEncounter)
             self.performSegue(withIdentifier: "newEncounter", sender: newEncounter)
         })
         self.present(alert, animated: true)
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -55,11 +53,11 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
 
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "newEncounter", sender: Encounter.sharedEncounters[indexPath.row])
     }
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             Encounter.sharedEncounters.remove(at: indexPath.row)
@@ -67,8 +65,7 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
         }
     }
 
-
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
         guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
         if topAsDetailController.monster == nil {
@@ -81,29 +78,28 @@ class EcounterTableViewController: UITableViewController, UISplitViewControllerD
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier{
-            
+        switch segue.identifier {
+
         case "newEncounter":
             let splitViewController = segue.destination as! UISplitViewController
             splitViewController.preferredPrimaryColumnWidthFraction = 0.25
             var navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
             navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
             navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-2] as! UINavigationController
-            
+
             if let vc = navigationController.topViewController as? MasterViewController {
                 if let encounter = sender as? Encounter {
                     vc.encounter = encounter
                 }
             }
             splitViewController.delegate = self
-            
+
         case "party":
             break
         default:
             break
         }
-        
+
     }
 
 }
-

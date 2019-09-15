@@ -9,36 +9,36 @@
 import UIKit
 
 class Spell: Hashable {
-    
+
     static var sharedSpells = Set<Spell>()
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.name)
     }
 
     var spellModel = SpellModel()
-    
-    var name:String { return spellModel.name ?? "" }
-    
-    convenience init(model:SpellModel) {
+
+    var name: String { return spellModel.name ?? "" }
+
+    convenience init(model: SpellModel) {
         self.init()
         self.spellModel = model
-        
+
     }
-    
+
     static func == (lhs: Spell, rhs: Spell) -> Bool {
         return lhs.name == rhs.name
     }
-    
+
     class func readSpells() {
         var spells = [SpellModel]()
-        
+
         guard let path = Bundle.main.path(forResource: "spells", ofType: "json") else {
             return
         }
-        
+
         do {
-            let data = try Data(contentsOf: URL(fileURLWithPath:path), options: .mappedIfSafe)
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
             do {
                 let decoder = JSONDecoder()
                 spells = try decoder.decode([SpellModel].self, from: data)
@@ -54,25 +54,25 @@ class Spell: Hashable {
 }
 
 struct SpellModel: Codable {
-    
-    var name:String? = ""
-    var desc:String? = ""
-    var page:String? = ""
-    var range:String? = ""
-    var components:String? = ""
-    var ritual:String? = ""
-    var duration:String? = ""
-    var concentration:String? = ""
-    var castingTime:String? = ""
-    var level:String? = ""
-    var school:String? = ""
-    var classes:String? = ""
+
+    var name: String? = ""
+    var desc: String? = ""
+    var page: String? = ""
+    var range: String? = ""
+    var components: String? = ""
+    var ritual: String? = ""
+    var duration: String? = ""
+    var concentration: String? = ""
+    var castingTime: String? = ""
+    var level: String? = ""
+    var school: String? = ""
+    var classes: String? = ""
 
     enum CodingKeys: String, CodingKey {
-        
+
         case classes = "class"
         case castingTime = "casting_time"
-        
+
         case name
         case desc
         case page
@@ -84,5 +84,5 @@ struct SpellModel: Codable {
         case level
         case school
     }
-    
+
 }

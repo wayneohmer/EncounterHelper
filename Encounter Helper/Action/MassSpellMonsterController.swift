@@ -9,27 +9,26 @@
 import UIKit
 
 class MassSpellMonsterController: UITableViewController {
-    
+
     var encounter = Encounter()
     var saveidx = Set<IndexPath>()
     var failidx = Set<IndexPath>()
     var selectedIdexes = Set<IndexPath>()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-       
+
     }
 
-    func rollSave(save:Attribute, dc:Int, full:Int?, half:Int?, conditions:Set<String> ) {
-        
+    func rollSave(save: Attribute, dc: Int, full: Int?, half: Int?, conditions: Set<String> ) {
+
         guard let selectedPaths = self.tableView?.indexPathsForSelectedRows else { return }
         saveidx.removeAll()
         failidx.removeAll()
         for idx in selectedPaths {
             let dice = FyreDice()
-            dice.dice = [20:1]
+            dice.dice = [20: 1]
             switch save {
             case .Strength:
                 dice.modifier = encounter.monsters[idx.row].strengthSave ?? (encounter.monsters[idx.row].strength - 10) / 2
@@ -67,7 +66,7 @@ class MassSpellMonsterController: UITableViewController {
             self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -80,15 +79,15 @@ class MassSpellMonsterController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MonsterEncounterCell", for: indexPath) as! MonsterListCell
-        
+
         let monster = encounter.monsters[indexPath.row]
-        
+
         cell.monster = monster
         cell.encounter = encounter
         cell.isEncounter = true
         cell.updateCell()
         cell.addRemoveButton?.tag = indexPath.row
-        
+
         if saveidx.contains(indexPath) {
             cell.saveLabel?.isHidden = false
             cell.saveLabel?.text = "SAVE"
@@ -101,10 +100,10 @@ class MassSpellMonsterController: UITableViewController {
         } else {
             cell.saveLabel?.isHidden = true
         }
-        
+
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         guard let selectedPaths = self.tableView?.indexPathsForSelectedRows else { return indexPath }
 
@@ -114,9 +113,8 @@ class MassSpellMonsterController: UITableViewController {
         }
         return indexPath
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
-    
-    
+
 }

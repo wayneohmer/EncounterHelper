@@ -28,7 +28,8 @@
 		2B340049230B943B003AE875 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340048230B943B003AE875 /* ActionCell.swift */; };
 		2B34004B230B94FE003AE875 /* ActionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34004A230B94FE003AE875 /* ActionTableViewController.swift */; };
 		2B340055230C84F8003AE875 /* BlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B340054230C84F8003AE875 /* BlackButton.swift */; };
-		2B99A9C9232998DE0021E888 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B99A9C8232998DE0021E888 /* CloudKit.framework */; };
+		2B356BB9232DA75A000E8E9E /* AttackPartyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B356BB8232DA75A000E8E9E /* AttackPartyController.swift */; };
+		2B356BBB232DA970000E8E9E /* AttackCharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B356BBA232DA970000E8E9E /* AttackCharacterCell.swift */; };
 		2B99A9CB2329A6320021E888 /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99A9CA2329A6320021E888 /* PartyViewController.swift */; };
 		2B99A9CD2329A6510021E888 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99A9CC2329A6510021E888 /* CharacterCell.swift */; };
 		2BA2C645231DAB1000602491 /* conditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2C644231DAB1000602491 /* conditions.json */; };
@@ -88,7 +89,8 @@
 		2B340048230B943B003AE875 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		2B34004A230B94FE003AE875 /* ActionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewController.swift; sourceTree = "<group>"; };
 		2B340054230C84F8003AE875 /* BlackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackButton.swift; sourceTree = "<group>"; };
-		2B99A9C8232998DE0021E888 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2B356BB8232DA75A000E8E9E /* AttackPartyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackPartyController.swift; sourceTree = "<group>"; };
+		2B356BBA232DA970000E8E9E /* AttackCharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackCharacterCell.swift; sourceTree = "<group>"; };
 		2B99A9CA2329A6320021E888 /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		2B99A9CC2329A6510021E888 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		2BA2C644231DAB1000602491 /* conditions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = conditions.json; sourceTree = "<group>"; };
@@ -122,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B99A9C9232998DE0021E888 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +164,6 @@
 		2B2A0EF2232555D100030C0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2B99A9C8232998DE0021E888 /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,8 +201,10 @@
 				2BEF9A672309E85000DEB8CD /* DetailViewController.swift */,
 				2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */,
 				2BFCD5712312295200804A0D /* HitPointEditorController.swift */,
-				2B17F76523108F2A0061EB5A /* Monster.storyboard */,
+				2B356BB8232DA75A000E8E9E /* AttackPartyController.swift */,
+				2B356BBA232DA970000E8E9E /* AttackCharacterCell.swift */,
 				2BA2C64B231DE21E00602491 /* Conditions */,
+				2B17F76523108F2A0061EB5A /* Monster.storyboard */,
 			);
 			path = Monsters;
 			sourceTree = "<group>";
@@ -279,6 +281,7 @@
 				2BEF9A5C2309E85000DEB8CD /* Sources */,
 				2BEF9A5D2309E85000DEB8CD /* Frameworks */,
 				2BEF9A5E2309E85000DEB8CD /* Resources */,
+				2BDCB9C8232D5A1500C84F3D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -391,6 +394,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2BDCB9C8232D5A1500C84F3D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftlint autocorrect\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2BEF9A5C2309E85000DEB8CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -408,6 +431,7 @@
 				2BA2C648231DB07400602491 /* ConditionsDescController.swift in Sources */,
 				2B340049230B943B003AE875 /* ActionCell.swift in Sources */,
 				2BFCD5BA2314947E00804A0D /* MassSpellController.swift in Sources */,
+				2B356BB9232DA75A000E8E9E /* AttackPartyController.swift in Sources */,
 				2B1008A723283F230018872C /* Character.swift in Sources */,
 				2B340047230B5232003AE875 /* EcounterTableViewController.swift in Sources */,
 				2B17F7782310A2FE0061EB5A /* FyreDice.swift in Sources */,
@@ -421,6 +445,7 @@
 				2BEF9A882309ECBB00DEB8CD /* MonsterModel.swift in Sources */,
 				2BEF9A642309E85000DEB8CD /* AppDelegate.swift in Sources */,
 				2BAC383E2309FC0400A1CAEA /* MonsterListCell.swift in Sources */,
+				2B356BBB232DA970000E8E9E /* AttackCharacterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

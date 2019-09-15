@@ -17,10 +17,10 @@ class DiceController: UIViewController {
     @IBOutlet weak var rollValueLabel: UILabel!
     @IBOutlet weak var advantageSwitch: AdvantageSwitch!
     @IBOutlet weak var disadvantageSwitch: AdvantageSwitch!
-   
+
     @IBOutlet weak var rollButton: UIButton!
     @IBOutlet weak var hitButton: BlackButton!
-    
+
     @IBOutlet weak var d4Button: UIButton!
     @IBOutlet weak var d6Button: UIButton!
     @IBOutlet weak var d8Button: UIButton!
@@ -28,7 +28,7 @@ class DiceController: UIViewController {
     @IBOutlet weak var d12Button: UIButton!
     @IBOutlet weak var d20Button: UIButton!
     @IBOutlet weak var d100Button: UIButton!
-    
+
     @IBOutlet weak var plus1Button: UIButton!
     @IBOutlet weak var plus2Button: UIButton!
     @IBOutlet weak var plus3Button: UIButton!
@@ -43,45 +43,55 @@ class DiceController: UIViewController {
     @IBOutlet weak var plus30Button: UIButton!
     @IBOutlet weak var SaveCheckSwitch: UISegmentedControl!
     @IBOutlet weak var advantageStack: UIStackView!
-    
+
     let deathSound = "DeathSound"
     let awwwSound = "Awww"
     let oneDieSound = "1die"
     let threeDieSound = "3dice"
     let tenDieSound = "10dice"
-    
+
     var diceButtons = [UIButton]()
     var modifierButtons = [UIButton]()
-    var soundUrls = [String:CFURL]()
+    var soundUrls = [String: CFURL]()
     var hasRolled = false
     var currentHistoryIndex = 0
     var oopsStack = [Oops]()
-    
+
     var rollName: String?
     var damageRollName: String?
     var saveMod: Int?
     var checkMod: Int?
     var damageDice = FyreDice()
     var fyreDice = FyreDice()
-    var logManager:LogManager?
+    var logManager: LogManager?
+
+    var partyVc: AttackPartyController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.titleLabel.text = self.rollName ?? ""
         self.makeSystemSoundUrls()
         self.advantageSwitch.companion = self.disadvantageSwitch
         self.disadvantageSwitch.companion = self.advantageSwitch
+        self.view.layer.borderColor = UIColor.white.cgColor
+        self.view.layer.borderWidth = 3
+        self.view.layer.cornerRadius = 10
+        self.displayLabel.layer.cornerRadius = 10
+        self.titleLabel.layer.cornerRadius = 10
+        self.resultDisplayLabel.layer.cornerRadius = 10
+        self.rollValueLabel.layer.cornerRadius = 10
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         self.updateDisplay()
      }
-    
+
     func makeSystemSoundUrls() {
-        if let soundUrl = Bundle.main.url(forResource: self.deathSound, withExtension: "aif")  {
+        if let soundUrl = Bundle.main.url(forResource: self.deathSound, withExtension: "aif") {
            self.soundUrls[self.deathSound] = soundUrl as CFURL
         }
         if let soundUrl = Bundle.main.url(forResource: self.awwwSound, withExtension: "aif") {
@@ -97,7 +107,7 @@ class DiceController: UIViewController {
             self.soundUrls[self.tenDieSound] = soundUrl as CFURL
         }
     }
-  
+
     func fixAdvantageSwitches () {
         if self.fyreDice.isAdvantageAllowed {
             self.advantageSwitch.isEnabled = true
@@ -113,15 +123,15 @@ class DiceController: UIViewController {
         self.displayLabel.text = self.fyreDice.display
         self.resultDisplayLabel.text = self.fyreDice.resultDisplay
         self.rollValueLabel.text = self.fyreDice.rollValue != 0 ? "\(self.fyreDice.rollValue)" : " "
-        
+
         self.rollButton.isEnabled = self.fyreDice.dice.count > 0
-       
+
         self.fixAdvantageSwitches()
 
     }
-    
-    func swapSign(from:String, to new:String, in buttons:[UIButton]) {
-        for button in buttons{
+
+    func swapSign(from: String, to new: String, in buttons: [UIButton]) {
+        for button in buttons {
             let title = button.title(for: .normal)
             let newTitle = title?.replacingOccurrences(of: from, with: new)
             button.setTitle(newTitle, for: .normal)
@@ -136,15 +146,15 @@ class DiceController: UIViewController {
             self.fyreDice.disadvantage = sender.isOn
         }
     }
-    
+
     @IBAction func rollTouched() {
-        self.oopsStack.append(Oops(fyreDice: FyreDice(with:self.fyreDice, includeResult:true), type: Oops.OopsType.roll))
+        self.oopsStack.append(Oops(fyreDice: FyreDice(with: self.fyreDice, includeResult: true), type: Oops.OopsType.roll))
         self.hasRolled = true
         self.fyreDice.roll()
-        var soundURL:CFURL?
+        var soundURL: CFURL?
         if self.fyreDice.rollValue == self.fyreDice.max {
             soundURL = self.soundUrls[self.deathSound]
-        } else if self.fyreDice.rollValue == self.fyreDice.min  {
+        } else if self.fyreDice.rollValue == self.fyreDice.min {
             soundURL = self.soundUrls[self.awwwSound]
         } else if self.fyreDice.numberOfDice > 10 {
             soundURL = self.soundUrls[self.tenDieSound]
@@ -160,80 +170,84 @@ class DiceController: UIViewController {
                 AudioServicesDisposeSystemSoundID(soundId)
             }
         }
-        FyreDice.shardedHistory.append(FyreDice(with:self.fyreDice, includeResult:true))
+        FyreDice.shardedHistory.append(FyreDice(with: self.fyreDice, includeResult: true))
         self.currentHistoryIndex = FyreDice.shardedHistory.count-1
         self.updateDisplay()
-        self.logManager?.logMessage(message:"\(self.titleLabel.text ?? "") \(self.fyreDice.display), \(self.fyreDice.resultDisplay) = \(self.fyreDice.rollValue) ")
+        var name = ""
+        if let index = self.partyVc?.tableView.indexPathForSelectedRow {
+            name = Character.sharedParty[index.row].name
+        }
+        self.logManager?.logMessage(message: "\(self.titleLabel.text ?? "") \(name) \(self.fyreDice.display), \(self.fyreDice.resultDisplay) = \(self.fyreDice.rollValue) ")
     }
 
     @IBAction func signTouched(_ sender: UIButton) {
-        
+
         let buttonArray = self.modifierButtons + self.diceButtons
- 
+
         if sender.title(for: .normal) == "+" {
             sender.setTitle("-", for: .normal)
-            self.swapSign(from:"-", to: "+", in: buttonArray)
+            self.swapSign(from: "-", to: "+", in: buttonArray)
         } else {
             sender.setTitle("+", for: .normal)
-            self.swapSign(from:"+", to: "-", in: buttonArray)
+            self.swapSign(from: "+", to: "-", in: buttonArray)
         }
     }
-    
+
     @IBAction func clearTouched() {
-        self.oopsStack.append(Oops(fyreDice: FyreDice(with:self.fyreDice, includeResult:true), type: Oops.OopsType.buttonTouch))
+        self.oopsStack.append(Oops(fyreDice: FyreDice(with: self.fyreDice, includeResult: true), type: Oops.OopsType.buttonTouch))
 
         self.fyreDice.clear()
         self.updateDisplay()
     }
-    
+
     @IBAction func dieTouched(_ sender: UIButton) {
-        self.oopsStack.append(Oops(fyreDice: FyreDice(with:self.fyreDice, includeResult:true), type: Oops.OopsType.buttonTouch))
+        self.oopsStack.append(Oops(fyreDice: FyreDice(with: self.fyreDice, includeResult: true), type: Oops.OopsType.buttonTouch))
         if hasRolled {
             self.fyreDice.clear()
             self.hasRolled = false
         }
         let components = sender.title(for: .normal)?.components(separatedBy: "d")
         if components?.count == 2 {
-            self.fyreDice.add(multipier: Int(components?[0] ?? "0") ?? 0 , d: Int(components?[1] ?? "0") ?? 0)
+            self.fyreDice.add(multipier: Int(components?[0] ?? "0") ?? 0, d: Int(components?[1] ?? "0") ?? 0)
         }
         self.updateDisplay()
     }
-    
+
     @IBAction func modifierTouched(_ sender: UIButton) {
-        self.oopsStack.append(Oops(fyreDice: FyreDice(with:self.fyreDice, includeResult:true), type: Oops.OopsType.buttonTouch))
+        self.oopsStack.append(Oops(fyreDice: FyreDice(with: self.fyreDice, includeResult: true), type: Oops.OopsType.buttonTouch))
         let modifier = Int(sender.title(for: .normal) ?? "0") ?? 0
         self.fyreDice.modifier += modifier
         self.updateDisplay()
     }
-    
+
     @IBAction func historyBackTouhced() {
         if self.currentHistoryIndex > 0 {
             self.currentHistoryIndex -= 1
-            self.fyreDice = FyreDice(with:FyreDice.shardedHistory[self.currentHistoryIndex], includeResult:true)
+            self.fyreDice = FyreDice(with: FyreDice.shardedHistory[self.currentHistoryIndex], includeResult: true)
             self.updateDisplay()
         }
     }
-    
+
     @IBAction func historyForwardouhced() {
         if self.currentHistoryIndex < FyreDice.shardedHistory.count-1 {
             self.currentHistoryIndex += 1
-            self.fyreDice = FyreDice(with:FyreDice.shardedHistory[self.currentHistoryIndex], includeResult:true)
+            self.fyreDice = FyreDice(with: FyreDice.shardedHistory[self.currentHistoryIndex], includeResult: true)
             self.updateDisplay()
         }
     }
-    
+
     @IBAction func oopsTouched() {
         if let oops = oopsStack.last {
             switch oops.type {
             case .buttonTouch:
-                self.fyreDice = FyreDice(with:oops.fyreDice, includeResult:true)
+                self.fyreDice = FyreDice(with: oops.fyreDice, includeResult: true)
                 self.updateDisplay()
             case .hit:
-                self.fyreDice = FyreDice(with:oops.fyreDice, includeResult:true)
+                self.fyreDice = FyreDice(with: oops.fyreDice, includeResult: true)
                 self.updateDisplay()
                 self.hitButton.isEnabled = true
             case .roll:
-                self.fyreDice = FyreDice(with:oops.fyreDice, includeResult:true)
+                self.fyreDice = FyreDice(with: oops.fyreDice, includeResult: true)
                 self.updateDisplay()
                 if self.currentHistoryIndex > 0 {
                     FyreDice.shardedHistory.removeLast()
@@ -248,9 +262,9 @@ class DiceController: UIViewController {
             oopsStack.removeLast()
         }
     }
-    
+
     @IBAction func saveCheckTouhced(_ sender: UISegmentedControl) {
-        
+
         if sender.selectedSegmentIndex == 0 {
             self.fyreDice.modifier = self.saveMod ?? 0
             self.titleLabel.text = self.titleLabel.text?.replacingOccurrences(of: "Check", with: "Save")
@@ -258,12 +272,12 @@ class DiceController: UIViewController {
             self.fyreDice.modifier = self.checkMod ?? 0
             self.titleLabel.text = self.titleLabel.text?.replacingOccurrences(of: "Save", with: "Check")
         }
-        
+
         self.updateDisplay()
-        
+
     }
     @IBAction func hitTouched(_ sender: Any) {
-        self.oopsStack.append(Oops(fyreDice: FyreDice(with:self.fyreDice, includeResult:true), type: Oops.OopsType.hit))
+        self.oopsStack.append(Oops(fyreDice: FyreDice(with: self.fyreDice, includeResult: true), type: Oops.OopsType.hit))
 
         self.fyreDice = self.damageDice
         self.titleLabel.text = self.damageRollName
@@ -271,13 +285,15 @@ class DiceController: UIViewController {
         self.updateDisplay()
         self.advantageStack.isHidden = true
         self.hitButton.isEnabled = false
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embed" {
+            partyVc = segue.destination as? AttackPartyController
+            partyVc?.view.layer.cornerRadius = 10
+        }
+
+    }
 
 }
-

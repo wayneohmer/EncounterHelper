@@ -8,10 +8,15 @@
 
 import UIKit
 
+struct StoredParty: Codable {
+
+    var characters = [Character]()
+}
+
 struct Character: Codable {
-    
-    static var shared = [Character]()
-    
+
+    static var sharedParty = [Character]()
+
     var name = ""
     var level = Int(0)
     var armorClass = Int(0)

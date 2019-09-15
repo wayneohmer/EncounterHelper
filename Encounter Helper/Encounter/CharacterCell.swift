@@ -10,14 +10,14 @@ import UIKit
 
 class CharacterCell: UITableViewCell {
 
-    var row:Int?
-    var parent:PartyViewController?
-    
+    var row: Int?
+    var parent: PartyViewController?
+
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var acField: UITextField!
     @IBOutlet weak var perceptionField: UITextField!
     @IBOutlet weak var levelField: UITextField!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,22 +29,22 @@ class CharacterCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func saveTouched(_ sender: BlackButton) {
-        
+
         if let thisRow = row {
-            Character.shared[thisRow].name = nameField.text ?? ""
-            Character.shared[thisRow].level = toInt(levelField)
-            Character.shared[thisRow].armorClass = toInt(acField)
-            Character.shared[thisRow].passivePerception = toInt(perceptionField)
+            Character.sharedParty[thisRow].name = nameField.text ?? ""
+            Character.sharedParty[thisRow].level = toInt(levelField)
+            Character.sharedParty[thisRow].armorClass = toInt(acField)
+            Character.sharedParty[thisRow].passivePerception = toInt(perceptionField)
         } else {
             let character = Character(name: nameField.text ?? "", level: toInt(levelField), armorClass: toInt(acField), passivePerception: toInt(perceptionField))
-            Character.shared.append(character)
+            Character.sharedParty.append(character)
         }
         parent?.tableView.reloadData()
     }
-    
+
     func toInt(_ textField: UITextField?) -> Int {
         return Int(textField?.text ?? "") ?? 0
-        
+
     }
-    
+
 }

@@ -369,12 +369,37 @@
                     <connections>
                         <outlet property="crMaxField" destination="BqO-de-ISd" id="YIe-ce-slR"/>
                         <outlet property="crMinField" destination="PLI-P8-eTp" id="7pL-mo-oWQ"/>
+                        <outlet property="difficultyLabel" destination="ck8-e4-46d" id="0Ct-SI-eZy"/>
+                        <outlet property="encounterHeaderView" destination="1fG-iP-zj2" id="Dl2-kW-YrT"/>
                         <outlet property="headerView" destination="lCD-gd-yUC" id="F7A-QA-SYQ"/>
                         <outlet property="saveButton" destination="BSR-Vq-60A" id="7I4-3p-o0u"/>
                         <outlet property="searchName" destination="HJv-O9-NvP" id="fN6-l2-w3K"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="1fG-iP-zj2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Hard." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-e4-46d">
+                            <rect key="frame" x="8" y="25" width="359" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="4jX-e7-icZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.18039405345916748" green="0.17642879486083984" blue="0.18039089441299438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="ck8-e4-46d" firstAttribute="centerY" secondItem="1fG-iP-zj2" secondAttribute="centerY" id="ZsE-1D-YMz"/>
+                        <constraint firstItem="ck8-e4-46d" firstAttribute="leading" secondItem="gYA-5k-hBx" secondAttribute="leading" constant="8" id="jMo-zl-j5s"/>
+                        <constraint firstItem="gYA-5k-hBx" firstAttribute="trailing" secondItem="ck8-e4-46d" secondAttribute="trailing" constant="8" id="wfN-2M-cet"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="gYA-5k-hBx"/>
+                </view>
                 <view contentMode="scaleToFill" id="lCD-gd-yUC">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -389,9 +414,9 @@
                             </connections>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BqO-de-ISd">
-                            <rect key="frame" x="168" y="74" width="90" height="30"/>
+                            <rect key="frame" x="148" y="74" width="70" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="90" id="bdq-d4-CPM"/>
+                                <constraint firstAttribute="width" constant="70" id="bdq-d4-CPM"/>
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -401,9 +426,9 @@
                             </connections>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PLI-P8-eTp">
-                            <rect key="frame" x="62" y="74" width="90" height="30"/>
+                            <rect key="frame" x="62" y="74" width="70" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="90" id="Tt0-86-I7t"/>
+                                <constraint firstAttribute="width" constant="70" id="Tt0-86-I7t"/>
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

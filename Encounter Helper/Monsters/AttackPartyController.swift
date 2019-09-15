@@ -1,54 +1,46 @@
 //
-//  ConditionsDescController.swift
+//  AttackPartyController
 //  Encounter Helper
 //
-//  Created by Wayne Ohmer on 9/2/19.
+//  Created by Wayne Ohmer on 9/14/19.
 //  Copyright © 2019 Tryal by Fyre. All rights reserved.
 //
 
 import UIKit
 
-class ConditionsDescController: UITableViewController {
-
-    var conditions = [String]()
+class AttackPartyController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 50
-        self.tableView.tableFooterView = UIView()
-        self.view.layer.borderColor = UIColor.white.cgColor
-        self.view.layer.borderWidth = 3
-        self.view.layer.cornerRadius = 10
 
+        self.tableView.tableFooterView = UIView()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return conditions.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return Character.sharedParty.count
 
-        return Monster.condtionsDesc[conditions[section]]?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CondtionsDescCell", for: indexPath) as! CondtionsDescCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AttackCharacterCell", for: indexPath) as! AttackCharacterCell
 
-        cell.descriptionLabel?.text = Monster.condtionsDesc[conditions[indexPath.section]]?[indexPath.row]
+        let character = Character.sharedParty[indexPath.row]
+        cell.nameLabel.text = "\(character.name) - \(character.armorClass)"
 
         return cell
-    }
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let headerView = view as? UITableViewHeaderFooterView {
-            headerView.textLabel?.textAlignment = .center
-            headerView.textLabel?.textColor = .white
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return conditions[section]
     }
 
     /*
@@ -61,7 +53,7 @@ class ConditionsDescController: UITableViewController {
 
     /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)

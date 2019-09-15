@@ -15,13 +15,13 @@ class MassSpellController: UIViewController, UITextFieldDelegate {
     var attribute = Attribute.Strength
     var restoreMonsters = [MonsterModel]()
     var conditionController = ConditionsController()
-    
+
     @IBOutlet weak var damageField: UITextField!
     @IBOutlet weak var halfDamageField: UITextField!
     @IBOutlet weak var dcField: UITextField!
     @IBOutlet weak var rollbutton: BlackButton!
     @IBOutlet weak var DCLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         for monster in encounter.monsters {
@@ -30,15 +30,15 @@ class MassSpellController: UIViewController, UITextFieldDelegate {
         self.DCLabel.text = attribute.rawValue
         self.dcField.becomeFirstResponder()
     }
-    
+
     @IBAction func donePressed() {
         self.dismiss(animated: true, completion: nil)
-       
+
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.dcField {
-            
+
             self.damageField.becomeFirstResponder()
         } else if textField == self.damageField {
             if let damage = Int(textField.text ?? "") {
@@ -48,10 +48,10 @@ class MassSpellController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
+
     @IBAction func rollTouched() {
         var conditions = Set<String>()
-        for (key,item) in conditionController.switchDict {
+        for (key, item) in conditionController.switchDict {
             if item .isOn {
                 conditions.insert(key)
             }
@@ -63,16 +63,15 @@ class MassSpellController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
+
     @IBAction func restoreTouched(_ sender: Any) {
         monsterTableVc.saveidx.removeAll()
         monsterTableVc.failidx.removeAll()
-        
-        for (idx,model) in restoreMonsters.enumerated() {
+
+        for (idx, model) in restoreMonsters.enumerated() {
             encounter.monsters[idx].restoreWith(model: model)
         }
         monsterTableVc.tableView.reloadData()
-        
 
     }
     // MARK: - Navigation

@@ -9,7 +9,7 @@
 import UIKit
 
 class Oops {
-    
+
     enum OopsType {
         case buttonTouch
         case roll
@@ -17,15 +17,15 @@ class Oops {
         case save
         case hit
     }
-    
+
     var fyreDice = FyreDice()
     var type = OopsType.buttonTouch
     var saveIndex = Int(0)
-    
-    convenience init(fyreDice:FyreDice, type:OopsType) {
+
+    convenience init(fyreDice: FyreDice, type: OopsType) {
         self.init()
         self.fyreDice = fyreDice
         self.type = type
     }
-    
+
 }

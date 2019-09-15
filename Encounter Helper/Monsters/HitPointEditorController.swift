@@ -13,28 +13,27 @@ class HitPointEditorController: UIViewController {
     @IBOutlet weak var hpLabel: UILabel!
     @IBOutlet weak var healButton: BlackButton!
     @IBOutlet weak var damageButton: BlackButton!
-    
+
     var monsterVc = DetailViewController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.damageButton.color = .red
         self.healButton.color = .blue
 
     }
-    
 
     @IBAction func numTouched(_ sender: UIButton) {
         if let title = sender.title(for: .normal) {
             self.hpLabel.text = "\(self.hpLabel.text ?? "")\(title)"
         }
-        
+
     }
-    
+
     @IBAction func xTouched(_ sender: Any) {
         self.hpLabel.text = ""
     }
-    
+
     @IBAction func backspaceTouched(_ sender: Any) {
         self.hpLabel.text = String(self.hpLabel.text?.dropLast() ?? "")
     }
@@ -50,7 +49,7 @@ class HitPointEditorController: UIViewController {
         }
         if sender.title(for: .normal) == "Heal" {
             if let hp = monster.monsterModel.currentHitPoints {
-                monster.monsterModel.currentHitPoints = min(hp + damage,monster.monsterModel.maxHitPoints ?? monster.monsterModel.hit_points)
+                monster.monsterModel.currentHitPoints = min(hp + damage, monster.monsterModel.maxHitPoints ?? monster.monsterModel.hit_points)
                 self.monsterVc.logMessage(message: "Heal - \(damage)")
             }
         } else {
@@ -63,5 +62,5 @@ class HitPointEditorController: UIViewController {
              self.monsterVc.actionVc.tableView.reloadData()
         })
     }
-    
+
 }

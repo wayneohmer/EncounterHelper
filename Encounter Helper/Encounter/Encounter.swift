@@ -9,41 +9,40 @@
 import UIKit
 
 class Encounter {
-    
+
     static var sharedEncounters = [Encounter]()
     static let savedEncountersPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("encounters")
 
     static var fileNames = Set<String>()
-    
+
     var name = ""
     var fileName = ""
     var isStarted = false
     var monsters = [Monster]()
     var round = Int(0)
-    var partyLevels: [Int] { return party.map( { $0.level } ) }
-    var party = [Character]()
-    
-    var saveable:SavebleEncounter {
+    var partyLevels: [Int] { return Character.sharedParty.map({ $0.level }) }
+
+    var saveable: SavebleEncounter {
         var modelArray = [MonsterModel]()
         for monster in monsters {
             modelArray.append(monster.monsterModel)
         }
-        
-        return SavebleEncounter(name: name, fileName:fileName, round: round, monsters: modelArray, partyLevels: partyLevels, party: party)
+
+        return SavebleEncounter(name: name, fileName: fileName, round: round, monsters: modelArray, partyLevels: partyLevels)
     }
-    
-    var partyThreshold:(easy:Int, medium:Int,hard:Int, deadly:Int) {
-        var returnValue:(easy:Int, medium:Int,hard:Int, deadly:Int) = (0,0,0,0)
+
+    var partyThreshold:(easy: Int, medium: Int, hard: Int, deadly: Int) {
+        var returnValue:(easy: Int, medium: Int, hard: Int, deadly: Int) = (0, 0, 0, 0)
         for level in partyLevels {
-            returnValue.easy += (Encounter.thresholdDict[level] ?? (0,0,0,0)).easy
-            returnValue.medium += (Encounter.thresholdDict[level] ?? (0,0,0,0)).medium
-            returnValue.hard += (Encounter.thresholdDict[level] ?? (0,0,0,0)).hard
-            returnValue.deadly += (Encounter.thresholdDict[level] ?? (0,0,0,0)).deadly
+            returnValue.easy += (Encounter.thresholdDict[level] ?? (0, 0, 0, 0)).easy
+            returnValue.medium += (Encounter.thresholdDict[level] ?? (0, 0, 0, 0)).medium
+            returnValue.hard += (Encounter.thresholdDict[level] ?? (0, 0, 0, 0)).hard
+            returnValue.deadly += (Encounter.thresholdDict[level] ?? (0, 0, 0, 0)).deadly
         }
         return returnValue
     }
-    
-    var totalXP:Int {
+
+    var totalXP: Int {
         var xp = self.monsters.map({$0.experience}).reduce(0, +)
         if monsters.count == 2 {
             xp = Int(Double(xp) * 1.5)
@@ -56,11 +55,11 @@ class Encounter {
         } else if monsters.count >= 15 && monsters.count <= 10 {
             xp *= 4
         }
-        
+
         return xp
     }
-    
-    var threshold:String {
+
+    var threshold: String {
         if totalXP <= partyThreshold.easy {
             return "Easy"
         } else if totalXP <= partyThreshold.medium {
@@ -70,13 +69,13 @@ class Encounter {
         }
         return "Deadly"
     }
-    
-    convenience init(name:String) {
+
+    convenience init(name: String) {
         self.init()
         self.name = name
     }
-    
-    convenience init(saveable:SavebleEncounter) {
+
+    convenience init(saveable: SavebleEncounter) {
         self.init()
         self.name = saveable.name
         self.fileName = saveable.fileName
@@ -84,9 +83,9 @@ class Encounter {
             self.monsters.append(Monster(model: mondel))
         }
     }
-    
+
     func save() {
-        
+
         if self.fileName == "" {
             var fname = self.name
             while Encounter.fileNames.contains(fname) {
@@ -107,8 +106,8 @@ class Encounter {
             print("Save Failed")
         }
     }
-    
-    static let thresholdDict:[Int:(easy:Int, medium:Int,hard:Int, deadly:Int)] =
+
+    static let thresholdDict: [Int:(easy: Int, medium: Int, hard: Int, deadly: Int)] =
         [1: (25, 50, 75, 100),
          2: (50, 100, 150, 200),
          3: (75, 150, 225, 400),
@@ -130,15 +129,13 @@ class Encounter {
          19: (2400, 4900, 7300, 10900),
          20: (2800, 5700, 8500, 12700)]
 
-    
 }
 
-struct SavebleEncounter:Codable {
-    
+struct SavebleEncounter: Codable {
+
     var name = ""
     var fileName = ""
     var round = Int(0)
     var monsters = [MonsterModel]()
     var partyLevels = [Int]()
-    var party = [Character]()
 }
