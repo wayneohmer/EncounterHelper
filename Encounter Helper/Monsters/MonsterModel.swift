@@ -205,6 +205,7 @@ class Monster: Hashable {
             if let imageData = try? Data(contentsOf: imagePath) {
                 if let image = UIImage(data: imageData) {
                     self.storedImage = image
+                    self.monsterModel.imageData = imageData
                     return image
                 }
             }
@@ -302,27 +303,42 @@ class Monster: Hashable {
         }
     }
 
-    func saveToCloud() {
+    func saveToCloudWith(name: String) {
 
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
-        let imageData = monsterModel.imageData
-        monsterModel.imageData = nil
 
         let data = try! encoder.encode(monsterModel)
         let container = CKContainer.default()
         let cloudDb = container.publicCloudDatabase
-        let cloudMonster = CKRecord(recordType: "Monster")
-        cloudMonster["name"] = self.name
+        let cloudMonster = CKRecord(recordType: "Monster", recordID: CKRecord.ID(recordName: name))
+
+        cloudMonster["recordName"] = name
+        cloudMonster["name"] = name
         cloudMonster["json"] = String(data: data, encoding: .utf8)!
         cloudDb.save(cloudMonster) { record, error in
             if error == nil {
-                print("\(record?["recordName"] ?? "No Name")")
+                print("\(record?["name"] ?? "No Name")")
             } else {
                 print(error.debugDescription)
             }
         }
 
+    }
+    class func fetchFromCloudWith(name: String, competion: @escaping (Monster) -> Void) {
+
+        let cloudDb = CKContainer.default().publicCloudDatabase
+        cloudDb.fetch(withRecordID: CKRecord.ID(recordName: name)) { record, _ in
+            if let record = record {
+                if let json = record["json"] as? String {
+                    let decoder = JSONDecoder()
+                    if let monsterModel = try? decoder.decode(MonsterModel.self, from: json.data(using: .utf8, allowLossyConversion: true) ?? Data()) {
+                        let monster = Monster(model: monsterModel)
+                        competion(monster)
+                    }
+                }
+            }
+        }
     }
 
     static func == (lhs: Monster, rhs: Monster) -> Bool {

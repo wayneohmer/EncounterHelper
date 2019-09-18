@@ -13,6 +13,7 @@ class EncounterCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var editButton: BlackButton!
+    var encounter = Encounter()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,4 +24,7 @@ class EncounterCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    @IBAction func cloudTouched() {
+        encounter.saveToCloud()
+    }
 }

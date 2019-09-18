@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class EncounterTableViewController: UITableViewController, UISplitViewControllerDelegate {
 
@@ -23,6 +24,34 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
     }
 
     // MARK: - Table view data source
+
+    @IBAction func cloudTouched(_ sender: UIBarButtonItem) {
+
+        let searchPredicate = NSPredicate(format: "TRUEPREDICATE")
+        let query = CKQuery(recordType: "Encounter", predicate: searchPredicate)
+        let container = CKContainer.default()
+        let cloudDb = container.publicCloudDatabase
+        cloudDb.perform(query, inZoneWith: nil) { records, error in
+            if let error = error {
+                print(error)
+            } else {
+                if let records = records {
+                    for record in records {
+                        if let json = record["json"] as? String {
+                            let decoder = JSONDecoder()
+                            if let cloundEncounter = try? decoder.decode(CloudEncounter.self, from: json.data(using: .utf8, allowLossyConversion: true) ?? Data()) {
+                                let newEncounter = Encounter(cloud: cloundEncounter)
+                                Encounter.sharedEncounters.append(newEncounter)
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -44,6 +73,7 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
         cell.nameLabel.text = "\(encounter.name) - \(exp) - \(encounter.totalXP) - \(encounter.threshold) - \(exp/Character.sharedParty.count) per character"
         cell.detailsLabel.text = encounter.details
         cell.editButton.tag = indexPath.row
+        cell.encounter = encounter
 
         return cell
     }

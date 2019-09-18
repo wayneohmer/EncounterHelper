@@ -154,7 +154,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tn6-Ad-Hyg" userLabel="Name">
-                                            <rect key="frame" x="28" y="23" width="872" height="35"/>
+                                            <rect key="frame" x="28" y="23" width="756" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="OS0-wL-dk7"/>
                                             </constraints>
@@ -171,9 +171,8 @@
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQs-hB-oGd" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                             <rect key="frame" x="916" y="16" width="100" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="5k9-lD-UiB"/>
                                                 <constraint firstAttribute="height" constant="40" id="eqJ-Mx-ZfI"/>
-                                                <constraint firstAttribute="width" constant="100" id="maD-CF-vzc"/>
+                                                <constraint firstAttribute="width" secondItem="bQs-hB-oGd" secondAttribute="height" multiplier="5:2" id="jtc-Mb-p7X"/>
                                             </constraints>
                                             <state key="normal" title="Edit">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,17 +181,33 @@
                                                 <segue destination="Sf9-bH-GZ1" kind="presentation" identifier="EditEncounter" id="5KA-tf-hFD"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxq-ct-LY7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <rect key="frame" x="800" y="16" width="100" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="fVM-6p-GZ9"/>
+                                            </constraints>
+                                            <state key="normal" title="Cloud">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cloudTouched" destination="iCW-hs-miC" eventType="touchUpInside" id="lJp-MN-ixB"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.1372649073600769" green="0.1333332359790802" blue="0.13333180546760559" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
+                                        <constraint firstItem="dxq-ct-LY7" firstAttribute="width" secondItem="bQs-hB-oGd" secondAttribute="width" id="AWU-SH-4GK"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="M65-v9-YDs" secondAttribute="trailing" constant="8" id="Ecz-hm-Xeu"/>
+                                        <constraint firstItem="bQs-hB-oGd" firstAttribute="leading" secondItem="dxq-ct-LY7" secondAttribute="trailing" constant="16" id="Hji-Dc-Ehl"/>
+                                        <constraint firstItem="dxq-ct-LY7" firstAttribute="top" secondItem="bQs-hB-oGd" secondAttribute="top" id="L7w-6Y-5rj"/>
                                         <constraint firstItem="M65-v9-YDs" firstAttribute="leading" secondItem="A4a-4p-zGZ" secondAttribute="leadingMargin" constant="8" id="S5C-eP-U4N"/>
+                                        <constraint firstItem="dxq-ct-LY7" firstAttribute="leading" secondItem="tn6-Ad-Hyg" secondAttribute="trailing" constant="16" id="Uuj-6C-ldP"/>
+                                        <constraint firstItem="dxq-ct-LY7" firstAttribute="bottom" secondItem="bQs-hB-oGd" secondAttribute="bottom" id="XFg-EB-0E3"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="M65-v9-YDs" secondAttribute="bottom" priority="750" constant="8" id="b3O-pv-Zo3"/>
                                         <constraint firstAttribute="trailing" secondItem="bQs-hB-oGd" secondAttribute="trailing" constant="8" id="bsC-qX-zTh"/>
                                         <constraint firstItem="bQs-hB-oGd" firstAttribute="top" secondItem="A4a-4p-zGZ" secondAttribute="top" constant="16" id="dZ3-sa-3ZV"/>
                                         <constraint firstItem="tn6-Ad-Hyg" firstAttribute="leading" secondItem="A4a-4p-zGZ" secondAttribute="leadingMargin" constant="8" id="gKE-hW-L6z"/>
                                         <constraint firstItem="M65-v9-YDs" firstAttribute="top" secondItem="tn6-Ad-Hyg" secondAttribute="bottom" constant="8" id="gjL-2b-lbo"/>
-                                        <constraint firstItem="bQs-hB-oGd" firstAttribute="leading" secondItem="tn6-Ad-Hyg" secondAttribute="trailing" constant="16" id="lHZ-7G-EiD"/>
                                         <constraint firstItem="tn6-Ad-Hyg" firstAttribute="top" secondItem="A4a-4p-zGZ" secondAttribute="topMargin" constant="8" id="wp7-E1-8M4"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -222,6 +237,11 @@
                             <barButtonItem title="Party" id="7x0-w9-Byl">
                                 <connections>
                                     <segue destination="zUl-ot-hBQ" kind="show" identifier="Party" id="PdI-cb-DdM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Cloud" id="o2H-Zc-Gc0">
+                                <connections>
+                                    <action selector="cloudTouched:" destination="BQd-xK-Snd" id="db1-er-naM"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -254,11 +274,11 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wU-Ub-c9A" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wU-Ub-c9A" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                 <rect key="frame" x="694" y="36" width="90" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="uBS-QO-gHN"/>
-                                    <constraint firstAttribute="width" constant="90" id="vTO-5v-1Pt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="vTO-5v-1Pt"/>
                                 </constraints>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

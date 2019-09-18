@@ -202,8 +202,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
 
     @IBAction func saveTouched(_ sender: UIBarButtonItem) {
-        self.monster?.saveToCloud()
+        self.monster?.saveToCloudWith(name: "\(self.encounter.name)-\(self.monster?.name ?? "")")
     }
+
     @IBAction func startTouched(_ sender: UIBarButtonItem) {
         if let vc = masterVc {
             vc.encounter.isStarted = !vc.encounter.isStarted

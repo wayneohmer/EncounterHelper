@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class Encounter {
 
@@ -24,12 +25,11 @@ class Encounter {
     var partyLevels: [Int] { return Character.sharedParty.map({ $0.level }) }
 
     var saveable: SavebleEncounter {
-        var modelArray = [MonsterModel]()
-        for monster in monsters {
-            modelArray.append(monster.monsterModel)
-        }
+        return SavebleEncounter(name: name, details: details, fileName: fileName, round: round, monsters: monsters.map({$0.monsterModel}))
+    }
 
-        return SavebleEncounter(name: name, details: details, fileName: fileName, round: round, monsters: modelArray, partyLevels: partyLevels)
+    var cloud: CloudEncounter {
+        return CloudEncounter(name: name, details: details, fileName: fileName, round: round, monsters: monsters.map({ $0.name }))
     }
 
     var partyThreshold:(easy: Int, medium: Int, hard: Int, deadly: Int) {
@@ -86,6 +86,18 @@ class Encounter {
         }
     }
 
+    convenience init(cloud: CloudEncounter) {
+        self.init()
+        self.name = cloud.name
+        self.details = cloud.details
+        self.fileName = cloud.fileName
+        for name in cloud.monsters {
+            Monster.fetchFromCloudWith(name: "\(self.name)|\(name)") { monster in
+                self.monsters.append(monster)
+            }
+        }
+    }
+
     func save() {
 
         if self.fileName == "" {
@@ -107,6 +119,30 @@ class Encounter {
         } catch {
             print("Save Failed")
         }
+    }
+
+    func saveToCloud() {
+
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+
+        let data = try! encoder.encode(cloud)
+        let container = CKContainer.default()
+        let cloudDb = container.publicCloudDatabase
+        let cloudEncounter = CKRecord(recordType: "Encounter", recordID: CKRecord.ID(recordName: name)  )
+        cloudEncounter["name"] = name
+        cloudEncounter["json"] = String(data: data, encoding: .utf8)!
+        cloudDb.save(cloudEncounter) { record, error in
+            if error == nil {
+                print("\(record?["name"] ?? "No Name")")
+            } else {
+                print(error.debugDescription)
+            }
+        }
+        for monster in monsters {
+            monster.saveToCloudWith(name: "\(name)|\(monster.name)")
+        }
+
     }
 
     static let thresholdDict: [Int:(easy: Int, medium: Int, hard: Int, deadly: Int)] =
@@ -140,5 +176,13 @@ struct SavebleEncounter: Codable {
     var fileName = ""
     var round = Int(0)
     var monsters = [MonsterModel]()
-    var partyLevels = [Int]()
+}
+
+struct CloudEncounter: Codable {
+
+    var name = ""
+    var details = ""
+    var fileName = ""
+    var round = Int(0)
+    var monsters = [String]()
 }
