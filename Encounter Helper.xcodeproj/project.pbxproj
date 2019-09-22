@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B05FEEF233823D900134045 /* Spells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B05FEEE233823D900134045 /* Spells.storyboard */; };
+		2B05FEF12338247400134045 /* SpellMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05FEF02338247400134045 /* SpellMasterController.swift */; };
+		2B05FEF5233824B700134045 /* SpellDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05FEF4233824B700134045 /* SpellDetailController.swift */; };
+		2B05FEF7233826A500134045 /* SpellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05FEF6233826A500134045 /* SpellCell.swift */; };
 		2B1008A723283F230018872C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1008A623283F230018872C /* Character.swift */; };
 		2B17F72B230F0F800061EB5A /* EncounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17F72A230F0F800061EB5A /* EncounterCell.swift */; };
 		2B17F76623108F2A0061EB5A /* Monster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B17F76523108F2A0061EB5A /* Monster.storyboard */; };
@@ -72,6 +76,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B05FEEE233823D900134045 /* Spells.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Spells.storyboard; sourceTree = "<group>"; };
+		2B05FEF02338247400134045 /* SpellMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellMasterController.swift; sourceTree = "<group>"; };
+		2B05FEF4233824B700134045 /* SpellDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellDetailController.swift; sourceTree = "<group>"; };
+		2B05FEF6233826A500134045 /* SpellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellCell.swift; sourceTree = "<group>"; };
 		2B1008A623283F230018872C /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		2B17F72A230F0F800061EB5A /* EncounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterCell.swift; sourceTree = "<group>"; };
 		2B17F76523108F2A0061EB5A /* Monster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monster.storyboard; sourceTree = "<group>"; };
@@ -144,6 +152,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B05FEED233823BE00134045 /* Spells */ = {
+			isa = PBXGroup;
+			children = (
+				2B05FEF02338247400134045 /* SpellMasterController.swift */,
+				2B05FEF6233826A500134045 /* SpellCell.swift */,
+				2B05FEF4233824B700134045 /* SpellDetailController.swift */,
+				2B05FEEE233823D900134045 /* Spells.storyboard */,
+			);
+			path = Spells;
+			sourceTree = "<group>";
+		};
 		2B17F7712310A2C60061EB5A /* Dice */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +210,7 @@
 		2B340052230C84A7003AE875 /* Encounter */ = {
 			isa = PBXGroup;
 			children = (
+				2BEF9A692309E85000DEB8CD /* Main.storyboard */,
 				2B340044230B4E7B003AE875 /* Encounter.swift */,
 				2B1008A623283F230018872C /* Character.swift */,
 				2B340046230B5232003AE875 /* EcounterTableViewController.swift */,
@@ -212,8 +232,8 @@
 				2BFCD5712312295200804A0D /* HitPointEditorController.swift */,
 				2B356BB8232DA75A000E8E9E /* AttackPartyController.swift */,
 				2B356BBA232DA970000E8E9E /* AttackCharacterCell.swift */,
-				2BA2C64B231DE21E00602491 /* Conditions */,
 				2B17F76523108F2A0061EB5A /* Monster.storyboard */,
+				2B356BBC232EB617000E8E9E /* MasterViews.storyboard */,
 			);
 			path = Monsters;
 			sourceTree = "<group>";
@@ -251,12 +271,12 @@
 			isa = PBXGroup;
 			children = (
 				2B2A0EF1232555B700030C0F /* Encounter Helper.entitlements */,
-				2BEF9A692309E85000DEB8CD /* Main.storyboard */,
-				2B356BBC232EB617000E8E9E /* MasterViews.storyboard */,
 				2BEF9A632309E85000DEB8CD /* AppDelegate.swift */,
 				2B340053230C84B6003AE875 /* Monsters */,
 				2B340052230C84A7003AE875 /* Encounter */,
 				2B340051230C8491003AE875 /* Action */,
+				2BA2C64B231DE21E00602491 /* Conditions */,
+				2B05FEED233823BE00134045 /* Spells */,
 				2B17F7712310A2C60061EB5A /* Dice */,
 				2BEF9A6C2309E85200DEB8CD /* Assets.xcassets */,
 				2BEF9A712309E85200DEB8CD /* Info.plist */,
@@ -387,6 +407,7 @@
 				2B17F76623108F2A0061EB5A /* Monster.storyboard in Resources */,
 				2B17F7832310A7EC0061EB5A /* Awww.aif in Resources */,
 				2BEF9A6B2309E85000DEB8CD /* Main.storyboard in Resources */,
+				2B05FEEF233823D900134045 /* Spells.storyboard in Resources */,
 				2B17F7802310A7EC0061EB5A /* 3dice.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B05FEF7233826A500134045 /* SpellCell.swift in Sources */,
 				2B356BBF232EC47F000E8E9E /* EncounterDetailController.swift in Sources */,
 				2B99A9CD2329A6510021E888 /* CharacterCell.swift in Sources */,
 				2B17F7792310A2FE0061EB5A /* Oops.swift in Sources */,
@@ -440,6 +462,7 @@
 				2B340055230C84F8003AE875 /* BlackButton.swift in Sources */,
 				2BA2C64A231DB4C800602491 /* CondtionsDescCell.swift in Sources */,
 				2B17F7752310A2EF0061EB5A /* AdvantageSwitch.swift in Sources */,
+				2B05FEF12338247400134045 /* SpellMasterController.swift in Sources */,
 				2BA2C648231DB07400602491 /* ConditionsDescController.swift in Sources */,
 				2B340049230B943B003AE875 /* ActionCell.swift in Sources */,
 				2BFCD5BA2314947E00804A0D /* MassSpellController.swift in Sources */,
@@ -458,6 +481,7 @@
 				2BEF9A642309E85000DEB8CD /* AppDelegate.swift in Sources */,
 				2BAC383E2309FC0400A1CAEA /* MonsterListCell.swift in Sources */,
 				2B356BBB232DA970000E8E9E /* AttackCharacterCell.swift in Sources */,
+				2B05FEF5233824B700134045 /* SpellDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

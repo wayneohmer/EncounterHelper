@@ -17,29 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     let savedParyPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("party")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
         if  !FileManager.default.fileExists(atPath: Encounter.savedEncountersPath.absoluteString) {
             do {
                 try FileManager.default.createDirectory(atPath: Encounter.savedEncountersPath.path,
-                                                withIntermediateDirectories: true,
-                                                attributes: nil)
-            } catch {
-                print("Error creating images folder in documents dir: \(error)")
-            }
-        }
-        if  !FileManager.default.fileExists(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("images").absoluteString) {
-            do {
-                try FileManager.default.createDirectory(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("images").path,
-                                                        withIntermediateDirectories: false,
-                                                        attributes: nil)
-            } catch {
-                print("Error creating images folder in documents dir: \(error)")
-            }
-        }
-        if  !FileManager.default.fileExists(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("party").absoluteString) {
-            do {
-                try FileManager.default.createDirectory(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("images").path,
-                                                        withIntermediateDirectories: false,
+                                                        withIntermediateDirectories: true,
                                                         attributes: nil)
             } catch {
                 print("Error creating images folder in documents dir: \(error)")
@@ -69,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                 try! FileManager.default.createDirectory(at: iCloudDocumentsURL, withIntermediateDirectories: true, attributes: nil)
             }
         }
+        Spell.readSpells()
+        Monster.readMonsters()
         return true
     }
 

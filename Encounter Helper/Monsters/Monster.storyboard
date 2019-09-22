@@ -391,12 +391,6 @@
                                     <action selector="massSpellTouched:" destination="DwA-FD-pM7" id="sCj-yq-XzZ"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="save" id="lZ5-ZB-poS">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="saveTouched:" destination="DwA-FD-pM7" id="IFD-e7-f3P"/>
-                                </connections>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -424,7 +418,6 @@
                         <outlet property="massSpellButton" destination="5cd-Yp-0af" id="I71-LS-fJN"/>
                         <outlet property="nameField" destination="zlA-tt-n3C" id="id1-Qx-iyA"/>
                         <outlet property="noImage" destination="kKU-Us-rJs" id="aES-az-GU8"/>
-                        <outlet property="saveButton" destination="lZ5-ZB-poS" id="2mr-xy-QAo"/>
                         <outlet property="sensesLabel" destination="ueW-l9-YSw" id="ENl-Vp-swe"/>
                         <outlet property="speedLabel" destination="YqO-ga-09m" id="4i9-5W-HlU"/>
                         <outlet property="startButton" destination="yt8-gv-Ity" id="OJn-Nw-MtX"/>
@@ -516,11 +509,12 @@
                         <segue destination="Miy-5z-4dK" kind="popoverPresentation" identifier="showAttack" popoverAnchorView="tDu-CH-FPc" id="ySz-Tz-V0u">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                        <segue destination="AkU-T2-cgN" kind="presentation" identifier="showSpells" id="8YD-Z8-jw4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ny6-e6-er9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30469" y="756"/>
+            <point key="canvasLocation" x="30409" y="806"/>
         </scene>
         <!--Dice Controller-->
         <scene sceneID="xsZ-Pl-09Y">
@@ -2187,6 +2181,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gO7-58-JtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31074" y="721"/>
+        </scene>
+        <!--Spells-->
+        <scene sceneID="wcH-J0-t1H">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Spells" id="AkU-T2-cgN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdG-tm-Q0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31091" y="1065"/>
         </scene>
         <!--Attack Party Controller-->
         <scene sceneID="y0C-a3-74D">

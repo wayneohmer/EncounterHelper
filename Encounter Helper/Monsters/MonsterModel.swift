@@ -56,7 +56,14 @@ class Monster: Hashable {
     var imagePath: URL { return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("images\(storedImageFileName ?? "")") }
 
     var monsterModel = MonsterModel()
-    var metaMonster = MonsterMetaModel()
+    var metaMonster: MonsterMetaModel {
+        set {
+            self.monsterModel.metaModel = newValue
+        }
+        get {
+            return monsterModel.metaModel ?? MonsterMetaModel()
+        }
+    }
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.name)
@@ -215,11 +222,6 @@ class Monster: Hashable {
             self.monsterModel.imageData = imageData
             self.storedImage = UIImage(data: imageData)
             imageFileName = name
-//            do {
-//                try imageData.write(to: imagePath)
-//            } catch {
-//                print(imagePath.absoluteString)
-//            }
             return self.storedImage
         }
     }
@@ -227,6 +229,9 @@ class Monster: Hashable {
     convenience init(model: MonsterModel) {
         self.init()
         self.monsterModel = model
+        if let imageData = model.imageData {
+            self.storedImage = UIImage(data: imageData)
+        }
         self.metaMonster = model.metaModel ?? MonsterMetaModel()
         if self.monsterModel.currentHitPoints == nil {
             if self.monsterModel.maxHitPoints == nil {
@@ -290,9 +295,18 @@ class Monster: Hashable {
         } catch {
         }
 
-        for monsterModel in monsters {
-            let monster = Monster()
-            monster.monsterModel = monsterModel
+        for var monsterModel in monsters {
+            for (idx, action) in monsterModel.special_abilities?.enumerated() ?? [Action]().enumerated() {
+                if let spellNames = action.spellNames {
+                    monsterModel.special_abilities?[idx].spells = [SpellModel]()
+                    for name in spellNames {
+                        if let spell = Spell.sharedSpells.first(where: { $0.name.lowercased() == name }) {
+                            monsterModel.special_abilities?[idx].spells?.append(spell.spellModel)
+                        }
+                    }
+                }
+            }
+            let monster = Monster(model: monsterModel)
             for metaMonster in metaMonsters {
                 if metaMonster.name == monsterModel.name {
                     monster.metaMonster = metaMonster
@@ -408,6 +422,8 @@ struct Action: Codable {
     var attack_bonus: Int?
     var damage_dice: String?
     var damage_bonus: Int?
+    var spellNames: [String]?
+    var spells: [SpellModel]?
 
     init(desc: String) {
         self.desc = desc

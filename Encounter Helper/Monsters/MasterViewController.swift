@@ -36,7 +36,6 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        Monster.readMonsters()
 
         self.tableView.estimatedRowHeight = 60
         self.tableView.tableFooterView = UIView()
@@ -50,7 +49,17 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
         titleButton.addTarget(self, action: #selector(flipTouched), for: .touchUpInside)
         self.navigationItem.titleView = titleButton
 
-        //self.tableView.tableHeaderView = self.headerView
+        if self.encounter.monsters.count == 0 {
+            self.monsters = Array(Monster.sharedMonsters)
+            monsters.sort(by: {
+                if $0.challengeRating == $1.challengeRating {
+                    return $0.name < $1.name
+                } else {
+                    return $0.challengeRating < $1.challengeRating
+                }
+            })
+        }
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -212,9 +221,9 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func tableButtonTouched(_ sender: UIButton) {
         if sender.title(for: .normal) == "+" {
             if isFiltering() {
-                self.encounter.monsters.append(filterdMonsters[sender.tag])
+                self.encounter.monsters.append(Monster(model: filterdMonsters[sender.tag].monsterModel))
             } else {
-                self.encounter.monsters.append(monsters[sender.tag])
+                self.encounter.monsters.append(Monster(model: monsters[sender.tag].monsterModel))
             }
             tableView.reloadRows(at: [IndexPath(item: sender.tag, section: 0)], with: .automatic)
         }

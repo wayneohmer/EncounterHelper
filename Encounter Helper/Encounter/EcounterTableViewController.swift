@@ -70,7 +70,11 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
 
         let encounter = Encounter.sharedEncounters[indexPath.row]
         let exp = encounter.monsters.map({$0.experience}).reduce(0, + )
-        cell.nameLabel.text = "\(encounter.name) - \(exp) - \(encounter.totalXP) - \(encounter.threshold) - \(exp/Character.sharedParty.count) per character"
+        if Character.sharedParty.count == 0 {
+            cell.nameLabel.text = "\(encounter.name)"
+        } else {
+            cell.nameLabel.text = "\(encounter.name) - \(exp) - \(encounter.totalXP) - \(encounter.threshold) - \(exp/Character.sharedParty.count) per character"
+        }
         cell.detailsLabel.text = encounter.details
         cell.editButton.tag = indexPath.row
         cell.encounter = encounter
@@ -84,6 +88,7 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            Encounter.sharedEncounters[indexPath.row].remove()
             Encounter.sharedEncounters.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()

@@ -60,8 +60,11 @@ class ActionTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         if monster.allActions[indexPath.section][indexPath.row].damage_dice != nil {
             self.performSegue(withIdentifier: "showAttack", sender: monster.allActions[indexPath.section][indexPath.row])
+        } else if monster.allActions[indexPath.section][indexPath.row].spells != nil {
+            self.performSegue(withIdentifier: "showSpells", sender: monster.allActions[indexPath.section][indexPath.row])
         }
 
     }
@@ -81,6 +84,31 @@ class ActionTableViewController: UITableViewController {
                 vc.damageDice.modifier = action.damage_bonus ?? 0
             }
         }
+        if segue.identifier == "showSpells", let action = sender as? Action {
+            let splitViewController = segue.destination as! UISplitViewController
+            splitViewController.preferredPrimaryColumnWidthFraction = 0.25
+            var navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-2] as! UINavigationController
+            navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-2] as! UINavigationController
+
+            if let vc = navigationController.topViewController as? SpellMasterController {
+                vc.spells = action.spells ?? [SpellModel]()
+            }
+            splitViewController.delegate = self
+        }
     }
 
+}
+
+extension ActionTableViewController: UISplitViewControllerDelegate {
+
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? SpellDetailController else { return false }
+        if topAsDetailController.spell == nil {
+            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            return true
+        }
+        return false
+    }
 }

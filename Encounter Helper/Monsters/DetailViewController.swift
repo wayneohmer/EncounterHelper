@@ -48,13 +48,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var condictionsButton: UIBarButtonItem!
     @IBOutlet var startButton: UIBarButtonItem!
     @IBOutlet var massSpellButton: UIBarButtonItem!
-    @IBOutlet var saveButton: UIBarButtonItem!
 
     var monster: Monster?
     var masterVc: MasterViewController?
     var encounter: Encounter { return masterVc?.encounter ?? Encounter() }
     var ecounterBarButtons: [UIBarButtonItem] { return [startButton, condictionsButton, diceButton, massSpellButton]}
-    var noEcounterBarButtons: [UIBarButtonItem] { return [startButton, duplicateButton, saveButton]}
+    var noEcounterBarButtons: [UIBarButtonItem] { return [startButton, duplicateButton]}
     var allBarButtons = [UIBarButtonItem]()
     var actionVc = ActionTableViewController()
     let titleButton =  UIButton(type: .custom)
@@ -201,10 +200,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.masterVc?.selectMonsterWith(name: newMonster.name)
     }
 
-    @IBAction func saveTouched(_ sender: UIBarButtonItem) {
-        self.monster?.saveToCloudWith(name: "\(self.encounter.name)-\(self.monster?.name ?? "")")
-    }
-
     @IBAction func startTouched(_ sender: UIBarButtonItem) {
         if let vc = masterVc {
             vc.encounter.isStarted = !vc.encounter.isStarted
@@ -215,8 +210,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                         monster.randomizeHP()
                     }
                     self.updateHP()
+                    vc.encounter.round = 1
+                    self.titleButton.setTitle("Round \(self.encounter.round)", for: .normal)
+
                 }))
-                alertController.addAction(UIAlertAction(title: "No", style: .default))
+                alertController.addAction(UIAlertAction(title: "No", style: .default, handler: {  _ in
+                    vc.encounter.round = 1
+                    self.titleButton.setTitle("Round \(self.encounter.round)", for: .normal)
+                }))
                 self.present(alertController, animated: true)
 
                 self.navigationItem.rightBarButtonItems = ecounterBarButtons
@@ -224,8 +225,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                 self.navigationItem.rightBarButtonItems = noEcounterBarButtons
             }
             self.startButton.title = encounter.isStarted ? "Finish" : "Start"
-            vc.encounter.round = 1
-            self.navigationItem.title = "Round \(encounter.round)"
 
         }
     }

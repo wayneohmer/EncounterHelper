@@ -98,6 +98,11 @@ class Encounter {
         }
     }
 
+    func remove() {
+        let path = Encounter.savedEncountersPath.appendingPathComponent(self.fileName)
+        try? FileManager.default.removeItem(at: path)
+    }
+
     func save() {
 
         if self.fileName == "" {
