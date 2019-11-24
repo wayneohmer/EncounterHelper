@@ -1,0 +1,227 @@
+[{
+    "name": "Dire Rat",
+    "size": "Large",
+    "type": "beast",
+    "subtype": "",
+    "alignment": "unaligned",
+    "armor_class": 14,
+    "hit_points": 37,
+    "hit_dice": "5d10",
+    "speed": "50 ft.",
+    "strength": 17,
+    "dexterity": 15,
+    "constitution": 15,
+    "intelligence": 3,
+    "wisdom": 12,
+    "charisma": 7,
+    "perception": 3,
+    "stealth": 4,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "passive Perception 13",
+    "languages": "",
+    "challenge_rating": "1",
+    "special_abilities": [{
+            "name": "Keen Hearing and Smell",
+            "desc": "The rat has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Pack Tactics",
+            "desc": "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [{
+        "name": "Bite",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+        "attack_bonus": 5,
+        "damage_dice": "2d6",
+        "damage_bonus": 3
+    }]
+}, {
+    "name": "Advanced Bullywug",
+    "size": "Medium",
+    "type": "Humanoid",
+    "subtype": "",
+    "alignment": "neutral evil",
+    "armor_class": 16,
+    "hit_points": 19,
+    "hit_dice": "3d8",
+    "speed": "20 ft.",
+    "strength": 13,
+    "dexterity": 12,
+    "constitution": 14,
+    "intelligence": 10,
+    "wisdom": 11,
+    "charisma": 10,
+    "wisdom_save": 0,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "passive Perception 10",
+    "languages": "Bullywug",
+    "challenge_rating": "1",
+    "special_abilities": [{
+        "name": "Amphibious",
+        "desc": "The bullywug can breathe air and water",
+        "attack_bonus": 0
+    }, {
+        "name": "Speak with Frogs and Toads",
+        "desc": "The bullywug can communicate simple concepts to frogs and toads when it speaks in Bullywug.",
+        "attack_bonus": 0
+    }, {
+        "name": "Magic Resistance",
+        "desc": "The bullywug has advantage on saving throws against spells and other magical effects.",
+        "attack_bonus": 0
+    }, {
+        "name": "Swamp Camouflage",
+        "desc": "The bullywug has advantage on Dexterity(Stealth) checks made to hide in swampy terrain.",
+        "attack_bonus": 0
+    }, {
+        "name": "Standing Leap",
+        "desc": "The bullywug's long jump is up to 20 feet and its high jump is up to 10 feet,with or without a running start.",
+        "attack_bonus": 0
+    }],
+    "actions": [{
+        "name": "Multiattack",
+        "desc": "The bullywug makes two melee attacks: one with its bite and one with its spear.",
+        "attack_bonus": 0
+    }, {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack:+3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damag",
+        "attack_bonus": 3,
+        "damage_dice": "1d4",
+        "damage_bonus": 1
+    }, {
+        "name": "Shortsword",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.",
+        "attack_bonus": 3,
+        "damage_dice": "1d6",
+        "damage_bonus": 1
+    }]
+}, {
+    "name": "Bullywug Boss",
+    "size": "Medium",
+    "type": "Humanoid",
+    "subtype": "",
+    "alignment": "neutral evil",
+    "armor_class": 15,
+    "hit_points": 39,
+    "hit_dice": "6d8",
+    "speed": "20 ft.",
+    "strength": 14,
+    "dexterity": 14,
+    "constitution": 15,
+    "intelligence": 7,
+    "wisdom": 11,
+    "charisma": 9,
+    "wisdom_save": 0,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "passive Perception 10",
+    "languages": "Bullywug",
+    "challenge_rating": "1",
+    "special_abilities": [{
+        "name": "Amphibious",
+        "desc": "The bullywug can breathe air and water",
+        "attack_bonus": 0
+    }, {
+        "name": "Speak with Frogs and Toads",
+        "desc": "The bullywug can communicate simple concepts to frogs and toads when it speaks in Bullywug.",
+        "attack_bonus": 0
+    }, {
+        "name": "Swamp Camouflage",
+        "desc": "The bullywug has advantage on Dexterity(Stealth) checks made to hide in swampy terrain.",
+        "attack_bonus": 0
+    }, {
+        "name": "Standing Leap",
+        "desc": "The bullywug's long jump is up to 20 feet and its high jump is up to 10 feet,with or without a running start.",
+        "attack_bonus": 0
+    }],
+    "actions": [{
+        "name": "Multiattack",
+        "desc": "The bullywug makes two melee attacks: one with its bite and one with its spear.",
+        "attack_bonus": 0
+    }, {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack:+4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damag",
+        "attack_bonus": 4,
+        "damage_dice": "1d4",
+        "damage_bonus": 2
+    }, {
+        "name": "Pike",
+        "desc": "Melee Weapon Attack: +4 to hit, reach 10 ft., one target. Hit: 7 (1d10 + 2) piercing damage.",
+        "attack_bonus": 4,
+        "damage_dice": "1d10",
+        "damage_bonus": 2
+    }]
+}, {
+    "name": "Bullywug Shaman",
+    "size": "Medium",
+    "type": "Humanoid",
+    "subtype": "",
+    "alignment": "neutral evil",
+    "armor_class": 12,
+    "hit_points": 32,
+    "hit_dice": "5d8",
+    "speed": "20 ft.",
+    "strength": 12,
+    "dexterity": 12,
+    "constitution": 14,
+    "intelligence": 8,
+    "wisdom": 14,
+    "charisma": 9,
+    "wisdom_save": 0,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "frightened",
+    "senses": "passive Perception 12",
+    "languages": "Bullywug",
+    "challenge_rating": "2",
+    "special_abilities": [{
+        "name": "Amphibious",
+        "desc": "The bullywug can breathe air and water",
+        "attack_bonus": 0
+    }, {
+        "name": "Speak with Frogs and Toads",
+        "desc": "The bullywug can communicate simple concepts to frogs and toads when it speaks in Bullywug.",
+        "attack_bonus": 0
+    }, {
+        "name": "Spellcasting",
+        "desc": "The bullywug is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The bullywug has the following druid spells prepared:\nCantrips (at will): druidcraft, poison spray, produce flame\n1st level (4 slots): fog cloud, goodberry, thunderwave\n2nd level (3 slots): barkskin, spike growth\n3rd level (2 slots): call lightning, conjure animals (amphibians only)",
+        "spellNames": ["druidcraft","poison spray","produce flame", "fog cloud", "goodberry", "thunderwave", "barkskin", "spike growth", "call lightning", "conjure animals"],
+        "attack_bonus": 0
+    }, {
+        "name": "Swamp Camouflage",
+        "desc": "The bullywug has advantage on Dexterity(Stealth) checks made to hide in swampy terrain.",
+        "attack_bonus": 0
+    }, {
+        "name": "Standing Leap",
+        "desc": "The bullywug's long jump is up to 20 feet and its high jump is up to 10 feet,with or without a running start.",
+        "attack_bonus": 0
+    }],
+    "actions": [{
+        "name": "Multiattack",
+        "desc": "The bullywug makes two melee attacks: one with its bite and one with its spear.",
+        "attack_bonus": 0
+    }, {
+        "name": "Bite",
+        "desc": "Melee Weapon Attack:+4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damag",
+        "attack_bonus": 4,
+        "damage_dice": "1d4",
+        "damage_bonus": 2
+    }, {
+        "name": "Quarterstaff",
+        "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage, or 5 (1d8 + 1) bludgeoning damage if wielded with two hands",
+        "attack_bonus": 3,
+        "damage_dice": "1d6",
+        "damage_bonus": 1
+    }]
+}]

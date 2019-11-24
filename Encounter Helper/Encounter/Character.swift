@@ -21,5 +21,6 @@ struct Character: Codable {
     var level = Int(0)
     var armorClass = Int(0)
     var passivePerception = Int(10)
+    var experiencePoints = Int(0)
 
 }

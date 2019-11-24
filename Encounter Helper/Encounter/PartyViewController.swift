@@ -35,12 +35,15 @@ class PartyViewController: UITableViewController {
             cell.levelField.text  = "\(Character.sharedParty[indexPath.row].level)"
             cell.acField.text = "\(Character.sharedParty[indexPath.row].armorClass)"
             cell.perceptionField.text = "\(Character.sharedParty[indexPath.row].passivePerception)"
+            cell.experiencePointField.text = "\(Character.sharedParty[indexPath.row].experiencePoints)"
             cell.row = indexPath.row
         } else {
             cell.nameField.text = ""
             cell.levelField.text  = ""
             cell.acField.text = ""
             cell.perceptionField.text = ""
+            cell.experiencePointField.text = ""
+
             cell.row = nil
         }
         cell.parent = self

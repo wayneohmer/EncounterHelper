@@ -15,6 +15,7 @@ class MassSpellController: UIViewController, UITextFieldDelegate {
     var attribute = Attribute.Strength
     var restoreMonsters = [MonsterModel]()
     var conditionController = ConditionsController()
+    var masterVc: MasterViewController?
 
     @IBOutlet weak var damageField: UITextField!
     @IBOutlet weak var halfDamageField: UITextField!
@@ -32,7 +33,12 @@ class MassSpellController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func donePressed() {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.masterVc?.tableView.reloadData()
+            self.masterVc?.tableView.selectRow(at: self.masterVc?.selectedIndex, animated: true, scrollPosition: .top)
+            self.masterVc?.performSegue(withIdentifier: "showDetail", sender: nil)
+
+        }
 
     }
 

@@ -11,11 +11,13 @@ import UIKit
 class MasterViewController: UITableViewController, UITextFieldDelegate {
 
     var detailViewController: DetailViewController?
+    var parentVc: EncounterTableViewController?
     var filterdMonsters = [Monster]()
     var encounter = Encounter()
     let titleButton =  UIButton(type: .custom)
     var searchCRMin: Float { return Float(crMinField.text ?? "") ?? 0 }
     var searchCRMax: Float { return Float(crMaxField.text ?? "") ?? 999 }
+    var selectedIndex = IndexPath(row: 0, section: 0)
 
     @IBOutlet var encounterHeaderView: UIView!
     @IBOutlet weak var difficultyLabel: UILabel!
@@ -50,6 +52,7 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
         self.navigationItem.titleView = titleButton
 
         if self.encounter.monsters.count == 0 {
+            self.titleButton.setTitle("All", for: .normal)
             self.monsters = Array(Monster.sharedMonsters)
             monsters.sort(by: {
                 if $0.challengeRating == $1.challengeRating {
@@ -66,10 +69,18 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+        self.tableView.selectRow(at: self.selectedIndex, animated: true, scrollPosition: .top)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.performSegue(withIdentifier: "showDetail", sender: nil)
     }
 
     @IBAction func SaveTouched(_ sender: Any) {
         self.encounter.save()
+        self.parentVc?.sortEncounters()
+        self.parentVc?.tableView.reloadData()
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -180,6 +191,10 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return isEncounter
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

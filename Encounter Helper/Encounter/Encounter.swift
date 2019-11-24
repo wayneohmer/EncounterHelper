@@ -23,13 +23,14 @@ class Encounter {
     var monsters = [Monster]()
     var round = Int(0)
     var partyLevels: [Int] { return Character.sharedParty.map({ $0.level }) }
+    var isCompleted = false
 
     var saveable: SavebleEncounter {
-        return SavebleEncounter(name: name, details: details, fileName: fileName, round: round, monsters: monsters.map({$0.monsterModel}))
+        return SavebleEncounter(name: name, details: details, fileName: fileName, round: round, monsters: monsters.map({$0.monsterModel}), isCompleted: isCompleted)
     }
 
     var cloud: CloudEncounter {
-        return CloudEncounter(name: name, details: details, fileName: fileName, round: round, monsters: monsters.map({ $0.name }))
+        return CloudEncounter(name: name, details: details, fileName: fileName, round: round, monsters: monsters.map({ $0.name }), isCompleted: isCompleted)
     }
 
     var partyThreshold:(easy: Int, medium: Int, hard: Int, deadly: Int) {
@@ -181,6 +182,8 @@ struct SavebleEncounter: Codable {
     var fileName = ""
     var round = Int(0)
     var monsters = [MonsterModel]()
+    var isCompleted = false
+
 }
 
 struct CloudEncounter: Codable {
@@ -190,4 +193,6 @@ struct CloudEncounter: Codable {
     var fileName = ""
     var round = Int(0)
     var monsters = [String]()
+    var isCompleted = false
+
 }

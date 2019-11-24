@@ -20,6 +20,7 @@ class HitPointEditorController: UIViewController {
         super.viewDidLoad()
         self.damageButton.color = .red
         self.healButton.color = .blue
+        self.hpLabel.layer.cornerRadius = 8
 
     }
 

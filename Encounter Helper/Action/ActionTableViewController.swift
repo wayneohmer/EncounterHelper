@@ -40,8 +40,10 @@ class ActionTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.contentView.backgroundColor = UIColor(red: 45/255, green: 44/255, blue: 44/255, alpha: 1)
             headerView.textLabel?.textAlignment = .center
             headerView.textLabel?.textColor = .white
+            headerView.textLabel?.backgroundColor = .clear
         }
     }
 

@@ -17,6 +17,7 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var acField: UITextField!
     @IBOutlet weak var perceptionField: UITextField!
     @IBOutlet weak var levelField: UITextField!
+    @IBOutlet weak var experiencePointField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +36,9 @@ class CharacterCell: UITableViewCell {
             Character.sharedParty[thisRow].level = toInt(levelField)
             Character.sharedParty[thisRow].armorClass = toInt(acField)
             Character.sharedParty[thisRow].passivePerception = toInt(perceptionField)
+            Character.sharedParty[thisRow].experiencePoints = toInt(experiencePointField)
         } else {
-            let character = Character(name: nameField.text ?? "", level: toInt(levelField), armorClass: toInt(acField), passivePerception: toInt(perceptionField))
+            let character = Character(name: nameField.text ?? "", level: toInt(levelField), armorClass: toInt(acField), passivePerception: toInt(perceptionField), experiencePoints: toInt(experiencePointField) )
             Character.sharedParty.append(character)
         }
         parent?.tableView.reloadData()

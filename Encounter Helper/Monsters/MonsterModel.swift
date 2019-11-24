@@ -25,6 +25,8 @@ class Monster: Hashable {
     static let crDict: [String: Int] = ["1/8": 25,
                                       "1/4": 50,
                                       "1/2": 100,
+                                      "1": 200,
+                                      "2": 450,
                                       "3": 700,
                                       "4": 1100,
                                       "5": 1800,
@@ -268,7 +270,7 @@ class Monster: Hashable {
         var monsters = [MonsterModel]()
         var metaMonsters = [MonsterMetaModel]()
 
-        guard let path = Bundle.main.path(forResource: "5e-SRD-Monsters", ofType: "json") else {
+        guard var path = Bundle.main.path(forResource: "5e-SRD-Monsters", ofType: "json") else {
             return
         }
         guard let metapath = Bundle.main.path(forResource: "srd_5e_monsters", ofType: "json") else {
@@ -281,6 +283,20 @@ class Monster: Hashable {
                 let decoder = JSONDecoder()
                 monsters = try decoder.decode([MonsterModel].self, from: data)
             } catch {
+            }
+        } catch {
+        }
+
+        path = Bundle.main.path(forResource: "ExtraMonsters", ofType: "json")!
+
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            do {
+                let decoder = JSONDecoder()
+                let extraMonsters = try decoder.decode([MonsterModel].self, from: data)
+                monsters.append(contentsOf: extraMonsters)
+            } catch {
+                print(error)
             }
         } catch {
         }

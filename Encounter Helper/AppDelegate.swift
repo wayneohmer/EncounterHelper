@@ -28,13 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             }
         }
 
-        if let monsterData = try? Data(contentsOf: savedMonstersPath) {
-            if let savedMonstsers = try? JSONDecoder().decode(StoredMonsters.self, from: monsterData) {
-                for model in savedMonstsers.monsters {
-                    Monster.sharedMonsters.insert(Monster(model: model))
-                }
-            }
-        }
+//        if let monsterData = try? Data(contentsOf: savedMonstersPath) {
+//            if let savedMonstsers = try? JSONDecoder().decode(StoredMonsters.self, from: monsterData) {
+//                for model in savedMonstsers.monsters {
+//                    Monster.sharedMonsters.insert(Monster(model: model))
+//                }
+//            }
+//        }
 
         if let characterData = try? Data(contentsOf: savedParyPath) {
             if let party = try? JSONDecoder().decode(StoredParty.self, from: characterData) {

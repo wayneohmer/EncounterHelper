@@ -20,7 +20,12 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.sortEncounters()
         tableView.reloadData()
+    }
+
+    func sortEncounters() {
+        Encounter.sharedEncounters.sort(by: { _, lhs in lhs.isCompleted })
     }
 
     // MARK: - Table view data source
@@ -75,6 +80,7 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
         } else {
             cell.nameLabel.text = "\(encounter.name) - \(exp) - \(encounter.totalXP) - \(encounter.threshold) - \(exp/Character.sharedParty.count) per character"
         }
+        cell.nameLabel.textColor = encounter.isCompleted ? .lightGray : .white
         cell.detailsLabel.text = encounter.details
         cell.editButton.tag = indexPath.row
         cell.encounter = encounter
@@ -120,6 +126,7 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
             if let vc = navigationController.topViewController as? MasterViewController {
                 if let encounter = sender as? Encounter {
                     vc.encounter = encounter
+                    vc.parentVc = self
                 }
             }
             splitViewController.delegate = self

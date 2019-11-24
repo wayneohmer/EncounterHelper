@@ -11,6 +11,11 @@ import UIKit
 class SpellDetailController: UIViewController {
 
     var spell: SpellModel?
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var rangeLabel: UILabel!
+    @IBOutlet weak var castlingTimeLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
 
     override func viewDidLoad() {
@@ -22,13 +27,42 @@ class SpellDetailController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let spell = spell, let details = spell.desc {
+
+            nameLabel.text = spell.name
+            nameLabel.layer.cornerRadius = 8
+
+            rangeLabel.text = spell.range
+            castlingTimeLabel.text = spell.castingTime
+            levelLabel.text = spell.level
+
             let htmlData = NSString(string: details).data(using: String.Encoding.unicode.rawValue)
             let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
                 NSAttributedString.DocumentType.html]
-            let attributedString = try? NSMutableAttributedString(data: htmlData ?? Data(),
-                                                                  options: options,
-                                                                  documentAttributes: nil)
-            self.descriptionView.attributedText = attributedString
+            do {
+                let attributedString = try NSMutableAttributedString(data: htmlData ?? Data(),
+                                                                     options: options,
+                                                                     documentAttributes: nil)
+                attributedString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], range: NSRange(location: 0, length: attributedString.length))
+
+                attributedString.enumerateAttribute(.font, in: NSRange(0..<attributedString.length)) { value, range, _ in
+                    if let font = value as? UIFont {
+                        var fontMetrics = UIFontMetrics(forTextStyle: .body)
+                        if font.fontDescriptor.symbolicTraits.contains(.traitBold) {
+                            fontMetrics = UIFontMetrics(forTextStyle: .title2)
+                        }
+                        let size = fontMetrics.scaledFont(for: UIFont.systemFont(ofSize: 20)).pointSize
+                        let newFont = UIFont(name: font.fontName, size: size) ?? font
+                        attributedString.removeAttribute(.font, range: range)
+                        attributedString.addAttribute(.font, value: newFont, range: range)
+                    }
+                }
+
+                self.descriptionView.attributedText = attributedString
+                self.descriptionView.layer.cornerRadius = 8
+            } catch {
+
+            }
+
         }
     }
     /*

@@ -222,6 +222,18 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
 
                 self.navigationItem.rightBarButtonItems = ecounterBarButtons
             } else {
+                let alertController = UIAlertController(title: "Award XP?", message: "", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                    let exp = self.encounter.monsters.map({$0.experience}).reduce(0, + ) / Character.sharedParty.count
+                    for (idx, _) in Character.sharedParty.enumerated() {
+                        Character.sharedParty[idx].experiencePoints += exp
+                    }
+                    vc.encounter.isCompleted = true
+                    self.masterVc?.SaveTouched(UIButton())
+
+                }))
+                alertController.addAction(UIAlertAction(title: "No", style: .default))
+                self.present(alertController, animated: true)
                 self.navigationItem.rightBarButtonItems = noEcounterBarButtons
             }
             self.startButton.title = encounter.isStarted ? "Finish" : "Start"
@@ -378,6 +390,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             if let vc = segue.destination as? MassSpellController {
                 vc.encounter = self.encounter
                 vc.attribute = sender as? Attribute ?? Attribute.Strength
+                vc.masterVc = self.masterVc
             }
         case "conditionsDesc":
             if let vc = segue.destination as? ConditionsDescController {
