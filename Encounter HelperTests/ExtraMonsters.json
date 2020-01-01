@@ -224,4 +224,74 @@
         "damage_dice": "1d6",
         "damage_bonus": 1
     }]
+},{
+  "name": "Rat Queen",
+  "size": "Medium",
+  "type": "humanoid",
+  "subtype": "human",
+  "alignment": "lawful evil",
+  "armor_class": 12,
+  "hit_points": 48, 
+  "hit_dice": "11d8",
+  "speed": "30 ft.",
+  "strength": 10,
+  "dexterity": 15,
+  "constitution": 14,
+  "intelligence": 11,
+  "wisdom": 10,
+  "charisma": 8,
+  "perception": 2,
+  "stealth": 4,
+  "damage_vulnerabilities": "",
+  "damage_resistances": "",
+  "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "condition_immunities": "",
+  "senses": "darkvision 60 ft. (rat form only), passive Perception 12",
+  "languages": "Common (can't speak in rat form)",
+  "challenge_rating": "4",
+  "special_abilities": [
+    {
+      "name": "Shapechanger",
+      "desc": "The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+      "attack_bonus": 0
+    },
+    {
+      "name": "Keen Smell",
+      "desc": "The wererat has advantage on Wisdom (Perception) checks that rely on smell.",
+      "attack_bonus": 0
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Humanoid or Hybrid Form Only)",
+      "desc": "The wererat makes two attacks, only one of which can be a bite.",
+      "attack_bonus": 0
+    },
+    {
+      "name": "Bite (Rat or Hybrid Form Only).",
+      "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 11 Constitution saving throw or be cursed with wererat lycanthropy.",
+      "attack_bonus": 5,
+      "damage_dice": "1d4",
+      "damage_bonus": 2
+    },
+    {
+      "name": "Shortsword (Humanoid or Hybrid Form Only)",
+      "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "attack_bonus": 5,
+      "damage_dice": "1d6",
+      "damage_bonus": 2
+    },
+    {
+      "name": "Hand Crossbow (Humanoid or Hybrid Form Only)",
+      "desc": "Ranged Weapon Attack: +5 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "attack_bonus": 5,
+      "damage_dice": "1d6",
+      "damage_bonus": 2
+    },{
+        "name": "Spellcasting",
+        "desc": "The Rat King is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The Rat King has the following druid spells prepared:\nCantrips (at will): druidcraft, poison spray, produce flame\n1st level (4 slots): fog cloud, goodberry, thunderwave\n2nd level (3 slots): barkskin, spike growth\n3rd level (2 slots): call lightning, conjure animals (Rats Only)",
+        "spellNames": ["druidcraft","poison spray","produce flame", "fog cloud", "goodberry", "thunderwave", "barkskin", "spike growth", "call lightning", "conjure animals"],
+        "attack_bonus": 0
+    }
+  ]
 }]

@@ -18563,7 +18563,7 @@
       "alignment": "chaotic evil",
       "armor_class": 16,
       "hit_points": 93,
-      "hit_dice": "11d8",
+      "hit_dice": "c",
       "speed": "30 ft.",
       "strength": 18,
       "dexterity": 12,

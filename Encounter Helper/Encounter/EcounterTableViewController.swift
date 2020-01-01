@@ -84,6 +84,7 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
         cell.detailsLabel.text = encounter.details
         cell.editButton.tag = indexPath.row
         cell.encounter = encounter
+        cell.table = self
 
         return cell
     }

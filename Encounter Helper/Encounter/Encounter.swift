@@ -17,6 +17,7 @@ class Encounter {
     static var fileNames = Set<String>()
 
     var name = ""
+    var group = ""
     var details = ""
     var fileName = ""
     var isStarted = false
@@ -149,6 +150,11 @@ class Encounter {
             monster.saveToCloudWith(name: "\(name)|\(monster.name)")
         }
 
+    }
+
+    func duplicate() {
+        let encounter = Encounter(saveable: self.saveable)
+        Encounter.sharedEncounters.append(encounter)
     }
 
     static let thresholdDict: [Int:(easy: Int, medium: Int, hard: Int, deadly: Int)] =

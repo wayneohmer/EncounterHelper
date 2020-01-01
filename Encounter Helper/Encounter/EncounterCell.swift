@@ -13,6 +13,7 @@ class EncounterCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var editButton: BlackButton!
+    var table: EncounterTableViewController?
     var encounter = Encounter()
 
     override func awakeFromNib() {
@@ -26,5 +27,10 @@ class EncounterCell: UITableViewCell {
 
     @IBAction func cloudTouched() {
         encounter.saveToCloud()
+    }
+
+    @IBAction func dupTouched(_ sender: Any) {
+        encounter.duplicate()
+        table?.tableView.reloadData()
     }
 }

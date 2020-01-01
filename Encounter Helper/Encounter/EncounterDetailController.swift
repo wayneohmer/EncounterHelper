@@ -33,6 +33,7 @@ class EncounterDetailController: UIViewController {
             if self.encounter != nil {
                 self.encounter?.name = self.nameLabel.text ?? ""
                 self.encounter?.details = self.descriptionView.text ?? ""
+                self.parentVc?.tableView.reloadData()
              } else {
                 let newEncounter = Encounter(name: self.nameLabel.text ?? "")
                 newEncounter.details = self.descriptionView.text ?? ""
