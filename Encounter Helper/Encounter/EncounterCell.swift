@@ -33,4 +33,8 @@ class EncounterCell: UITableViewCell {
         encounter.duplicate()
         table?.tableView.reloadData()
     }
+
+    @IBAction func editTouched(_ sender: Any) {
+        table?.performSegue(withIdentifier: "EditEncounter", sender: encounter)
+    }
 }

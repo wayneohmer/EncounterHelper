@@ -259,6 +259,11 @@
       "name": "Keen Smell",
       "desc": "The wererat has advantage on Wisdom (Perception) checks that rely on smell.",
       "attack_bonus": 0
+    },{
+        "name": "Spellcasting",
+        "desc": "The Rat King is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The Rat King has the following druid spells prepared:\nCantrips (at will): druidcraft, poison spray, produce flame\n1st level (4 slots): fog cloud, goodberry, thunderwave\n2nd level (3 slots): barkskin, spike growth\n3rd level (2 slots): call lightning, conjure animals (Rats Only)",
+        "spellNames": ["druidcraft","poison spray","produce flame", "fog cloud", "goodberry", "thunderwave", "barkskin", "spike growth", "call lightning", "conjure animals"],
+        "attack_bonus": 0
     }
   ],
   "actions": [
@@ -287,11 +292,6 @@
       "attack_bonus": 5,
       "damage_dice": "1d6",
       "damage_bonus": 2
-    },{
-        "name": "Spellcasting",
-        "desc": "The Rat King is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The Rat King has the following druid spells prepared:\nCantrips (at will): druidcraft, poison spray, produce flame\n1st level (4 slots): fog cloud, goodberry, thunderwave\n2nd level (3 slots): barkskin, spike growth\n3rd level (2 slots): call lightning, conjure animals (Rats Only)",
-        "spellNames": ["druidcraft","poison spray","produce flame", "fog cloud", "goodberry", "thunderwave", "barkskin", "spike growth", "call lightning", "conjure animals"],
-        "attack_bonus": 0
     }
   ]
 }]

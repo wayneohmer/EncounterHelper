@@ -79,7 +79,7 @@ class MasterViewController: UITableViewController, UITextFieldDelegate {
 
     @IBAction func SaveTouched(_ sender: Any) {
         self.encounter.save()
-        self.parentVc?.sortEncounters()
+        self.parentVc?.lastGroup = encounter.group
         self.parentVc?.tableView.reloadData()
         self.dismiss(animated: true, completion: nil)
     }

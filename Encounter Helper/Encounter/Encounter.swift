@@ -11,7 +11,7 @@ import CloudKit
 
 class Encounter {
 
-    static var sharedEncounters = [Encounter]()
+    static var sharedEncounters = [String: Encounter]()
     static let savedEncountersPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("encounters")
 
     static var fileNames = Set<String>()
@@ -19,19 +19,19 @@ class Encounter {
     var name = ""
     var group = ""
     var details = ""
-    var fileName = ""
     var isStarted = false
     var monsters = [Monster]()
     var round = Int(0)
     var partyLevels: [Int] { return Character.sharedParty.map({ $0.level }) }
     var isCompleted = false
+    var key: String { return "\(group)|\(name)"}
 
     var saveable: SavebleEncounter {
-        return SavebleEncounter(name: name, details: details, fileName: fileName, round: round, monsters: monsters.map({$0.monsterModel}), isCompleted: isCompleted)
+        return SavebleEncounter(name: name, group: group, details: details, round: round, monsters: monsters.map({$0.monsterModel}), isCompleted: isCompleted)
     }
 
     var cloud: CloudEncounter {
-        return CloudEncounter(name: name, details: details, fileName: fileName, round: round, monsters: monsters.map({ $0.name }), isCompleted: isCompleted)
+        return CloudEncounter(name: name, group: group, details: details, round: round, monsters: monsters.map({ $0.name }), isCompleted: isCompleted)
     }
 
     var partyThreshold:(easy: Int, medium: Int, hard: Int, deadly: Int) {
@@ -81,8 +81,8 @@ class Encounter {
     convenience init(saveable: SavebleEncounter) {
         self.init()
         self.name = saveable.name
+        self.group = saveable.group
         self.details = saveable.details
-        self.fileName = saveable.fileName
         for mondel in saveable.monsters {
             self.monsters.append(Monster(model: mondel))
         }
@@ -91,8 +91,8 @@ class Encounter {
     convenience init(cloud: CloudEncounter) {
         self.init()
         self.name = cloud.name
+        self.group = cloud.group
         self.details = cloud.details
-        self.fileName = cloud.fileName
         for name in cloud.monsters {
             Monster.fetchFromCloudWith(name: "\(self.name)|\(name)") { monster in
                 self.monsters.append(monster)
@@ -101,24 +101,16 @@ class Encounter {
     }
 
     func remove() {
-        let path = Encounter.savedEncountersPath.appendingPathComponent(self.fileName)
+        let path = Encounter.savedEncountersPath.appendingPathComponent(self.key)
         try? FileManager.default.removeItem(at: path)
     }
 
     func save() {
 
-        if self.fileName == "" {
-            var fname = self.name
-            while Encounter.fileNames.contains(fname) {
-                fname = "\(fname)X"
-            }
-            Encounter.fileNames.insert(fname)
-            self.fileName = fname
-        }
         do {
             let data = try JSONEncoder().encode(self.saveable)
             do {
-                let writePath = Encounter.savedEncountersPath.appendingPathComponent(self.fileName)
+                let writePath = Encounter.savedEncountersPath.appendingPathComponent(self.key)
                 try data.write(to: writePath)
             } catch {
                 print(error.localizedDescription)
@@ -154,7 +146,24 @@ class Encounter {
 
     func duplicate() {
         let encounter = Encounter(saveable: self.saveable)
-        Encounter.sharedEncounters.append(encounter)
+        var components = encounter.name.split(separator: " ")
+
+        if var num = Int(String(components.last ?? "")) {
+            num += 1
+            components.removeLast()
+            encounter.name = "\(components.joined(separator: " ")) \(num)"
+            while Encounter.sharedEncounters.filter({ $0.key == encounter.key }).count > 0 {
+                num += 1
+                encounter.name = "\(components.joined(separator: " ")) \(num)"
+            }
+        } else {
+            self.remove()
+            self.name = "\(encounter.name) 1"
+            encounter.name = "\(encounter.name) 2"
+        }
+        self.save()
+        encounter.save()
+        Encounter.sharedEncounters[encounter.key] = encounter
     }
 
     static let thresholdDict: [Int:(easy: Int, medium: Int, hard: Int, deadly: Int)] =
@@ -184,8 +193,8 @@ class Encounter {
 struct SavebleEncounter: Codable {
 
     var name = ""
+    var group = ""
     var details = ""
-    var fileName = ""
     var round = Int(0)
     var monsters = [MonsterModel]()
     var isCompleted = false
@@ -195,8 +204,8 @@ struct SavebleEncounter: Codable {
 struct CloudEncounter: Codable {
 
     var name = ""
+    var group = ""
     var details = ""
-    var fileName = ""
     var round = Int(0)
     var monsters = [String]()
     var isCompleted = false

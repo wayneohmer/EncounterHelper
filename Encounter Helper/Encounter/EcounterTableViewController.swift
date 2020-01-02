@@ -11,6 +11,9 @@ import CloudKit
 
 class EncounterTableViewController: UITableViewController, UISplitViewControllerDelegate {
 
+    var collapsedSections = [String: Bool]()
+    var lastGroup = "A"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 100
@@ -20,12 +23,30 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.sortEncounters()
         tableView.reloadData()
     }
 
-    func sortEncounters() {
-        Encounter.sharedEncounters.sort(by: { _, lhs in lhs.isCompleted })
+    var encounters: [[Encounter]] {
+        if Encounter.sharedEncounters.count == 0 {
+            return [[Encounter]]()
+        }
+        //convert dict to array, then sort by key.
+        var sortedEncounters = Encounter.sharedEncounters.map({ $0.value }).sorted(by: {  $0.key < $1.key })
+        var group = sortedEncounters[0].group
+        var returnArray = [[Encounter]]()
+        var inner: [Encounter] = [sortedEncounters[0]]
+        sortedEncounters.remove(at: 0)
+        for encounter in sortedEncounters {
+            if encounter.group == group {
+                inner.append(encounter)
+            } else {
+                returnArray.append(inner)
+                group = encounter.group
+                inner = [encounter]
+            }
+        }
+        returnArray.append(inner)
+        return returnArray
     }
 
     // MARK: - Table view data source
@@ -46,39 +67,48 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
                             let decoder = JSONDecoder()
                             if let cloundEncounter = try? decoder.decode(CloudEncounter.self, from: json.data(using: .utf8, allowLossyConversion: true) ?? Data()) {
                                 let newEncounter = Encounter(cloud: cloundEncounter)
-                                Encounter.sharedEncounters.append(newEncounter)
-                                DispatchQueue.main.async {
-                                    self.tableView.reloadData()
-                                }
+                                Encounter.sharedEncounters[newEncounter.key] = newEncounter
+
                             }
                         }
                     }
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
         }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return encounters.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Encounter.sharedEncounters.count
+        return encounters[section].count
     }
 
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
+    }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        if collapsedSections[encounters[indexPath.section][indexPath.row].group] ?? false {
+            return 0
+        }
+
         return UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EncounterCell", for: indexPath) as! EncounterCell
 
-        let encounter = Encounter.sharedEncounters[indexPath.row]
+        let encounter = encounters[indexPath.section][indexPath.row]
         let exp = encounter.monsters.map({$0.experience}).reduce(0, + )
         if Character.sharedParty.count == 0 {
-            cell.nameLabel.text = "\(encounter.name)"
+            cell.nameLabel.text = "\(encounter.group) - \(encounter.name)"
         } else {
-            cell.nameLabel.text = "\(encounter.name) - \(exp) - \(encounter.totalXP) - \(encounter.threshold) - \(exp/Character.sharedParty.count) per character"
+            cell.nameLabel.text = "\(encounter.group) - \(encounter.name) - \(exp) - \(encounter.totalXP) - \(encounter.threshold) - \(exp/Character.sharedParty.count) per character"
         }
         cell.nameLabel.textColor = encounter.isCompleted ? .lightGray : .white
         cell.detailsLabel.text = encounter.details
@@ -90,17 +120,51 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "openEncounter", sender: Encounter.sharedEncounters[indexPath.row])
+        self.performSegue(withIdentifier: "openEncounter", sender: encounters[indexPath.section][indexPath.row])
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            Encounter.sharedEncounters[indexPath.row].remove()
-            Encounter.sharedEncounters.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            encounters[indexPath.section][indexPath.row].remove()
+            Encounter.sharedEncounters.removeValue(forKey: encounters[indexPath.section][indexPath.row].key)
             tableView.reloadData()
         }
     }
+
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.contentView.backgroundColor = .black
+            headerView.textLabel?.textAlignment = .center
+            headerView.textLabel?.textColor = .white
+            headerView.textLabel?.backgroundColor = .clear
+            let recog = UITapGestureRecognizer(target: self, action: #selector(collaspeSection(_:)))
+            recog.name = self.encounters[section][0].group
+            headerView.addGestureRecognizer(recog)
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+
+        if Character.sharedParty.count == 0 {
+            return self.encounters[section][0].group
+        } else {
+            let sum = self.encounters[section].reduce(0) { sum, encounter in
+                sum + encounter.monsters.map({$0.experience}).reduce(0, + )
+            }
+            return "\(self.encounters[section][0].group) - \(sum/Character.sharedParty.count) per character"
+        }
+    }
+
+    @objc func collaspeSection(_ sender: UITapGestureRecognizer) {
+           self.collapsedSections[sender.name ?? ""] = !(self.collapsedSections[sender.name ?? ""] ?? false)
+           var section = 0
+           for (idx, array) in encounters.enumerated() {
+               if array[0].group == sender.name {
+                   section = idx
+               }
+           }
+           self.tableView.reloadSections([section], with: .fade)
+       }
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
@@ -136,9 +200,9 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
                 vc.parentVc = self
             }
         case "EditEncounter":
-            if let vc = segue.destination as? EncounterDetailController, let button = sender as? UIButton {
+            if let vc = segue.destination as? EncounterDetailController {
                 vc.parentVc = self
-                vc.encounter = Encounter.sharedEncounters[button.tag]
+                vc.encounter = sender as? Encounter ?? Encounter()
             }
 
         case "party":

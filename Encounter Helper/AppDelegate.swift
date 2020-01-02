@@ -81,8 +81,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             guard let url = URL(string: Encounter.savedEncountersPath.appendingPathComponent(path).absoluteString) else { break }
             do {
                 let encounterData = try Data(contentsOf: url)
-                if let encounter = try? JSONDecoder().decode(SavebleEncounter.self, from: encounterData) {
-                    Encounter.sharedEncounters.append(Encounter(saveable: encounter))
+                if let savebleEncounter = try? JSONDecoder().decode(SavebleEncounter.self, from: encounterData) {
+                    let encounter = Encounter(saveable: savebleEncounter)
+                    Encounter.sharedEncounters[encounter.key] = encounter
                 }
             } catch {
                 print(error.localizedDescription)

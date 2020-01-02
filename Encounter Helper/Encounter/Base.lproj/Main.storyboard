@@ -207,7 +207,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="Sf9-bH-GZ1" kind="presentation" identifier="EditEncounter" id="5KA-tf-hFD"/>
+                                                        <action selector="editTouched:" destination="iCW-hs-miC" eventType="touchUpInside" id="z2W-O3-AFg"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -272,6 +272,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="WsO-L2-O9t" kind="presentation" identifier="openEncounter" id="05P-k2-EBO"/>
+                        <segue destination="Sf9-bH-GZ1" kind="presentation" identifier="EditEncounter" id="LnS-3i-wjL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FlS-Vk-0r9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,17 +287,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="712" height="760"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CfE-rh-Ihm">
-                                <rect key="frame" x="15" y="8" width="575" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="OcD-c3-2aV"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MWg-OG-h7K">
+                                <rect key="frame" x="8" y="8" width="590" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CfE-rh-Ihm">
+                                        <rect key="frame" x="0.0" y="0.0" width="291" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="OcD-c3-2aV"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byk-da-67p">
+                                        <rect key="frame" x="299" y="0.0" width="291" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="heW-Lx-w6M"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wU-Ub-c9A" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                 <rect key="frame" x="606" y="16" width="90" height="40"/>
                                 <constraints>
@@ -311,7 +328,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BPI-wt-8bW">
-                                <rect key="frame" x="16" y="74" width="680" height="670"/>
+                                <rect key="frame" x="16" y="66" width="680" height="678"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -321,14 +338,14 @@
                         <color key="backgroundColor" red="0.1372649073600769" green="0.1333332359790802" blue="0.13333180546760559" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="BPI-wt-8bW" firstAttribute="leading" secondItem="ewS-1i-Nc5" secondAttribute="leading" constant="16" id="0RJ-eF-pbD"/>
-                            <constraint firstItem="6wU-Ub-c9A" firstAttribute="leading" secondItem="CfE-rh-Ihm" secondAttribute="trailing" constant="16" id="14F-UF-pdr"/>
                             <constraint firstItem="ewS-1i-Nc5" firstAttribute="trailing" secondItem="6wU-Ub-c9A" secondAttribute="trailing" constant="16" id="3KP-RA-rJa"/>
                             <constraint firstItem="ewS-1i-Nc5" firstAttribute="bottom" secondItem="BPI-wt-8bW" secondAttribute="bottom" constant="16" id="MaQ-vs-tNP"/>
+                            <constraint firstItem="MWg-OG-h7K" firstAttribute="top" secondItem="ewS-1i-Nc5" secondAttribute="top" constant="8" id="N1m-Ei-QNG"/>
                             <constraint firstItem="6wU-Ub-c9A" firstAttribute="top" secondItem="ewS-1i-Nc5" secondAttribute="top" constant="16" id="Ry5-SZ-jHS"/>
                             <constraint firstItem="ewS-1i-Nc5" firstAttribute="trailing" secondItem="BPI-wt-8bW" secondAttribute="trailing" constant="16" id="TZZ-Uf-OZy"/>
-                            <constraint firstItem="CfE-rh-Ihm" firstAttribute="top" secondItem="ewS-1i-Nc5" secondAttribute="top" constant="8" id="VQq-d9-MOk"/>
-                            <constraint firstItem="BPI-wt-8bW" firstAttribute="top" secondItem="CfE-rh-Ihm" secondAttribute="bottom" constant="16" id="fey-L2-JPG"/>
-                            <constraint firstItem="CfE-rh-Ihm" firstAttribute="leading" secondItem="ewS-1i-Nc5" secondAttribute="leading" constant="15" id="uFt-SF-eKr"/>
+                            <constraint firstItem="BPI-wt-8bW" firstAttribute="top" secondItem="MWg-OG-h7K" secondAttribute="bottom" constant="8" id="TiM-uB-WY8"/>
+                            <constraint firstItem="MWg-OG-h7K" firstAttribute="leading" secondItem="ewS-1i-Nc5" secondAttribute="leading" constant="8" id="X8O-vE-Tr1"/>
+                            <constraint firstItem="6wU-Ub-c9A" firstAttribute="leading" secondItem="MWg-OG-h7K" secondAttribute="trailing" constant="8" id="fqT-GT-jox"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ewS-1i-Nc5"/>
                     </view>
@@ -336,7 +353,8 @@
                     <size key="freeformSize" width="800" height="800"/>
                     <connections>
                         <outlet property="descriptionView" destination="BPI-wt-8bW" id="i1B-Od-izI"/>
-                        <outlet property="nameLabel" destination="CfE-rh-Ihm" id="Jqo-5C-jQZ"/>
+                        <outlet property="groupLabel" destination="CfE-rh-Ihm" id="82A-Bg-SfF"/>
+                        <outlet property="nameLabel" destination="byk-da-67p" id="khh-Bc-cir"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSE-P3-45F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -377,6 +395,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5KA-tf-hFD"/>
+        <segue reference="LnS-3i-wjL"/>
     </inferredMetricsTieBreakers>
 </document>

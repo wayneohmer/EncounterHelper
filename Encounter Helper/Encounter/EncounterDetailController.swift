@@ -11,6 +11,7 @@ import UIKit
 class EncounterDetailController: UIViewController {
 
     @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var groupLabel: UITextField!
     @IBOutlet weak var descriptionView: UITextView!
 
     var parentVc: EncounterTableViewController?
@@ -19,12 +20,17 @@ class EncounterDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.nameLabel.layer.cornerRadius = 8
+        self.groupLabel.layer.cornerRadius = 8
         self.descriptionView.layer.borderColor = UIColor.white.cgColor
         self.descriptionView.layer.borderWidth = 2
         self.descriptionView.layer.cornerRadius = 8
         if let encounter = self.encounter {
             nameLabel.text = encounter.name
+            groupLabel.text = encounter.group
             descriptionView.text = encounter.details
+        } else {
+            groupLabel.text = parentVc?.lastGroup
+
         }
     }
 
@@ -32,12 +38,14 @@ class EncounterDetailController: UIViewController {
         self.dismiss(animated: true) {
             if self.encounter != nil {
                 self.encounter?.name = self.nameLabel.text ?? ""
+                self.encounter?.group = self.groupLabel.text ?? ""
                 self.encounter?.details = self.descriptionView.text ?? ""
                 self.parentVc?.tableView.reloadData()
              } else {
                 let newEncounter = Encounter(name: self.nameLabel.text ?? "")
                 newEncounter.details = self.descriptionView.text ?? ""
-                Encounter.sharedEncounters.append(newEncounter)
+                newEncounter.group = self.groupLabel.text ?? ""
+                Encounter.sharedEncounters[newEncounter.key] = newEncounter
                 self.parentVc?.performSegue(withIdentifier: "openEncounter", sender: newEncounter)
             }
         }
