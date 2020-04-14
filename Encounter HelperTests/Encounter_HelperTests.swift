@@ -25,7 +25,7 @@ class Encounter_HelperTests: XCTestCase {
     }
 
     func testExample() {
-        if let path = Bundle.main.path(forResource: "5e-SRD-Monsters", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "ExtraMonsters", ofType: "json") {
             fileURL = URL(fileURLWithPath: path)
         } else {
             XCTAssert(false)

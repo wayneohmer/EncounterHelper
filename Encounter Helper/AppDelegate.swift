@@ -59,6 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationWillResignActive(_ application: UIApplication) {
         saveAllMonsters()
         saveParty()
+        for (_, encounter) in Encounter.sharedEncounters {
+            encounter.save()
+        }
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -73,6 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationWillTerminate(_ application: UIApplication) {
         saveAllMonsters()
         saveParty()
+        for (_, encounter) in Encounter.sharedEncounters {
+            encounter.save()
+        }
     }
 
     func getAllEncounters() {
@@ -113,6 +119,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func saveParty() {
         let storedParty = StoredParty(characters: Character.sharedParty)
+
+        for character in Character.sharedParty {
+            character.saveToCloud()
+        }
 
         do {
             let data = try JSONEncoder().encode(storedParty)

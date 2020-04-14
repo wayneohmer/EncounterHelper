@@ -73,6 +73,8 @@ class ActionTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAttack", let action = sender as? Action, let vc = segue.destination as? DiceController {
+
+            vc.popoverPresentationController?.sourceRect = (CGRect(x: self.view.bounds.width/2, y: 250, width: 10, height: 10))
             vc.rollName = action.name
             vc.fyreDice = FyreDice()
             vc.fyreDice.dice = [20: 1]
@@ -94,7 +96,10 @@ class ActionTableViewController: UITableViewController {
             navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-2] as! UINavigationController
 
             if let vc = navigationController.topViewController as? SpellMasterController {
-                vc.spells = action.spells ?? [SpellModel]()
+                vc.spells =  [Spell]()
+                for model in action.spells ?? [SpellModel]() {
+                    vc.spells.append(Spell(model: model))
+                }
             }
             splitViewController.delegate = self
         }

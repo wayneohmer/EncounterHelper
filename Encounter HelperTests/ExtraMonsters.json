@@ -24,15 +24,15 @@
     "languages": "",
     "challenge_rating": "1",
     "special_abilities": [{
-            "name": "Keen Hearing and Smell",
-            "desc": "The rat has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-            "attack_bonus": 0
-        },
-        {
-            "name": "Pack Tactics",
-            "desc": "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
-            "attack_bonus": 0
-        }
+        "name": "Keen Hearing and Smell",
+        "desc": "The rat has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+        "attack_bonus": 0
+    },
+    {
+        "name": "Pack Tactics",
+        "desc": "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
+        "attack_bonus": 0
+    }
     ],
     "actions": [{
         "name": "Bite",
@@ -225,73 +225,607 @@
         "damage_bonus": 1
     }]
 },{
-  "name": "Rat Queen",
+    "name": "Rat Queen",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "human",
+    "alignment": "lawful evil",
+    "armor_class": 12,
+    "hit_points": 48,
+    "hit_dice": "11d8",
+    "speed": "30 ft.",
+    "strength": 10,
+    "dexterity": 15,
+    "constitution": 14,
+    "intelligence": 11,
+    "wisdom": 10,
+    "charisma": 8,
+    "perception": 2,
+    "stealth": 4,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+    "condition_immunities": "",
+    "senses": "darkvision 60 ft. (rat form only), passive Perception 12",
+    "languages": "Common (can't speak in rat form)",
+    "challenge_rating": "4",
+    "special_abilities": [
+        {
+            "name": "Shapechanger",
+            "desc": "The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Keen Smell",
+            "desc": "The wererat has advantage on Wisdom (Perception) checks that rely on smell.",
+            "attack_bonus": 0
+        },{
+            "name": "Spellcasting",
+            "desc": "The Rat King is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The Rat King has the following druid spells prepared:\nCantrips (at will): druidcraft, poison spray, produce flame\n1st level (4 slots): fog cloud, goodberry, thunderwave\n2nd level (3 slots): barkskin, spike growth\n3rd level (2 slots): call lightning, conjure animals (Rats Only)",
+            "spellNames": ["druidcraft","poison spray","produce flame", "fog cloud", "goodberry", "thunderwave", "barkskin", "spike growth", "call lightning", "conjure animals"],
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack (Humanoid or Hybrid Form Only)",
+            "desc": "The wererat makes two attacks, only one of which can be a bite.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Bite (Rat or Hybrid Form Only).",
+            "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 11 Constitution saving throw or be cursed with wererat lycanthropy.",
+            "attack_bonus": 5,
+            "damage_dice": "1d4",
+            "damage_bonus": 2
+        },
+        {
+            "name": "Shortsword (Humanoid or Hybrid Form Only)",
+            "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+            "attack_bonus": 5,
+            "damage_dice": "1d6",
+            "damage_bonus": 2
+        },
+        {
+            "name": "Hand Crossbow (Humanoid or Hybrid Form Only)",
+            "desc": "Ranged Weapon Attack: +5 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+            "attack_bonus": 5,
+            "damage_dice": "1d6",
+            "damage_bonus": 2
+        }
+    ]
+},{
+    "name": "Weiss",
+    "size": "Medium",
+    "type": "Half Dragon",
+    "subtype": "Orc Half Dragon",
+    "alignment": "chaotic evil",
+    "armor_class": 16,
+    "hit_points": 93,
+    "hit_dice": "11d8",
+    "speed": "30 ft.",
+    "strength": 18,
+    "dexterity": 12,
+    "constitution": 18,
+    "intelligence": 11,
+    "wisdom": 11,
+    "charisma": 16,
+    "intimidation": 5,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "Acid",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "blindsight 10, darkvision 60 ft., passive Perception 10",
+    "languages": "Common, Orc, Draconic",
+    "challenge_rating": "5",
+    "special_abilities": [
+        {
+            "name": "Aggressive",
+            "desc": "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Gruumsh's Fury",
+            "desc": "The ore deals an extra 4 (ld8) damage when it hits with a weapon attack (included in the attacks).",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The ore makes two attacks with its greataxe or its spear.",
+            "attack_bonus": 0
+            
+        },
+        {
+            "name": "Greataxe",
+            "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (1d12 + 4 + d8) slashing damage.",
+            "attack_bonus": 6,
+            "damage_dice": "1d12+1d8",
+            "damage_bonus": 4
+        },
+        {
+            "name": "Spear",
+            "desc": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20{60 ft., one target. Hit: 12 (1d6 + 4 plus 1d8) piercing damage, or 13 (2d8 + 4) piercing damage if used with two hands to make a melee attack",
+            "attack_bonus": 6,
+            "damage_dice": "1d6+1d8",
+            "damage_bonus": 4
+        }, {
+            "name": "Battle Cry (1/Day)",
+            "desc": "Each creature of the war chief's choice that is within 30 feet of it, can hear it, and not already affected by Battle Cry gain advantage on attack rolls until the start of the war chief's next turn. The war chief can then make one attack as a bonus action.",
+            "attack_bonus": 0
+            
+        },{
+            "name": "Acid Breath (Recharge 5-6)",
+            "desc": "The dragon exhales acid in a 15-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 22 (Sd8) acid damage on a failed save, or half as much damage on a successful one.",
+            "attack_bonus": 0,
+            "damage_dice": "5d8"
+        }
+    ]
+},{
+    "name": "Hymie",
+    "size": "Medium",
+    "type": "Half Dragon",
+    "subtype": "Half Dragon Hobgoblin",
+    "alignment": "lawful evil",
+    "armor_class": 20,
+    "hit_points": 97,
+    "hit_dice": "13d8",
+    "speed": "30 ft.",
+    "strength": 16,
+    "dexterity": 14,
+    "constitution": 16,
+    "intelligence": 14,
+    "wisdom": 11,
+    "charisma": 15,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "Acid",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "blindSight 10, darkvision 60 ft., passive Perception 10",
+    "languages": "Common, Goblin",
+    "challenge_rating": "6",
+    "special_abilities": [
+        {
+            "name": "Martial Advantage",
+            "desc": "Once per turn, the hobgoblin can deal an extra 14 (4d6) damage to a creature it hits with a weapon attack if that creature is within 5 ft. of an ally of the hobgoblin that isn't incapacitated.",
+            "attack_bonus": 0,
+            "damage_dice": "4d6"
+        }, {
+            "name": "Multiattack",
+            "desc": "The hobgoblin makes three melee attacks. Alternatively, it can make two ranged attacks with its javelins",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Longsword",
+            "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands.",
+            "attack_bonus": 9,
+            "damage_dice": "1d8",
+            "damage_bonus": 3
+        },
+        {
+            "name": "Shield Bash",
+            "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) bludgeoning damage. If the target is Large or smaller, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
+            "attack_bonus": 9,
+            "damage_dice": "1d4",
+            "damage_bonus": 3
+        },
+        {
+            "name": "Javelin",
+            "desc": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft . or range 30/ 120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+            "attack_bonus": 4,
+            "damage_dice": "1d6",
+            "damage_bonus": 2
+        },
+        {
+            "name": "Leadership (Recharges after a Short or Long Rest)",
+            "desc": "For 1 minute, the hobgoblin can utter a special command or warning whenever a nonhostil e creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the goblin. A creature can benefit from only one Leadership die at a time. This effect ends if the hobgoblin is incapacitated.",
+            "attack_bonus": 0
+            
+        },{
+            "name": "Acid Breath (Recharge 5-6)",
+            "desc": "The dragon exhales acid in a 15-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 22 (Sd8) acid damage on a failed save, or half as much damage on a successful one.",
+            "attack_bonus": 0,
+            "damage_dice": "5d8"
+        }
+    ],
+    "reactions": [{
+        "name": "Parry",
+        "desc": "The hobgoblin adds 3 to its AC against one melee attack that would hit it. To do so, the hobgoblin must see the attacker and be wielding a melee weapon."
+    }
+    ]
+},{
+    "name": "Orog",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "orc",
+    "alignment": "chaotic evil",
+    "armor_class": 18,
+    "hit_points": 42,
+    "hit_dice": "5d8",
+    "speed": "30 ft.",
+    "strength": 18,
+    "dexterity": 12,
+    "constitution": 18,
+    "intelligence": 12,
+    "wisdom": 11,
+    "charisma": 12,
+    "intimidation": 5,
+    "survival": 2,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 60 ft., passive Perception 10",
+    "languages": "Common, Orc",
+    "challenge_rating": "2",
+    "special_abilities": [
+        {
+            "name": "Multiattack",
+            "desc": "The orc makes two greataxe attacks",
+            "attack_bonus": 0
+            
+        },
+        {
+            "name": "Aggressive",
+            "desc": "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Greataxe",
+            "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12 + 3) slashing damage.",
+            "attack_bonus": 5,
+            "damage_dice": "1d12",
+            "damage_bonus": 3
+        },
+        {
+            "name": "Javelin",
+            "desc": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+            "attack_bonus": 5,
+            "damage_dice": "1d6",
+            "damage_bonus": 3
+        }]
+},{
+    "name": "Tower Orc",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "orc",
+    "alignment": "chaotic evil",
+    "armor_class": 13,
+    "hit_points": 15,
+    "hit_dice": "2d8",
+    "speed": "30 ft.",
+    "strength": 16,
+    "dexterity": 12,
+    "constitution": 16,
+    "intelligence": 7,
+    "wisdom": 11,
+    "charisma": 10,
+    "intimidation": 2,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 60 ft., passive Perception 10",
+    "languages": "Common, Orc",
+    "challenge_rating": "1/2",
+    "special_abilities": [
+        {
+            "name": "Aggressive",
+            "desc": "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Greataxe",
+            "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12 + 3) slashing damage.",
+            "attack_bonus": 5,
+            "damage_dice": "1d12",
+            "damage_bonus": 3
+        },
+        {
+            "name": "Tower Ballista",
+            "desc": "Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 120/600 ft., one target. Hit: 11 (2d10 + 1) piercing damage.",
+            "attack_bonus": 3,
+            "damage_dice": "2d10",
+            "damage_bonus": 1
+        }
+    ]
+},
+{
+  "name": "Drow Elite Warrior",
   "size": "Medium",
   "type": "humanoid",
-  "subtype": "human",
-  "alignment": "lawful evil",
-  "armor_class": 12,
-  "hit_points": 48, 
+  "subtype": "elf",
+  "alignment": "neutral evil",
+  "armor_class": 18,
+  "hit_points": 71,
   "hit_dice": "11d8",
   "speed": "30 ft.",
-  "strength": 10,
-  "dexterity": 15,
+  "strength": 13,
+  "dexterity": 18,
   "constitution": 14,
   "intelligence": 11,
-  "wisdom": 10,
-  "charisma": 8,
+  "wisdom": 13,
+  "charisma": 12,
   "perception": 2,
   "stealth": 4,
+  "dexterity_save": 7,
+  "constitution_save": 5,
+  "wisdom_save": 4,
   "damage_vulnerabilities": "",
   "damage_resistances": "",
-  "damage_immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "damage_immunities": "",
   "condition_immunities": "",
-  "senses": "darkvision 60 ft. (rat form only), passive Perception 12",
-  "languages": "Common (can't speak in rat form)",
-  "challenge_rating": "4",
+  "senses": "darkvision 120 ft., passive Perception 12",
+  "languages": "Elvish, Undercommon",
+  "challenge_rating": "5",
   "special_abilities": [
     {
-      "name": "Shapechanger",
-      "desc": "The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+      "name": "Fey Ancestry",
+      "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
       "attack_bonus": 0
     },
     {
-      "name": "Keen Smell",
-      "desc": "The wererat has advantage on Wisdom (Perception) checks that rely on smell.",
+      "name": "Innate Spellcasting",
+      "desc": "The drow's spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire",
       "attack_bonus": 0
-    },{
-        "name": "Spellcasting",
-        "desc": "The Rat King is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The Rat King has the following druid spells prepared:\nCantrips (at will): druidcraft, poison spray, produce flame\n1st level (4 slots): fog cloud, goodberry, thunderwave\n2nd level (3 slots): barkskin, spike growth\n3rd level (2 slots): call lightning, conjure animals (Rats Only)",
-        "spellNames": ["druidcraft","poison spray","produce flame", "fog cloud", "goodberry", "thunderwave", "barkskin", "spike growth", "call lightning", "conjure animals"],
-        "attack_bonus": 0
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+      "attack_bonus": 0
     }
   ],
   "actions": [
     {
-      "name": "Multiattack (Humanoid or Hybrid Form Only)",
-      "desc": "The wererat makes two attacks, only one of which can be a bite.",
+      "name": "Shortsword",
+      "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
+      "attack_bonus": 7,
+      "damage_dice": "1d6+1d10",
+      "damage_bonus": 4
+    },
+    {
+      "name": "Hand Crossbow",
+      "desc": "Ranged Weapon Attack: +7 to hit, range 30/120 ft., one target. Hit: 7 (1d6 + 4) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake.",
+      "attack_bonus": 7,
+      "damage_dice": "1d6",
+      "damage_bonus": 4
+    }
+  ],"reactions": [{
+      "name": "Parry",
+      "desc": "The hobgoblin adds 3 to its AC against one melee attack that would hit it. To do so, the hobgoblin must see the attacker and be wielding a melee weapon."
+  }]
+},
+{
+  "name": "Umber Hulk",
+  "size": "large",
+  "type": "monstrosity",
+  "subtype": "elf",
+  "alignment": "chaotic evil",
+  "armor_class": 18,
+  "hit_points": 93,
+  "hit_dice": "11d10",
+  "speed": "30 ft.,burrow 20 ft.",
+  "strength": 20,
+  "dexterity": 13,
+  "constitution": 16,
+  "intelligence": 9,
+  "wisdom": 10,
+  "charisma": 10,
+  "perception": 10,
+  "damage_vulnerabilities": "",
+  "damage_resistances": "",
+  "damage_immunities": "",
+  "condition_immunities": "",
+  "senses": "darkvision 120 ft.tremorsense 60ft.,passive Perception 10",
+  "languages": "Umber Hulk",
+  "challenge_rating": "5",
+  "special_abilities": [
+    {
+      "name": "Confusing Gaze.",
+      "desc": "When a creature starts its turn within 30 feet of the umber hulk and is able to see the umber hulk's eyes, the umber hulk can magically force it to make a DC 15 Charisma saving throw, unless the umber hulk is incapacitated. On a fai led saving throw, the creature can't take reactions until the start of its next turn and rolls a d8 to determine what it does during that turn. On a 1 to 4, the creature does nothing. On a 5 or 6, the creature takes no action but uses all its movement to move in a random direction. On a '1 or 8, the  creature makes one melee attack against a random creature, or it doe.s nothing if no creature is within reach. Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the umber hulk until the start of its next turn, when it can avert its eyes again. If the creature looks at the umber hulk in the meantime, it must immediately make the save.",
       "attack_bonus": 0
     },
     {
-      "name": "Bite (Rat or Hybrid Form Only).",
-      "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 11 Constitution saving throw or be cursed with wererat lycanthropy.",
-      "attack_bonus": 5,
-      "damage_dice": "1d4",
-      "damage_bonus": 2
+      "name": "Tunneler",
+      "desc": "The umber hulk can burrow through solid rock at half its burrowing speed and leaves a 5 foot-wide, 8-foot-high tunnel in its wake.",
+      "attack_bonus": 0
+    }
+  ],
+  "actions": [
+      {
+          "name": "Multiattack",
+          "desc": "The umber hulk makes three attacks: two with its claws and one with its mandibles.",
+          "attack_bonus": 0
+      },
+      {
+          "name": "Claw",
+          "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target.Hit: 9 (1d8 + 5) slashing damage.",
+          "attack_bonus": 8,
+          "damage_dice": "1d8",
+          "damage_bonus": 5
+      },
+      {
+          "name": "Mandibles",
+          "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft. , one target. Hit: 14 (2d8 + 5) slashing damage.",
+          "attack_bonus": 8,
+          "damage_dice": "2d8",
+          "damage_bonus": 5
+      }
+  ]
+},
+{
+  "name": "Grick Alpha",
+  "size": "Large",
+  "type": "monstrosity",
+  "subtype": "",
+  "alignment": "neutral",
+  "armor_class": 18,
+  "hit_points": 75,
+  "hit_dice": "10d10",
+  "speed": "30 ft., climb 30 ft.",
+  "strength": 18,
+  "dexterity": 16,
+  "constitution": 15,
+  "intelligence": 4,
+  "wisdom": 14,
+  "charisma": 9,
+  "damage_vulnerabilities": "",
+  "damage_resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "damage_immunities": "",
+  "condition_immunities": "",
+  "senses": "darkvision 60 ft., passive Perception 12",
+  "languages": "",
+  "challenge_rating": "7",
+  "special_abilities": [
+    {
+      "name": "Stone Camouflage",
+      "desc": "The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
+      "attack_bonus": 0
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "desc": "The grick makes two attacks: one with its tail and one with its tentacles. If it hits with its tentacles, the grick can make one beak attack against the same target",
+      "attack_bonus": 0
     },
     {
-      "name": "Shortsword (Humanoid or Hybrid Form Only)",
-      "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-      "attack_bonus": 5,
-      "damage_dice": "1d6",
-      "damage_bonus": 2
+      "name": "Tentacles",
+      "desc": "Melee Weapon Attack: +7 to hit, reach 10ft., one target. Hit: 22 (4d8 + 4) slashing damage",
+      "attack_bonus": 7,
+      "damage_dice": "4d8",
+      "damage_bonus": 4
     },
     {
-      "name": "Hand Crossbow (Humanoid or Hybrid Form Only)",
-      "desc": "Ranged Weapon Attack: +5 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-      "attack_bonus": 5,
-      "damage_dice": "1d6",
-      "damage_bonus": 2
+      "name": "Beak",
+      "desc": "Melee Weapon Attack: +7 to hit, reach 10ft., one target. Hit: 13 (2d8 + 4) piercing damage.",
+      "attack_bonus": 7,
+      "damage_dice": "2d8",
+      "damage_bonus": 4
     }
   ]
-}]
+},{
+    "name": "Cambion",
+    "size": "Medium",
+    "type": "fiend",
+    "subtype": "",
+    "alignment": "lawful evil",
+    "armor_class": 19,
+    "hit_points": 82,
+    "hit_dice": "11d8",
+    "speed": "30ft., fly 60ft.",
+    "strength": 18,
+    "dexterity": 18,
+    "constitution": 16,
+    "intelligence": 14,
+    "wisdom": 12,
+    "charisma": 16,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "cold, fire, lightning, poison; bludgeoning, piercing, and slashing from non magical weapons",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 60 ft. (rat form only), passive Perception 14",
+    "languages": "Abyssal, Common, Infernal",
+    "challenge_rating": "5",
+    "special_abilities": [
+        {
+            "name": "Fiendish Blessing",
+            "desc": "The AC of the cambion includes its Charisma bonus.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Spellcasting",
+            "desc": "The cambion's spellcasting ability is Charisma (spell save DC 14). The cambion can innately cast the following spells, requiring no material components: 3/day each: alter self, command, detect magic 1/day: plane shift (self only)",
+            "spellNames": ["alter self","command,","detect magic", "plane shift"],
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The cambion makes two melee attacks or uses its Fire Ray twice.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Whip",
+            "desc": "Melee, one target. Hit: 7 (1d4 + 4) slashing damage, plus 6 (1d6) fire damage.",
+            "attack_bonus": 7,
+            "damage_dice": "1d4+2d6",
+            "damage_bonus": 4
+        },
+        {
+            "name": "Fire Ray",
+            "desc": "Ranged Spell Attack: +7 to hit, range 120ft., one target. Hit: 10 (3d6) fire damage.",
+            "attack_bonus": 7,
+            "damage_dice": "3d6",
+            "damage_bonus": 0
+        },
+        {
+            "name": "Fiendish Charm",
+            "desc": "One humanoid the cambion can see within 30 feet of it must succeed on a DC 14 Wisdom saving throw or be magically charmed for 1 day. The charmed target obeys the cambion's spoken commands. If the target suffers any harm from the cambion or another creature or receives a suicidal command from the cambion, the target can repeat the saving throw, ending the effect on itself on a success. If a target's saving throw is successful, or if the effect ends for it, the creature is immune to the cambion's Fiendish Charm for the next 24 hours.",
+            "attack_bonus": 0
+        }
+    ]
+},{
+    "name": "Banshee",
+    "size": "Medium",
+    "type": "undead",
+    "subtype": "",
+    "alignment": "lawful evil",
+    "armor_class": 12,
+    "hit_points": 58,
+    "hit_dice": "13d8",
+    "speed": "fly 40ft.",
+    "strength": 1,
+    "dexterity": 14,
+    "constitution": 10,
+    "intelligence": 12,
+    "wisdom": 11,
+    "charisma": 17,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "acid, fire, lightning, thunder; bludgeoning, piercing, and slashing from non magical weapons",
+    "damage_immunities": "cold, necrotic, poison",
+    "condition_immunities": "charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
+    "senses": "darkvision 60 ft., passive Perception 10",
+    "languages": "Abyssal, Common, Infernal",
+    "challenge_rating": "4",
+    "special_abilities": [
+        {
+            "name": "Detect Life",
+            "desc": "The banshee can magically sense the presence of living creatures up to 5 miles away. She knows the general direction they're in but not their exact locations.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Incorporeal Movement",
+            "desc": "The banshee can move through 0ther creatures and objects as if they were difficu lt terrain. She takes 5 (1d10) force damage if she ends he~ turn inside an object.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Corrupting Touch",
+            "desc": "Melee Spell Attack: +4 to hit, reach 5 ft., one target. Hit: 12 (3d6 + 2) necrotic damage.",
+            "attack_bonus": 4,
+            "damage_dice": "3d6",
+            "damage_bonus": 2
+        },
+        {
+            "name": "Horrifying Visage",
+            "desc": "Each non-undead creatu re within 60 feet of the banshee that can see her must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. A frightened target can repeat the saving throw at the end of each of its turns, with disadvantage if the banshee is within line of sight, ending the effect on itself on a success. If a ta rget's saving throw is successful or the effect ends for it, the target is immune to the banshee's Horrifying Visage for the next 24 hours.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Wail (1/Day)",
+            "desc": "The banshee releases a mournful wail, provided that she isn't in sunlight. This wail has no effect on constructs and undead. All other creatures within 30 feet of her that can hear her must make a DC 13 Constitution saving throw. On a failure, a creature drops to 0 hit points. On a success, a creature takes 10 (3d6) psychic damage.",
+            "attack_bonus": 7
+        }
+    ]
+}
+]

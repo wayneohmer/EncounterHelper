@@ -10,13 +10,14 @@ import UIKit
 
 class SpellDetailController: UIViewController {
 
-    var spell: SpellModel?
+    var spell: Spell?
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var castlingTimeLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
+    @IBOutlet weak var durationLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +27,15 @@ class SpellDetailController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let spell = spell, let details = spell.desc {
+        if let spell = spell, let details = spell.model.desc {
 
             nameLabel.text = spell.name
             nameLabel.layer.cornerRadius = 8
 
-            rangeLabel.text = spell.range
-            castlingTimeLabel.text = spell.castingTime
-            levelLabel.text = spell.level
+            rangeLabel.text = spell.model.range
+            castlingTimeLabel.text = spell.model.castingTime
+            levelLabel.text = spell.model.level
+            durationLabel.text = "\(spell.concentration ? "Concentration -" : "") \(spell.model.duration ?? "") "
 
             let htmlData = NSString(string: details).data(using: String.Encoding.unicode.rawValue)
             let options = [NSAttributedString.DocumentReadingOptionKey.documentType:

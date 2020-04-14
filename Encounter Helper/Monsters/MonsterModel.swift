@@ -317,7 +317,7 @@ class Monster: Hashable {
                     monsterModel.special_abilities?[idx].spells = [SpellModel]()
                     for name in spellNames {
                         if let spell = Spell.sharedSpells.first(where: { $0.name.lowercased() == name }) {
-                            monsterModel.special_abilities?[idx].spells?.append(spell.spellModel)
+                            monsterModel.special_abilities?[idx].spells?.append(spell.model)
                         }
                     }
                 }

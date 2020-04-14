@@ -16,13 +16,14 @@ class Spell: Hashable {
         hasher.combine(self.name)
     }
 
-    var spellModel = SpellModel()
+    var model = SpellModel()
 
-    var name: String { return spellModel.name ?? "" }
+    var name: String { return model.name ?? "" }
+    var concentration: Bool { return model.concentration ?? "" == "yes" }
 
     convenience init(model: SpellModel) {
         self.init()
-        self.spellModel = model
+        self.model = model
 
     }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class PartyViewController: UITableViewController {
 
@@ -15,6 +16,37 @@ class PartyViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         self.tableView.isEditing = true
 
+    }
+
+    @IBAction func cloudTouched(_ sender: UIBarButtonItem) {
+
+        let searchPredicate = NSPredicate(format: "TRUEPREDICATE")
+        let query = CKQuery(recordType: "Party", predicate: searchPredicate)
+        let container = CKContainer.default()
+        let cloudDb = container.publicCloudDatabase
+
+        Character.sharedParty.removeAll()
+        cloudDb.perform(query, inZoneWith: nil) { records, error in
+            if let error = error {
+                print(error)
+            } else {
+                if let records = records {
+                    for record in records {
+                        if let json = record["json"] as? String {
+                            let decoder = JSONDecoder()
+
+                            if let character = try? decoder.decode(Character.self, from: json.data(using: .utf8, allowLossyConversion: true) ?? Data()) {
+                                Character.sharedParty.append(character)
+                            }
+
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source

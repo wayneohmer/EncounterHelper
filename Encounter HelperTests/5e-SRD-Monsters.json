@@ -14859,6 +14859,8 @@
       {
         "name": "Spellcasting",
         "desc": "The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:\n\n• Cantrips (at will): mage hand, minor illusion, ray of frost\n• 1st level (4 slots): charm person, detect magic, sleep\n• 2nd level (3 slots): detect thoughts, hold person\n• 3rd level (3 slots): lightning bolt, water breathing\n• 4th level (3 slots): blight, dimension door\n• 5th level (2 slots): dominate person",
+        "spellNames": ["mage hand","minor illusion","ray of frost", "charm person", "detect magic", "sleep", "detect thoughts", "hold person", "call lightning", "lightning bolt","water breathing","blight","dimension door","dominate person"],
+
         "attack_bonus": 0
       }
     ],
@@ -18563,7 +18565,7 @@
       "alignment": "chaotic evil",
       "armor_class": 16,
       "hit_points": 93,
-      "hit_dice": "c",
+      "hit_dice": "13d8",
       "speed": "30 ft.",
       "strength": 18,
       "dexterity": 12,
@@ -18664,29 +18666,11 @@
       ],
       "actions": [
           {
-              "name": "Multiattack",
-              "desc": "The ore makes two attacks with its greataxe or its spear.",
-              "attack_bonus": 0
-              
-          },
-          {
-              "name": "Greataxe",
-              "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (1d12 + 4 + d8) slashing damage.",
-              "attack_bonus": 6,
-              "damage_dice": "1d12+1d8",
-              "damage_bonus": 4
-          },
-          {
               "name": "Spear",
               "desc": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 11 (ld6 + 3 plus ld8) piercing damage, or 12 (2d8 + 3) piercing damage if used with two ands to make a melee attack",
               "attack_bonus": 5,
               "damage_dice": "1d6+1d8",
               "damage_bonus": 4
-          }, {
-              "name": "Battle Cry (1/Day)",
-              "desc": "Each creature of the war chief's choice that is within 30 feet of it, can hear it, and not already affected by Battle Cry gain advantage on attack rolls until the start of the war chief's next turn. The war chief can then make one attack as a bonus action.",
-              "attack_bonus": 0
-              
           }
       ]
       
@@ -18749,6 +18733,69 @@
               "attack_bonus": 4,
               "damage_dice": "1d6",
               "damage_bonus": 0
+          }
+      ]
+  },{
+      "name": "Orc War Cheif",
+      "size": "Medium",
+      "type": "humanoid",
+      "subtype": "Orc",
+      "alignment": "chaotic evil",
+      "armor_class": 16,
+      "hit_points": 93,
+      "hit_dice": "11d8",
+      "speed": "30 ft.",
+      "strength": 18,
+      "dexterity": 12,
+      "constitution": 18,
+      "intelligence": 11,
+      "wisdom": 11,
+      "charisma": 16,
+      "intimidation": 5,
+      "damage_vulnerabilities": "",
+      "damage_resistances": "",
+      "damage_immunities": "",
+      "condition_immunities": "",
+      "senses": "darkvision 60 ft., passive Perception 10",
+      "languages": "Common, Orc",
+      "challenge_rating": "5",
+      "special_abilities": [
+          {
+              "name": "Aggressive",
+              "desc": "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.",
+              "attack_bonus": 0
+          },
+          {
+          "name": "Gruumsh's Fury",
+          "desc": "The ore deals an extra 4 (ld8) damage when it hits with a weapon attack (included in the attacks).",
+          "attack_bonus": 0
+          }
+      ],
+      "actions": [
+          {
+              "name": "Multiattack",
+              "desc": "The ore makes two attacks with its greataxe or its spear.",
+              "attack_bonus": 0
+              
+          },
+          {
+              "name": "Greataxe",
+              "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (1d12 + 4 + d8) slashing damage.",
+              "attack_bonus": 6,
+              "damage_dice": "1d12+1d8",
+              "damage_bonus": 4
+          },
+          {
+              "name": "Spear",
+              "desc": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20{60 ft., one target. Hit: 12 (1d6 + 4 plus 1d8) piercing damage, or 13 (2d8 + 4) piercing damage if used with two hands to make a melee attack",
+              "attack_bonus": 6,
+              "damage_dice": "1d6+1d8",
+              "damage_bonus": 4
+          }, {
+              "name": "Battle Cry (1/Day)",
+              "desc": "Each creature of the war chief's choice that is within 30 feet of it, can hear it, and not already affected by Battle Cry gain advantage on attack rolls until the start of the war chief's next turn. The war chief can then make one attack as a bonus action.",
+              "attack_bonus": 0
+              
           }
       ]
   }

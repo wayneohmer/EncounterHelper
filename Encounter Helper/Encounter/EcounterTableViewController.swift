@@ -91,6 +91,7 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
     }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         if collapsedSections[encounters[indexPath.section][indexPath.row].group] ?? false {
@@ -106,9 +107,9 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
         let encounter = encounters[indexPath.section][indexPath.row]
         let exp = encounter.monsters.map({$0.experience}).reduce(0, + )
         if Character.sharedParty.count == 0 {
-            cell.nameLabel.text = "\(encounter.group) - \(encounter.name)"
+            cell.nameLabel.text = "\(encounter.name)"
         } else {
-            cell.nameLabel.text = "\(encounter.group) - \(encounter.name) - \(exp) - \(encounter.totalXP) - \(encounter.threshold) - \(exp/Character.sharedParty.count) per character"
+            cell.nameLabel.text = "\(encounter.name) - \(exp) - \(encounter.totalXP) - \(encounter.threshold) - \(exp/Character.sharedParty.count) per character"
         }
         cell.nameLabel.textColor = encounter.isCompleted ? .lightGray : .white
         cell.detailsLabel.text = encounter.details
@@ -126,7 +127,6 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             encounters[indexPath.section][indexPath.row].remove()
-            Encounter.sharedEncounters.removeValue(forKey: encounters[indexPath.section][indexPath.row].key)
             tableView.reloadData()
         }
     }
@@ -165,6 +165,13 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
            }
            self.tableView.reloadSections([section], with: .fade)
        }
+
+    @IBAction func collapseAll(_ sender: Any) {
+        for section in encounters {
+            self.collapsedSections[section[0].group] = true
+        }
+        self.tableView.reloadData()
+    }
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }

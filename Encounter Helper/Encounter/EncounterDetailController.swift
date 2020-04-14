@@ -37,9 +37,11 @@ class EncounterDetailController: UIViewController {
     @IBAction func saveTouched() {
         self.dismiss(animated: true) {
             if self.encounter != nil {
+                self.encounter?.remove()
                 self.encounter?.name = self.nameLabel.text ?? ""
                 self.encounter?.group = self.groupLabel.text ?? ""
                 self.encounter?.details = self.descriptionView.text ?? ""
+                self.encounter?.save()
                 self.parentVc?.tableView.reloadData()
              } else {
                 let newEncounter = Encounter(name: self.nameLabel.text ?? "")

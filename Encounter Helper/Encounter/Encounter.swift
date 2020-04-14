@@ -103,6 +103,8 @@ class Encounter {
     func remove() {
         let path = Encounter.savedEncountersPath.appendingPathComponent(self.key)
         try? FileManager.default.removeItem(at: path)
+        Encounter.sharedEncounters.removeValue(forKey: self.key)
+
     }
 
     func save() {
@@ -118,6 +120,7 @@ class Encounter {
         } catch {
             print("Save Failed")
         }
+        Encounter.sharedEncounters[self.key] = self
     }
 
     func saveToCloud() {
@@ -163,7 +166,6 @@ class Encounter {
         }
         self.save()
         encounter.save()
-        Encounter.sharedEncounters[encounter.key] = encounter
     }
 
     static let thresholdDict: [Int:(easy: Int, medium: Int, hard: Int, deadly: Int)] =

@@ -10,7 +10,7 @@ import UIKit
 
 class SpellMasterController: UITableViewController {
 
-    var spells = [SpellModel]()
+    var spells = [Spell]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
