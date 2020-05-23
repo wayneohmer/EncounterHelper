@@ -73,9 +73,9 @@ class Monster: Hashable {
     var name: String { return monsterModel.name }
     var size: String { return monsterModel.size }
     var type: String { return monsterModel.type }
-    var subtype: String { return monsterModel.subtype }
+    var subtype: String { return monsterModel.subtype ?? "" }
     var alignment: String { return monsterModel.alignment }
-    var armorClass: Int { return monsterModel.armor_class }
+    var armorClass: Int { return monsterModel.armor_class ?? 0 }
     var hitPoints: Int { return monsterModel.currentHitPoints ?? monsterModel.maxHitPoints ?? monsterModel.hit_points }
     var damageColor: UIColor {
         guard let hp = monsterModel.currentHitPoints, let maxHp = monsterModel.maxHitPoints else { return .white }
@@ -97,12 +97,12 @@ class Monster: Hashable {
     var strengthSave: Int? { return monsterModel.strength_save }
     var wisdomSave: Int? { return monsterModel.wisdom_save  }
     var perception: Int { return monsterModel.perception ?? 0}
-    var damageVulnerabilities: String { return monsterModel.damage_vulnerabilities }
-    var damageResistances: String { return monsterModel.damage_resistances }
-    var damageImmunities: String { return monsterModel.damage_immunities }
-    var conditionImmunities: String { return monsterModel.condition_immunities }
+    var damageVulnerabilities: String { return monsterModel.damage_vulnerabilities ?? "" }
+    var damageResistances: String { return monsterModel.damage_resistances ?? "" }
+    var damageImmunities: String { return monsterModel.damage_immunities ?? "" }
+    var conditionImmunities: String { return monsterModel.condition_immunities ?? ""}
     var senses: String { return monsterModel.senses }
-    var languages: String { return monsterModel.languages }
+    var languages: String { return monsterModel.languages ?? "" }
     var challengeRating: Float {
         if let cr = Float(monsterModel.challenge_rating) {
             return cr
@@ -287,6 +287,20 @@ class Monster: Hashable {
         } catch {
         }
 
+        path = Bundle.main.path(forResource: "tomeOfBeasts", ofType: "json")!
+
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            do {
+                let decoder = JSONDecoder()
+                let extraMonsters = try decoder.decode([MonsterModel].self, from: data)
+                monsters.append(contentsOf: extraMonsters)
+            } catch {
+                print(error)
+            }
+        } catch {
+        }
+        
         path = Bundle.main.path(forResource: "ExtraMonsters", ofType: "json")!
 
         do {
@@ -387,9 +401,9 @@ struct MonsterModel: Codable {
     var name: String = ""
     var size: String = ""
     var type: String = ""
-    var subtype: String = ""
+    var subtype: String? = ""
     var alignment: String = ""
-    var armor_class = 0
+    var armor_class: Int? = 0
     var hit_points = 0
     var hit_dice: String = ""
     var speed: String = ""
@@ -407,12 +421,12 @@ struct MonsterModel: Codable {
 
     var wisdom_save: Int? = 0
     var perception: Int? = 0
-    var damage_vulnerabilities: String = ""
-    var damage_resistances: String = ""
-    var damage_immunities: String = ""
-    var condition_immunities: String = ""
+    var damage_vulnerabilities: String? = ""
+    var damage_resistances: String? = ""
+    var damage_immunities: String? = ""
+    var condition_immunities: String? = ""
     var senses: String = ""
-    var languages: String = ""
+    var languages: String? = ""
     var challenge_rating: String = ""
     var storedImageFileName: String? = ""
     var currentHitPoints: Int?

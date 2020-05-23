@@ -65,6 +65,7 @@
 		2BFCD5B62314906600804A0D /* MassSpell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFCD5B52314906600804A0D /* MassSpell.storyboard */; };
 		2BFCD5B82314917000804A0D /* MassSpellMonsterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCD5B72314917000804A0D /* MassSpellMonsterController.swift */; };
 		2BFCD5BA2314947E00804A0D /* MassSpellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCD5B92314947E00804A0D /* MassSpellController.swift */; };
+		B031848524797A090058561B /* tomeOfBeasts.json in Resources */ = {isa = PBXBuildFile; fileRef = B031848424797A090058561B /* tomeOfBeasts.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		2BFCD5B52314906600804A0D /* MassSpell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MassSpell.storyboard; sourceTree = "<group>"; };
 		2BFCD5B72314917000804A0D /* MassSpellMonsterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassSpellMonsterController.swift; sourceTree = "<group>"; };
 		2BFCD5B92314947E00804A0D /* MassSpellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassSpellController.swift; sourceTree = "<group>"; };
+		B031848424797A090058561B /* tomeOfBeasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tomeOfBeasts.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +295,7 @@
 		2BEF9A792309E85300DEB8CD /* Encounter HelperTests */ = {
 			isa = PBXGroup;
 			children = (
+				B031848424797A090058561B /* tomeOfBeasts.json */,
 				2B2A0EEB2324545B00030C0F /* spells.json */,
 				2BEF9A852309EC5900DEB8CD /* 5e-SRD-Monsters.json */,
 				2BAC383F230A04C100A1CAEA /* srd_5e_monsters.json */,
@@ -402,6 +405,7 @@
 				2B2B942F2353B41100B6C812 /* ExtraMonsters.json in Resources */,
 				2B2A0EEC2324545B00030C0F /* spells.json in Resources */,
 				2BA2C646231DAC5600602491 /* conditions.json in Resources */,
+				B031848524797A090058561B /* tomeOfBeasts.json in Resources */,
 				2B356BBD232EB617000E8E9E /* MasterViews.storyboard in Resources */,
 				2BAC3841230A05FB00A1CAEA /* srd_5e_monsters.json in Resources */,
 				2BAC383B2309F49300A1CAEA /* 5e-SRD-MonstersCopy.json in Resources */,
@@ -448,7 +452,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftlint autocorrect\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#swiftlint autocorrect\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -581,7 +585,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -636,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
