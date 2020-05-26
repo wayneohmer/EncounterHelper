@@ -73,7 +73,7 @@ class Monster: Hashable {
     var name: String { return monsterModel.name }
     var size: String { return monsterModel.size }
     var type: String { return monsterModel.type }
-    var subtype: String { return monsterModel.subtype ?? ""}
+    var subtype: String { return monsterModel.subtype ?? "" }
     var alignment: String { return monsterModel.alignment }
     var armorClass: Int { return monsterModel.armor_class ?? 0 }
     var hitPoints: Int { return monsterModel.currentHitPoints ?? monsterModel.maxHitPoints ?? monsterModel.hit_points }
@@ -97,10 +97,10 @@ class Monster: Hashable {
     var strengthSave: Int? { return monsterModel.strength_save }
     var wisdomSave: Int? { return monsterModel.wisdom_save  }
     var perception: Int { return monsterModel.perception ?? 0}
-    var damageVulnerabilities: String { return monsterModel.damage_vulnerabilities ?? ""}
+    var damageVulnerabilities: String { return monsterModel.damage_vulnerabilities ?? "" }
     var damageResistances: String { return monsterModel.damage_resistances ?? "" }
     var damageImmunities: String { return monsterModel.damage_immunities ?? "" }
-    var conditionImmunities: String { return monsterModel.condition_immunities ?? "" }
+    var conditionImmunities: String { return monsterModel.condition_immunities ?? ""}
     var senses: String { return monsterModel.senses }
     var languages: String { return monsterModel.languages ?? "" }
     var challengeRating: Float {
@@ -287,6 +287,20 @@ class Monster: Hashable {
         } catch {
         }
 
+        path = Bundle.main.path(forResource: "tomeOfBeasts", ofType: "json")!
+
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            do {
+                let decoder = JSONDecoder()
+                let extraMonsters = try decoder.decode([MonsterModel].self, from: data)
+                monsters.append(contentsOf: extraMonsters)
+            } catch {
+                print(error)
+            }
+        } catch {
+        }
+        
         path = Bundle.main.path(forResource: "ExtraMonsters", ofType: "json")!
 
         do {
@@ -311,7 +325,7 @@ class Monster: Hashable {
         } catch {
         }
 
-        path = Bundle.main.path(forResource: "TomOfMonsters", ofType: "json")!
+        path = Bundle.main.path(forResource: "tomeOfBeasts", ofType: "json")!
 
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
