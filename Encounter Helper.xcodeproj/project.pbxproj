@@ -50,6 +50,7 @@
 		2BAC383E2309FC0400A1CAEA /* MonsterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */; };
 		2BAC3840230A04C100A1CAEA /* srd_5e_monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BAC383F230A04C100A1CAEA /* srd_5e_monsters.json */; };
 		2BAC3841230A05FB00A1CAEA /* srd_5e_monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BAC383F230A04C100A1CAEA /* srd_5e_monsters.json */; };
+		2BD6B718246E0CB000D9A360 /* TomOfMonsters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BD6B716246E0B5D00D9A360 /* TomOfMonsters.json */; };
 		2BEF9A642309E85000DEB8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF9A632309E85000DEB8CD /* AppDelegate.swift */; };
 		2BEF9A662309E85000DEB8CD /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF9A652309E85000DEB8CD /* MasterViewController.swift */; };
 		2BEF9A682309E85000DEB8CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF9A672309E85000DEB8CD /* DetailViewController.swift */; };
@@ -115,6 +116,7 @@
 		2BA2C649231DB4C800602491 /* CondtionsDescCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondtionsDescCell.swift; sourceTree = "<group>"; };
 		2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterListCell.swift; sourceTree = "<group>"; };
 		2BAC383F230A04C100A1CAEA /* srd_5e_monsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = srd_5e_monsters.json; sourceTree = "<group>"; };
+		2BD6B716246E0B5D00D9A360 /* TomOfMonsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TomOfMonsters.json; sourceTree = "<group>"; };
 		2BEF9A602309E85000DEB8CD /* Encounter Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Encounter Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEF9A632309E85000DEB8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BEF9A652309E85000DEB8CD /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		2BEF9A792309E85300DEB8CD /* Encounter HelperTests */ = {
 			isa = PBXGroup;
 			children = (
+				2BD6B716246E0B5D00D9A360 /* TomOfMonsters.json */,
 				2B2A0EEB2324545B00030C0F /* spells.json */,
 				2BEF9A852309EC5900DEB8CD /* 5e-SRD-Monsters.json */,
 				2BAC383F230A04C100A1CAEA /* srd_5e_monsters.json */,
@@ -408,6 +411,7 @@
 				2B17F7822310A7EC0061EB5A /* 10dice.aif in Resources */,
 				2B17F7842310A7EC0061EB5A /* 1die.aif in Resources */,
 				2B17F7812310A7EC0061EB5A /* DeathSound.aif in Resources */,
+				2BD6B718246E0CB000D9A360 /* TomOfMonsters.json in Resources */,
 				2BEF9A6D2309E85200DEB8CD /* Assets.xcassets in Resources */,
 				2B17F76623108F2A0061EB5A /* Monster.storyboard in Resources */,
 				2B17F7832310A7EC0061EB5A /* Awww.aif in Resources */,

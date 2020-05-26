@@ -574,6 +574,7 @@
     {
       "name": "Innate Spellcasting",
       "desc": "The drow's spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire",
+      "spellNames": ["darkness","command,","faerie fire", "dancing lights"],
       "attack_bonus": 0
     },
     {
@@ -827,5 +828,226 @@
             "attack_bonus": 7
         }
     ]
+},{
+  "name": "Drow Monk",
+  "size": "Medium",
+  "type": "humanoid",
+  "subtype": "elf",
+  "alignment": "neutral evil",
+  "armor_class": 17,
+  "hit_points": 66,
+  "hit_dice": "10d8",
+  "speed": "40 ft.",
+  "strength": 13,
+  "dexterity": 18,
+  "constitution": 14,
+  "intelligence": 11,
+  "wisdom": 16,
+  "charisma": 12,
+  "perception": 2,
+  "stealth": 4,
+  "dexterity_save": 7,
+  "constitution_save": 5,
+  "wisdom_save": 4,
+  "damage_vulnerabilities": "",
+  "damage_resistances": "",
+  "damage_immunities": "",
+  "condition_immunities": "",
+  "senses": "darkvision 120 ft., passive Perception 12",
+  "languages": "Elvish, Undercommon",
+  "challenge_rating": "5",
+  "special_abilities": [
+    {
+      "name": "Evasion",
+      "desc": "When teh monk subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
+      "attack_bonus": 0
+    },
+    {
+      "name": "Fey Ancestry",
+      "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
+      "attack_bonus": 0
+    },
+    {
+      "name": "Innate Spellcasting",
+      "desc": "The drow's spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire",
+      "spellNames": ["darkness","command,","faerie fire", "dancing lights"],
+      "attack_bonus": 0
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+      "attack_bonus": 0
+    }
+  ],
+  "actions": [
+    {
+        "name": "Multiattack",
+        "desc": "The Monk makes two attacks with it's monk weapons and one unarmed strike as a bonus action",
+        "attack_bonus": 0
+    },{
+      "name": "Monk Weapon",
+      "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
+      "attack_bonus": 8,
+      "damage_dice": "1d6",
+      "damage_bonus": 4
+    },{
+      "name": "Stunning Strike (Recharge 5-6)",
+      "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage. The target must succeed on a DC 14 Constitution saving throw or be stunned until the end of your next turn.",
+      "attack_bonus": 8,
+      "damage_dice": "1d6",
+      "damage_bonus": 4
+    },{
+      "name": "Spider Shuriken",
+      "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
+      "attack_bonus": 8,
+      "damage_dice": "1d6",
+      "damage_bonus": 4
+    }
+  ]
+},{
+  "name": "Shadow Demon",
+  "size": "Medium",
+  "type": "fiend",
+  "subtype": "demon",
+  "alignment": "chaotic evil",
+  "armor_class": 13,
+  "hit_points": 66,
+  "hit_dice": "12d8",
+  "speed": "30 ft., fly 30 ft.",
+  "strength": 1,
+  "dexterity": 17,
+  "constitution": 12,
+  "intelligence": 14,
+  "wisdom": 13,
+  "charisma": 14,
+  "dexterity_save": 5,
+  "charisma_save": 4,
+  "damage_vulnerabilities": "radiant",
+  "damage_resistances": "acid, fire, necrotic, thunder, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "damage_immunities": "cold, lightning, poison",
+  "condition_immunities": "exhaustion, grappled, para lyzed, petrified, poisoned, prone, restrained",
+  "senses": "darkvision 120 ft., passive Perception 11",
+  "languages": "Abyssal, telepathy 120 ft.",
+  "challenge_rating": "4",
+  "special_abilities": [
+      {
+          "name": "Incorporeal Movement",
+          "desc": "The demon can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.",
+          "attack_bonus": 0
+      },
+      {
+          "name": "Light Sensitivity",
+          "desc": "While in bright lig ht, the demon has disadvantage on attack roll s, as well as on Wisdom (Perception) checks that rely on sight.",
+          "attack_bonus": 0
+      },
+      {
+          "name": "Shadow Stealth",
+          "desc": "While in dim light or darkness, the demon can take the Hide action as a bonus action.",
+          "attack_bonus": 0
+      }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 10 (2d6 + 3) psychic damage or, if the demon had advantage on the attack roll , 17 (4d6 + 3) psychic damage.",
+      "attack_bonus": 5,
+      "damage_dice": "2d6",
+      "damage_bonus": 3
+    }
+  ]
+},{
+  "name": "Helmed Horror",
+  "size": "Medium",
+  "type": "construct",
+  "subtype": "construct",
+  "alignment": "neutral",
+  "armor_class": 20,
+  "hit_points": 60,
+  "hit_dice": "8d8",
+  "speed": "30 ft., fly 30 ft.",
+  "strength": 18,
+  "dexterity": 13,
+  "constitution": 16,
+  "intelligence": 10,
+  "wisdom": 10,
+  "charisma": 10,
+  "damage_vulnerabilities": "",
+  "damage_resistances": "",
+  "damage_immunities": "force, necrotic, poison",
+  "condition_immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned, stunned",
+  "senses": "blind sight 60ft. (blind beyond this radius), passive Perception 14",
+  "languages": "understands the languages of its creator but can 't speak",
+  "challenge_rating": "4",
+  "special_abilities": [
+      {
+          "name": "Magic Resistance",
+          "desc": "The helm ed horror has advantage on saving throws aga inst spells and other magical effects.",
+          "attack_bonus": 0
+      },
+      {
+          "name": "Spell Immunity",
+          "desc": "The helmed horror is immune to three spells chosen by its creator. Typical immunities include fireball, heat metal, and lightning bolt.",
+          "attack_bonus": 0
+      }
+  ],
+  "actions": [
+      {
+          "name": "Multiattack",
+          "desc": "The helmed horror makes two longsword attacks",
+          "attack_bonus": 0
+      },
+    {
+      "name": "Longsword",
+      "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage, or 9 (1d10 + 4) slashing damage if used with two hands.",
+      "attack_bonus": 6,
+      "damage_dice": "1d8",
+      "damage_bonus": 4
+    }
+  ]
+},{
+  "name": "Beholder Zombie",
+  "size": "large",
+  "type": "Undead",
+  "subtype": "Undead",
+  "alignment": "neutral evil",
+  "armor_class": 15,
+  "hit_points": 93,
+  "hit_dice": "11d10",
+  "speed": "fly 20 ft.",
+  "strength": 10,
+  "dexterity": 8,
+  "constitution": 16,
+  "intelligence": 3,
+  "wisdom": 8,
+  "charisma": 5,
+  "damage_vulnerabilities": "",
+  "damage_resistances": "",
+  "damage_immunities": "poison",
+  "condition_immunities": "poisoned",
+  "senses": "darkvision 60ft., pass ive Perception 9",
+  "languages": "understands Deep Speech and Undercommon but can't speak",
+  "challenge_rating": "5",
+  "special_abilities": [
+      {
+          "name": "Undead Fortitude",
+          "desc": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 +the damage taken, un less the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point in stead.",
+          "attack_bonus": 0
+      }
+  ],
+  "actions": [
+      {
+          "name": "Bite",
+          "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 14 (4d6) piercing damage.",
+          "attack_bonus": 3,
+          "damage_dice": "4d6",
+          "damage_bonus": 3
+      },
+    {
+      "name": "Eye Ray.",
+      "desc": "1. Paralyzing Ray. The targeted creature must succeed on a DC 14 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. \n2. Fear Ray. The targeted creature must succeed on a DC 14 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success . \n3. Enervation Ray. The targeted creature must make a DC 14 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one. \n4. Disintegration Ray. If the target is a creature, it must succeed on a DC 14 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smal ler non magical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger non magical object or creation of magical force , this ray disintegrates a 10-foot cube of it.",
+      "attack_bonus": 0
+    
+    }
+  ]
 }
 ]
