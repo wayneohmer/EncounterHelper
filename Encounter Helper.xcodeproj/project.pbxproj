@@ -116,6 +116,7 @@
 		2BA2C649231DB4C800602491 /* CondtionsDescCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondtionsDescCell.swift; sourceTree = "<group>"; };
 		2BAC383D2309FC0400A1CAEA /* MonsterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterListCell.swift; sourceTree = "<group>"; };
 		2BAC383F230A04C100A1CAEA /* srd_5e_monsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = srd_5e_monsters.json; sourceTree = "<group>"; };
+		2BD6B716246E0B5D00D9A360 /* TomOfMonsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TomOfMonsters.json; sourceTree = "<group>"; };
 		2BEF9A602309E85000DEB8CD /* Encounter Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Encounter Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEF9A632309E85000DEB8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BEF9A652309E85000DEB8CD /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +261,7 @@
 				2BEF9A792309E85300DEB8CD /* Encounter HelperTests */,
 				2BEF9A612309E85000DEB8CD /* Products */,
 				2B2A0EF2232555D100030C0F /* Frameworks */,
+				2BF76BBB247D7DC20045DD6F /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -306,6 +308,14 @@
 				2B2B942E2353B41100B6C812 /* ExtraMonsters.json */,
 			);
 			path = "Encounter HelperTests";
+			sourceTree = "<group>";
+		};
+		2BF76BBB247D7DC20045DD6F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6B716246E0B5D00D9A360 /* TomOfMonsters.json */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

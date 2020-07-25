@@ -325,6 +325,30 @@ class Monster: Hashable {
         } catch {
         }
 
+        path = Bundle.main.path(forResource: "tomeOfBeasts", ofType: "json")!
+
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            do {
+                let decoder = JSONDecoder()
+                let extraMonsters = try decoder.decode([MonsterModel].self, from: data)
+                monsters.append(contentsOf: extraMonsters)
+            } catch {
+                print(error)
+            }
+        } catch {
+        }
+
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: metapath), options: .mappedIfSafe)
+            do {
+                let decoder = JSONDecoder()
+                metaMonsters = try decoder.decode([MonsterMetaModel].self, from: data)
+            } catch {
+            }
+        } catch {
+        }
+
         for var monsterModel in monsters {
             for (idx, action) in monsterModel.special_abilities?.enumerated() ?? [Action]().enumerated() {
                 if let spellNames = action.spellNames {
