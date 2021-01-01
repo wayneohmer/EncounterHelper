@@ -30,6 +30,24 @@ class Spell: Hashable {
     static func == (lhs: Spell, rhs: Spell) -> Bool {
         return lhs.name == rhs.name
     }
+    
+    var saveType:String {
+        let regex = try! NSRegularExpression(pattern: "(strength|dexterity|Constitution|intelligence|wisdom|charisma) saving throw")
+        let desc = self.model.desc ?? ""
+        let range = NSRange(location: 0, length: desc.count)
+        let matches = regex.matches(in: desc, range: range)
+        if matches.count > 0 {
+            let val = matches.map {
+                String(desc[Range($0.range, in: desc)!])
+                }[0]
+            
+            let words = val.split(separator: " ").map(String.init)
+            if words.count > 0 {
+                return String(words[0])
+            }
+        }
+        return ""
+    }
 
     class func readSpells() {
         var spells = [SpellModel]()

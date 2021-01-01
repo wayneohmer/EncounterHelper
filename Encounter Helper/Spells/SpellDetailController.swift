@@ -18,7 +18,9 @@ class SpellDetailController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var durationLabel: UILabel!
-
+    @IBOutlet weak var saveTypeLabel: UILabel!
+    @IBOutlet weak var saveStack: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +37,8 @@ class SpellDetailController: UIViewController {
             rangeLabel.text = spell.model.range
             castlingTimeLabel.text = spell.model.castingTime
             levelLabel.text = spell.model.level
+            saveStack.isHidden = spell.saveType == ""
+            saveTypeLabel.text = spell.saveType
             durationLabel.text = "\(spell.concentration ? "Concentration -" : "") \(spell.model.duration ?? "") "
 
             let htmlData = NSString(string: details).data(using: String.Encoding.unicode.rawValue)

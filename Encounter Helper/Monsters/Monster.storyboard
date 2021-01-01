@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DwA-FD-pM7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DwA-FD-pM7">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +36,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ME7-MW-NZe">
                                         <rect key="frame" x="0.0" y="0.0" width="420" height="38.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fQa-rt-1bh" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fQa-rt-1bh" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="134.5" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="STR: 16 +3/5">
@@ -48,7 +48,7 @@
                                                     </segue>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="oPM-Dk-4FB" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="oPM-Dk-4FB" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="142.5" y="0.0" width="135" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="DEX: 16 +3/5">
@@ -60,7 +60,7 @@
                                                     </segue>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-Jk-vj2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-Jk-vj2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="285.5" y="0.0" width="134.5" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="CON: 16 +3/5">
@@ -77,7 +77,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zti-mj-30P">
                                         <rect key="frame" x="0.0" y="46.5" width="420" height="38.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="1dt-PO-TZ7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="1dt-PO-TZ7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="134.5" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="INT: 16 +3/5">
@@ -89,7 +89,7 @@
                                                     </segue>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="3Q8-Zn-YDz" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="3Q8-Zn-YDz" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="142.5" y="0.0" width="135" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="WIS: 16 +3/5">
@@ -101,7 +101,7 @@
                                                     </segue>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="4TS-Xv-Llp" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="4TS-Xv-Llp" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="285.5" y="0.0" width="134.5" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="CHA: 16 +3/5">
@@ -121,16 +121,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="umf-4Q-OwJ" userLabel="Armor Class">
-                                <rect key="frame" x="234" y="166.5" width="135" height="30"/>
+                                <rect key="frame" x="234" y="166.5" width="134.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Armor Class:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uq-RS-T8X">
-                                        <rect key="frame" x="0.0" y="0.0" width="98.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.94118529559999997" green="0.94116502999999996" blue="0.94116908310000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQu-0r-i09">
-                                        <rect key="frame" x="106.5" y="0.0" width="28.5" height="30"/>
+                                        <rect key="frame" x="106" y="0.0" width="28.5" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <color key="textColor" red="0.94118529559999997" green="0.94116502999999996" blue="0.94116908310000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -138,10 +138,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="fr7-Ug-5kC">
-                                <rect key="frame" x="234" y="204.5" width="526" height="130.5"/>
+                                <rect key="frame" x="234" y="204.5" width="526" height="158"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-Ln-hC8" userLabel="Speed">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-eH-QVO">
                                                 <rect key="frame" x="0.0" y="0.0" width="54" height="20.5"/>
@@ -150,7 +150,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="30 ft., fly 60 ft." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqO-ga-09m">
-                                                <rect key="frame" x="62" y="0.0" width="125" height="20.5"/>
+                                                <rect key="frame" x="62" y="0.0" width="124" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.94118529559999997" green="0.94116502999999996" blue="0.94116908310000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -158,16 +158,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hWb-i0-i00" userLabel="Senses">
-                                        <rect key="frame" x="0.0" y="27.5" width="407" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="404.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senses:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czj-GQ-mhW">
-                                                <rect key="frame" x="0.0" y="0.0" width="60.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Darkvision 120 ft.,  Passive Perception 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueW-l9-YSw">
-                                                <rect key="frame" x="68.5" y="0.0" width="338.5" height="20.5"/>
+                                                <rect key="frame" x="68" y="0.0" width="336.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -192,7 +192,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fu2-MK-qjj" userLabel="Damage Immune">
-                                        <rect key="frame" x="0.0" y="82.5" width="344" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="82.5" width="342" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DI:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXe-bl-HQo">
                                                 <rect key="frame" x="0.0" y="0.0" width="21" height="20.5"/>
@@ -201,7 +201,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="cold, lightning; bludgeoning, piercing, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxN-2O-q5a">
-                                                <rect key="frame" x="29" y="0.0" width="315" height="20.5"/>
+                                                <rect key="frame" x="29" y="0.0" width="313" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -209,16 +209,33 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c6U-5c-th4" userLabel="Conditional Immune">
-                                        <rect key="frame" x="0.0" y="110" width="334.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="110" width="332" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CI:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBE-Fa-al2">
-                                                <rect key="frame" x="0.0" y="0.0" width="21" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="20.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="cold, lightning; bludgeoning, piercing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X2k-m4-khL">
-                                                <rect key="frame" x="29" y="0.0" width="305.5" height="20.5"/>
+                                                <rect key="frame" x="28.5" y="0.0" width="303.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dKX-gJ-AVI" userLabel="Damage Vulnerabilities">
+                                        <rect key="frame" x="0.0" y="137.5" width="338" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DV:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8t-VB-h71">
+                                                <rect key="frame" x="0.0" y="0.0" width="26.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="cold, lightning; bludgeoning, piercing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KnC-QG-sia">
+                                                <rect key="frame" x="34.5" y="0.0" width="303.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -307,7 +324,7 @@
                                 </connections>
                             </containerView>
                             <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="Poisoned, Paralyzed, blinded, charmed, Incopacitated" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWL-3g-Hnl">
-                                <rect key="frame" x="385" y="151" width="367" height="45.5"/>
+                                <rect key="frame" x="384.5" y="151" width="367.5" height="45.5"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -317,6 +334,7 @@
                                 </connections>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="1au-zm-Kch"/>
                         <color key="backgroundColor" red="0.1372649073600769" green="0.1333332359790802" blue="0.13333180546760559" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="O39-8I-n2C" firstAttribute="leading" secondItem="umf-4Q-OwJ" secondAttribute="leading" id="5zW-3o-xmb"/>
@@ -350,7 +368,6 @@
                             <constraint firstItem="1au-zm-Kch" firstAttribute="trailing" secondItem="39W-Xd-crw" secondAttribute="trailing" id="xZf-1N-eWm"/>
                             <constraint firstItem="bS9-v3-RUD" firstAttribute="top" secondItem="31j-RF-sgl" secondAttribute="bottom" constant="7.5" id="xce-e6-xZh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1au-zm-Kch"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="9n8-Ev-TXn">
@@ -403,6 +420,8 @@
                         <outlet property="damageImmuneStack" destination="Fu2-MK-qjj" id="SeE-oL-6FG"/>
                         <outlet property="damageResistLabel" destination="4nA-Vk-L8e" id="Q3y-4p-gJp"/>
                         <outlet property="damageResistStack" destination="527-F8-8gq" id="Yqd-M4-YQD"/>
+                        <outlet property="damageVulnerabilitiesLabel" destination="KnC-QG-sia" id="GkP-NQ-kkV"/>
+                        <outlet property="damageVulnerabilityStack" destination="dKX-gJ-AVI" id="Tf4-id-Un5"/>
                         <outlet property="descriptionLabel" destination="nv6-zO-KhU" id="4gr-uC-EPV"/>
                         <outlet property="dexButton" destination="oPM-Dk-4FB" id="aSy-ZI-Drl"/>
                         <outlet property="diceButton" destination="c3g-xm-e5y" id="0UN-dJ-ZWb"/>
@@ -476,7 +495,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVL-Jc-QuN">
-                                                    <rect key="frame" x="355" y="33.5" width="42" height="43.5"/>
+                                                    <rect key="frame" x="355.5" y="33.5" width="41.5" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -506,7 +525,7 @@
                     </tableView>
                     <connections>
                         <segue destination="Miy-5z-4dK" kind="popoverPresentation" identifier="showAttack" popoverAnchorView="tDu-CH-FPc" id="ySz-Tz-V0u">
-                            <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES"/>
                         </segue>
                         <segue destination="AkU-T2-cgN" kind="presentation" identifier="showSpells" id="8YD-Z8-jw4"/>
                     </connections>
@@ -565,7 +584,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MrI-HU-FHo">
                                 <rect key="frame" x="218" y="157" width="191" height="216"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCa-GL-dZk" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCa-GL-dZk" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="191" height="50.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -583,7 +602,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="pO8-xj-ZaH">
                                         <rect key="frame" x="0.0" y="55.5" width="191" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmZ-Gy-gHy" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmZ-Gy-gHy" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -594,7 +613,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="bnD-bR-AvV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="op3-al-mom" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="op3-al-mom" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="0.0" width="37.5" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -605,7 +624,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="VL1-DW-axu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAu-Rm-eDb" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAu-Rm-eDb" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="76.5" y="0.0" width="37.5" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -616,7 +635,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="nhq-ZS-ocW"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjU-CV-l7V" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjU-CV-l7V" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="115" y="0.0" width="37.5" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -627,7 +646,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="54D-yE-RMz"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTD-JY-nYA" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTD-JY-nYA" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="153.5" y="0.0" width="37.5" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -643,7 +662,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="fMC-zo-zDj">
                                         <rect key="frame" x="0.0" y="110.5" width="191" height="50.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Af-UA-Im7" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Af-UA-Im7" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="50.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -654,7 +673,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="NFs-Qj-o8W"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogl-n3-bnW" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogl-n3-bnW" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="0.0" width="37.5" height="50.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -665,7 +684,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="iee-Kk-CKO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chE-a3-tXh" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chE-a3-tXh" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="76.5" y="0.0" width="37.5" height="50.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -676,7 +695,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="7Xc-4t-ioH"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKS-aF-kcQ" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKS-aF-kcQ" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="115" y="0.0" width="37.5" height="50.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -687,7 +706,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="PDH-ep-A4n"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcb-1S-9AR" userLabel="m10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcb-1S-9AR" userLabel="m10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="153.5" y="0.0" width="37.5" height="50.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -703,7 +722,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="MEV-QQ-4vH">
                                         <rect key="frame" x="0.0" y="166" width="191" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weE-8R-XEf" userLabel="m20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weE-8R-XEf" userLabel="m20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -714,7 +733,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="EIN-JV-piB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ms3-vn-Qwl" userLabel="m30" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ms3-vn-Qwl" userLabel="m30" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="48" y="0.0" width="46.5" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -725,7 +744,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="L27-ap-2Y8"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-a1-vOu" userLabel="m40" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-a1-vOu" userLabel="m40" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="96.5" y="0.0" width="46" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -736,7 +755,7 @@
                                                     <action selector="modifierTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="IBB-Gb-e0F"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCE-eX-Ta4" userLabel="m50" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCE-eX-Ta4" userLabel="m50" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="144.5" y="0.0" width="46.5" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -758,7 +777,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fYs-0q-OuI">
                                 <rect key="frame" x="16" y="157" width="186" height="213"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh2-fU-fkB" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh2-fU-fkB" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="49.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -773,7 +792,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8EC-Ur-RMa">
                                         <rect key="frame" x="0.0" y="54.5" width="186" height="49.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEE-aC-RmP" userLabel="d4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEE-aC-RmP" userLabel="d4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="60.5" height="49.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -785,7 +804,7 @@
                                                     <action selector="dieTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="Mbg-TW-Tw0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVl-sI-UPI" userLabel="d6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVl-sI-UPI" userLabel="d6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="62.5" y="0.0" width="60.5" height="49.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -797,7 +816,7 @@
                                                     <action selector="dieTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="y8c-Or-axt"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpb-kG-Ni2" userLabel="d8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpb-kG-Ni2" userLabel="d8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="125" y="0.0" width="61" height="49.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -814,7 +833,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="RhO-XY-nMl">
                                         <rect key="frame" x="0.0" y="109" width="186" height="49.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSl-8k-TFI" userLabel="d10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSl-8k-TFI" userLabel="d10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="60.5" height="49.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -826,7 +845,7 @@
                                                     <action selector="dieTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="PC4-Wr-V38"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-R7-dAh" userLabel="d12" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-R7-dAh" userLabel="d12" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="62.5" y="0.0" width="60.5" height="49.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -838,7 +857,7 @@
                                                     <action selector="dieTouched:" destination="Ahc-H9-X8k" eventType="touchUpInside" id="d1a-sy-i7T"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hey-p4-TXH" userLabel="d20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hey-p4-TXH" userLabel="d20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="125" y="0.0" width="61" height="49.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -855,7 +874,7 @@
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="rdB-WY-GHd">
                                         <rect key="frame" x="0.0" y="161" width="186" height="0.0"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ope-rj-STH" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ope-rj-STH" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="186" height="0.0"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -869,7 +888,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-LG-Knb" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-LG-Knb" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="163.5" width="186" height="49.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -965,6 +984,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="FwG-7d-XDv"/>
                         <color key="backgroundColor" red="0.1097879484" green="0.1176410541" blue="0.11764592679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="WAZ-5v-mR1" firstAttribute="top" secondItem="MrI-HU-FHo" secondAttribute="bottom" constant="16" id="3yX-mn-Ct1"/>
@@ -987,7 +1007,6 @@
                             <constraint firstItem="FwG-7d-XDv" firstAttribute="trailing" secondItem="MrI-HU-FHo" secondAttribute="trailing" constant="16" id="kmf-ju-EsW"/>
                             <constraint firstItem="Sb1-1k-M8w" firstAttribute="leading" secondItem="FwG-7d-XDv" secondAttribute="leading" constant="28" id="r5p-lP-sHR"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="FwG-7d-XDv"/>
                     </view>
                     <navigationItem key="navigationItem" id="o7A-We-4Ii"/>
                     <value key="contentSizeForViewInPopover" type="size" width="400" height="475"/>
@@ -1399,7 +1418,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SyA-ES-2Or">
                                         <rect key="frame" x="0.0" y="0.0" width="225" height="29"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="qpf-Ez-TCe" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="qpf-Ez-TCe" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="69.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="STR">
@@ -1415,7 +1434,7 @@
                                                     <action selector="SaveButtonTouched:" destination="Yef-eJ-WZK" eventType="touchUpInside" id="p5o-9F-xTu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="jmX-Qr-dhh" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="jmX-Qr-dhh" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="77.5" y="0.0" width="70" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="DEX">
@@ -1431,7 +1450,7 @@
                                                     <action selector="SaveButtonTouched:" destination="Yef-eJ-WZK" eventType="touchUpInside" id="eGa-y4-sNj"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="vvR-P3-Mv1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="vvR-P3-Mv1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="155.5" y="0.0" width="69.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="CON">
@@ -1452,7 +1471,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-T1-M4u">
                                         <rect key="frame" x="0.0" y="33" width="225" height="29"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Zta-mi-9Cn" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Zta-mi-9Cn" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="69.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="INT">
@@ -1468,7 +1487,7 @@
                                                     <action selector="SaveButtonTouched:" destination="Yef-eJ-WZK" eventType="touchUpInside" id="7cT-hh-RK5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="kni-sM-evS" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="kni-sM-evS" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="77.5" y="0.0" width="70" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="WIS">
@@ -1484,7 +1503,7 @@
                                                     <action selector="SaveButtonTouched:" destination="Yef-eJ-WZK" eventType="touchUpInside" id="Jv7-8M-6ng"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="jG2-WE-doX" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="jG2-WE-doX" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="155.5" y="0.0" width="69.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="CHA">
@@ -1507,7 +1526,7 @@
                                     <constraint firstAttribute="width" constant="225" id="W2Z-gk-XGN"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Aew-QB-aBh" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Aew-QB-aBh" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                 <rect key="frame" x="393" y="292" width="45" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="RiR-WQ-XqE"/>
@@ -1536,6 +1555,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="IuG-GE-jCQ"/>
                         <color key="backgroundColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wlf-Nz-cbH" firstAttribute="top" secondItem="Qrb-bz-llc" secondAttribute="top" constant="16" id="Ane-tv-Exm"/>
@@ -1551,7 +1571,6 @@
                             <constraint firstItem="IuG-GE-jCQ" firstAttribute="bottom" secondItem="Ao3-wA-ipZ" secondAttribute="bottom" constant="16" id="vFm-Gi-rDj"/>
                             <constraint firstItem="wlf-Nz-cbH" firstAttribute="leading" secondItem="IuG-GE-jCQ" secondAttribute="leading" constant="16" id="xtq-b8-6Ej"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="IuG-GE-jCQ"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="500" height="390"/>
                     <size key="freeformSize" width="450" height="390"/>
@@ -1569,7 +1588,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYE-hh-Jao" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" id="rbp-4f-8PF" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" id="rbp-4f-8PF" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="39"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
@@ -1577,7 +1596,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" id="yU6-TY-gTZ" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" id="yU6-TY-gTZ" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="39"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
@@ -1687,7 +1706,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2as-eF-ERA">
                                 <rect key="frame" x="192.5" y="164" width="200.5" height="209"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXm-yK-8Rd" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXm-yK-8Rd" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="200.5" height="48.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1705,7 +1724,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="B1H-e6-vaZ">
                                         <rect key="frame" x="0.0" y="53.5" width="200.5" height="48.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvi-Gg-hXc" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvi-Gg-hXc" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="39.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1716,7 +1735,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="fde-PH-dF2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mX0-7g-S0c" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mX0-7g-S0c" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="40.5" y="0.0" width="39" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1727,7 +1746,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="VdD-XO-OU6"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwz-Oi-B6J" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwz-Oi-B6J" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="80.5" y="0.0" width="39.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1738,7 +1757,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="Rfs-II-cdk"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMi-9h-VRm" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMi-9h-VRm" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="121" y="0.0" width="39" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1749,7 +1768,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="V2o-C2-hmN"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-gw-KIa" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-gw-KIa" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="161" y="0.0" width="39.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1765,7 +1784,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="GxQ-cv-GN7">
                                         <rect key="frame" x="0.0" y="107" width="200.5" height="48.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la3-RK-BgB" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la3-RK-BgB" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="39.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1776,7 +1795,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="Z98-oJ-50C"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7i-xQ-ZFk" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7i-xQ-ZFk" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="40.5" y="0.0" width="39" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1787,7 +1806,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="rZW-M0-23l"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3w-13-ZIA" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3w-13-ZIA" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="80.5" y="0.0" width="39.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1798,7 +1817,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="eC2-rA-Re5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlr-U7-T7d" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlr-U7-T7d" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="121" y="0.0" width="39" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1809,7 +1828,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="bqf-IL-gW1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQz-Bk-ZFL" userLabel="m10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQz-Bk-ZFL" userLabel="m10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="161" y="0.0" width="39.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1825,7 +1844,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="qWg-hS-rDp">
                                         <rect key="frame" x="0.0" y="160.5" width="200.5" height="48.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANw-xR-UZC" userLabel="m20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANw-xR-UZC" userLabel="m20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="48.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1836,7 +1855,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="kfZ-8J-KtO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsj-oy-A0k" userLabel="m30" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsj-oy-A0k" userLabel="m30" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="50.5" y="0.0" width="48.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1847,7 +1866,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="SlM-iL-8bS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3q-BZ-Ppp" userLabel="m40" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3q-BZ-Ppp" userLabel="m40" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="0.0" width="49" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1858,7 +1877,7 @@
                                                     <action selector="modifierTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="FOf-Lk-qUC"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPN-UB-lZ9" userLabel="m50" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPN-UB-lZ9" userLabel="m50" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="152" y="0.0" width="48.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1880,7 +1899,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sCH-6q-2xZ">
                                 <rect key="frame" x="16" y="164" width="160.5" height="262"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoD-cC-mwJ" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoD-cC-mwJ" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="160.5" height="48.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1895,7 +1914,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-hN-mJV">
                                         <rect key="frame" x="0.0" y="53.5" width="160.5" height="48.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8s-fz-TF4" userLabel="d4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8s-fz-TF4" userLabel="d4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1907,7 +1926,7 @@
                                                     <action selector="dieTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="H1V-5D-CVs"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmJ-tr-qt8" userLabel="d6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmJ-tr-qt8" userLabel="d6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="54" y="0.0" width="52.5" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1919,7 +1938,7 @@
                                                     <action selector="dieTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="JFs-hl-6C9"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjN-yR-9gW" userLabel="d8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjN-yR-9gW" userLabel="d8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="108.5" y="0.0" width="52" height="48.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1936,7 +1955,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ASV-ei-9ee">
                                         <rect key="frame" x="0.0" y="107" width="160.5" height="48"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtu-i3-HRx" userLabel="d10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtu-i3-HRx" userLabel="d10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="48"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1948,7 +1967,7 @@
                                                     <action selector="dieTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="CAF-NV-rah"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUP-P5-49y" userLabel="d12" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUP-P5-49y" userLabel="d12" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="54" y="0.0" width="52.5" height="48"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1960,7 +1979,7 @@
                                                     <action selector="dieTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="CRN-0g-dVC"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLy-Dx-JBn" userLabel="d20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLy-Dx-JBn" userLabel="d20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="108.5" y="0.0" width="52" height="48"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1977,7 +1996,7 @@
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="dZP-Z9-fMe">
                                         <rect key="frame" x="0.0" y="157.5" width="160.5" height="0.0"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOP-uq-wBy" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOP-uq-wBy" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="0.0"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -1989,7 +2008,7 @@
                                                     <action selector="signTouched:" destination="Miy-5z-4dK" eventType="touchUpInside" id="n8w-23-aXW"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0h-H8-VBM" userLabel="d100" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0h-H8-VBM" userLabel="d100" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="60.5" height="0.0"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2003,7 +2022,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKZ-zD-GFz" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKZ-zD-GFz" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="160.5" height="48.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2015,7 +2034,7 @@
                                             <action selector="oopsTouched" destination="Miy-5z-4dK" eventType="touchUpInside" id="ohd-Jh-zdg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-lf-DqT" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-lf-DqT" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="213.5" width="160.5" height="48.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2113,6 +2132,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="FBj-yQ-puA"/>
                         <color key="backgroundColor" red="0.1097879484" green="0.1176410541" blue="0.11764592679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="FBj-yQ-puA" firstAttribute="bottom" secondItem="9Fp-lI-Kvf" secondAttribute="bottom" constant="16" id="6JS-sX-2pd"/>
@@ -2138,7 +2158,6 @@
                             <constraint firstItem="2as-eF-ERA" firstAttribute="top" secondItem="Gxg-l8-vhl" secondAttribute="bottom" constant="16" id="maZ-D4-wBJ"/>
                             <constraint firstItem="vI0-84-jLJ" firstAttribute="top" secondItem="FBj-yQ-puA" secondAttribute="top" constant="8" id="yZ5-Gf-1O4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="FBj-yQ-puA"/>
                     </view>
                     <navigationItem key="navigationItem" id="l7G-Bu-xEB"/>
                     <value key="contentSizeForViewInPopover" type="size" width="625" height="455"/>
@@ -2246,7 +2265,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bhg-Vk-TP5">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="barTintColor" systemColor="viewFlipsideBackgroundColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -2310,7 +2329,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="psu-PC-0s5">
                                 <rect key="frame" x="218" y="126" width="191" height="222"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0h-jn-d6R" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0h-jn-d6R" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="191" height="52"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2328,7 +2347,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Apb-by-pDj">
                                         <rect key="frame" x="0.0" y="57" width="191" height="51.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljw-eC-Vqb" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljw-eC-Vqb" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2339,7 +2358,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="WPr-uZ-lM7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLV-SW-Cw6" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLV-SW-Cw6" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="0.0" width="37.5" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2350,7 +2369,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="J3R-HW-blV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkm-rz-MKB" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkm-rz-MKB" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="76.5" y="0.0" width="37.5" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2361,7 +2380,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="RRl-CN-C8h"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7g2-qI-jT6" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7g2-qI-jT6" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="115" y="0.0" width="37.5" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2372,7 +2391,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="BEc-Yf-uMP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThO-5P-gMN" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThO-5P-gMN" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="153.5" y="0.0" width="37.5" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2388,7 +2407,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="t0R-uv-ne0">
                                         <rect key="frame" x="0.0" y="113.5" width="191" height="52"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43i-wC-6CD" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43i-wC-6CD" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="52"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2399,7 +2418,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="Ku5-vq-0zc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd0-0V-015" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd0-0V-015" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="0.0" width="37.5" height="52"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2410,7 +2429,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="9Se-vk-VlJ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9f-05-ayC" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9f-05-ayC" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="76.5" y="0.0" width="37.5" height="52"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2421,7 +2440,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="buA-e4-nUE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86d-WY-HxK" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86d-WY-HxK" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="115" y="0.0" width="37.5" height="52"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2432,7 +2451,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="m1M-Tk-39v"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qS-UB-RCm" userLabel="m10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qS-UB-RCm" userLabel="m10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="153.5" y="0.0" width="37.5" height="52"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2448,7 +2467,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="SFn-kg-GFD">
                                         <rect key="frame" x="0.0" y="170.5" width="191" height="51.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wja-BI-j6T" userLabel="m20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wja-BI-j6T" userLabel="m20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2459,7 +2478,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="e3F-Ro-0zb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztd-Ib-DSA" userLabel="m30" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztd-Ib-DSA" userLabel="m30" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="48" y="0.0" width="46.5" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2470,7 +2489,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="LkA-MI-xHA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oc-tW-IU2" userLabel="m40" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oc-tW-IU2" userLabel="m40" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="96.5" y="0.0" width="46" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2481,7 +2500,7 @@
                                                     <action selector="modifierTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="xo4-bn-8nq"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gD-Ym-7fF" userLabel="m50" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gD-Ym-7fF" userLabel="m50" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="144.5" y="0.0" width="46.5" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2503,7 +2522,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GBm-kK-Rnf">
                                 <rect key="frame" x="16" y="126" width="186" height="276"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuD-Ye-z7I" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuD-Ye-z7I" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="51"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2518,7 +2537,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-ga-tWc">
                                         <rect key="frame" x="0.0" y="56" width="186" height="51.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-Au-0uZ" userLabel="d4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-Au-0uZ" userLabel="d4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="60.5" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2530,7 +2549,7 @@
                                                     <action selector="dieTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="hmx-44-cSL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Akm-kz-u7C" userLabel="d6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Akm-kz-u7C" userLabel="d6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="62.5" y="0.0" width="60.5" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2542,7 +2561,7 @@
                                                     <action selector="dieTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="DhX-Za-yr7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtV-kf-MZ1" userLabel="d8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtV-kf-MZ1" userLabel="d8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="125" y="0.0" width="61" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2559,7 +2578,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="uBn-Rm-oji">
                                         <rect key="frame" x="0.0" y="112.5" width="186" height="51"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-8q-2na" userLabel="d10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-8q-2na" userLabel="d10" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="60.5" height="51"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2571,7 +2590,7 @@
                                                     <action selector="dieTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="MmY-bl-Da0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rva-aE-VXu" userLabel="d12" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rva-aE-VXu" userLabel="d12" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="62.5" y="0.0" width="60.5" height="51"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2583,7 +2602,7 @@
                                                     <action selector="dieTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="d5S-ld-os0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-py-c9O" userLabel="d20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-py-c9O" userLabel="d20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="125" y="0.0" width="61" height="51"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2600,7 +2619,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="3Yu-UN-s2O">
                                         <rect key="frame" x="0.0" y="168.5" width="186" height="51.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0o-i5-qaR" userLabel="d20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0o-i5-qaR" userLabel="d20" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2612,7 +2631,7 @@
                                                     <action selector="dieTouched:" destination="teF-jv-gAb" eventType="touchUpInside" id="yj9-6V-4uu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrT-qM-rhW" userLabel="m50" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrT-qM-rhW" userLabel="m50" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="113" y="0.0" width="73" height="51.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2626,7 +2645,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2V1-Rf-E0y" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2V1-Rf-E0y" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="225" width="186" height="51"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2722,6 +2741,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="yFR-ZJ-i2e"/>
                         <color key="backgroundColor" red="0.1097879484" green="0.1176410541" blue="0.11764592679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bUd-2S-bfh" firstAttribute="top" secondItem="yFR-ZJ-i2e" secondAttribute="top" constant="8" id="1WB-hU-jaU"/>
@@ -2744,7 +2764,6 @@
                             <constraint firstItem="yFR-ZJ-i2e" firstAttribute="trailing" secondItem="DFb-s9-ASV" secondAttribute="trailing" constant="16" id="nqX-p9-SNZ"/>
                             <constraint firstItem="mHG-IK-iHr" firstAttribute="leading" secondItem="2V1-Rf-E0y" secondAttribute="trailing" constant="16" id="wL5-o6-k7c"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yFR-ZJ-i2e"/>
                     </view>
                     <navigationItem key="navigationItem" id="s2h-uW-3Br"/>
                     <value key="contentSizeForViewInPopover" type="size" width="400" height="450"/>
@@ -2793,7 +2812,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBy-Uy-cgC" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBy-Uy-cgC" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                 <rect key="frame" x="110" y="244" width="74" height="40"/>
                                 <color key="backgroundColor" red="0.64335477927123286" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2825,7 +2844,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Ye-KM-XQw">
                                         <rect key="frame" x="0.0" y="0.0" width="166" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRW-Bs-Tow" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRW-Bs-Tow" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2836,7 +2855,7 @@
                                                     <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="anz-G1-Jhd"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5r-NM-DvO" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5r-NM-DvO" userLabel="m2" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="58" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2847,7 +2866,7 @@
                                                     <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="mvd-i6-PWz"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1B-3T-eml" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1B-3T-eml" userLabel="m3" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="116" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2863,7 +2882,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2xP-bb-peg">
                                         <rect key="frame" x="0.0" y="38" width="166" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aws-Eq-jDg" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aws-Eq-jDg" userLabel="m4" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2874,7 +2893,7 @@
                                                     <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="Rm1-yc-nN3"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-mZ-ym8" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-mZ-ym8" userLabel="m5" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="58" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2885,7 +2904,7 @@
                                                     <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="vnj-0d-AeE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Og-YI-Ln1" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Og-YI-Ln1" userLabel="m6" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="116" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2901,7 +2920,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IaX-11-igl">
                                         <rect key="frame" x="0.0" y="76" width="166" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-C1-k58" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-C1-k58" userLabel="m7" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2912,7 +2931,7 @@
                                                     <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="OkQ-dz-uCB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnt-YV-g26" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnt-YV-g26" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="58" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2923,7 +2942,7 @@
                                                     <action selector="numTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="7VP-N5-QxB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MC-rG-DGe" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MC-rG-DGe" userLabel="m9" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="116" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2939,7 +2958,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tuV-xl-TE5">
                                         <rect key="frame" x="0.0" y="114" width="166" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oec-5i-jSM" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oec-5i-jSM" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2950,7 +2969,7 @@
                                                     <action selector="backspaceTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="0QY-ea-Y77"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgP-eS-msS" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgP-eS-msS" userLabel="m8" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                                 <rect key="frame" x="91" y="0.0" width="75" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -2965,7 +2984,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtU-8J-sOT" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtU-8J-sOT" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                 <rect key="frame" x="16" y="244" width="74" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.78581426898219175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -2980,7 +2999,7 @@
                                     <action selector="damageTouched:" destination="ZIH-BO-IKl" eventType="touchUpInside" id="HTs-mD-Qus"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zM6-7r-zTd" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zM6-7r-zTd" userLabel="m1" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
                                 <rect key="frame" x="117" y="16" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2996,7 +3015,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="qgX-mB-WKE"/>
+                        <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qgX-mB-WKE" firstAttribute="trailing" secondItem="QZD-zc-Qin" secondAttribute="trailing" constant="18" id="1Ow-M9-eYX"/>
                             <constraint firstItem="LtU-8J-sOT" firstAttribute="top" secondItem="tuV-xl-TE5" secondAttribute="bottom" constant="16" id="2Xk-9Y-h3r"/>
@@ -3012,7 +3032,6 @@
                             <constraint firstItem="QZD-zc-Qin" firstAttribute="leading" secondItem="qgX-mB-WKE" secondAttribute="leading" constant="16" id="kaI-6d-xxx"/>
                             <constraint firstItem="qgX-mB-WKE" firstAttribute="trailing" secondItem="pBy-Uy-cgC" secondAttribute="trailing" constant="16" id="uep-wL-t9h"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qgX-mB-WKE"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="315"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -3028,10 +3047,327 @@
             <point key="canvasLocation" x="30143.359375" y="-287.109375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="No_circle" width="1024" height="1024"/>
-    </resources>
+    <designables>
+        <designable name="0qS-UB-RCm">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="1dt-PO-TZ7">
+            <size key="intrinsicContentSize" width="87" height="29"/>
+        </designable>
+        <designable name="2V1-Rf-E0y">
+            <size key="intrinsicContentSize" width="36" height="30"/>
+        </designable>
+        <designable name="3Q8-Zn-YDz">
+            <size key="intrinsicContentSize" width="91" height="29"/>
+        </designable>
+        <designable name="3eS-Jk-vj2">
+            <size key="intrinsicContentSize" width="95" height="29"/>
+        </designable>
+        <designable name="43i-wC-6CD">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="4TS-Xv-Llp">
+            <size key="intrinsicContentSize" width="95" height="29"/>
+        </designable>
+        <designable name="7MC-rG-DGe">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="7Oc-tW-IU2">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="7Og-YI-Ln1">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="7g2-qI-jT6">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="86d-WY-HxK">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="8gD-Ym-7fF">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="9Af-UA-Im7">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="AFh-C1-k58">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ANw-xR-UZC">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Aew-QB-aBh">
+            <size key="intrinsicContentSize" width="37" height="29"/>
+        </designable>
+        <designable name="Akm-kz-u7C">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
+        <designable name="Aws-Eq-jDg">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="DmZ-Gy-gHy">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="E0h-jn-d6R">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="GSl-8k-TFI">
+            <size key="intrinsicContentSize" width="43" height="30"/>
+        </designable>
+        <designable name="HBj-mZ-ym8">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="IPN-UB-lZ9">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="JCE-eX-Ta4">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Jsj-oy-A0k">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="L9f-05-ayC">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Ljw-eC-Vqb">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="LtU-8J-sOT">
+            <size key="intrinsicContentSize" width="31" height="30"/>
+        </designable>
+        <designable name="M7i-xQ-ZFk">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Ms3-vn-Qwl">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="N1B-3T-eml">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="NUP-P5-49y">
+            <size key="intrinsicContentSize" width="43" height="30"/>
+        </designable>
+        <designable name="Oec-5i-jSM">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Ogl-n3-bnW">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Ope-rj-STH">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="PmJ-tr-qt8">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
+        <designable name="Q3q-BZ-Ppp">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Qpb-kG-Ni2">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
+        <designable name="R0o-i5-qaR">
+            <size key="intrinsicContentSize" width="52" height="30"/>
+        </designable>
+        <designable name="RuD-Ye-z7I">
+            <size key="intrinsicContentSize" width="38" height="30"/>
+        </designable>
+        <designable name="Rva-aE-VXu">
+            <size key="intrinsicContentSize" width="43" height="30"/>
+        </designable>
+        <designable name="SLy-Dx-JBn">
+            <size key="intrinsicContentSize" width="43" height="30"/>
+        </designable>
+        <designable name="ThO-5P-gMN">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="U5r-NM-DvO">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="UMi-9h-VRm">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="UtV-kf-MZ1">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
+        <designable name="VrT-qM-rhW">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="WjN-yR-9gW">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
+        <designable name="Wja-BI-j6T">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ZRW-Bs-Tow">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Zta-mi-9Cn">
+            <size key="intrinsicContentSize" width="30" height="29"/>
+        </designable>
+        <designable name="a8s-fz-TF4">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
+        <designable name="aEZ-gw-KIa">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="bgP-eS-msS">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="c3w-13-ZIA">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="cVl-sI-UPI">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
+        <designable name="cXm-yK-8Rd">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="chE-a3-tXh">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="dFu-py-c9O">
+            <size key="intrinsicContentSize" width="43" height="30"/>
+        </designable>
+        <designable name="dlr-U7-T7d">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="eEE-aC-RmP">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
+        <designable name="eoD-cC-mwJ">
+            <size key="intrinsicContentSize" width="38" height="30"/>
+        </designable>
+        <designable name="fQa-rt-1bh">
+            <size key="intrinsicContentSize" width="91" height="29"/>
+        </designable>
+        <designable name="fTD-JY-nYA">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="fcb-1S-9AR">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="fd0-0V-015">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="fp5-a1-vOu">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="gPw-Au-0uZ">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
+        <designable name="gnt-YV-g26">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="hcO-LG-Knb">
+            <size key="intrinsicContentSize" width="36" height="30"/>
+        </designable>
+        <designable name="hey-p4-TXH">
+            <size key="intrinsicContentSize" width="43" height="30"/>
+        </designable>
+        <designable name="hlB-8q-2na">
+            <size key="intrinsicContentSize" width="43" height="30"/>
+        </designable>
+        <designable name="iCa-GL-dZk">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="j0h-H8-VBM">
+            <size key="intrinsicContentSize" width="52" height="30"/>
+        </designable>
+        <designable name="jG2-WE-doX">
+            <size key="intrinsicContentSize" width="33" height="29"/>
+        </designable>
+        <designable name="jjU-CV-l7V">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="jmX-Qr-dhh">
+            <size key="intrinsicContentSize" width="30" height="29"/>
+        </designable>
+        <designable name="kRj-lf-DqT">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="kni-sM-evS">
+            <size key="intrinsicContentSize" width="30" height="29"/>
+        </designable>
+        <designable name="la3-RK-BgB">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="mOP-uq-wBy">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="mX0-7g-S0c">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="mh2-fU-fkB">
+            <size key="intrinsicContentSize" width="38" height="30"/>
+        </designable>
+        <designable name="mkm-rz-MKB">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="oPM-Dk-4FB">
+            <size key="intrinsicContentSize" width="92" height="29"/>
+        </designable>
+        <designable name="op3-al-mom">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="pBy-Uy-cgC">
+            <size key="intrinsicContentSize" width="57" height="30"/>
+        </designable>
+        <designable name="pvi-Gg-hXc">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="pz0-R7-dAh">
+            <size key="intrinsicContentSize" width="43" height="30"/>
+        </designable>
+        <designable name="qAu-Rm-eDb">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="qKS-aF-kcQ">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="qpf-Ez-TCe">
+            <size key="intrinsicContentSize" width="30" height="29"/>
+        </designable>
+        <designable name="rKZ-zD-GFz">
+            <size key="intrinsicContentSize" width="36" height="30"/>
+        </designable>
+        <designable name="rbp-4f-8PF">
+            <size key="intrinsicContentSize" width="30" height="29"/>
+        </designable>
+        <designable name="vvR-P3-Mv1">
+            <size key="intrinsicContentSize" width="33" height="29"/>
+        </designable>
+        <designable name="wQz-Bk-ZFL">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="weE-8R-XEf">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="wwz-Oi-B6J">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="xtu-i3-HRx">
+            <size key="intrinsicContentSize" width="43" height="30"/>
+        </designable>
+        <designable name="yU6-TY-gTZ">
+            <size key="intrinsicContentSize" width="30" height="29"/>
+        </designable>
+        <designable name="zLV-SW-Cw6">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="zM6-7r-zTd">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ztd-Ib-DSA">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="YtM-9x-naA"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="No_circle" width="1024" height="1024"/>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -199,6 +199,7 @@ class EncounterTableViewController: UITableViewController, UISplitViewController
                 if let encounter = sender as? Encounter {
                     vc.encounter = encounter
                     vc.parentVc = self
+                    vc.modalPresentationStyle = .fullScreen
                 }
             }
             splitViewController.delegate = self

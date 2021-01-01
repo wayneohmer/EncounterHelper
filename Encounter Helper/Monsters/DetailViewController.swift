@@ -27,11 +27,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var damageImmuneLabel: UILabel!
     @IBOutlet weak var conditionImmuneLabel: UILabel!
     @IBOutlet weak var conditionsLabel: UILabel!
-
+    @IBOutlet weak var damageVulnerabilitiesLabel: UILabel!
+    
     @IBOutlet weak var damageResistStack: UIStackView!
     @IBOutlet weak var damageImmuneStack: UIStackView!
     @IBOutlet weak var conditionImmuneStack: UIStackView!
-
+    @IBOutlet weak var damageVulnerabilityStack: UIStackView!
+    
     @IBOutlet weak var nameField: UITextField!
 
     @IBOutlet weak var sensesLabel: UILabel!
@@ -99,6 +101,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                 conditionImmuneLabel.text = monster.conditionImmunities
             } else {
                 conditionImmuneStack.isHidden = true
+            }
+            
+            if monster.damageVulnerabilities != "" {
+                damageVulnerabilityStack.isHidden = false
+                damageVulnerabilitiesLabel.text = monster.damageVulnerabilities
+            } else {
+                damageVulnerabilityStack.isHidden = true
             }
 
             strButton.setTitle(self.fixButtonTitleWith(attribute: "STR", score: monster.strength, save: monster.strengthSave), for: .normal)

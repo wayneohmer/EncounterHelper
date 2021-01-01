@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cl9-53-hRK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cl9-53-hRK">
     <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -285,8 +285,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="WsO-L2-O9t" kind="presentation" identifier="openEncounter" id="05P-k2-EBO"/>
-                        <segue destination="Sf9-bH-GZ1" kind="presentation" identifier="EditEncounter" id="LnS-3i-wjL"/>
+                        <segue destination="WsO-L2-O9t" kind="presentation" identifier="openEncounter" modalPresentationStyle="fullScreen" id="05P-k2-EBO"/>
+                        <segue destination="Sf9-bH-GZ1" kind="presentation" identifier="EditEncounter" modalPresentationStyle="fullScreen" id="LnS-3i-wjL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FlS-Vk-0r9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,14 +298,14 @@
             <objects>
                 <viewController id="Sf9-bH-GZ1" customClass="EncounterDetailController" customModule="Encounter_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sFy-oQ-rhb">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="760"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MWg-OG-h7K">
-                                <rect key="frame" x="8" y="8" width="590" height="50"/>
+                                <rect key="frame" x="8" y="8" width="678" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CfE-rh-Ihm">
-                                        <rect key="frame" x="0.0" y="0.0" width="291" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -316,7 +316,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byk-da-67p">
-                                        <rect key="frame" x="299" y="0.0" width="291" height="50"/>
+                                        <rect key="frame" x="343" y="0.0" width="335" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -328,8 +328,8 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wU-Ub-c9A" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
-                                <rect key="frame" x="606" y="16" width="90" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wU-Ub-c9A" customClass="BlackButton" customModule="Encounter_Helper" customModuleProvider="target">
+                                <rect key="frame" x="694" y="16" width="90" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="uBS-QO-gHN"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="vTO-5v-1Pt"/>
@@ -342,13 +342,14 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BPI-wt-8bW">
-                                <rect key="frame" x="16" y="66" width="680" height="678"/>
+                                <rect key="frame" x="16" y="66" width="768" height="718"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ewS-1i-Nc5"/>
                         <color key="backgroundColor" red="0.1372649073600769" green="0.1333332359790802" blue="0.13333180546760559" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="BPI-wt-8bW" firstAttribute="leading" secondItem="ewS-1i-Nc5" secondAttribute="leading" constant="16" id="0RJ-eF-pbD"/>
@@ -361,7 +362,6 @@
                             <constraint firstItem="MWg-OG-h7K" firstAttribute="leading" secondItem="ewS-1i-Nc5" secondAttribute="leading" constant="8" id="X8O-vE-Tr1"/>
                             <constraint firstItem="6wU-Ub-c9A" firstAttribute="leading" secondItem="MWg-OG-h7K" secondAttribute="trailing" constant="8" id="fqT-GT-jox"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ewS-1i-Nc5"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="800" height="800"/>
                     <size key="freeformSize" width="800" height="800"/>
@@ -408,6 +408,23 @@
             <point key="canvasLocation" x="-856.0546875" y="-1020.351390922401"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="6wU-Ub-c9A">
+            <size key="intrinsicContentSize" width="34" height="30"/>
+        </designable>
+        <designable name="MQ7-sW-iuW">
+            <size key="intrinsicContentSize" width="39" height="34"/>
+        </designable>
+        <designable name="YMg-d4-kP3">
+            <size key="intrinsicContentSize" width="34" height="34"/>
+        </designable>
+        <designable name="bQs-hB-oGd">
+            <size key="intrinsicContentSize" width="31" height="34"/>
+        </designable>
+        <designable name="dxq-ct-LY7">
+            <size key="intrinsicContentSize" width="48" height="34"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="LnS-3i-wjL"/>
     </inferredMetricsTieBreakers>

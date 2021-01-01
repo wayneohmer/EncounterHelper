@@ -97,7 +97,7 @@ class Monster: Hashable {
     var strengthSave: Int? { return monsterModel.strength_save }
     var wisdomSave: Int? { return monsterModel.wisdom_save  }
     var perception: Int { return monsterModel.perception ?? 0}
-    var damageVulnerabilities: String { return monsterModel.damage_vulnerabilities ?? "" }
+    var damageVulnerabilities: String { return monsterModel.damage_vulnerabilities ?? monsterModel.vulnerable ?? "" }
     var damageResistances: String { return monsterModel.damage_resistances ?? "" }
     var damageImmunities: String { return monsterModel.damage_immunities ?? "" }
     var conditionImmunities: String { return monsterModel.condition_immunities ?? ""}
@@ -255,7 +255,8 @@ class Monster: Hashable {
     }
 
     func randomizeHP() {
-        let components = monsterModel.hit_dice.split(separator: "d")
+        let plusString = monsterModel.hit_dice.split(separator: "+")
+        let components = plusString[0].split(separator: "d")
         let dice = FyreDice()
         if let mult = Int(components[0]), let d = Int(components[1]) {
             dice.add(multipier: mult, d: d)
@@ -446,6 +447,7 @@ struct MonsterModel: Codable {
     var wisdom_save: Int? = 0
     var perception: Int? = 0
     var damage_vulnerabilities: String? = ""
+    var vulnerable: String? = ""
     var damage_resistances: String? = ""
     var damage_immunities: String? = ""
     var condition_immunities: String? = ""

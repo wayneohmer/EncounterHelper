@@ -84,8 +84,16 @@ class ActionTableViewController: UITableViewController {
             let diceComponents = action.damage_dice?.split(separator: "+")
             for diceStr in diceComponents ?? [Substring(action.damage_dice ?? "")] {
                 let components = diceStr.split(separator: "d")
-                vc.damageDice.add(multipier: Int(components[0].trimmingCharacters(in: .whitespaces)) ?? 0, d: Int(components[1].trimmingCharacters(in: .whitespaces)) ?? 0)
-                vc.damageDice.modifier = action.damage_bonus ?? 0
+                if components.count > 1 {
+                    vc.damageDice.add(multipier: Int(components[0].trimmingCharacters(in: .whitespaces)) ?? 0, d: Int(components[1].trimmingCharacters(in: .whitespaces)) ?? 0)
+                    
+                } else {
+                    vc.damageDice.modifier = Int(diceStr) ?? 0
+                }
+                
+            }
+            if vc.damageDice.modifier == 0, let bonus = action.damage_bonus  {
+                vc.damageDice.modifier = bonus
             }
         }
         if segue.identifier == "showSpells", let action = sender as? Action {

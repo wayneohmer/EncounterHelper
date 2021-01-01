@@ -247,7 +247,9 @@
 				{
 					"name": "Slam",
 					"desc": "+8 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) damage plus 28 (8d6) fire damage.",
-					"attack_bonus": 0
+					"attack_bonus": 8,
+                    "damage_dice": "1d8+8d6+3"
+
 				},
 				{
 					"name": "Blinding Gaze (Recharge 5-6)",
@@ -2308,7 +2310,7 @@
 									"name": "Swirling Bones",
 									"desc": "Melee Weapon Attack: +10 to hit, reach 0 ft., one creature in the swarm's space. Hit: 31 (5d8 + 9) bludgeoning, piercing, or slashing damage (includes Strength of Bone special ability).",
 									"attack_bonus": 10,
-									"damage_dice": "5d8"
+									"damage_dice": "5d8+9"
 								},
 								{
 									"name": "Death's Embrace (Recharge 5-6)",
@@ -7209,19 +7211,19 @@
 									"name": "Bite",
 									"desc": "Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 34 (4d12 + 8) piercing damage. If the target is a Large or smaller creature, it is grappled (escape DC 18). When the spinosaurus moves, the grappled creature moves with it. Until this grapple ends, the target is restrained and the spinosaurus can't bite another target.",
 									"attack_bonus": 13,
-									"damage_dice": "4d12"
+									"damage_dice": "4d12+8"
 								},
 								{
 									"name": "Claw",
 									"desc": "Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 22 (4d6 + 8) slashing damage.",
 									"attack_bonus": 13,
-									"damage_dice": "4d6"
+									"damage_dice": "4d6+8"
 								},
 								{
 									"name": "Tail",
 									"desc": "Melee Weapon Attack: +13 to hit, reach 20 ft., one target. Hit: 21 (3d8 + 8) bludgeoning damage.",
 									"attack_bonus": 13,
-									"damage_dice": "3d8"
+									"damage_dice": "3d8+8"
 								},
 								{
 									"name": "Frightful Presence",
@@ -7788,19 +7790,19 @@
 									"name": "Bite",
 									"desc": "Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 18 (3d6 + 8) plus 3 (1d6) poison damage.",
 									"attack_bonus": 13,
-									"damage_dice": "3d6"
+									"damage_dice": "3d6+8"
 								},
 								{
 									"name": "Claw",
 									"desc": "Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 15 (2d6 + 8) slashing damage.",
 									"attack_bonus": 13,
-									"damage_dice": "2d6"
+									"damage_dice": "2d6+*"
 								},
 								{
 									"name": "Tail",
 									"desc": "Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.",
 									"attack_bonus": 13,
-									"damage_dice": "2d8"
+									"damage_dice": "2d8+8"
 								},
 								{
 									"name": "Frightful Presence",
@@ -7888,6 +7890,7 @@
 								{
 									"name": "Innate Spellcasting",
 									"desc": "the dragon's innate spellcasting ability is Charisma (spell save DC 15). It can innately cast the following spells, requiring no material components:\n\n1/day each: blur, counterspell, web\n\n3/day: darkness",
+                                    "spellNames": [ "blur", "counterspell","web","darkness"],
 									"attack_bonus":0
 								}
 							],
@@ -7901,13 +7904,13 @@
 									"name": "Bite",
 									"desc": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 13 (2d6 + 6) piercing damage plus 3 (1d6) poison damage.",
 									"attack_bonus": 8,
-									"damage_dice": "2d6"
+									"damage_dice": "3d6+6"
 								},
 								{
 									"name": "Claw",
 									"desc": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 13 (2d6 + 6) slashing damage.",
 									"attack_bonus": 8,
-									"damage_dice": "2d6"
+									"damage_dice": "2d6+6"
 								},
 								{
 									"name": "Poison Breath (Recharge 5-6)",
@@ -9835,13 +9838,13 @@
 									"name": "Bite",
 									"desc": "Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 26 (4d8 + 8) piercing damage plus 5 (1d10) lightning damage, and the target must succeed on a DC 18 Constitution saving throw or become paralyzed for 1d4 rounds.",
 									"attack_bonus": 12,
-									"damage_dice": "4d8"
+									"damage_dice": "4d8+8"
 								},
 								{
 									"name": "Tail Slap",
 									"desc": "Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 30 (5d8 + 8) bludgeoning damage plus 5 (1d10) lightning damage and push the target up to 10 feet away.",
 									"attack_bonus": 12,
-									"damage_dice": "5d8"
+									"damage_dice": "5d8+8"
 								},
 								{
 									"name": "Lightning Breath (Recharge 6)",
@@ -9892,13 +9895,13 @@
 									"name": "Slam",
 									"desc": "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 58 (10d10 + 3) bludgeoning damage.",
 									"attack_bonus": 6,
-									"damage_dice": "10d10"
+									"damage_dice": "10d10+3"
 								},
 								{
 									"name": "Leaves",
 									"desc": "Ranged Weapon Attack: +3 to hit, range 30/60 ft., one target. Hit: 45 (10d8) slashing damage.",
 									"attack_bonus": 3,
-									"damage_dice": "10d8"
+									"damage_dice": "10d8+3"
 								},
 								{
 									"name": "Breath Weapon (Recharge 6)",
@@ -10739,13 +10742,13 @@
 									"name": "Claw",
 									"desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 3) slashing damage.",
 									"attack_bonus": 6,
-									"damage_dice": "1d8"
+									"damage_dice": "1d8+3"
 								},
 								{
 									"name": "Hair",
 									"desc": "Melee Weapon Attack: +6 to hit, reach 20 ft., one target. Hit: 14 (2d10 + 3) slashing damage, and the target is grappled (escape DC 16). Three creatures can be grappled at a time.",
 									"attack_bonus": 6,
-									"damage_dice": "2d10"
+									"damage_dice": "2d10+3"
 								},
 								{
 									"name": "Kiss",
@@ -12424,7 +12427,8 @@
 							"special_abilities": [
 								{
 									"name": "Innate Spellcasting",
-									"desc": "the fext's innate spellcasting ability is Charisma (spell save DC 15). It can innately cast the following spells, requiring no material components:at will: hex3/day each: counterspell, fear, gaseous form1/day each: hold monster, true seeing",
+									"desc": "the fext's innate spellcasting ability is Charisma (spell save DC 15). It can innately cast the following spells, requiring no material components:at will: hex3/day each: counterspell, hellish rebuke1/day each: hold monster, true seeing",
+                                    "spellNames": ["hex", "eldritch blast", "counterspell", "armor of agathys", "hellish rebuke", "hold monster"],
 									"attack_bonus":0
 								},
 								{
@@ -12459,7 +12463,7 @@
 									"name": "Eldritch Fury",
 									"desc": "Ranged Weapon Attack: +6 to hit, range 60/200 ft., one creature. Hit: 25 (4d10 + 3) force damage.",
 									"attack_bonus": 6,
-									"damage_dice": "4d10"
+									"damage_dice": "4d10+3"
 								}
 							]
 						},
@@ -14259,6 +14263,8 @@
 								{
 									"name": "Innate Spellcasting",
 									"desc": "the bonepowder ghoul's innate spellcasting ability is Charisma (spell save DC 18, +10 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n\nat will: chill touch, darkness, dispel magic, ray of enfeeblement\n\n3/day: blindness/deafness, circle of death (7th level; 10d6)\n\n1/day: finger of death",
+                                    "spellNames": ["darkness", "dispel magic", "ray of enfeeblement", "circle of death", "finger of death"],
+
 									"attack_bonus":0
 								}
 							],
@@ -14586,25 +14592,25 @@
 									"name": "Bite",
 									"desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 17 (3d8 + 4) piercing damage. If the target is a creature other than an elf or undead, it must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. The target repeats the saving throw at the end of each of its turns, ending the effect on itself on a success. If the target is humanoid, it must succeed on a separate DC 13 Constitution saving throw or contract darakhul fever.",
 									"attack_bonus": 7,
-									"damage_dice": "3d8"
+									"damage_dice": "3d8+4"
 								},
 								{
 									"name": "Claws",
 									"desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 18 (4d6 + 4) slashing damage. If the target is a creature other than an elf or undead, it must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. The target repeats the saving throw at the end of each of its turns, ending the effect on itself on a success. If the target is humanoid, it must succeed on a separate DC 13 Constitution saving throw or contract darakhul fever.",
 									"attack_bonus": 7,
-									"damage_dice": "4d6"
+									"damage_dice": "4d6+4"
 								},
 								{
 									"name": "Glaive",
 									"desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 20 (1d10 + 4) slashing damage.",
 									"attack_bonus": 7,
-									"damage_dice": "1d10"
+									"damage_dice": "1d10+4"
 								},
 								{
 									"name": "Heavy Bone Crossbow",
 									"desc": "Ranged Weapon Attack: +6 to hit, range 100/400, one target. Hit: 8 (1d10 + 3) piercing damage.",
 									"attack_bonus": 6,
-									"damage_dice": "1d10"
+									"damage_dice": "1d10+3"
 								}
 							]
 						},
@@ -15981,6 +15987,7 @@
 								{
 									"name": "Innate Spellcasting",
 									"desc": "the hag's innate spellcasting ability is Charisma (spell save DC 15). She can innately cast the following spells, requiring no material components:\n\nat will: disguise self, knock, minor illusion, misty step, pass without trace, protection from evil and good, tongues, water breathing\n\n3/day each: bestow curse, invisibility, mirror image\n\n1/day each: cloudkill, modify memory",
+                                    "spellNames": ["disguise self", "knock", "minor illusion", "misty step", "pass without trace", "protection from evil and good", "tongues, water breathing"],
 									"attack_bonus":0
 								}
 							],
@@ -16906,6 +16913,7 @@
 								{
 									"name": "Innate Spellcasting",
 									"desc": "the ice maiden's innate spellcasting ability is Charisma (spell save DC 17). She can innately cast the following spells:\n\nat will: chill touch, detect magic, light, mage hand, prestidigitation, resistance\n\n5/day each: endure elements (cold only), fear, fog cloud, misty step\n\n3/day each: alter self, protection from energy, sleet storm\n\n1/day: ice storm",
+                                    "spellNames": ["chill touch", "detect magic", "light", "mage hand", "prestidigitation", "resistance", "endure elements (cold only)", "fear", "fog cloud", "misty step","alter self", "protection from energy", "sleet storm","ice storm"],
 									"attack_bonus":0
 								}
 							],
@@ -18286,7 +18294,7 @@
 									"name": "Claw",
 									"desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
 									"attack_bonus": 6,
-									"damage_dice": "2d6"
+									"damage_dice": "2d6+3"
 								},
 								{
 									"name": "Disruptive Gaze",
@@ -19036,6 +19044,7 @@
 								{
 									"name": "Innate Spellcasting",
 									"desc": "the mavka's innate spellcasting ability is Charisma (spell save DC 16, +8 to hit with spell attacks). She can innately cast the following spells, requiring no material components:\n\nconstant: protection from evil and good\n\nat will: create or destroy water, dancing lights, ray of frost, resistance, witch bolt\n\n3/day each: darkness, hold person, inflict wounds, invisibility, silence\n\n1/day each: animate dead, bestow curse, blindness/deafness, contagion, dispel magic, vampiric touch",
+                                    "spellNames": ["witch bolt", "darkness", "hold person", "inflict wounds", "invisibility", "invisibility", "silence","bestow curse", "blindness/deafness","contagion","dispel magic","vampiric touch"],
 									"attack_bonus":0
 								},
 								{
@@ -19059,7 +19068,7 @@
 									"name": "Slam",
 									"desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 23 (4d8 + 5) bludgeoning damage plus 11 (2d10) necrotic damage.",
 									"attack_bonus": 9,
-									"damage_dice": "4d8"
+									"damage_dice": "4d8+2d10+5"
 								}
 							]
 						},
@@ -19688,19 +19697,19 @@
 									"name": "Spike",
 									"desc": "Ranged Weapon Attack: +8 to hit, range 20/60 ft., one target. Hit: 12 (2d8 + 3) piercing damage plus 3 (1d6) acid damage.",
 									"attack_bonus": 8,
-									"damage_dice": "2d8"
+									"damage_dice": "2d8+3"
 								},
 								{
 									"name": "Tentacle",
 									"desc": "Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 17 (2d10 + 6) bludgeoning damage plus 7 (2d6) acid damage.",
 									"attack_bonus": 11,
-									"damage_dice": "2d10"
+									"damage_dice": "2d10+2d6+6"
 								},
 								{
 									"name": "Filaments",
 									"desc": "Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 22 (3d10 + 6) bludgeoning damage plus 10 (3d6) acid damage, and the target is grappled (escape DC 16) and restrained.",
 									"attack_bonus": 11,
-									"damage_dice": "3d10"
+									"damage_dice": "3d10+3d6+6"
 								}
 							]
 						},
@@ -20465,7 +20474,8 @@
 								{
 									"name": "Spellcasting",
 									"desc": "the noctiny is a 3rd-level spellcaster. Its spellcasting ability score is Charisma (save DC 13, +5 to hit with spell attacks). It knows the following warlock spells.\n\ncantrips (at will): chill touch, eldritch blast, poison spray\n\n1st level (4 slots): armor of agathys, charm person, hellish rebuke, hex\n\n2nd level (2 slots): crown of madness, misty step",
-									"attack_bonus":0
+                                    "spellNames": ["chill touch", "eldritch blast", "poison spray", "armor of agathys", "charm person", "hellish rebuke", "hex","crown of madness", "misty step"],
+                                    "attack_bonus":0
 								}
 							],
 							"actions": [
@@ -20972,7 +20982,7 @@
 									"name": "Claw",
 									"desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 24 (3d12 + 5) slashing damage.",
 									"attack_bonus": 8,
-									"damage_dice": "3d12"
+									"damage_dice": "3d12+5"
 								},
 								{
 									"name": "Deadly Gaze (recharge 5-6)",
@@ -20982,6 +20992,7 @@
 								{
 									"name": "Innate Spellcasting",
 									"desc": "the qwyllion's innate casting ability is Charisma (spell save DC 14). She can innately cast the following spells, requiring no material components:\n\n3/day each: dominate person (range 20 feet), shatter",
+                                    "spellNames": ["dominate person", "shatter"],
 									"attack_bonus":0
 								}
 							]
@@ -21877,7 +21888,7 @@
 									"name": "Blade",
 									"desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 15 (2d10 + 4) slashing damage.",
 									"attack_bonus": 7,
-									"damage_dice": "2d10"
+									"damage_dice": "2d10+7"
 								}
 							]
 						},
@@ -23425,13 +23436,13 @@
 									"name": "Bite",
 									"desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 21 (3d10 + 5) piercing damage.",
 									"attack_bonus": 8,
-									"damage_dice": "3d10"
+									"damage_dice": "3d10+5"
 								},
 								{
 									"name": "Claw",
 									"desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 18 (3d8 + 5) slashing damage.",
 									"attack_bonus": 8,
-									"damage_dice": "3d8"
+									"damage_dice": "3d8+5"
 								}
 							]
 						},
@@ -23896,7 +23907,7 @@
 									"name": "Spectral Rend",
 									"desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) necrotic damage. If the target is a creature, it must succeed on a DC 14 Wisdom saving throw or be frightened and have its speed reduced to 0; both effects last until the end of its next turn.",
 									"attack_bonus": 7,
-									"damage_dice": "2d8"
+									"damage_dice": "2d8+4"
 								}
 							]
 						},
@@ -24301,6 +24312,7 @@
 								{
 									"name": "Innate Spellcasting",
 									"desc": "the spider of Leng's innate spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n\nat will: comprehend languages, detect magic, shocking grasp\n\n3/day each: shield, silence\n\n1/day each: arcane eye, confusion, hypnotic pattern, stoneskin",
+                                    "spellNames": ["comprehend languages", "detect magic", "shocking grasp","shield", "silence", "arcane eye", "confusion", "hypnotic pattern", "stoneskin"],
 									"attack_bonus":0
 								},
 								{
@@ -24324,19 +24336,19 @@
 									"name": "Claw",
 									"desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (2d10 + 3) slashing damage plus 4 (1d8) poison damage.",
 									"attack_bonus": 6,
-									"damage_dice": "2d10"
+									"damage_dice": "2d10+3"
 								},
 								{
 									"name": "Spit Venom",
 									"desc": "Ranged Weapon Attack: +6 to hit, range 60 ft., one target. Hit: 16 (3d8 + 3) poison damage, and the target must make a successful DC 14 Constitution saving throw or be poisoned and blinded until the end of its next turn.",
 									"attack_bonus": 6,
-									"damage_dice": "3d8"
+									"damage_dice": "3d8+3"
 								},
 								{
 									"name": "Staff of Leng",
 									"desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) bludgeoning damage plus 13 (2d12) psychic damage, and the target must make a successful DC 15 Wisdom saving throw or be stunned until the start of the spider's next turn.",
 									"attack_bonus": 5,
-									"damage_dice": "2d6"
+									"damage_dice": "2d6+2"
 								}
 							],
 							"reactions": [ 
@@ -28787,6 +28799,8 @@
 									
 									"name": "Innate Spellcasting",
 									"desc": "the vampire's spellcasting ability is Charisma (spell save DC 17). It can innately cast the following spells, requiring no material components.\n\nat will: darkness, dominate person, invisibility, misty step\n\n1/day each: arms of hadar, disguise self, dissonant whispers, detect thoughts, hold monster",
+                                    "spellNames": ["darkness", "eldritch blast", "dominate person", "invisibility", "hellish rebuke", "invisibility", "dissonant whispers" ],
+
 									"attack_bonus":0
 									
 								} 

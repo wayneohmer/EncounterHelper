@@ -1049,5 +1049,236 @@
     
     }
   ]
+},
+{
+    "name": "Paladin of Tiamat",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "human",
+    "alignment": "chaotic evil",
+    "armor_class": 18,
+    "armor_desc": "scale mail and shield",
+    "hit_points": 140,
+    "hit_dice": "15d10+60",
+    "speed": "30 ft.",
+    "speed_json":{
+        "walk": 30
+    },
+    "strength": 18,
+    "dexterity": 14,
+    "constitution": 18,
+    "intelligence": 11,
+    "wisdom": 5,
+    "charisma": 14,
+    "strength_save": 3,
+    "wisdom_save": 0,
+    "charisma_save":5,
+    "perception": 0,
+    "stealth": 7,
+    "senses": "darkvision 120 ft., passive Perception 10",
+    "languages": "common, draconic",
+    "challenge_rating": "7",
+    "special_abilities": [
+        {
+            "name": "Spellcasting",
+            "desc": "5th level spellcaster. Its spellcasting ability is Charisma (save DC 13, +5 to hit with spell attacks). The following paladin spells are prepared:\n\n1st level (4 slots): hellish rebuke, inflict wounds, shield of faith, wrathful smite\n\n2nd level (2 slots): aid, crown of madness, darkness, magic weapon",
+            "spellNames": ["hellish rebuke","shield of faith","wrathful smite","lesser restoration"],
+            "attack_bonus":0
+        },
+        {
+            "name": "Hellish smite",
+            "desc": "Use a spell slot for + 2d8 element damage",
+            "attack_bonus":0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The Paladin makes two Greatsword attacks or two heavy crossbow attacks.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Mounted Lance Charge",
+            "desc": "If mounted and move at least 20 feet.  Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 7 (3d6 + 4) piercing damage, DC 16 Strenght save of fall prone.",
+            "attack_bonus": 9,
+            "damage_dice": "3d6+4"
+        },
+        {
+            "name": "Greatsword",
+            "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 4) slashing damage",
+            "attack_bonus": 9,
+            "damage_dice": "1d10+4"
+        },
+        {
+            "name": "Heavy Crossbow",
+            "desc": "Ranged Weapon Attack: +7 to hit, range 100/400 ft., one target, Hit: 9 (1d10 + 4) piercing damage",
+            "attack_bonus": 7,
+            "damage_dice": "1d10+4"
+        }
+    ]
+},{
+    "name": "Tiamat Cultist",
+    "size": "Medium",
+    "type": "Humanoid (any race)",
+    "alignment": "lawful neutral or evil",
+    "armor_class": 14,
+    "armor_desc": "breastplate",
+    "hit_points": 117,
+    "hit_dice": "18d8+36",
+    "speed": "30 ft.",
+    "speed_json":{
+        "walk": 30
+    },
+    "strength": 10,
+    "dexterity": 10,
+    "constitution": 14,
+    "intelligence": 15,
+    "wisdom": 20,
+    "charisma": 15,
+    "intelligence_save": 5,
+    "wisdom_save": 8,
+    "charisma_save":5,
+    "arcana": 5,
+    "deception": 5,
+    "history": 5,
+    "religion": 5,
+    "damage_resistances": "cold, fire, lightning",
+    "senses": "darkvision 60 ft., passive Perception 15",
+    "languages": "any three languages",
+    "challenge_rating": "8",
+    "special_abilities": [
+        {
+            "name": "Spellcasting",
+            "desc": "Tiamat Cultist is a 10th-level spellcaster. His spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks). The cult leader has the following cleric spells prepared:\n\ncantrips (at will): guidance, light, sacred flame, spare the dying, thaumaturgy\n\n1st level (4 slots): cure wounds, identify, guiding bolt\n\n2nd level (3 slots): lesser restoration, silence, spiritual weapon\n\n3rd level (3 slots): dispel magic, mass healing word, spirit guardians\n\n4th level (3 slots): banishment, death ward, guardian of faith\n\n5th level (2 slots): flame strike",
+            "spellNames": ["guidance", "light", "sacred flame", "spare the dying", "thaumaturgy","cure wounds", "identify", "guiding bolt","lesser restoration", "silence", "spiritual weapon", "dispel magic", "mass healing word", "spirit guardians","banishment", "death ward", "guardian of faith","flame strike"],
+            "attack_bonus":0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The Tiamat Cultist makes one melee attack and casts a cantrip.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Mace",
+            "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft, one target. Hit: 3 (1d6) bludgeoning damage.",
+            "attack_bonus": 3,
+            "damage_dice": "1d6+3"
+        },
+        {
+            "name": "Spiritul Weapon",
+            "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft, one target. Hit: 3 (1d6+5) bludgeoning damage.",
+            "attack_bonus": 3,
+            "damage_dice": "1d8+5"
+        }
+    ],
+    "reactions": [
+        {
+            "name": "Dragon's Rebuke",
+            "desc": "As a reaction when struck by a melee attack, the Tiamat Cultist can expend a spell slot to do 10 (3d6) necrotic damage to the attacker. If the emerald order cult leader expends a spell slot of 2nd level or higher, the damage increases by 1d6 for each level above 1st.",
+            "attack_bonus": 0
+            
+        }
+    ]
+},
+{
+    "name": "Ezrial",
+    "size": "Huge",
+    "type": "devil",
+    "subtype": "",
+    "alignment": "lawful evil",
+    "armor_class": 19,
+    "hit_points": 230,
+    "hit_dice": "20d12",
+    "speed": "50 ft.",
+    "strength": 29,
+    "dexterity": 14,
+    "constitution": 20,
+    "intelligence": 16,
+    "wisdom": 18,
+    "charisma": 18,
+    "strength_save": 14,
+    "constitution_save": 10,
+    "wisdom_save": 9,
+    "charisma_save": 9,
+    "arcana": 8,
+    "athletics": 14,
+    "history": 8,
+    "perception": 9,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "cold, lightning",
+    "damage_immunities": "fire",
+    "condition_immunities": "",
+    "senses": "passive Perception 19",
+    "languages": "Common, infernal",
+    "challenge_rating": "18",
+    "special_abilities": [
+      {
+        "name": "Legendary Resistance (3/Day)",
+        "desc": "If the tarrasque fails a saving throw, it can choose to succeed instead.",
+        "attack_bonus": 0
+      },
+      {
+        "name": "Steaming Body",
+        "desc": "A creature that starts it's turn within 5 feet Ezrial takes 10 (3d6) fire damage.",
+        "attack_bonus": 0,
+        "damage_dice": "3d6"
+      }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "Ezraial makes three attacks, choosing Scimitar, Fire Bolt Eyes, or Grab",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Scimitar",
+            "desc": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 30 (6d6 + 9) slashing damage plus 2d8 fire damage",
+            "attack_bonus": 14,
+            "damage_dice": "6d6+2d8",
+            "damage_bonus": 9
+        },
+        {
+            "name": "Fire Bolt Eyes",
+            "desc": "Ranged Spell Attack: +14 to hit, one target. Hit: 30 (4d10) fire damage ",
+            "attack_bonus": 14,
+            "damage_dice": "4d10",
+            "damage_bonus": 0
+        },
+        {
+            "name": "Grab Strike",
+            "desc": "Melee Weapon Attack: +15 to hit, reach 10 ft., one creature. Hit: 17 (2d8 + 9) bludgeoning damage. On hit the target is grappled (escape DC 18) and lifted 10' in the air.",
+            "attack_bonus": 14,
+            "damage_dice": "2d8",
+            "damage_bonus": 9
+        },
+        {
+            "name": "Ground throw",
+            "desc": "Ezrail tosses a grappled creature to the ground, 4d8 falling damage and creature is prone. Takes place of a grab strike",
+            "attack_bonus": 0,
+            "damage_dice": "4d8",
+            "damage_bonus": 0
+
+        }
+    ],
+    "legendary_actions": [
+        {
+            "name": "Grab strike",
+            "desc": "Ezrail can make a Grab Strike",
+            "attack_bonus": 0
+        },{
+            "name": "Fire Eyes",
+            "desc": "Ezrail can make a Fire Bolt Eyes atttack",
+            "attack_bonus": 0
+        }
+    ] ,"reactions": [
+        {
+            "name": "Hellish Rebuke",
+            "desc": "DC 18 dex save or 2d10 fire or half",
+            "attack_bonus": 1,
+            "damage_dice": "2d10"
+        }
+    ]
 }
 ]
