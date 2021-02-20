@@ -14,6 +14,7 @@ class MassSpellMonsterController: UITableViewController {
     var saveidx = Set<IndexPath>()
     var failidx = Set<IndexPath>()
     var selectedIdexes = Set<IndexPath>()
+    var haveAdvantage = Set<Int>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class MassSpellMonsterController: UITableViewController {
             case .Charisma:
                 dice.modifier = encounter.monsters[idx.row].charismaSave ?? (encounter.monsters[idx.row].charisma - 10) / 2
             }
+            dice.advantage = haveAdvantage.contains(idx.row) 
             dice.roll()
             if dice.rollValue > dc {
                 saveidx.insert(idx)
@@ -67,6 +69,13 @@ class MassSpellMonsterController: UITableViewController {
         }
     }
 
+    @IBAction func advantageSwitchChanged(_ sender: UISwitch) {
+        if sender.isOn {
+            haveAdvantage.insert(sender.tag)
+        } else {
+            haveAdvantage.remove(sender.tag)
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -86,7 +95,8 @@ class MassSpellMonsterController: UITableViewController {
         cell.encounter = encounter
         cell.isEncounter = true
         cell.updateCell()
-        cell.addRemoveButton?.tag = indexPath.row
+        cell.advantageSwitch.tag = indexPath.row
+        cell.advantageSwitch.isOn = haveAdvantage.contains(indexPath.row)
 
         if saveidx.contains(indexPath) {
             cell.saveLabel?.isHidden = false

@@ -1,12 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Blood Hag.jpg",
+      "filename" : "Drow Priestess Of Lolth.jpeg",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

@@ -191,7 +191,7 @@ class Monster: Hashable {
             if let newValue = newValue {
                 storedImage = newValue
                 imageFileName = name
-                self.monsterModel.imageData =  newValue.jpegData(compressionQuality: 0)
+                self.monsterModel.imageData =  newValue.pngData()
             }
         }
         get {
@@ -207,7 +207,7 @@ class Monster: Hashable {
             if let image = UIImage(named: self.name) {
                 self.storedImage = image
                 imageFileName = name
-                self.monsterModel.imageData = self.storedImage?.jpegData(compressionQuality: 0)
+                self.monsterModel.imageData = self.storedImage?.pngData()
                 return image
             }
 

@@ -11628,6 +11628,7 @@
 								{
 									"name": "Spellcasting",
 									"desc": "the shadow fey is a 10th-level spellcaster. Her spellcasting ability is Charisma (save DC 15, +7 to hit with spell attacks). She knows the following bard spells.\n\ncantrips (at will): blade ward, friends, message, vicious mockery\n\n1st level (4 slots): bane, charm person, faerie fire\n\n2nd level (3 slots): enthrall, hold person\n\n3rd level (3 slots): conjure fey, fear, hypnotic pattern\n\n4th level (3 slots): confusion, greater invisibility, phantasmal killer\n\n5th level (2 slots): animate objects, dominate person, hold monster",
+                                    "spellNames": ["blade ward", "friends, message", "vicious mockery","bane", "charm person", "faerie fire", "enthrall", "hold person", "conjure fey", "fear", "hypnotic pattern","confusion", "greater invisibility", "phantasmal killer", "animate objects", "dominate person", "hold monster"],
 									"attack_bonus":0
 								},
 								{
@@ -11651,7 +11652,7 @@
 									"name": "Rapier",
 									"desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage plus 17 (5d6) psychic damage.",
 									"attack_bonus": 5,
-									"damage_dice": "1d8"
+									"damage_dice": "1d8+5"
 								},
 								{
 									"name": "Beguiling Whispers (recharge 5-6)",
@@ -18819,6 +18820,7 @@
 								{
 									"name": "Innate Spellcasting",
 									"desc": "the storm crow's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast the following spells, requiring no material components:\n\nat will: magic missile\n\n1/day: haste",
+                                    "spellNames": ["magic missile", "haste"],
 									"attack_bonus":0
 								},
 								{

@@ -440,7 +440,7 @@
                         <outlet property="startButton" destination="yt8-gv-Ity" id="OJn-Nw-MtX"/>
                         <outlet property="strButton" destination="fQa-rt-1bh" id="jko-Vp-x8i"/>
                         <outlet property="wisButton" destination="3Q8-Zn-YDz" id="eKW-D7-s4j"/>
-                        <segue destination="x0b-xe-jz4" kind="presentation" identifier="massSpell" id="yLu-Ef-vwU"/>
+                        <segue destination="x0b-xe-jz4" kind="presentation" identifier="massSpell" modalPresentationStyle="fullScreen" id="yLu-Ef-vwU"/>
                         <segue destination="ijJ-DQ-tdY" kind="popoverPresentation" identifier="conditionsDesc" popoverAnchorView="bWL-3g-Hnl" id="E4U-B6-dNr">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                         </segue>
@@ -465,7 +465,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="30428.90625" y="188.671875"/>
+            <point key="canvasLocation" x="30412" y="375"/>
         </scene>
         <!--Action Table View Controller-->
         <scene sceneID="fuX-9I-n8S">
@@ -532,7 +532,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ny6-e6-er9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30409" y="806"/>
+            <point key="canvasLocation" x="30413" y="1065"/>
         </scene>
         <!--Dice Controller-->
         <scene sceneID="xsZ-Pl-09Y">

@@ -21,7 +21,8 @@ class MonsterListCell: UITableViewCell {
     @IBOutlet weak var conditionsLabel: UILabel!
     @IBOutlet weak var noCircleImage: UIImageView!
     @IBOutlet weak var saveLabel: UILabel?
-
+    @IBOutlet weak var advantageSwitch: UISwitch!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
