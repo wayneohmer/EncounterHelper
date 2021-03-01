@@ -538,180 +538,180 @@
     ]
 },
 {
-  "name": "Drow Elite Warrior",
-  "size": "Medium",
-  "type": "humanoid",
-  "subtype": "elf",
-  "alignment": "neutral evil",
-  "armor_class": 18,
-  "hit_points": 71,
-  "hit_dice": "11d8",
-  "speed": "30 ft.",
-  "strength": 13,
-  "dexterity": 18,
-  "constitution": 14,
-  "intelligence": 11,
-  "wisdom": 13,
-  "charisma": 12,
-  "perception": 2,
-  "stealth": 4,
-  "dexterity_save": 7,
-  "constitution_save": 5,
-  "wisdom_save": 4,
-  "damage_vulnerabilities": "",
-  "damage_resistances": "",
-  "damage_immunities": "",
-  "condition_immunities": "",
-  "senses": "darkvision 120 ft., passive Perception 12",
-  "languages": "Elvish, Undercommon",
-  "challenge_rating": "5",
-  "special_abilities": [
-    {
-      "name": "Fey Ancestry",
-      "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
-      "attack_bonus": 0
-    },
-    {
-      "name": "Innate Spellcasting",
-      "desc": "The drow's spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire",
-      "spellNames": ["darkness","command,","faerie fire", "dancing lights"],
-      "attack_bonus": 0
-    },
-    {
-      "name": "Sunlight Sensitivity",
-      "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
-      "attack_bonus": 0
-    }
-  ],
-  "actions": [
-    {
-      "name": "Shortsword",
-      "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
-      "attack_bonus": 7,
-      "damage_dice": "1d6+1d10",
-      "damage_bonus": 4
-    },
-    {
-      "name": "Hand Crossbow",
-      "desc": "Ranged Weapon Attack: +7 to hit, range 30/120 ft., one target. Hit: 7 (1d6 + 4) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake.",
-      "attack_bonus": 7,
-      "damage_dice": "1d6",
-      "damage_bonus": 4
-    }
-  ],"reactions": [{
-      "name": "Parry",
-      "desc": "The hobgoblin adds 3 to its AC against one melee attack that would hit it. To do so, the hobgoblin must see the attacker and be wielding a melee weapon."
-  }]
+    "name": "Drow Elite Warrior",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "elf",
+    "alignment": "neutral evil",
+    "armor_class": 18,
+    "hit_points": 71,
+    "hit_dice": "11d8",
+    "speed": "30 ft.",
+    "strength": 13,
+    "dexterity": 18,
+    "constitution": 14,
+    "intelligence": 11,
+    "wisdom": 13,
+    "charisma": 12,
+    "perception": 2,
+    "stealth": 4,
+    "dexterity_save": 7,
+    "constitution_save": 5,
+    "wisdom_save": 4,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 120 ft., passive Perception 12",
+    "languages": "Elvish, Undercommon",
+    "challenge_rating": "5",
+    "special_abilities": [
+        {
+            "name": "Fey Ancestry",
+            "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Innate Spellcasting",
+            "desc": "The drow's spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire",
+            "spellNames": ["darkness","command,","faerie fire", "dancing lights"],
+            "attack_bonus": 0
+        },
+        {
+            "name": "Sunlight Sensitivity",
+            "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Shortsword",
+            "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
+            "attack_bonus": 7,
+            "damage_dice": "1d6+1d10",
+            "damage_bonus": 4
+        },
+        {
+            "name": "Hand Crossbow",
+            "desc": "Ranged Weapon Attack: +7 to hit, range 30/120 ft., one target. Hit: 7 (1d6 + 4) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake.",
+            "attack_bonus": 7,
+            "damage_dice": "1d6",
+            "damage_bonus": 4
+        }
+    ],"reactions": [{
+        "name": "Parry",
+        "desc": "The Drow adds 3 to its AC against one melee attack that would hit it. To do so, the Drow must see the attacker and be wielding a melee weapon."
+    }]
 },
 {
-  "name": "Umber Hulk",
-  "size": "large",
-  "type": "monstrosity",
-  "subtype": "elf",
-  "alignment": "chaotic evil",
-  "armor_class": 18,
-  "hit_points": 93,
-  "hit_dice": "11d10",
-  "speed": "30 ft.,burrow 20 ft.",
-  "strength": 20,
-  "dexterity": 13,
-  "constitution": 16,
-  "intelligence": 9,
-  "wisdom": 10,
-  "charisma": 10,
-  "perception": 10,
-  "damage_vulnerabilities": "",
-  "damage_resistances": "",
-  "damage_immunities": "",
-  "condition_immunities": "",
-  "senses": "darkvision 120 ft.tremorsense 60ft.,passive Perception 10",
-  "languages": "Umber Hulk",
-  "challenge_rating": "5",
-  "special_abilities": [
-    {
-      "name": "Confusing Gaze.",
-      "desc": "When a creature starts its turn within 30 feet of the Umber Hulk and is able to see the Umber Hulk's eyes, the Umber Hulk can magically force it to make a DC 15 Charisma saving throw, unless the Umber Hulk is incapacitated. On a fai led saving throw, the creature can't take reactions until the start of its next turn and rolls a d8 to determine what it does during that turn. On a 1 to 4, the creature does nothing. On a 5 or 6, the creature takes no action but uses all its movement to move in a random direction. On a '1 or 8, the  creature makes one melee attack against a random creature, or it doe.s nothing if no creature is within reach. Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the Umber Hulk until the start of its next turn, when it can avert its eyes again. If the creature looks at the Umber Hulk in the meantime, it must immediately make the save.",
-      "attack_bonus": 0
-    },
-    {
-      "name": "Tunneler",
-      "desc": "The Umber Hulk can burrow through solid rock at half its burrowing speed and leaves a 5 foot-wide, 8-foot-high tunnel in its wake.",
-      "attack_bonus": 0
-    }
-  ],
-  "actions": [
-      {
-          "name": "Multiattack",
-          "desc": "The Umber Hulk makes three attacks: two with its claws and one with its mandibles.",
-          "attack_bonus": 0
-      },
-      {
-          "name": "Claw",
-          "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target.Hit: 9 (1d8 + 5) slashing damage.",
-          "attack_bonus": 8,
-          "damage_dice": "1d8",
-          "damage_bonus": 5
-      },
-      {
-          "name": "Mandibles",
-          "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft. , one target. Hit: 14 (2d8 + 5) slashing damage.",
-          "attack_bonus": 8,
-          "damage_dice": "2d8",
-          "damage_bonus": 5
-      }
-  ]
+    "name": "Umber Hulk",
+    "size": "large",
+    "type": "monstrosity",
+    "subtype": "elf",
+    "alignment": "chaotic evil",
+    "armor_class": 18,
+    "hit_points": 93,
+    "hit_dice": "11d10",
+    "speed": "30 ft.,burrow 20 ft.",
+    "strength": 20,
+    "dexterity": 13,
+    "constitution": 16,
+    "intelligence": 9,
+    "wisdom": 10,
+    "charisma": 10,
+    "perception": 10,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 120 ft.tremorsense 60ft.,passive Perception 10",
+    "languages": "Umber Hulk",
+    "challenge_rating": "5",
+    "special_abilities": [
+        {
+            "name": "Confusing Gaze.",
+            "desc": "When a creature starts its turn within 30 feet of the Umber Hulk and is able to see the Umber Hulk's eyes, the Umber Hulk can magically force it to make a DC 15 Charisma saving throw, unless the Umber Hulk is incapacitated. On a fai led saving throw, the creature can't take reactions until the start of its next turn and rolls a d8 to determine what it does during that turn. On a 1 to 4, the creature does nothing. On a 5 or 6, the creature takes no action but uses all its movement to move in a random direction. On a '1 or 8, the  creature makes one melee attack against a random creature, or it doe.s nothing if no creature is within reach. Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the Umber Hulk until the start of its next turn, when it can avert its eyes again. If the creature looks at the Umber Hulk in the meantime, it must immediately make the save.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Tunneler",
+            "desc": "The Umber Hulk can burrow through solid rock at half its burrowing speed and leaves a 5 foot-wide, 8-foot-high tunnel in its wake.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The Umber Hulk makes three attacks: two with its claws and one with its mandibles.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Claw",
+            "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target.Hit: 9 (1d8 + 5) slashing damage.",
+            "attack_bonus": 8,
+            "damage_dice": "1d8",
+            "damage_bonus": 5
+        },
+        {
+            "name": "Mandibles",
+            "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft. , one target. Hit: 14 (2d8 + 5) slashing damage.",
+            "attack_bonus": 8,
+            "damage_dice": "2d8",
+            "damage_bonus": 5
+        }
+    ]
 },
 {
-  "name": "Grick Alpha",
-  "size": "Large",
-  "type": "monstrosity",
-  "subtype": "",
-  "alignment": "neutral",
-  "armor_class": 18,
-  "hit_points": 75,
-  "hit_dice": "10d10",
-  "speed": "30 ft., climb 30 ft.",
-  "strength": 18,
-  "dexterity": 16,
-  "constitution": 15,
-  "intelligence": 4,
-  "wisdom": 14,
-  "charisma": 9,
-  "damage_vulnerabilities": "",
-  "damage_resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
-  "damage_immunities": "",
-  "condition_immunities": "",
-  "senses": "darkvision 60 ft., passive Perception 12",
-  "languages": "",
-  "challenge_rating": "7",
-  "special_abilities": [
-    {
-      "name": "Stone Camouflage",
-      "desc": "The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
-      "attack_bonus": 0
-    }
-  ],
-  "actions": [
-    {
-      "name": "Multiattack",
-      "desc": "The grick makes two attacks: one with its tail and one with its tentacles. If it hits with its tentacles, the grick can make one beak attack against the same target",
-      "attack_bonus": 0
-    },
-    {
-      "name": "Tentacles",
-      "desc": "Melee Weapon Attack: +7 to hit, reach 10ft., one target. Hit: 22 (4d8 + 4) slashing damage",
-      "attack_bonus": 7,
-      "damage_dice": "4d8",
-      "damage_bonus": 4
-    },
-    {
-      "name": "Beak",
-      "desc": "Melee Weapon Attack: +7 to hit, reach 10ft., one target. Hit: 13 (2d8 + 4) piercing damage.",
-      "attack_bonus": 7,
-      "damage_dice": "2d8",
-      "damage_bonus": 4
-    }
-  ]
+    "name": "Grick Alpha",
+    "size": "Large",
+    "type": "monstrosity",
+    "subtype": "",
+    "alignment": "neutral",
+    "armor_class": 18,
+    "hit_points": 75,
+    "hit_dice": "10d10",
+    "speed": "30 ft., climb 30 ft.",
+    "strength": 18,
+    "dexterity": 16,
+    "constitution": 15,
+    "intelligence": 4,
+    "wisdom": 14,
+    "charisma": 9,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 60 ft., passive Perception 12",
+    "languages": "",
+    "challenge_rating": "7",
+    "special_abilities": [
+        {
+            "name": "Stone Camouflage",
+            "desc": "The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The grick makes two attacks: one with its tail and one with its tentacles. If it hits with its tentacles, the grick can make one beak attack against the same target",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Tentacles",
+            "desc": "Melee Weapon Attack: +7 to hit, reach 10ft., one target. Hit: 22 (4d8 + 4) slashing damage",
+            "attack_bonus": 7,
+            "damage_dice": "4d8",
+            "damage_bonus": 4
+        },
+        {
+            "name": "Beak",
+            "desc": "Melee Weapon Attack: +7 to hit, reach 10ft., one target. Hit: 13 (2d8 + 4) piercing damage.",
+            "attack_bonus": 7,
+            "damage_dice": "2d8",
+            "damage_bonus": 4
+        }
+    ]
 },{
     "name": "Cambion",
     "size": "Medium",
@@ -829,226 +829,226 @@
         }
     ]
 },{
-  "name": "Drow Monk",
-  "size": "Medium",
-  "type": "humanoid",
-  "subtype": "elf",
-  "alignment": "neutral evil",
-  "armor_class": 17,
-  "hit_points": 66,
-  "hit_dice": "10d8",
-  "speed": "40 ft.",
-  "strength": 13,
-  "dexterity": 18,
-  "constitution": 14,
-  "intelligence": 11,
-  "wisdom": 16,
-  "charisma": 12,
-  "perception": 2,
-  "stealth": 4,
-  "dexterity_save": 7,
-  "constitution_save": 5,
-  "wisdom_save": 4,
-  "damage_vulnerabilities": "",
-  "damage_resistances": "",
-  "damage_immunities": "",
-  "condition_immunities": "",
-  "senses": "darkvision 120 ft., passive Perception 12",
-  "languages": "Elvish, Undercommon",
-  "challenge_rating": "5",
-  "special_abilities": [
-    {
-      "name": "Evasion",
-      "desc": "When teh monk subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
-      "attack_bonus": 0
-    },
-    {
-      "name": "Fey Ancestry",
-      "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
-      "attack_bonus": 0
-    },
-    {
-      "name": "Innate Spellcasting",
-      "desc": "The drow's spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire",
-      "spellNames": ["darkness","command,","faerie fire", "dancing lights"],
-      "attack_bonus": 0
-    },
-    {
-      "name": "Sunlight Sensitivity",
-      "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
-      "attack_bonus": 0
-    }
-  ],
-  "actions": [
-    {
-        "name": "Multiattack",
-        "desc": "The Monk makes two attacks with it's monk weapons and one unarmed strike as a bonus action",
-        "attack_bonus": 0
-    },{
-      "name": "Monk Weapon",
-      "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
-      "attack_bonus": 8,
-      "damage_dice": "1d6",
-      "damage_bonus": 4
-    },{
-      "name": "Stunning Strike (Recharge 5-6)",
-      "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage. The target must succeed on a DC 14 Constitution saving throw or be stunned until the end of your next turn.",
-      "attack_bonus": 8,
-      "damage_dice": "1d6",
-      "damage_bonus": 4
-    },{
-      "name": "Spider Shuriken",
-      "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
-      "attack_bonus": 8,
-      "damage_dice": "1d6",
-      "damage_bonus": 4
-    }
-  ]
+    "name": "Drow Monk",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "elf",
+    "alignment": "neutral evil",
+    "armor_class": 17,
+    "hit_points": 66,
+    "hit_dice": "10d8",
+    "speed": "40 ft.",
+    "strength": 13,
+    "dexterity": 18,
+    "constitution": 14,
+    "intelligence": 11,
+    "wisdom": 16,
+    "charisma": 12,
+    "perception": 2,
+    "stealth": 4,
+    "dexterity_save": 7,
+    "constitution_save": 5,
+    "wisdom_save": 4,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 120 ft., passive Perception 12",
+    "languages": "Elvish, Undercommon",
+    "challenge_rating": "5",
+    "special_abilities": [
+        {
+            "name": "Evasion",
+            "desc": "When teh monk subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Fey Ancestry",
+            "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Innate Spellcasting",
+            "desc": "The drow's spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire",
+            "spellNames": ["darkness","command,","faerie fire", "dancing lights"],
+            "attack_bonus": 0
+        },
+        {
+            "name": "Sunlight Sensitivity",
+            "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The Monk makes two attacks with it's monk weapons and one unarmed strike as a bonus action",
+            "attack_bonus": 0
+        },{
+            "name": "Monk Weapon",
+            "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
+            "attack_bonus": 8,
+            "damage_dice": "1d6",
+            "damage_bonus": 4
+        },{
+            "name": "Stunning Strike (Recharge 5-6)",
+            "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage. The target must succeed on a DC 14 Constitution saving throw or be stunned until the end of your next turn.",
+            "attack_bonus": 8,
+            "damage_dice": "1d6",
+            "damage_bonus": 4
+        },{
+            "name": "Spider Shuriken",
+            "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
+            "attack_bonus": 8,
+            "damage_dice": "1d6",
+            "damage_bonus": 4
+        }
+    ]
 },{
-  "name": "Shadow Demon",
-  "size": "Medium",
-  "type": "fiend",
-  "subtype": "demon",
-  "alignment": "chaotic evil",
-  "armor_class": 13,
-  "hit_points": 66,
-  "hit_dice": "12d8",
-  "speed": "30 ft., fly 30 ft.",
-  "strength": 1,
-  "dexterity": 17,
-  "constitution": 12,
-  "intelligence": 14,
-  "wisdom": 13,
-  "charisma": 14,
-  "dexterity_save": 5,
-  "charisma_save": 4,
-  "damage_vulnerabilities": "radiant",
-  "damage_resistances": "acid, fire, necrotic, thunder, bludgeoning, piercing, and slashing from nonmagical weapons",
-  "damage_immunities": "cold, lightning, poison",
-  "condition_immunities": "exhaustion, grappled, para lyzed, petrified, poisoned, prone, restrained",
-  "senses": "darkvision 120 ft., passive Perception 11",
-  "languages": "Abyssal, telepathy 120 ft.",
-  "challenge_rating": "4",
-  "special_abilities": [
-      {
-          "name": "Incorporeal Movement",
-          "desc": "The demon can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.",
-          "attack_bonus": 0
-      },
-      {
-          "name": "Light Sensitivity",
-          "desc": "While in bright lig ht, the demon has disadvantage on attack roll s, as well as on Wisdom (Perception) checks that rely on sight.",
-          "attack_bonus": 0
-      },
-      {
-          "name": "Shadow Stealth",
-          "desc": "While in dim light or darkness, the demon can take the Hide action as a bonus action.",
-          "attack_bonus": 0
-      }
-  ],
-  "actions": [
-    {
-      "name": "Claws",
-      "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 10 (2d6 + 3) psychic damage or, if the demon had advantage on the attack roll , 17 (4d6 + 3) psychic damage.",
-      "attack_bonus": 5,
-      "damage_dice": "2d6",
-      "damage_bonus": 3
-    }
-  ]
+    "name": "Shadow Demon",
+    "size": "Medium",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 13,
+    "hit_points": 66,
+    "hit_dice": "12d8",
+    "speed": "30 ft., fly 30 ft.",
+    "strength": 1,
+    "dexterity": 17,
+    "constitution": 12,
+    "intelligence": 14,
+    "wisdom": 13,
+    "charisma": 14,
+    "dexterity_save": 5,
+    "charisma_save": 4,
+    "damage_vulnerabilities": "radiant",
+    "damage_resistances": "acid, fire, necrotic, thunder, bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "cold, lightning, poison",
+    "condition_immunities": "exhaustion, grappled, para lyzed, petrified, poisoned, prone, restrained",
+    "senses": "darkvision 120 ft., passive Perception 11",
+    "languages": "Abyssal, telepathy 120 ft.",
+    "challenge_rating": "4",
+    "special_abilities": [
+        {
+            "name": "Incorporeal Movement",
+            "desc": "The demon can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Light Sensitivity",
+            "desc": "While in bright lig ht, the demon has disadvantage on attack roll s, as well as on Wisdom (Perception) checks that rely on sight.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Shadow Stealth",
+            "desc": "While in dim light or darkness, the demon can take the Hide action as a bonus action.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Claws",
+            "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 10 (2d6 + 3) psychic damage or, if the demon had advantage on the attack roll , 17 (4d6 + 3) psychic damage.",
+            "attack_bonus": 5,
+            "damage_dice": "2d6",
+            "damage_bonus": 3
+        }
+    ]
 },{
-  "name": "Helmed Horror",
-  "size": "Medium",
-  "type": "construct",
-  "subtype": "construct",
-  "alignment": "neutral",
-  "armor_class": 20,
-  "hit_points": 60,
-  "hit_dice": "8d8",
-  "speed": "30 ft., fly 30 ft.",
-  "strength": 18,
-  "dexterity": 13,
-  "constitution": 16,
-  "intelligence": 10,
-  "wisdom": 10,
-  "charisma": 10,
-  "damage_vulnerabilities": "",
-  "damage_resistances": "",
-  "damage_immunities": "force, necrotic, poison",
-  "condition_immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned, stunned",
-  "senses": "blind sight 60ft. (blind beyond this radius), passive Perception 14",
-  "languages": "understands the languages of its creator but can 't speak",
-  "challenge_rating": "4",
-  "special_abilities": [
-      {
-          "name": "Magic Resistance",
-          "desc": "The helm ed horror has advantage on saving throws aga inst spells and other magical effects.",
-          "attack_bonus": 0
-      },
-      {
-          "name": "Spell Immunity",
-          "desc": "The helmed horror is immune to three spells chosen by its creator. Typical immunities include fireball, heat metal, and lightning bolt.",
-          "attack_bonus": 0
-      }
-  ],
-  "actions": [
-      {
-          "name": "Multiattack",
-          "desc": "The helmed horror makes two longsword attacks",
-          "attack_bonus": 0
-      },
-    {
-      "name": "Longsword",
-      "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage, or 9 (1d10 + 4) slashing damage if used with two hands.",
-      "attack_bonus": 6,
-      "damage_dice": "1d8",
-      "damage_bonus": 4
-    }
-  ]
+    "name": "Helmed Horror",
+    "size": "Medium",
+    "type": "construct",
+    "subtype": "construct",
+    "alignment": "neutral",
+    "armor_class": 20,
+    "hit_points": 60,
+    "hit_dice": "8d8",
+    "speed": "30 ft., fly 30 ft.",
+    "strength": 18,
+    "dexterity": 13,
+    "constitution": 16,
+    "intelligence": 10,
+    "wisdom": 10,
+    "charisma": 10,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "force, necrotic, poison",
+    "condition_immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned, stunned",
+    "senses": "blind sight 60ft. (blind beyond this radius), passive Perception 14",
+    "languages": "understands the languages of its creator but can 't speak",
+    "challenge_rating": "4",
+    "special_abilities": [
+        {
+            "name": "Magic Resistance",
+            "desc": "The helm ed horror has advantage on saving throws aga inst spells and other magical effects.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Spell Immunity",
+            "desc": "The helmed horror is immune to three spells chosen by its creator. Typical immunities include fireball, heat metal, and lightning bolt.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The helmed horror makes two longsword attacks",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Longsword",
+            "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage, or 9 (1d10 + 4) slashing damage if used with two hands.",
+            "attack_bonus": 6,
+            "damage_dice": "1d8",
+            "damage_bonus": 4
+        }
+    ]
 },{
-  "name": "Beholder Zombie",
-  "size": "large",
-  "type": "Undead",
-  "subtype": "Undead",
-  "alignment": "neutral evil",
-  "armor_class": 15,
-  "hit_points": 93,
-  "hit_dice": "11d10",
-  "speed": "fly 20 ft.",
-  "strength": 10,
-  "dexterity": 8,
-  "constitution": 16,
-  "intelligence": 3,
-  "wisdom": 8,
-  "charisma": 5,
-  "damage_vulnerabilities": "",
-  "damage_resistances": "",
-  "damage_immunities": "poison",
-  "condition_immunities": "poisoned",
-  "senses": "darkvision 60ft., pass ive Perception 9",
-  "languages": "understands Deep Speech and Undercommon but can't speak",
-  "challenge_rating": "5",
-  "special_abilities": [
-      {
-          "name": "Undead Fortitude",
-          "desc": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 +the damage taken, un less the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point in stead.",
-          "attack_bonus": 0
-      }
-  ],
-  "actions": [
-      {
-          "name": "Bite",
-          "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 14 (4d6) piercing damage.",
-          "attack_bonus": 3,
-          "damage_dice": "4d6",
-          "damage_bonus": 3
-      },
-    {
-      "name": "Eye Ray.",
-      "desc": "1. Paralyzing Ray. The targeted creature must succeed on a DC 14 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. \n2. Fear Ray. The targeted creature must succeed on a DC 14 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success . \n3. Enervation Ray. The targeted creature must make a DC 14 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one. \n4. Disintegration Ray. If the target is a creature, it must succeed on a DC 14 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smal ler non magical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger non magical object or creation of magical force , this ray disintegrates a 10-foot cube of it.",
-      "attack_bonus": 0
-    
-    }
-  ]
+    "name": "Beholder Zombie",
+    "size": "large",
+    "type": "Undead",
+    "subtype": "Undead",
+    "alignment": "neutral evil",
+    "armor_class": 15,
+    "hit_points": 93,
+    "hit_dice": "11d10",
+    "speed": "fly 20 ft.",
+    "strength": 10,
+    "dexterity": 8,
+    "constitution": 16,
+    "intelligence": 3,
+    "wisdom": 8,
+    "charisma": 5,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 60ft., pass ive Perception 9",
+    "languages": "understands Deep Speech and Undercommon but can't speak",
+    "challenge_rating": "5",
+    "special_abilities": [
+        {
+            "name": "Undead Fortitude",
+            "desc": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 +the damage taken, un less the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point in stead.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Bite",
+            "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 14 (4d6) piercing damage.",
+            "attack_bonus": 3,
+            "damage_dice": "4d6",
+            "damage_bonus": 3
+        },
+        {
+            "name": "Eye Ray.",
+            "desc": "1. Paralyzing Ray. The targeted creature must succeed on a DC 14 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. \n2. Fear Ray. The targeted creature must succeed on a DC 14 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success . \n3. Enervation Ray. The targeted creature must make a DC 14 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one. \n4. Disintegration Ray. If the target is a creature, it must succeed on a DC 14 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smal ler non magical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger non magical object or creation of magical force , this ray disintegrates a 10-foot cube of it.",
+            "attack_bonus": 0
+            
+        }
+    ]
 },
 {
     "name": "Paladin of Tiamat",
@@ -1214,21 +1214,21 @@
     "languages": "Common, infernal",
     "challenge_rating": "18",
     "special_abilities": [
-      {
-        "name": "Legendary Resistance (3/Day)",
-        "desc": "If the tarrasque fails a saving throw, it can choose to succeed instead.",
-        "attack_bonus": 0
-      },
-      {
-        "name": "Steaming Body",
-        "desc": "A creature that starts it's turn within 5 feet Ezrial takes 10 (3d6) fire damage.",
-        "attack_bonus": 0,
-        "damage_dice": "3d6"
-      },{
-          "name": "Multiattack",
-          "desc": "Ezraial makes three attacks, choosing Scimitar, Fire Bolt Eyes, or Grab",
-          "attack_bonus": 0
-      }
+        {
+            "name": "Legendary Resistance (3/Day)",
+            "desc": "If the tarrasque fails a saving throw, it can choose to succeed instead.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Steaming Body",
+            "desc": "A creature that starts it's turn within 5 feet Ezrial takes 10 (3d6) fire damage.",
+            "attack_bonus": 0,
+            "damage_dice": "3d6"
+        },{
+            "name": "Multiattack",
+            "desc": "Ezraial makes three attacks, choosing Scimitar, Fire Bolt Eyes, or Grab",
+            "attack_bonus": 0
+        }
     ],
     "actions": [
         
@@ -1259,7 +1259,7 @@
             "attack_bonus": 0,
             "damage_dice": "4d8",
             "damage_bonus": 0
-
+            
         }
     ],
     "legendary_actions": [
@@ -1309,89 +1309,89 @@
             "desc": "The Mareth Lizard makes two attacks, tail and bite.",
             "attack_bonus": 0
         },
-      {
-        "name": "Variant: Spider Climb",
-        "desc": "The lizard can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
-        "attack_bonus": 0
-      }
+        {
+            "name": "Variant: Spider Climb",
+            "desc": "The lizard can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
+            "attack_bonus": 0
+        }
     ],
     "actions": [
-      {
-        "name": "Bite",
-        "desc": "Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit:(3d8 + 7) piercing damage. the target must make a successful DC 18 Constitution saving throw or be poisoned for 1 hour.",
-        "attack_bonus": 14,
-        "damage_dice": "3d8",
-        "damage_bonus": 7
-      },
-      {
-          "name": "Tail Strike",
-          "desc": "Melee Weapon Attack: +15 to hit, reach 10 ft., one creature. Hit: 17 (2d8 + 9) bludgeoning damage. On hit the target must make a DC 18 strenght save or be knocked prone.",
-          "attack_bonus": 14,
-          "damage_dice": "2d8",
-          "damage_bonus": 9
-      }, {
-          "name": "Confusing Caze",
-          "desc": "When a creature starts its turn within 30 feet of the Mareth Lizard and is able to see the Mareth Lizard's eyes, the Mareth Lizard can magically force it to make a DC 15 Charisma saving throw, unless the Mareth Lizard is incapacitated. On a failed saving throw, the creature can't take reactions until the start of its next turn and rolls a d8 to determine what it does during that turn. On a 1 to 4, the creature does nothing. On a 5 or 6, the creature takes no action but uses all its movement to move in a random direction. On a 7 or 8, the creature makes one melee attack against a random creature, or it does nothing if no creature is within reach. Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the Mareth Lizard until the start of its next turn, when it can avert its eyes again. If the creature looks at the Mareth Lizard in the meantime, it must immediately make the save.",
-          "attack_bonus": 0
-      },
+        {
+            "name": "Bite",
+            "desc": "Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit:(3d8 + 7) piercing damage. the target must make a successful DC 18 Constitution saving throw or be poisoned for 1 hour.",
+            "attack_bonus": 14,
+            "damage_dice": "3d8",
+            "damage_bonus": 7
+        },
+        {
+            "name": "Tail Strike",
+            "desc": "Melee Weapon Attack: +15 to hit, reach 10 ft., one creature. Hit: 17 (2d8 + 9) bludgeoning damage. On hit the target must make a DC 18 strenght save or be knocked prone.",
+            "attack_bonus": 14,
+            "damage_dice": "2d8",
+            "damage_bonus": 9
+        }, {
+            "name": "Confusing Caze",
+            "desc": "When a creature starts its turn within 30 feet of the Mareth Lizard and is able to see the Mareth Lizard's eyes, the Mareth Lizard can magically force it to make a DC 15 Charisma saving throw, unless the Mareth Lizard is incapacitated. On a failed saving throw, the creature can't take reactions until the start of its next turn and rolls a d8 to determine what it does during that turn. On a 1 to 4, the creature does nothing. On a 5 or 6, the creature takes no action but uses all its movement to move in a random direction. On a 7 or 8, the creature makes one melee attack against a random creature, or it does nothing if no creature is within reach. Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the Mareth Lizard until the start of its next turn, when it can avert its eyes again. If the creature looks at the Mareth Lizard in the meantime, it must immediately make the save.",
+            "attack_bonus": 0
+        },
     ]
-  },{
-      "name": "The Incarcerator",
-      "size": "Medium",
-      "type": "undead",
-      "subtype": "shapechanger",
-      "alignment": "lawful evil",
-      "armor_class": 22,
-      "hit_points": 244,
-      "hit_dice": "21d10 + 90",
-      "speed": "30 ft.",
-      "strength": 22,
-      "dexterity": 18,
-      "constitution": 20,
-      "intelligence": 17,
-      "wisdom": 15,
-      "charisma": 18,
-      "dexterity_save": 9,
-      "wisdom_save": 7,
-      "charisma_save": 9,
-      "perception": 7,
-      "stealth": 9,
-      "damage_vulnerabilities": "",
-      "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
-      "damage_immunities": "",
-      "condition_immunities": "",
-      "senses": "darkvision 120 ft., passive Perception 17",
-      "languages": "the languages it knew in life",
-      "challenge_rating": "15",
-      "special_abilities": [
+},{
+    "name": "The Incarcerator",
+    "size": "Medium",
+    "type": "undead",
+    "subtype": "shapechanger",
+    "alignment": "lawful evil",
+    "armor_class": 22,
+    "hit_points": 244,
+    "hit_dice": "21d10 + 90",
+    "speed": "30 ft.",
+    "strength": 22,
+    "dexterity": 18,
+    "constitution": 20,
+    "intelligence": 17,
+    "wisdom": 15,
+    "charisma": 18,
+    "dexterity_save": 9,
+    "wisdom_save": 7,
+    "charisma_save": 9,
+    "perception": 7,
+    "stealth": 9,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 120 ft., passive Perception 17",
+    "languages": "the languages it knew in life",
+    "challenge_rating": "15",
+    "special_abilities": [
         {
-          "name": "Legendary Resistance (3/Day)",
-          "desc": "If the vampire fails a saving throw, it can choose to succeed instead.",
-          "attack_bonus": 0
+            "name": "Legendary Resistance (3/Day)",
+            "desc": "If the vampire fails a saving throw, it can choose to succeed instead.",
+            "attack_bonus": 0
         },
         {
-          "name": "Misty Escape",
-          "desc": "When it drops to 0 hit points outside its resting place, the Incarcerator transforms into a cloud of mist (as in the Shapechanger trait) instead of falling unconscious, provided that it isn't in sunlight or running water. If it can't transform, it is destroyed.\nWhile it has 0 hit points in mist form, it can't revert to its vampire form, and it must reach its resting place within 2 hours or be destroyed. Once in its resting place, it reverts to its vampire form. It is then paralyzed until it regains at least 1 hit point. After spending 1 hour in its resting place with 0 hit points, it regains 1 hit point.",
-          "attack_bonus": 0
+            "name": "Misty Escape",
+            "desc": "When it drops to 0 hit points outside its resting place, the Incarcerator transforms into a cloud of mist (as in the Shapechanger trait) instead of falling unconscious, provided that it isn't in sunlight or running water. If it can't transform, it is destroyed.\nWhile it has 0 hit points in mist form, it can't revert to its vampire form, and it must reach its resting place within 2 hours or be destroyed. Once in its resting place, it reverts to its vampire form. It is then paralyzed until it regains at least 1 hit point. After spending 1 hour in its resting place with 0 hit points, it regains 1 hit point.",
+            "attack_bonus": 0
         },
         {
-          "name": "Regeneration",
-          "desc": "The Incarcerator regains 20 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the Incarcerator's next turn.",
-          "attack_bonus": 0
+            "name": "Regeneration",
+            "desc": "The Incarcerator regains 20 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the Incarcerator's next turn.",
+            "attack_bonus": 0
         },
-      ],
-      "actions": [
+    ],
+    "actions": [
         {
-          "name": "Multiattack",
-          "desc": "The vampire makes three attacks",
-          "attack_bonus": 0
+            "name": "Multiattack",
+            "desc": "The vampire makes three attacks",
+            "attack_bonus": 0
         },
         {
-          "name": "Thown Dagger of Stunning",
-          "desc": "Ranged Weapon Attack: +12 to hit, range 40 ft. If hit DC 15 Constitution save or be stunned for one minute. Repeat save at the end of your turn.  ",
-          "attack_bonus": 12,
-          "damage_dice": "1d4 + 3d10",
-          "damage_bonus": 4
+            "name": "Thown Dagger of Stunning",
+            "desc": "Ranged Weapon Attack: +12 to hit, range 40 ft. If hit DC 15 Constitution save or be stunned for one minute. Repeat save at the end of your turn.  ",
+            "attack_bonus": 12,
+            "damage_dice": "1d4 + 3d10",
+            "damage_bonus": 4
         },
         {
             "name": "Axe of the snapping turtle ",
@@ -1399,259 +1399,665 @@
             "attack_bonus": 12,
             "damage_dice": "1d10 + 3d8",
             "damage_bonus": 8
-          },
+        },
         {
             "name": "Vampric Longsword",
             "desc": "Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 1d8 + 8 slashing damage plus 13 (4d6) necrotc damage. The Incarcerator heals the 4d6",
             "attack_bonus": 12,
             "damage_dice": "1d10 + 4d6",
             "damage_bonus": 8
-          },
-        {
-          "name": "Charm",
-          "desc": "The Incarcerator targets one humanoid it can see within 30 ft. of it. If the target can see the Incarcerator, the target must succeed on a DC 17 Wisdom saving throw against this magic or be charmed by the Incarcerator. The charmed target regards the vampire as a trusted friend to be heeded and protected. Although the target isn't under the vampire's control, it takes the Incarcerator's requests or actions in the most favorable way it can, and it is a willing target for the Incarcerator's bit attack.\nEach time the vampire or the vampire's companions do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the Incarcerator is destroyed, is on a different plane of existence than the target, or takes a bonus action to end the effect.",
-          "attack_bonus": 0
-        }
-      ],
-      "reactions": [
-          {
-              "name": "Hellish Rebuke",
-              "desc": "As a reaction when struck by a melee attack, the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.",
-              "attack_bonus": 0
-          }
-      ],
-      "legendary_actions": [
-        {
-          "name": "Move",
-          "desc": "The Incarcerator moves up to its speed without provoking opportunity attacks.",
-          "attack_bonus": 0
         },
         {
-          "name": "Weapon Strike",
-          "desc": "The Incarcerator makes one weapon strike.",
-          "attack_bonus": 0
+            "name": "Charm",
+            "desc": "The Incarcerator targets one humanoid it can see within 30 ft. of it. If the target can see the Incarcerator, the target must succeed on a DC 17 Wisdom saving throw against this magic or be charmed by the Incarcerator. The charmed target regards the vampire as a trusted friend to be heeded and protected. Although the target isn't under the vampire's control, it takes the Incarcerator's requests or actions in the most favorable way it can, and it is a willing target for the Incarcerator's bit attack.\nEach time the vampire or the vampire's companions do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the Incarcerator is destroyed, is on a different plane of existence than the target, or takes a bonus action to end the effect.",
+            "attack_bonus": 0
+        }
+    ],
+    "reactions": [
+        {
+            "name": "Hellish Rebuke",
+            "desc": "As a reaction when struck by a melee attack, the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.",
+            "attack_bonus": 0
+        }
+    ],
+    "legendary_actions": [
+        {
+            "name": "Move",
+            "desc": "The Incarcerator moves up to its speed without provoking opportunity attacks.",
+            "attack_bonus": 0
         },
         {
-          "name": "Wave of Viscous Mockery",
-          "desc": "You unleash a string of insults laced with subtle enchantments at ll creature you can see within 60ft. If the target can hear you (though it need not understand you), it must succeed on a Wisdom saving throw (15) or take 1d4 psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn.",
-          "attack_bonus": 0
+            "name": "Weapon Strike",
+            "desc": "The Incarcerator makes one weapon strike.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Wave of Viscous Mockery",
+            "desc": "You unleash a string of insults laced with subtle enchantments at ll creature you can see within 60ft. If the target can hear you (though it need not understand you), it must succeed on a Wisdom saving throw (15) or take 1d4 psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn.",
+            "attack_bonus": 0
         }
-      ]
-    },
-  {
-        "name": "Yochlol",
-        "size": "Medium",
-        "type": "fiend",
-        "subtype": "demon",
-        "alignment": "chaotic evil",
-        "armor_class": 15,
-        "hit_points": 136,
-        "hit_dice": "16d8+64",
-        "speed": "30 ft., climb 30 ft.",
-        "strength": 15,
-        "dexterity": 14,
-        "constitution": 18,
-        "intelligence": 13,
-        "wisdom": 15,
-        "charisma": 15,
-        "damage_vulnerabilities": "",
-        "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
-        "damage_immunities": "poison",
-        "condition_immunities": "poisoned",
-        "senses": "darkvision 120 ft., passive Perception 12",
-        "languages": "Abyssal, Elvish, Undercommon",
-        "challenge_rating": "10",
-        "special_abilities": [
-          {
+    ]
+},
+{
+    "name": "Yochlol",
+    "size": "Medium",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 15,
+    "hit_points": 136,
+    "hit_dice": "16d8+64",
+    "speed": "30 ft., climb 30 ft.",
+    "strength": 15,
+    "dexterity": 14,
+    "constitution": 18,
+    "intelligence": 13,
+    "wisdom": 15,
+    "charisma": 15,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "darkvision 120 ft., passive Perception 12",
+    "languages": "Abyssal, Elvish, Undercommon",
+    "challenge_rating": "10",
+    "special_abilities": [
+        {
             "name": "Shapechanger",
             "desc": "The yochlol can use its action to polymorph into a form that resembles a female drow or giant s pider, or back into its true form . Its stati stics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
             "attack_bonus": 0,
-          },
-          {
+        },
+        {
             "name": "Spider Climb",
             "desc": "The yochlol can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
             "attack_bonus": 0,
             "damage_dice": "3d6"
-          },
-          {
+        },
+        {
             "name": "Magic Resistance",
             "desc": "The balor has advantage on saving throws against spells and other magical effects.",
             "attack_bonus": 0
-          },
-          {
+        },
+        {
             "name": "Innate Spellcasting",
             "desc": "The yochlol's spellcasting ability is Charisma (spell save DC 14). The yochlol can innately cast the following spells, requiring no material components: At will: detect thoughts, web 1/ day: dominate person",
             "spellNames": ["detect thoughts","web","dominate person"],
             "attack_bonus": 0
-          }
-        ],
-        "actions": [
-          {
+        }
+    ],
+    "actions": [
+        {
             "name": "Multiattack",
             "desc": "The yochlol makes two melee attacks.",
             "attack_bonus": 0
-          },
-          {
+        },
+        {
             "name": "Slam (Bite in Spider Form)",
             "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft. (10ft. in demon form}, one target. Hit: 5 (1d6 + 2) bludgeoning (piercing in spider form) damage plus 21 (6d6) poison damage.",
             "attack_bonus": 6,
             "damage_dice": "1d8 + 6d6",
             "damage_bonus": 8
-          },
-          {
+        },
+        {
             "name": "Mist Form.",
             "desc": "The yochlol transforms into toxic mist or reverts to its true form. Any equipment it is wearing or carrying is also transformed. It reverts to its true form if it dies. While in mist form, the yochlol is incapacitated and can't speak. It has a flyin g speed of 30 feet, can hover, and can pass through any space that isn't airtight. It has advantage on Strength, Dexterity, and Constitution saving throws, and it is immune to nonmagical damage. While in mist form, the yochlol can enter a creature's space and stop there. Each time that creature starts its turn with  the yochlol in its space, the creature must succeed on a DC 14 Constitution saving throw or be poisoned until the start of its next turn. While poisoned in this way, the target is incapacitated.",
             "attack_bonus": 0,
-          }
-        ]
-      },
-    {
-          "name": "Drow Favored Consort",
-          "size": "Medium",
-          "type": "humanoid",
-          "subtype": "elf",
-          "alignment": "neutral evil",
-          "armor_class": 18,
-          "hit_points": 225,
-          "hit_dice": "30d8",
-          "speed": "30 ft.",
-          "strength": 15,
-          "dexterity": 20,
-          "constitution": 16,
-          "intelligence": 18,
-          "wisdom": 15,
-          "charisma": 18,
-          "perception": 4,
-          "stealth": 4,
-          "dexterity_save": 11,
-          "constitution_save": 9,
-          "charisma_save": 10,
-          "damage_vulnerabilities": "",
-          "damage_resistances": "",
-          "damage_immunities": "",
-          "condition_immunities": "",
-          "senses": "darkvision 120 ft., passive Perception 18",
-          "languages": "Elvish, Undercommon",
-          "challenge_rating": "18",
-          "special_abilities": [
-            {
-              "name": "Fey Ancestry",
-              "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
-              "attack_bonus": 0
-            },
-            {
-              "name": "Innate Spellcasting",
-              "desc": "The drow's spellcasting ability is Charisma (spell save DC 18). It can innately cast the following spells, requiring no material components:\nAt will: levitate\n1/day each: darkness, faerie fire",
-              "spellNames": ["darkness","command,","faerie fire", "levitate"],
-              "attack_bonus": 0
-            },
-            {
-              "name": "Sunlight Sensitivity",
-              "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
-              "attack_bonus": 0
-            },
-            {
-              "name": "Innate Spellcasting",
-              "desc": "The drow is a 11th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 18, + 10 to hit with spell attacks). It has the following wizard spells prepared:\nCantrips (at will): mage hand, message, poison spray, shocking grasp, ray of frost\n1st level (4 slots): burning hands, mage armor, magic missile, shield\n2nd level (3 slots): gust of wind, invisibility, misty step, shatter\n3rd level (3 s lots): counterspell, firebal/, haste\n4th level (3 slots): dimension door, Otiluke's resilient sphere\n5th level (2 slots): cone of cold\n6th level (1 slot): chain lightning",
-              "spellNames": ["mage hand","message"," poison spray", "shocking grasp", "ray of frost","burning hands", "mage armor", "magic missile", "shield","gust of wind", "invisibility", "misty step", "shatter","counterspell", "fireball", "haste","dimension door", "Otiluke's resilient sphere","cone of cold", "chain lightning"],
-              "attack_bonus": 0
-            },{
-              "name": "War Magic",
-              "desc": "When the drow uses its action to cast a spell, it can make one weapon attack as a bonus action.",
-              "attack_bonus": 0
-            }
-          ],
-          "actions": [
-              {
-                "name": "Multiattack",
-                "desc": "The drow makes three scimitar attacks.",
-                "attack_bonus": 0
-              },
-            {
-              "name": "Scimitar",
-              "desc": "Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 8 (ld6 + 5) slashing damage plus 18 (4d8) poison damage. In addition, the target has disadvantage on the next saving throw it makes against a spell the drow casts before the end of the drow's next turn.",
-              "attack_bonus": 11,
-              "damage_dice": "1d6+4d8",
-              "damage_bonus": 5
-            },
-            {
-              "name": "Hand Crossbow",
-              "desc": "Ranged Weapon Attack: +11 to hit, range 30/120 ft., one target. Hit: 8 (1d6 + 5) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake.",
-              "attack_bonus": 7,
-              "damage_dice": "1d6",
-              "damage_bonus": 5
-            }
-          ]
-        },
-    {
-          "name": "Drow Priestess Of Lolth",
-          "size": "Medium",
-          "type": "humanoid",
-          "subtype": "elf",
-          "alignment": "neutral evil",
-          "armor_class": 16,
-          "hit_points": 71,
-          "hit_dice": "13d8",
-          "speed": "30 ft.",
-          "strength": 10,
-          "dexterity": 14,
-          "constitution": 12,
-          "intelligence": 13,
-          "wisdom": 17,
-          "charisma": 18,
-          "perception": 4,
-          "stealth": 4,
-          "damage_vulnerabilities": "",
-          "damage_resistances": "",
-          "damage_immunities": "",
-          "condition_immunities": "",
-          "senses": "darkvision 120 ft., passive Perception 18",
-          "languages": "Elvish, Undercommon",
-          "challenge_rating": "8",
-          "special_abilities": [
-            {
-              "name": "Fey Ancestry",
-              "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
-              "attack_bonus": 0
-            },
-            {
-              "name": "Innate Spellcasting",
-              "desc": "The drow's spellcasting ability is Charisma (spell save DC 15). It can innately cast the following spells, requiring no material components:\nAt will: levitate\n1/day each: darkness, faerie fire",
-              "spellNames": ["darkness","faerie fire", "levitate"],
-              "attack_bonus": 0
-            },
-            {
-              "name": "Sunlight Sensitivity",
-              "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
-              "attack_bonus": 0
-            },
-            {
-              "name": "Innate Spellcasting",
-              "desc": "The drow is a lOth -level spellcaster. Her spellcasting ab ility is Wisdom (save DC 14, +6 to hit with spell attacks). The drow has the following cleric spells prepared\nCantrips (at will):guidance, poison spray, resistance, spare the dying, thaumaturgy\n1st level (4 slots): animal friendship, cure wounds, detect poisonand disease, ray of sickness \n2nd level (3 slots): lesser restoratlon, protection from poison, web\n3rd level (3 s lots): conjure animals (2 giant spiders), dispel magic\n4th level (3 slots): divination ,freedom of movement\n5th level (2 slots): insect plague, mass cure wounds",
-              "spellNames": ["guidance", "poison spray", "resistance", "spare the dying", "thaumaturgy","animal friendship", "cure wounds", "detect poison and disease", "ray of sickness", "lesser restoratlon", "protection from poison", "web","conjure animals","dispel magic","divination" ,"freedom of movement", "insect plague", "mass cure wounds"],
-              "attack_bonus": 0
-            }
-          ],
-          "actions": [
-              {
-                "name": "Multiattack",
-                "desc": "The drow makes two Scourge attacks.",
-                "attack_bonus": 0
-              },
-            {
-              "name": "Scourge",
-              "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (ld6 + 2) piercing damage plus 17 (5d6) poison damage",
-              "attack_bonus": 5,
-              "damage_dice": "1d6+5d6",
-              "damage_bonus": 2
-            },
-            {
-              "name": "Hand Crossbow",
-              "desc": "Ranged Weapon Attack: +11 to hit, range 30/120 ft., one target. Hit: 8 (1d6 + 5) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake.",
-              "attack_bonus": 7,
-              "damage_dice": "1d6",
-              "damage_bonus": 5
-            }
-          ]
         }
+    ]
+},{
+    "name": "Nalfeshnee",
+    "size": "Large",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 18,
+    "hit_points": 184,
+    "hit_dice": "16d10",
+    "speed": "30 ft., climb 30 ft.",
+    "strength": 21,
+    "dexterity": 10,
+    "constitution": 22,
+    "intelligence": 19,
+    "wisdom": 12,
+    "charisma": 15,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "Cold, Fire, Lightning; Bludgeoning, Piercing, and Slashing From Nonmagical Attacks",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "Truesight 120 Ft",
+    "languages": "Abyssal, Telepathy 120 Ft.",
+    "challenge_rating": "13",
+    "special_abilities": [
+        {
+            "name": "Magic Resistance",
+            "desc": "The nalfeshnee has advantage on saving throws against spells and other magical effects.",
+            "attack_bonus": 0,
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The nalfeshnee uses Horror Nimbus if it can. It then makes three attacks: one with its bite and two with its claws.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Bite",
+            "desc": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: (5d10 + 5) piercing damage.",
+            "attack_bonus": 10,
+            "damage_dice": "5d10",
+            "damage_bonus": 5
+        },
+        {
+            "name": "Claw",
+            "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: (3d6 + 5) slashing damage.",
+            "attack_bonus": 10,
+            "damage_dice": "3d6",
+            "damage_bonus": 5
+        },
+        {
+            "name": "Horror Nimbus (Recharge 5-6).",
+            "desc": "The nalfeshnee magically emits scintillating, multicolored light. Each creature within 15 feet of the nalfeshnee that can see the light must succeed on a DC 15 Wisdom saving throw or be frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the nalfeshnee's Horror Nimbus for the next 24 hours.",
+            "attack_bonus": 0,
+        },{
+            "name": "Teleport",
+            "desc": " The nalfeshnee magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
+            "attack_bonus": 0,
+        }
+    ]
+},
+{
+    "name": "Drow Favored Consort",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "elf",
+    "alignment": "neutral evil",
+    "armor_class": 18,
+    "hit_points": 225,
+    "hit_dice": "30d8",
+    "speed": "30 ft.",
+    "strength": 15,
+    "dexterity": 20,
+    "constitution": 16,
+    "intelligence": 18,
+    "wisdom": 15,
+    "charisma": 18,
+    "perception": 4,
+    "stealth": 4,
+    "dexterity_save": 11,
+    "constitution_save": 9,
+    "charisma_save": 10,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 120 ft., passive Perception 18",
+    "languages": "Elvish, Undercommon",
+    "challenge_rating": "18",
+    "special_abilities": [
+        {
+            "name": "Fey Ancestry",
+            "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Innate Spellcasting",
+            "desc": "The drow's spellcasting ability is Charisma (spell save DC 18). It can innately cast the following spells, requiring no material components:\nAt will: levitate\n1/day each: darkness, faerie fire",
+            "spellNames": ["darkness","command,","faerie fire", "levitate"],
+            "attack_bonus": 0
+        },
+        {
+            "name": "Sunlight Sensitivity",
+            "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Innate Spellcasting",
+            "desc": "The drow is a 11th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 18, + 10 to hit with spell attacks). It has the following wizard spells prepared:\nCantrips (at will): mage hand, message, poison spray, shocking grasp, ray of frost\n1st level (4 slots): burning hands, mage armor, magic missile, shield\n2nd level (3 slots): gust of wind, invisibility, misty step, shatter\n3rd level (3 s lots): counterspell, firebal/, haste\n4th level (3 slots): dimension door, Otiluke's resilient sphere\n5th level (2 slots): cone of cold\n6th level (1 slot): chain lightning",
+            "spellNames": ["mage hand","message"," poison spray", "shocking grasp", "ray of frost","burning hands", "mage armor", "magic missile", "shield","gust of wind", "invisibility", "misty step", "shatter","counterspell", "fireball", "haste","dimension door", "Otiluke's resilient sphere","cone of cold", "chain lightning"],
+            "attack_bonus": 0
+        },{
+            "name": "War Magic",
+            "desc": "When the drow uses its action to cast a spell, it can make one weapon attack as a bonus action.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The drow makes three scimitar attacks.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Scimitar",
+            "desc": "Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 8 (ld6 + 5) slashing damage plus 18 (4d8) poison damage. In addition, the target has disadvantage on the next saving throw it makes against a spell the drow casts before the end of the drow's next turn.",
+            "attack_bonus": 11,
+            "damage_dice": "1d6+4d8",
+            "damage_bonus": 5
+        },
+        {
+            "name": "Hand Crossbow",
+            "desc": "Ranged Weapon Attack: +11 to hit, range 30/120 ft., one target. Hit: 8 (1d6 + 5) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake.",
+            "attack_bonus": 7,
+            "damage_dice": "1d6",
+            "damage_bonus": 5
+        }
+    ]
+},
+{
+    "name": "Mind Flayer",
+    "size": "Medium",
+    "type": "aberration",
+    "subtype": "elf",
+    "alignment": "lawful evil",
+    "armor_class": 15,
+    "hit_points": 71,
+    "hit_dice": "13d8",
+    "speed": "30 ft.",
+    "strength": 11,
+    "dexterity": 12,
+    "constitution": 12,
+    "intelligence": 19,
+    "wisdom": 17,
+    "charisma": 17,
+    "perception": 4,
+    "stealth": 4,
+    "intelligence_save": 7,
+    "wisdom_save": 6,
+    "charisma_save": 6,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 120 ft., passive Perception 16",
+    "languages": "Deep Speech, Undercommon, telepathy 120 ft.",
+    "challenge_rating": "7",
+    "special_abilities": [
+        {
+            "name": "Magic Resistance",
+            "desc": "The Mind Flayer has advantage on saving throws against spells and other magical effects.",
+            "attack_bonus": 0,
+        },
+        {
+            "name": "Innate Spellcasting",
+            "desc": "The mind flayer’s innate spellcasting ability is Intelligence (spell save DC 15). It can innately cast the following spells, requiring no components\nAt will:  detect thoughts, levitate\n1/day each: dominate monster, plane shift (self only)",
+            "spellNames": ["detect thoughts","levitate", "dominate monster", "plane shift"],
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Tentacles",
+            "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: (2d10 + 4) psychic damage. If the target is Medium or smaller, it is grappled, escape DC 15, and must succeed on a DC 15 Intelligence saving throw or be stunned until this grapple ends",
+            "attack_bonus": 7,
+            "damage_dice": "2d10",
+            "damage_bonus": 4
+        },
+        {
+            "name": "Extract Brain.",
+            "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one incapacitated humanoid grappled by the mind flayer. Hit: (10d10) piercing damage. This attack can only be used on a incapacitated humanoid grappled by the mind flayer. If this damage reduces the target to 0 hit points, the mind flayer kills the target by extracting and devouring its brain",
+            "attack_bonus": 7,
+            "damage_dice": "10d10",
+            "damage_bonus": 4
+        },
+        {
+            "name": "Mind Blast (Recharge 5–6).",
+            "desc": " The mind flayer magically emits psychic energy in a 60-foot cone. Each creature in that area must succeed on a DC 15 Intelligence saving throw or take 22 (4d8 + 4) psychic damage and be stunned for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+            "attack_bonus": 7,
+            "damage_dice": "4d8",
+            "damage_bonus": 0
+        }
+    ]
+},{
+    "name": "Mind Flayer Archanist",
+    "size": "Medium",
+    "type": "aberration",
+    "subtype": "elf",
+    "alignment": "lawful evil",
+    "armor_class": 15,
+    "hit_points": 71,
+    "hit_dice": "13d8",
+    "speed": "30 ft.",
+    "strength": 11,
+    "dexterity": 12,
+    "constitution": 12,
+    "intelligence": 19,
+    "wisdom": 17,
+    "charisma": 17,
+    "perception": 4,
+    "stealth": 4,
+    "intelligence_save": 7,
+    "wisdom_save": 6,
+    "charisma_save": 6,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 120 ft., passive Perception 16",
+    "languages": "Deep Speech, Undercommon, telepathy 120 ft.",
+    "challenge_rating": "7",
+    "special_abilities": [
+        {
+            "name": "Magic Resistance",
+            "desc": "The Mind Flayer has advantage on saving throws against spells and other magical effects.",
+            "attack_bonus": 0
+        },{
+            "name": "Innate Spellcasting (Psionics)",
+            "desc": "The mind flayer’s innate spellcasting ability is Intelligence (spell save DC 15). It can innately cast the following spells, requiring no components\nAt will:  detect thoughts, levitate\n1/day each: dominate monster, plane shift (self only)",
+            "spellNames": ["detect thoughts","levitate", "dominate monster", "plane shift"],
+            "attack_bonus": 0
+        }, {
+            "name": "Spellcasting",
+            "desc": "The mind flayer is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 15, +7 to hit with spell attacks). The mind flayer has the following wizard spells prepared:\nCantrips (at will): blade ward, dancing lights, mage hand, shocking grasp\n1st level (4 slots): detect magic, disguise self, shield, sleep\n2nd level (3 slots): blur, invisibility, ray of enfeeblement\n3rd level (3 slots): clairvoyance, lightning bolt, sending\n4th level (3 slots): confusion, hallucinatory terrain \n5th level (2 slots): telekinesis, wall of force",
+            "spellNames": ["blade ward","dancing lights", "mage hand", "shocking grasp","detect magic", "disguise self", "shield, sleep", "blur", "invisibility", "ray of enfeeblement","clairvoyance", "lightning bolt", "sending", "confusion", "hallucinatory terrain", "telekinesis", "wall of force"],
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Tentacles",
+            "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: (2d10 + 4) psychic damage. If the target is Medium or smaller, it is grappled, escape DC 15, and must succeed on a DC 15 Intelligence saving throw or be stunned until this grapple ends",
+            "attack_bonus": 7,
+            "damage_dice": "2d10",
+            "damage_bonus": 4
+        },
+        {
+            "name": "Extract Brain.",
+            "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one incapacitated humanoid grappled by the mind flayer. Hit: (10d10) piercing damage. This attack can only be used on a incapacitated humanoid grappled by the mind flayer. If this damage reduces the target to 0 hit points, the mind flayer kills the target by extracting and devouring its brain",
+            "attack_bonus": 7,
+            "damage_dice": "10d10",
+            "damage_bonus": 4
+        },
+        {
+            "name": "Mind Blast (Recharge 5–6).",
+            "desc": " The mind flayer magically emits psychic energy in a 60-foot cone. Each creature in that area must succeed on a DC 15 Intelligence saving throw or take 22 (4d8 + 4) psychic damage and be stunned for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+            "attack_bonus": 7,
+            "damage_dice": "4d8",
+            "damage_bonus": 0
+        }
+    ]
+},{
+    "name": "Chasme",
+    "size": "Large",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 15,
+    "hit_points": 84,
+    "hit_dice": "13d10",
+    "speed": "20 ft., fly 60 ft.",
+    "strength": 15,
+    "dexterity": 15,
+    "constitution": 12,
+    "intelligence": 11,
+    "wisdom": 14,
+    "charisma": 10,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "Cold, Fire, Lightning",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "blindsight 10 ft., darkvision 120 ft., passive Perception 15",
+    "languages": "Abyssal, Telepathy 120 Ft.",
+    "challenge_rating": "6",
+    "special_abilities": [
+        {
+            "name": "Magic Resistance",
+            "desc": "The nalfeshnee has advantage on saving throws against spells and other magical effects.",
+            "attack_bonus": 0,
+        },{
+            "name": "Drone",
+            "desc": "The chasme produces a horrid droning sound to which demons are immune. Any other creature that starts its turn within 30 feet of the chasme must succeed on a DC 12 Constitution saving throw or fall unconscious for 10 minutes. A creature that can’t hear the drone automatically succeeds on the save. The effect on the creature ends if it takes damage or if another creature takes an action to splash it with holy water. If a creature’s saving throw is successful or the effect ends for it, it is immune to the drone for the next 24 hours.",
+            "attack_bonus": 0,
+        }
+    ],
+    "actions": [
+        {
+            "name": "Proboscis",
+            "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: (4d6 + 2) piercing damage plus (7d6)necrotic damage. The target’s hit point maximum is reduced by an amount equal to the necrotic damage taken If this effect reduces a creature’s hit point maximum to 0, the creature dies. This reduction to a creature’s hit point maximum lasts until the creature finishes a long rest or until it is affected by a spell like greater restoration",
+            "attack_bonus": 5,
+            "damage_dice": "4d6+7d6",
+            "damage_bonus": 2
+        }
+    ]
+},{
+    "name": "Draegloth",
+    "size": "Large",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 15,
+    "hit_points": 123,
+    "hit_dice": "13d10",
+    "speed": "30 ft.",
+    "strength": 20,
+    "dexterity": 15,
+    "constitution": 18,
+    "intelligence": 13,
+    "wisdom": 11,
+    "charisma": 11,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "Cold, Lightning",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "arkvision 120 ft., passive Perception 13",
+    "languages": "Abyssal, Elvish, Undercommon",
+    "challenge_rating": "7",
+    "special_abilities": [
+        {
+            "name": "Fey Ancestry",
+            "desc": "The draegloth has advantage on saving throws against being charmed, and magic can’t put it to sleep",
+            "attack_bonus": 0,
+        },
+        {
+            "name": "Innate Spellcasting",
+            "desc": "The draegloth’s innate spellcasting ability is Charisma (spell save DC 11). The draegloth can innately cast the following spells, requiring no material components:\nAt will: darkness\n1/day each: confusion, faerie fire, dancing lights",
+            "spellNames": ["darkness","command,","faerie fire", "confusion", "dancing lights"],
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The draegloth makes three attacks: one with its bite and two with its claws.",
+            "attack_bonus": 0
+        },{
+            "name": "Bite",
+            "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one creature. Hit: (2d10 + 5) piercing damage.",
+            "attack_bonus": 8,
+            "damage_dice": "2d10",
+            "damage_bonus": 5
+        },{
+            "name": "Claws",
+            "desc": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: (2d10 + 5) slashing damage. ",
+            "attack_bonus": 8,
+            "damage_dice": "2d10",
+            "damage_bonus": 5
+        }
+    ]
+},{
+    "name": "Armanite",
+    "size": "Large",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 15,
+    "hit_points": 84,
+    "hit_dice": "8d10",
+    "speed": "60 ft.",
+    "strength": 21,
+    "dexterity": 18,
+    "constitution": 21,
+    "intelligence": 8,
+    "wisdom": 12,
+    "charisma": 13,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "Cold, fire, Lightning",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "Darkvision 120 ft., passive Perception 13",
+    "languages": "Abyssal, telepathy 120 ft.",
+    "challenge_rating": "7",
+    "special_abilities": [
+        {
+            "name": "Magic Resistance",
+            "desc": "The armanite has advantage on saving throws against spells and other magical effects.",
+            "attack_bonus": 0,
+        },
+        {
+            "name": "Magic Weapons",
+            "desc": "The armanite’s weapon attacks are magical.",
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The armanite makes three attacks: one with its hooves, one with its claws, and one with its serrated tail.",
+            "attack_bonus": 0
+        },{
+            "name": "Hooves",
+            "desc": "Melee Weapon: +8 to hit, reach 5 ft., One target. Hit: (2d6+5) Bludgeoning damage. ",
+            "attack_bonus": 8,
+            "damage_dice": "2d6",
+            "damage_bonus": 5
+        },{
+            "name": "Claws",
+            "desc": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: (2d4 + 5) slashing damage. ",
+            "attack_bonus": 8,
+            "damage_dice": "2d4",
+            "damage_bonus": 5
+        },{
+            "name": "Serrated Tail",
+            "desc": "Melee Weapon: +8 to hit, reach 10 ft., One target. Hit: (2d10+5) Slashing damage. ",
+            "attack_bonus": 8,
+            "damage_dice": "2d10",
+            "damage_bonus": 5
+        },{
+            "name": "Lightning Lance (Recharge 5-6)",
+            "desc": "The armanite looses a bolt of lightning in a line 60 feet long and 10 feet wide. Each creature in the line must make a DC 15 Dexterity saving throw, taking 27 (6d8) lightning damage on a failed save, or half as much damage on a successful one.",
+            "damage_bonus": 5
+        }
+    ]
+},{
+    "name": "Shoosuva",
+    "size": "Large",
+    "type": "fiend",
+    "subtype": "demon",
+    "alignment": "chaotic evil",
+    "armor_class": 110,
+    "hit_points": 84,
+    "hit_dice": "13d10",
+    "speed": "60 ft.",
+    "strength": 18,
+    "dexterity": 13,
+    "constitution": 17,
+    "intelligence": 7,
+    "wisdom": 14,
+    "charisma": 9,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical attacks",
+    "damage_immunities": "poison",
+    "condition_immunities": "charmed, frightened, poisoned",
+    "senses": "darkvision 60 ft., passive Perception 12",
+    "languages": "Abyssal, Gnoll, telepathy 120 ft.",
+    "challenge_rating": "8",
+    "special_abilities": [
+        {
+            "name": "Rampage",
+            "desc": "When it reduces a creature to 0 hit points with a melee attack on its turn, the shoosuva can take a bonus action to move up to half its speed and make a bite attack.",
+            "attack_bonus": 0,
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The shoosuva makes two attacks: one with its bite and one with its tail stinger.",
+            "attack_bonus": 0
+        },{
+            "name": "Bite",
+            "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: (4d10 + 4) piercing damage. ",
+            "attack_bonus": 7,
+            "damage_dice": "4d10",
+            "damage_bonus": 4
+        },{
+            "name": "Tail Stinger",
+            "desc": "Melee Weapon Attack: +7 to hit, reach 15 ft., one creature. Hit: (2d8 + 4) piercing damage. The target must succeed on a dc 14 constitution saving throw or become poisoned While poisoned, the target is also paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success",
+            "attack_bonus": 7,
+            "damage_dice": "2d8",
+            "damage_bonus": 4
+        }
+    ]
+},
+{
+    "name": "Drow Priestess Of Lolth",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "elf",
+    "alignment": "neutral evil",
+    "armor_class": 16,
+    "hit_points": 71,
+    "hit_dice": "13d8",
+    "speed": "30 ft.",
+    "strength": 10,
+    "dexterity": 14,
+    "constitution": 12,
+    "intelligence": 13,
+    "wisdom": 17,
+    "charisma": 18,
+    "perception": 4,
+    "stealth": 4,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 120 ft., passive Perception 18",
+    "languages": "Elvish, Undercommon",
+    "challenge_rating": "8",
+    "special_abilities": [
+        {
+            "name": "Fey Ancestry",
+            "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Innate Spellcasting",
+            "desc": "The drow's spellcasting ability is Charisma (spell save DC 15). It can innately cast the following spells, requiring no material components:\nAt will: levitate\n1/day each: darkness, faerie fire",
+            "spellNames": ["darkness","faerie fire", "levitate"],
+            "attack_bonus": 0
+        },
+        {
+            "name": "Sunlight Sensitivity",
+            "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Innate Spellcasting",
+            "desc": "The drow is a lOth -level spellcaster. Her spellcasting ab ility is Wisdom (save DC 14, +6 to hit with spell attacks). The drow has the following cleric spells prepared\nCantrips (at will):guidance, poison spray, resistance, spare the dying, thaumaturgy\n1st level (4 slots): animal friendship, cure wounds, detect poisonand disease, ray of sickness \n2nd level (3 slots): lesser restoratlon, protection from poison, web\n3rd level (3 s lots): conjure animals (2 giant spiders), dispel magic\n4th level (3 slots): divination ,freedom of movement\n5th level (2 slots): insect plague, mass cure wounds",
+            "spellNames": ["guidance", "poison spray", "resistance", "spare the dying", "thaumaturgy","animal friendship", "cure wounds", "detect poison and disease", "ray of sickness", "lesser restoratlon", "protection from poison", "web","conjure animals","dispel magic","divination" ,"freedom of movement", "insect plague", "mass cure wounds"],
+            "attack_bonus": 0
+        }
+    ],
+    "actions": [
+        {
+            "name": "Multiattack",
+            "desc": "The drow makes two Scourge attacks.",
+            "attack_bonus": 0
+        },
+        {
+            "name": "Scourge",
+            "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (ld6 + 2) piercing damage plus 17 (5d6) poison damage",
+            "attack_bonus": 5,
+            "damage_dice": "1d6+5d6",
+            "damage_bonus": 2
+        },
+        {
+            "name": "Hand Crossbow",
+            "desc": "Ranged Weapon Attack: +11 to hit, range 30/120 ft., one target. Hit: 8 (1d6 + 5) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake.",
+            "attack_bonus": 7,
+            "damage_dice": "1d6",
+            "damage_bonus": 5
+        }
+    ]
+}
+
+
 ]
